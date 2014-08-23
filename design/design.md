@@ -1,5 +1,12 @@
+
 Introduction
 ============
+
+Connected Worlds
+----------------
+This is a game design document for my Ludum Dare 30 entry. Consider it like a rule book for a table top game!
+
+*Connect the worlds, rule the universe*
 
 Description
 -----------
