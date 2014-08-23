@@ -165,7 +165,7 @@ Territory
 	
 Action Card Types
 =================
-```json
+```javascript
 [
 	"Scientists": {
 		cost: 5
@@ -205,7 +205,7 @@ Action Card Types
 
 Units and Unit Card Types
 =========================
-```json
+```javascript
 [
 	"Standard Base": {
 		strength: 1,
