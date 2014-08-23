@@ -1,5 +1,12 @@
+
 Introduction
 ============
+
+Connected Worlds
+----------------
+This is a game design document for my Ludum Dare 30 entry. Consider it like a rule book for a table top game!
+
+*Connect the worlds, rule the universe*
 
 Description
 -----------
@@ -23,7 +30,7 @@ A deck building 4x space adventure game, (in space!)
 + Build units into your deck using Engineers
 	
 ### Exterminate:
-+ Destroy those pesky xenos by amassing a force strong enough
++ Destroy those pesky xenos by amassing a force strong enough to beat them
 + Capture enemy bases
 
 Gameplay
@@ -37,18 +44,21 @@ Winning the game
 	
 Order of the game
 -----------------
-1. Set up
+1. Setup
+2. Start a new round
 2. Each player takes their turn
 3. At the end of each round, check winning conditions
-	
+4. Start a new round (cont.)
+
 Setup
 -----
-1. Add 1 world for each player in the game, worlds should be 
-2. Each player gets 1 base on a world of their choosing (fight!)
-3. Each player gets a starting deck of 10 cards - 3 Harvester, 1 Portal, 2 Scientst, 2 Engineers, 2 Units
-4. Each player shuffles their starting deck
-5. Choose Player 1 - humans automatically go first. If there is more than one human, then the youngest human goes first.
-6. Play goes clockwise from Player 1
+1. Add 1 planet board for each player in the game
+2. For each world board, add a corresponding planet counter to the space map on one of the homeworld (H) hexes.
+3. Each player gets 1 base on a world of their choosing (fight!)
+4. Each player gets a starting deck of 10 cards - 3 Harvester, 1 Portal, 2 Scientst, 2 Engineers, 2 Units
+5. Each player shuffles their starting deck
+6. Choose Player 1 - humans automatically go first. If there is more than one human, then the youngest human goes first.
+7. Play goes clockwise from Player 1
 	
 Order of a round
 ----------------
@@ -68,23 +78,23 @@ Rules
 
 Card Terminology
 ----------------
-Deck - all of the cards that the player owns, that have not been played
-Discard pile - cards that the player owns that have been played, they cannot be replayed until they have been shuffled back into the deck - each player has their own discard pile
-Hand - the cards that the player currently has in play
++ **Deck** - all of the cards that the player owns, that have not been played
++ **Discard pile** - cards that the player owns that have been played, they cannot be replayed until they have been shuffled back into the deck - each player has their own discard pile
++ **Hand** - the cards that the player currently has in play
 	
 Map Terminology
 ---------------
-**Space** - the area of hexes that represents interplanetary space 
-**Planet** - a planet is an area of hexes that represents the surface of a planet
-**Hex / Hexes** - a tile representing a location in Space or on a Planet - these are used to activate movement and combat
-**Base** - a base is an outpost (or city) in your civilisation - bases are used to control territory
-**Unit** - units are either 
++ **Space** - the area of hexes that represents interplanetary space 
++ **Planet** - a planet is an area of hexes that represents the surface of a planet
++ **Hex / Hexes** - a tile representing a location in Space or on a Planet - these are used to activate movement and combat
++ **Base** - a base is an outpost (or city) in your civilisation - bases are used to control territory
++ **Unit** - units are either 
 	
 Cards and the Player's Deck
 ---------------------------
 + The player performs actions using cards in their hand.
 + Cards have various actions that can be performed to move units, to harvest resources, or to buy new cards.
-+ Cards represent the collective knowledge, skills, and resources of your army.
++ Cards represent the collective knowledge, skills, and resources of your civilisation.
 + There are two types of cards, actions and units.
 
 Action cards
@@ -155,7 +165,8 @@ Territory
 	
 Action Card Types
 =================
-`[
+```javascript
+[
 	"Scientists": {
 		cost: 5
 		movement: 1,
@@ -189,11 +200,13 @@ Action Card Types
 		action: "gather resources",
 		resources: 5
 	}
-]`
+]
+```
 
 Units and Unit Card Types
 =========================
-`[
+```javascript
+[
 	"Standard Base": {
 		strength: 1,
 		cost: 5,
@@ -230,6 +243,7 @@ Units and Unit Card Types
 		strength: 5,
 		cost: 24
 	}
-]`
+]
+```
 
 	
