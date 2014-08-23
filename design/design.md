@@ -78,17 +78,17 @@ Rules
 
 Card Terminology
 ----------------
-Deck - all of the cards that the player owns, that have not been played
-Discard pile - cards that the player owns that have been played, they cannot be replayed until they have been shuffled back into the deck - each player has their own discard pile
-Hand - the cards that the player currently has in play
++ **Deck** - all of the cards that the player owns, that have not been played
++ **Discard pile** - cards that the player owns that have been played, they cannot be replayed until they have been shuffled back into the deck - each player has their own discard pile
++ **Hand** - the cards that the player currently has in play
 	
 Map Terminology
 ---------------
-**Space** - the area of hexes that represents interplanetary space 
-**Planet** - a planet is an area of hexes that represents the surface of a planet
-**Hex / Hexes** - a tile representing a location in Space or on a Planet - these are used to activate movement and combat
-**Base** - a base is an outpost (or city) in your civilisation - bases are used to control territory
-**Unit** - units are either 
++ **Space** - the area of hexes that represents interplanetary space 
++ **Planet** - a planet is an area of hexes that represents the surface of a planet
++ **Hex / Hexes** - a tile representing a location in Space or on a Planet - these are used to activate movement and combat
++ **Base** - a base is an outpost (or city) in your civilisation - bases are used to control territory
++ **Unit** - units are either 
 	
 Cards and the Player's Deck
 ---------------------------
