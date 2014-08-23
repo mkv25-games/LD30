@@ -94,7 +94,7 @@ Cards and the Player's Deck
 ---------------------------
 + The player performs actions using cards in their hand.
 + Cards have various actions that can be performed to move units, to harvest resources, or to buy new cards.
-+ Cards represent the collective knowledge, skills, and resources of your army.
++ Cards represent the collective knowledge, skills, and resources of your civilisation.
 + There are two types of cards, actions and units.
 
 Action cards
