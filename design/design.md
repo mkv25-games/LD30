@@ -30,7 +30,7 @@ A deck building 4x space adventure game, (in space!)
 + Build units into your deck using Engineers
 	
 ### Exterminate:
-+ Destroy those pesky xenos by amassing a force strong enough
++ Destroy those pesky xenos by amassing a force strong enough to beat them
 + Capture enemy bases
 
 Gameplay
