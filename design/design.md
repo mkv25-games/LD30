@@ -5,27 +5,26 @@ Description
 -----------
 A deck building 4x space adventure game, (in space!)
 
-h3. Explore:
+### Explore:
 + Move units out into space
 + Space is not so big
 + Hex tiles for movement between worlds
 	
-h3. Expand:
+### Expand:
 + Build bases to claim territory
 + Planets are like space but with borders
 + Deploy new units and bases from cards in your hand
 + Connect worlds using portals at bases
 	
-h3. Exploit:
+### Exploit:
 + Harvest resources from bases
 + Buy new cards using resources
 + Research new actions for your desk with Scientists
 + Build units into your deck using Engineers
 	
-h3. Exterminate:
+### Exterminate:
 + Destroy those pesky xenos by amassing a force strong enough
 + Capture enemy bases
-
 
 Gameplay
 ========
