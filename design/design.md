@@ -44,18 +44,21 @@ Winning the game
 	
 Order of the game
 -----------------
-1. Set up
+1. Setup
+2. Start a new round
 2. Each player takes their turn
 3. At the end of each round, check winning conditions
-	
+4. Start a new round (cont.)
+
 Setup
 -----
-1. Add 1 world for each player in the game, worlds should be 
-2. Each player gets 1 base on a world of their choosing (fight!)
-3. Each player gets a starting deck of 10 cards - 3 Harvester, 1 Portal, 2 Scientst, 2 Engineers, 2 Units
-4. Each player shuffles their starting deck
-5. Choose Player 1 - humans automatically go first. If there is more than one human, then the youngest human goes first.
-6. Play goes clockwise from Player 1
+1. Add 1 planet board for each player in the game
+2. For each world board, add a corresponding planet counter to the space map on one of the homeworld (H) hexes.
+3. Each player gets 1 base on a world of their choosing (fight!)
+4. Each player gets a starting deck of 10 cards - 3 Harvester, 1 Portal, 2 Scientst, 2 Engineers, 2 Units
+5. Each player shuffles their starting deck
+6. Choose Player 1 - humans automatically go first. If there is more than one human, then the youngest human goes first.
+7. Play goes clockwise from Player 1
 	
 Order of a round
 ----------------
