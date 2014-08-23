@@ -1,0 +1,31 @@
+mkv25.net ludum dare template
+
+A guide to where to put code:
+
+- animation/
+  Build your animation frames here from raw assets, and cache them in the AnimationFrameCache for AnimationUI instances to use.
+
+- controller/
+  Write your high-level game controllers here, responding to signals on the EventBus across different screens in a screen agnostic way
+	
+- event/EventBus.hx
+  Add signals galore to this - any high level action you want to communicate with other part of the game... define it here, register in a controller, and dispatch it from a screen.
+  See EventBus.hx
+
+- model/
+  Models in here should extend CoreModel, and dispatch .changed() or more specific signals
+  See CoreModel.hx
+
+- provider/
+  Providers should generally only contain static helper methods to help make things and wire up the gameworld in controllers.
+
+- screens/
+  Screens in here should extend Screen, and contain lots of BaseUI type objects, Sprites, and Bitmaps. They should be configured external by controllers by way of setup or update methods.
+  Screens should clean up their own state by responding to hide and show appropriately.
+  See Screen.hx and ScreenController.hx
+
+- ui/
+  UI classes get stuff on screen, and should be cohesive with Models, listening out for changes on their model and redrawing themselves as appropriate.
+  Lots of UI classes have been provided to make it easy to get stuff on screen.
+  When writing new UI classes, always extend BaseUI - don't be tempted to extend another similar class, just use it the existing ones as templates and write your own.
+  See BaseUI.hx, BitmapUI.hx, AnimationUI.hx, BubbleCircleUI.hx, ButtonUI.hx, DebugUI.hx, IconButtonUI.hx, TextUI.hx

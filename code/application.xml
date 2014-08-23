@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	<!-- NMML reference: https://gist.github.com/1763850 -->
+	
+	<!-- metadata, make sure 'package' is at least 3 segments (ie. com.mycompany.myproject) -->
+	<meta title="Connected Worlds" package="net.mkv25.game.ld30" version="1.0.0" company="mkv25 games" />
+	
+	<!-- output -->
+	<app main="net.mkv25.game.Main" file="LudumDareGame" path="bin" />
+	
+	<window background="#000000" fps="60" />
+	<window width="500" height="800" unless="mobile" />
+	<window orientation="vertical" vsync="false" antialiasing="0" if="cpp" />
+	
+	<!-- classpath, haxe libs -->
+	<source path="src" />
+	<haxelib name="openfl" />
+	<haxelib name="actuate" />
+	
+	<!-- assets -->
+	<icon path="assets/openfl.svg" />
+	<assets path="assets/img" rename="img" />
+	<assets path="assets/fonts" rename="fonts" />
+	<assets path="assets/sounds" rename="sounds" />
+	
+	<!-- optimize output
+	<haxeflag name="-dce full" /> -->
+	
+</project>

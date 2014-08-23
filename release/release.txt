@@ -1,0 +1,3 @@
+A zipped up releaseable version of the game source code and assets goes here.
+
+Historically my releases have just been the contents of the code/ folder.
