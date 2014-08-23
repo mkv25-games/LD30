@@ -8,7 +8,9 @@ class EventBus
 	public static var requestNextScreen = new Signal();
 	public static var requestLastScreen = new Signal();
 	
-	// TODO: Add your own custom signals here 
+	// specific actions
+	public static var startNewGame = new Signal();
+	public static var restartGame = new Signal();
 	
 	public function new() 
 	{

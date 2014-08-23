@@ -25,7 +25,7 @@ class ButtonUI extends BaseUI
 		super();
 		
 		bitmap = new Bitmap();
-		textField = Text.makeTextField("fonts/alegreya-regular.ttf", 26, 0x333333, TextFormatAlign.CENTER);
+		textField = Text.makeTextField("fonts/trebuc.ttf", 28, 0xFFFFFF, TextFormatAlign.CENTER);
 		assetPrefix = DEFAULT_ASSET_PREFIX;
 		
 		waitingOnActivation = false;
@@ -53,15 +53,14 @@ class ButtonUI extends BaseUI
 	
 	function updateLabelSize()
 	{
+		textField.height = textField.textHeight + 5;
 		if (bitmap == null)
 		{
 			textField.width = 100;
-			textField.height = 30;
 		}
 		else
 		{
 			textField.width = bitmap.width;
-			textField.height = bitmap.height;
 		}
 		center(textField);
 	}

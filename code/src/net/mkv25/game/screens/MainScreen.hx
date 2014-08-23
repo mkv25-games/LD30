@@ -11,7 +11,7 @@ import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.event.EventBus;
 import openfl.Assets;
 
-class IntroScreen extends Screen
+class MainScreen extends Screen
 {
 	var button:ButtonUI;
 	
@@ -22,11 +22,11 @@ class IntroScreen extends Screen
 	
 	override private function setup():Void 
 	{
-		setBackground("img/title-screen.png");
+		setBackground("img/main-layout-player6.png");
 		
 		button = new ButtonUI();
-		button.setup("START", onBeginAction);
-		button.move(horizontalCenter, verticalCenter + 100);
+		button.setup("BACK", onBackAction);
+		button.move(horizontalCenter, verticalCenter);
 		
 		artwork.addChild(button.artwork);
 	}
@@ -52,11 +52,11 @@ class IntroScreen extends Screen
 		}
 	}
 	
-	function onBeginAction(?model:ButtonUI)
+	function onBackAction(?model:ButtonUI)
 	{
 		var bloopSfx = Assets.getSound("sounds/bloop.wav");
 		bloopSfx.play();
 		
-		EventBus.startNewGame.dispatch(this);
+		EventBus.restartGame.dispatch(this);
 	}
 }
