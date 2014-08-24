@@ -8,7 +8,7 @@ import flash.geom.Rectangle;
 class ImageRegion
 {
 	public static function getImageRegion(source:String, x:Int, y:Int, width:Int, height:Int):BitmapData {		
-		return Image.getImage(source, new Rectangle(x, y, width, height));
+		return ImageRegion.getImage(source, new Rectangle(x, y, width, height));
 	}
 	
 	private static function getImage(source:String, rectangle:Rectangle, outputOffset:Point = null):BitmapData {		

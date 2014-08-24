@@ -9,11 +9,13 @@ import net.mkv25.base.ui.ButtonUI;
 import net.mkv25.base.ui.IconButtonUI;
 import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.event.EventBus;
+import net.mkv25.game.ui.MapUI;
 import openfl.Assets;
 
 class MainScreen extends Screen
 {
 	var button:ButtonUI;
+	var map:MapUI;
 	
 	public function new() 
 	{
@@ -28,6 +30,12 @@ class MainScreen extends Screen
 		button.setup("BACK", onBackAction);
 		button.move(horizontalCenter, verticalCenter);
 		
+		map = new MapUI();
+		map.move(0, 50);
+		map.setup(Index.gameMap);
+		Index.gameMap.changed.dispatch(Index.gameMap);
+		
+		artwork.addChild(map.artwork);
 		artwork.addChild(button.artwork);
 	}
 	
