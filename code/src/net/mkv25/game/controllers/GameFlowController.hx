@@ -1,6 +1,7 @@
 package net.mkv25.game.controllers;
 
 import net.mkv25.game.event.EventBus;
+import net.mkv25.game.models.ActiveGame;
 
 class GameFlowController
 {
@@ -17,6 +18,7 @@ class GameFlowController
 	}
 	
 	private function handle_startNewGame(?model) {
+		Index.activeGame = new ActiveGame(2);
 		Index.screenController.showScreen(Index.mainScreen);
 	}
 	

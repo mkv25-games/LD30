@@ -1,5 +1,6 @@
 package net.mkv25.game.models;
 
+import flash.display.BitmapData;
 import haxe.ds.HashMap;
 import haxe.ds.StringMap;
 import net.mkv25.base.core.CoreModel;
@@ -7,12 +8,20 @@ import net.mkv25.base.core.CoreModel;
 class MapModel extends CoreModel
 {
 	public var hexes:StringMap<HexTile>;
+	public var background:BitmapData;
 	
 	public function new() 
 	{
 		super();
 		
 		hexes = MapModel.createCircle(5);
+	}
+	
+	public function getHexTile(q:Int, r:Int):Null<HexTile>
+	{
+		var key:String = q + "," + r;
+		
+		return hexes.get(key);
 	}
 	
 	public static function createCircle(radius:Int):StringMap<HexTile>

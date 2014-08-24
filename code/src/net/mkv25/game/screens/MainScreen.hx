@@ -38,8 +38,8 @@ class MainScreen extends Screen
 		
 		map = new MapUI();
 		map.move(0, 50);
-		map.setup(Index.gameMap);
-		Index.gameMap.changed.dispatch(Index.gameMap);
+		map.setup(Index.activeGame.space);
+		Index.activeGame.space.changed.dispatch(Index.activeGame.space);
 		
 		statusBar = new StatusBarUI();
 		playerHand = new PlayerHandUI();

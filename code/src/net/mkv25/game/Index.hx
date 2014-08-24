@@ -5,6 +5,7 @@ import net.mkv25.base.core.Screen;
 import net.mkv25.base.core.ScreenController;
 import net.mkv25.base.ui.DebugUI;
 import net.mkv25.game.controllers.GameFlowController;
+import net.mkv25.game.models.ActiveGame;
 import net.mkv25.game.models.MapModel;
 import net.mkv25.game.provider.CardProvider;
 import net.mkv25.game.screens.IntroScreen;
@@ -15,7 +16,7 @@ class Index
 	private static var failsafe:Bool = false;
 	
 	// models
-	public static var gameMap:MapModel;
+	public static var activeGame:ActiveGame;
 	
 	// controllers
 	public static var screenController:ScreenController;
@@ -42,7 +43,7 @@ class Index
 		failsafe = true;
 		
 		// models
-		gameMap = new MapModel();
+		activeGame = null;
 		
 		// controllers
 		screenController = new ScreenController();

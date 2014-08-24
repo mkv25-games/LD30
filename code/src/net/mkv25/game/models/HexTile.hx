@@ -29,7 +29,6 @@ class HexTile
 	public function y():Float {
 		return (q + (2 * r)) * HexTile.HH;
 	}
-	
 	public function key():String {
 		return q + "," + r;
 	}
@@ -37,5 +36,13 @@ class HexTile
 	public function neighbourKey(direction:Int):String {
 		var d = HexTile.NEIGHBOURS[direction];
 		return (q + d[0]) + "," + (r + d[1]);
+	}
+	
+	public static function xy2qr(x:Float, y:Float):Array<Int>
+	{
+		var q = x / HexTile.TQW;
+		var r = ((y / HexTile.HH) - q) / 2;
+		
+		return [Math.round(q), Math.round(r)];
 	}
 }
