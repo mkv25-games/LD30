@@ -6,6 +6,7 @@ import net.mkv25.base.core.ScreenController;
 import net.mkv25.base.ui.DebugUI;
 import net.mkv25.game.controllers.GameFlowController;
 import net.mkv25.game.models.MapModel;
+import net.mkv25.game.provider.CardProvider;
 import net.mkv25.game.screens.IntroScreen;
 import net.mkv25.game.screens.MainScreen;
 
@@ -19,6 +20,9 @@ class Index
 	// controllers
 	public static var screenController:ScreenController;
 	public static var gameFlowController:GameFlowController;
+	
+	// providers
+	public static var cardProvider:CardProvider;
 	
 	// screens
 	public static var introScreen:Screen;
@@ -44,6 +48,9 @@ class Index
 		screenController = new ScreenController();
 		gameFlowController = new GameFlowController();
 		
+		// providers
+		cardProvider = new CardProvider();
+		
 		// screens
 		introScreen = new IntroScreen();
 		mainScreen = new MainScreen();
@@ -53,5 +60,6 @@ class Index
 		
 		// wiring
 		gameFlowController.setup();
+		cardProvider.setup();
 	}
 }

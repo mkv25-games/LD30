@@ -6,8 +6,8 @@
     <movie input="" />
     <movie path="application.xml" />
     <movie fps="60" />
-    <movie width="800" />
-    <movie height="500" />
+    <movie width="500" />
+    <movie height="800" />
     <movie version="3" />
     <movie minorVersion="0" />
     <movie platform="NME" />
@@ -23,6 +23,7 @@
   <build>
     <option directives="tools=1&#xA;openfl_ver=1.0.10&#xA;openfl&#xA;display&#xA;web" />
     <option flashStrict="False" />
+    <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />
     <option enabledebug="True" />
     <option additional="--no-output&#xA;-swf-version 11&#xA;#--remap nme:flash" />

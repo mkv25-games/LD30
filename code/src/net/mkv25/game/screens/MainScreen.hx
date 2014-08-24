@@ -9,6 +9,7 @@ import net.mkv25.base.ui.ButtonUI;
 import net.mkv25.base.ui.IconButtonUI;
 import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.event.EventBus;
+import net.mkv25.game.models.PlayerHand;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.PlayerHandUI;
 import net.mkv25.game.ui.StatusBarUI;
@@ -42,6 +43,9 @@ class MainScreen extends Screen
 		
 		statusBar = new StatusBarUI();
 		playerHand = new PlayerHandUI();
+		playerHand.move(0, 550);
+		playerHand.display(new PlayerHand());
+		
 		adviceText = cast TextUI.makeFor("Welcome to the game", 0x000000).fontSize(28).size(Screen.WIDTH, 40).move(0, Screen.HEIGHT - 45);
 		
 		artwork.addChild(map.artwork);
