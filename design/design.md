@@ -166,7 +166,7 @@ Territory
 Action Card Types
 =================
 ```javascript
-[
+{
 	"Scientists": {
 		cost: 5
 		movement: 1,
@@ -200,13 +200,13 @@ Action Card Types
 		action: "gather resources",
 		resources: 5
 	}
-]
+}
 ```
 
 Units and Unit Card Types
 =========================
 ```javascript
-[
+{
 	"Standard Base": {
 		strength: 1,
 		cost: 5,
@@ -243,7 +243,7 @@ Units and Unit Card Types
 		strength: 5,
 		cost: 24
 	}
-]
+}
 ```
 
 	
