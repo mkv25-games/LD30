@@ -11,6 +11,7 @@ class EventBus
 	// specific actions
 	public static var startNewGame = new Signal();
 	public static var restartGame = new Signal();
+	public static var cardSelectedFromHandByPlayer = new Signal();
 	
 	public function new() 
 	{

@@ -30,7 +30,7 @@ class IconProvider
 	private static function getIcon(index:Int = 1):BitmapData {
 		
 		var x = index % ICON_COLS;
-		var y = Math.round(index / ICON_COLS);
+		var y = Math.floor(index / ICON_COLS);
 		
 		var iconImage = ImageRegion.getImageRegion("img/icons.png", x * ICON_SIZE, y * ICON_SIZE, ICON_SIZE, ICON_SIZE);
 		return iconImage;

@@ -3,20 +3,21 @@ package net.mkv25.game.ui;
 import flash.display.Sprite;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
+import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayerHand;
 
 class PlayerHandUI extends BaseUI
 {
 	private var model:PlayerHand;
 	
-	var cards:Array<BitmapUI>;
+	var cards:Array<CardHolderUI>;
 	var recycler:Sprite;
 	
 	public function new() 
 	{
 		super();
 		
-		cards = new Array<BitmapUI>();
+		cards = new Array<CardHolderUI>();
 		recycler = new Sprite();
 		
 		init();
@@ -26,7 +27,8 @@ class PlayerHandUI extends BaseUI
 	{
 		for (i in 0...PlayerHand.MAX_HAND_SIZE)
 		{
-			var card = new BitmapUI();
+			var card = new CardHolderUI();
+			card.selected.add(onCardHolderSelected);
 			cards.push(card);
 		}
 	}
@@ -35,13 +37,14 @@ class PlayerHandUI extends BaseUI
 	{
 		this.model = playersHand;
 		
+		// populate cards with data
 		for (i in 0...cards.length)
 		{
 			var cardHolder = cards[i];
 			if (i < playersHand.hand.length)
 			{
 				var card = playersHand.hand[i];
-				cardHolder.setBitmapData(card.picture);
+				cardHolder.setupCard(card);
 				artwork.addChild(cardHolder.artwork);
 				
 				var overlap = 50;
@@ -49,11 +52,38 @@ class PlayerHandUI extends BaseUI
 			}
 			else
 			{
+				cardHolder.setup(null);
 				recycler.addChild(cardHolder.artwork);
 			}
+		}
+		
+		// reset selection state of cards
+		for (card in cards)
+		{
+			card.deselect();
 		}
 		
 		return this;
 	}
 	
+	function onCardHolderSelected(selectedCard:CardHolderUI):Void
+	{
+		// reset selection state of other cards
+		for (card in cards)
+		{
+			artwork.addChild(card.artwork);
+			if(card != selectedCard) {
+				card.deselect();
+			}
+		}
+		// bring selected card to front
+		artwork.addChild(selectedCard.artwork);
+		
+		// mark it as selected
+		selectedCard.select();
+		
+		// tell the world
+		// trace("Card selected: " + selectedCard.assignedCard.name);
+		EventBus.cardSelectedFromHandByPlayer.dispatch(selectedCard.assignedCard);
+	}
 }

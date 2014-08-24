@@ -12,7 +12,7 @@ class CardPictureProvider
 	public static function getPicture(index:Int = 1):BitmapData {
 		
 		var x = index % PICTURE_COLS;
-		var y = Math.round(index / PICTURE_COLS);
+		var y = Math.floor(index / PICTURE_COLS);
 		
 		var image = ImageRegion.getImageRegion("img/cards.png", x * PICTURE_WIDTH, y * PICTURE_HEIGHT, PICTURE_WIDTH, PICTURE_HEIGHT);
 		return image;
