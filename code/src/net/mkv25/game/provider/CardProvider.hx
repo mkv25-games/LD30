@@ -50,7 +50,7 @@ class CardProvider
 		for (key in Reflect.fields(json))
 		{
 			var cardJson = Reflect.getProperty(json, key);
-			var card = PlayableCard.createActionCardFrom(cardJson).setName(key);
+			var card = PlayableCard.createUnitCardFrom(cardJson).setName(key);
 			
 			var picture:BitmapData = CardPictureProvider.getPicture(card.pictureTile);
 			card.setPicture(picture);

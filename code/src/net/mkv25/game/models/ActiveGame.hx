@@ -1,8 +1,11 @@
 package net.mkv25.game.models;
 
 import net.mkv25.base.core.CoreModel;
+import net.mkv25.game.enums.PlayableCardType;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.provider.IconProvider;
+import net.mkv25.game.provider.UnitProvider;
+import net.mkv25.game.resources.UnitCards;
 import openfl.Assets;
 
 class ActiveGame extends CoreModel
@@ -22,6 +25,7 @@ class ActiveGame extends CoreModel
 		validateNumberOfPlayers(numberOfPlayers);
 		createMaps(numberOfPlayers);
 		createPlayers(numberOfPlayers);
+		createStartingBases();
 	}
 	
 	function validateNumberOfPlayers(numberOfPlayers:Int):Void
@@ -42,8 +46,6 @@ class ActiveGame extends CoreModel
 		space.background = Assets.getBitmapData("img/starfield-small.png");
 		
 		worlds = new Array<MapModel>();
-		// central world, always present
-		addWorld(0, 0, 4, "img/planet05.png");
 		
 		// player worlds, ideally variable based on number of players
 		addWorld(-4,  4, 0, "img/planet01.png");
@@ -52,6 +54,20 @@ class ActiveGame extends CoreModel
 		addWorld( 4,  0, 3, "img/planet04.png");
 		addWorld( 0, -4, 5, "img/planet06.png");
 		addWorld( 0,  4, 6, "img/planet07.png");
+		
+		// central world, always present
+		addWorld(0, 0, 4, "img/planet05.png");
+	}
+	
+	function createStartingBases():Void
+	{
+		for (player in players)
+		{
+			var world = worlds[player.playerNumberZeroBased];
+			var startingBase = UnitProvider.getUnit(player, PlayableCardType.STANDARD_BASE);
+			
+			world.getHexTile(0, 0).add(startingBase);
+		}
 	}
 	
 	function addWorld(q:Int, r:Int, id:Int, backgroundAsset:String):Void

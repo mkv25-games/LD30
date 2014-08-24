@@ -3,6 +3,8 @@ package net.mkv25.game.provider;
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import net.mkv25.base.core.Image.ImageRegion;
+import net.mkv25.game.models.PlayableCard;
+import net.mkv25.game.models.PlayerModel;
 
 class IconProvider
 {
@@ -37,13 +39,22 @@ class IconProvider
 		WORLD_ICONS.push(getIcon(16));
 	}
 	
-	private static function getIcon(index:Int = 1):BitmapData {
-		
+	private static function getIcon(index:Int = 1):BitmapData
+	{
 		var x = index % ICON_COLS;
 		var y = Math.floor(index / ICON_COLS);
 		
 		var iconImage = ImageRegion.getImageRegion("img/icons.png", x * ICON_SIZE, y * ICON_SIZE, ICON_SIZE, ICON_SIZE);
 		return iconImage;
+	}
+	
+	public static function getUnitIconFor(player:PlayerModel, type:PlayableCard):BitmapData
+	{
+		var unitOffset = type.iconOffset;
+		var rowOffset = (2 + player.playerNumberZeroBased) * ICON_COLS;
+		var index = rowOffset + unitOffset;
+		
+		return getIcon(index);
 	}
 	
 }

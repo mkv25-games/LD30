@@ -2,6 +2,8 @@ package net.mkv25.game.ui;
 
 import flash.display.Bitmap;
 import flash.display.BitmapData;
+import flash.display.DisplayObject;
+import flash.display.DisplayObjectContainer;
 import flash.display.Graphics;
 import flash.display.Sprite;
 import flash.events.MouseEvent;
@@ -180,7 +182,7 @@ class MapUI extends BaseUI
 			// make an image for the thing
 			var bitmap = (unusedThings.length > 0) ? unusedThings.pop() : new Bitmap();
 			bitmap.bitmapData = thing.getIcon();
-			thingsLayer.addChildAt(bitmap, thing.getDepth());
+			safeAddAt(thingsLayer, bitmap, thing.getDepth());
 			bitmapsInUse.push(bitmap);
 			
 			// recalculate position of hex
@@ -192,8 +194,13 @@ class MapUI extends BaseUI
 			// center thing on hex
 			bitmap.x = x + (hexImage.width / 2) - (bitmap.width / 2);
 			bitmap.y = y + (hexImage.height / 2) - (bitmap.height / 2);
-
 		}
+	}
+	
+	function safeAddAt(container:DisplayObjectContainer, item:DisplayObject, depth:Int):Void
+	{
+		var depth:Int = cast Math.min(depth, container.numChildren);
+		container.addChildAt(item, depth);
 	}
 	
 }

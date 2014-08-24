@@ -19,6 +19,8 @@ class PlayableCard extends CoreModel
 	public var pictureTile:Int;
 	public var picture:BitmapData;
 
+	public var iconOffset:Int;
+	
 	public function new() 
 	{
 		super();
@@ -36,6 +38,8 @@ class PlayableCard extends CoreModel
 		
 		pictureTile = -1;
 		picture = null;
+		
+		iconOffset = -1;
 	}
 	
 	public function setName(name:String):PlayableCard {
@@ -71,6 +75,7 @@ class PlayableCard extends CoreModel
 		
 		card.cost = card.readInt("cost", json, 1);
 		card.pictureTile = card.readInt("pictureTile", json, -1);
+		card.iconOffset = card.readInt("iconOffset", json, 0);
 		
 		card.strength = card.readInt("strength", json, 1);
 		card.base = card.readBool("base", json, false);

@@ -100,6 +100,4 @@ class MapModel extends CoreModel implements IMapThing
 	private static inline function isCorner(q:Int, r:Int, radius:Int):Bool {
 		return (Math.abs(q) == radius && r == 0) || (Math.abs(r) == radius && q == 0) || (Math.abs(q) == radius && Math.abs(r) == radius);
 	}
-	
-	
 }

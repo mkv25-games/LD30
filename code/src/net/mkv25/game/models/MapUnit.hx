@@ -8,12 +8,20 @@ class MapUnit implements IMapThing extends CoreModel
 {
 	public var icon:BitmapData;
 	public var depth:Int;
-	public var unit:PlayableCard;
+	public var type:PlayableCard;
 	public var owner:PlayerModel;
 
 	public function new() 
 	{
 		super();
+		
+		depth = 1;
+	}
+	
+	public function setup(owner:PlayerModel, type:PlayableCard):Void
+	{
+		this.owner = owner;
+		this.type = type;
 	}
 	
 	public function getIcon():BitmapData 
