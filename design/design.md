@@ -238,7 +238,7 @@ Units and Unit Card Types
 	"Titan Force": {
 		strength: 4,
 		cost: 12,
-	}
+	},
 	"Capital Army": {
 		strength: 5,
 		cost: 24
