@@ -83,7 +83,7 @@ class PlayerHandUI extends BaseUI
 		selectedCard.select();
 		
 		// tell the world
-		// trace("Card selected: " + selectedCard.assignedCard.name);
+		EventBus.displayNewStatusMessage.dispatch("Card selected: " + selectedCard.assignedCard.name);
 		EventBus.cardSelectedFromHandByPlayer.dispatch(selectedCard.assignedCard);
 	}
 }

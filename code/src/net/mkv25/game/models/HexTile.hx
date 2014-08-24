@@ -15,11 +15,14 @@ class HexTile
 	public var r:Float;
 	
 	public var bitmap:Bitmap;
+	private var contents:Array<IMapThing>;
 
 	public function new() 
 	{
 		this.q = 0;
 		this.r = 0;
+		
+		this.bitmap = null;
 	}
 	
 	public function x():Float {
@@ -36,6 +39,38 @@ class HexTile
 	public function neighbourKey(direction:Int):String {
 		var d = HexTile.NEIGHBOURS[direction];
 		return (q + d[0]) + "," + (r + d[1]);
+	}
+	
+	public function add(thing:IMapThing):Void
+	{
+		checkContents();
+		
+		contents.push(thing);
+	}
+	
+	public function remove(thing:IMapThing):Void
+	{
+		checkContents();
+		
+		contents.remove(thing);
+	}
+	
+	public function removeAll():Void
+	{
+		this.contents = new Array<IMapThing>();
+	}
+	
+	public function listContents():Array<IMapThing>
+	{
+		checkContents();
+		
+		return contents;
+	}
+	
+	inline function checkContents() {
+		if (contents == null) {
+			this.contents = new Array<IMapThing>();
+		}
 	}
 	
 	public static function xy2qr(x:Float, y:Float):Array<Int>

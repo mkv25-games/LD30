@@ -13,6 +13,8 @@ class IconProvider
 	public static var ICON_STATUS_TERRITORY:BitmapData;
 	public static var ICON_STATUS_RESOURCES:BitmapData;
 
+	public static var WORLD_ICONS:Array<BitmapData>;
+	
 	private static var alreadySetup:Bool = false;
 	public static function setup():Void
 	{
@@ -25,6 +27,14 @@ class IconProvider
 		ICON_STATUS_RESOURCES = getIcon(2);
 		ICON_STATUS_TERRITORY = getIcon(1);
 		
+		WORLD_ICONS = new Array<BitmapData>();
+		WORLD_ICONS.push(getIcon(10));
+		WORLD_ICONS.push(getIcon(11));
+		WORLD_ICONS.push(getIcon(12));
+		WORLD_ICONS.push(getIcon(13));
+		WORLD_ICONS.push(getIcon(14));
+		WORLD_ICONS.push(getIcon(15));
+		WORLD_ICONS.push(getIcon(16));
 	}
 	
 	private static function getIcon(index:Int = 1):BitmapData {

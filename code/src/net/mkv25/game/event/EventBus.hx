@@ -15,6 +15,7 @@ class EventBus
 	
 	// global events
 	public static var activePlayerChanged = new Signal();
+	public static var displayNewStatusMessage = new Signal();
 	
 	public function new() 
 	{

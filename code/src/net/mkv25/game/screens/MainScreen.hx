@@ -63,12 +63,18 @@ class MainScreen extends Screen
 		artwork.addChild(adviceText.artwork);
 		
 		EventBus.activePlayerChanged.add(setBackgroundToMatchPlayer);
+		EventBus.displayNewStatusMessage.add(handleDisplayNewStatus);
 	}
 	
 	function setBackgroundToMatchPlayer(activePlayer:PlayerModel)
 	{
 		var layoutAsset = MainScreen.LAYOUTS[activePlayer.playerNumberZeroBased];
 		setBackground(layoutAsset);
+	}
+	
+	function handleDisplayNewStatus(message:String)
+	{
+		adviceText.setText(message);
 	}
 	
 	override public function show():Void 

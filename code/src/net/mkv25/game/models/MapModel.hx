@@ -5,16 +5,39 @@ import haxe.ds.HashMap;
 import haxe.ds.StringMap;
 import net.mkv25.base.core.CoreModel;
 
-class MapModel extends CoreModel
+class MapModel extends CoreModel implements IMapThing
 {
 	public var hexes:StringMap<HexTile>;
+	
 	public var background:BitmapData;
+	public var mapIcon:BitmapData;
+	public var mapDepth:Int;
 	
 	public function new() 
 	{
 		super();
 		
 		hexes = MapModel.createCircle(5);
+		
+		background = null;
+		mapIcon = null;
+		mapDepth = 0;
+	}
+	
+	public function setup(background:BitmapData, mapIcon:BitmapData):Void
+	{
+		this.background = background;
+		this.mapIcon = mapIcon;
+	}
+
+	public function getIcon():BitmapData 
+	{
+		return this.mapIcon;
+	}
+	
+	public function getDepth():Int 
+	{
+		return this.mapDepth;
 	}
 	
 	public function getHexTile(q:Int, r:Int):Null<HexTile>
