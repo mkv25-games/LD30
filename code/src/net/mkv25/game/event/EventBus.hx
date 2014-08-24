@@ -13,6 +13,9 @@ class EventBus
 	public static var restartGame = new Signal();
 	public static var cardSelectedFromHandByPlayer = new Signal();
 	
+	// global events
+	public static var activePlayerChanged = new Signal();
+	
 	public function new() 
 	{
 		

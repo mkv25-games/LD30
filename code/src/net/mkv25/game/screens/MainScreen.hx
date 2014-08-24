@@ -10,6 +10,7 @@ import net.mkv25.base.ui.IconButtonUI;
 import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayerHand;
+import net.mkv25.game.models.PlayerModel;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.PlayerHandUI;
 import net.mkv25.game.ui.StatusBarUI;
@@ -22,6 +23,15 @@ class MainScreen extends Screen
 	var statusBar:StatusBarUI;
 	var playerHand:PlayerHandUI;
 	var adviceText:TextUI;
+	
+	public static var LAYOUTS:Array<String> = [
+		"img/main-layout-player1.png",
+		"img/main-layout-player2.png",
+		"img/main-layout-player3.png",
+		"img/main-layout-player4.png",
+		"img/main-layout-player5.png",
+		"img/main-layout-player6.png"
+	];
 	
 	public function new() 
 	{
@@ -39,12 +49,10 @@ class MainScreen extends Screen
 		map = new MapUI();
 		map.move(0, 50);
 		map.setup(Index.activeGame.space);
-		Index.activeGame.space.changed.dispatch(Index.activeGame.space);
 		
 		statusBar = new StatusBarUI();
 		playerHand = new PlayerHandUI();
 		playerHand.move(0, 550);
-		playerHand.display(new PlayerHand());
 		
 		adviceText = cast TextUI.makeFor("Welcome to the game", 0x000000).fontSize(28).size(Screen.WIDTH, 40).move(0, Screen.HEIGHT - 45);
 		
@@ -53,6 +61,23 @@ class MainScreen extends Screen
 		artwork.addChild(statusBar.artwork);
 		artwork.addChild(playerHand.artwork);
 		artwork.addChild(adviceText.artwork);
+		
+		EventBus.activePlayerChanged.add(setBackgroundToMatchPlayer);
+	}
+	
+	function setBackgroundToMatchPlayer(activePlayer:PlayerModel)
+	{
+		var layoutAsset = MainScreen.LAYOUTS[activePlayer.playerNumberZeroBased];
+		setBackground(layoutAsset);
+	}
+	
+	override public function show():Void 
+	{
+		super.show();
+		
+		Index.activeGame.space.changed.dispatch(Index.activeGame.space);
+		setBackgroundToMatchPlayer(Index.activeGame.activePlayer);
+		playerHand.display(Index.activeGame.activePlayer.playerHand);
 	}
 	
 	override public function handleKeyAction(event:KeyboardEvent):Void

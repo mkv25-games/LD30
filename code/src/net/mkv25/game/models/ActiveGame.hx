@@ -1,6 +1,7 @@
 package net.mkv25.game.models;
 
 import net.mkv25.base.core.CoreModel;
+import net.mkv25.game.event.EventBus;
 import openfl.Assets;
 
 class ActiveGame extends CoreModel
@@ -76,11 +77,15 @@ class ActiveGame extends CoreModel
 		if (activePlayer == null)
 		{
 			activePlayer = players[0];
-			return activePlayer;
 		}
-		
-		var index = (activePlayer.playerNumberZeroBased + 1) % players.length;
-		activePlayer = players[index];
+		else
+		{
+			var index = (activePlayer.playerNumberZeroBased + 1) % players.length;
+			activePlayer = players[index];
+		}
+			
+		EventBus.activePlayerChanged.dispatch(activePlayer);
+			
 		return activePlayer;
 	}
 	
