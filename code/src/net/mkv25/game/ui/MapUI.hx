@@ -67,14 +67,7 @@ class MapUI extends BaseUI
 		var hex_y = hex.y();
 		var x = view_x + hexImage.width * hex_x - hexImage.width / 2;
 		var y = view_y + hexImage.height * hex_y - hexImage.height / 2;
-		
-		/*
-		var matrix:Matrix = new Matrix(0, 0, 0, 0, -x, -y);
-		graphics.beginBitmapFill(hexImage, matrix, true, false);
-		graphics.drawRect(x, y, hexImage.width, hexImage.height);
-		graphics.endFill();
-		*/
-		
+
 		var bmp = new Bitmap(hexImage);
 		bmp.x = x;
 		bmp.y = y;

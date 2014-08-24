@@ -10,12 +10,17 @@ import net.mkv25.base.ui.IconButtonUI;
 import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.ui.MapUI;
+import net.mkv25.game.ui.PlayerHandUI;
+import net.mkv25.game.ui.StatusBarUI;
 import openfl.Assets;
 
 class MainScreen extends Screen
 {
 	var button:ButtonUI;
 	var map:MapUI;
+	var statusBar:StatusBarUI;
+	var playerHand:PlayerHandUI;
+	var adviceText:TextUI;
 	
 	public function new() 
 	{
@@ -35,8 +40,15 @@ class MainScreen extends Screen
 		map.setup(Index.gameMap);
 		Index.gameMap.changed.dispatch(Index.gameMap);
 		
+		statusBar = new StatusBarUI();
+		playerHand = new PlayerHandUI();
+		adviceText = cast TextUI.makeFor("Welcome to the game", 0x000000).fontSize(28).size(Screen.WIDTH, 40).move(0, Screen.HEIGHT - 45);
+		
 		artwork.addChild(map.artwork);
 		artwork.addChild(button.artwork);
+		artwork.addChild(statusBar.artwork);
+		artwork.addChild(playerHand.artwork);
+		artwork.addChild(adviceText.artwork);
 	}
 	
 	override public function handleKeyAction(event:KeyboardEvent):Void
