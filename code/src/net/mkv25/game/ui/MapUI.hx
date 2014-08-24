@@ -18,16 +18,19 @@ class MapUI extends BaseUI
 	static var MAP_WIDTH:Int = 500;
 	static var MAP_HEIGHT:Int = 500;
 	
-	private var model:MapModel;
-	private var hexImage:BitmapData;
+	public var currentModel:MapModel;
 	
 	var hexes:Array<Bitmap>;
+	var hexImage:BitmapData;
 	var highlightedHex:HexTile;
+	var highlightedHexImage:Bitmap;
 	
+	var mapImage:Bitmap;
+	var viewLayer:Sprite;
 	var hexLayer:Sprite;
 	var thingsLayer:Sprite;
 	
-	var thingBitmaps:Array<Bitmap>;
+	var bitmapsInUse:Array<Bitmap>;
 	var unusedThings:Array<Bitmap>;
 	var recycler:Sprite;
 	
@@ -37,29 +40,38 @@ class MapUI extends BaseUI
 		
 		hexes = new Array<Bitmap>();
 		highlightedHex = new HexTile();
-		highlightedHex.bitmap = new Bitmap();
+		highlightedHexImage = new Bitmap();
 		
+		mapImage = new Bitmap();
+		viewLayer = new Sprite();
 		hexLayer = new Sprite();
 		thingsLayer = new Sprite();
 		
-		thingBitmaps = new Array<Bitmap>();
+		bitmapsInUse = new Array<Bitmap>();
 		unusedThings = new Array<Bitmap>();
 		recycler = new Sprite();
 		
 		HexProvider.setup();
 		hexImage = HexProvider.EMPTY_HEX;
+		
+		EventBus.mapRequiresRedraw.add(handleMapRequiresRedraw);
 	}
 	
 	public function setup(model:MapModel)
 	{
-		if (this.model != null) {
-			this.model.changed.remove(onModelChanged);
-		}
-		this.model = model;
-		model.changed.add(onModelChanged);
+		this.currentModel = model;
 		
-		artwork.addEventListener(MouseEvent.MOUSE_MOVE, highlightHexTile, false, 0, true);
-		artwork.addEventListener(MouseEvent.MOUSE_DOWN, checkHexTile, false, 0, true);
+		mapImage.bitmapData = model.background;
+		
+		viewLayer.addEventListener(MouseEvent.MOUSE_MOVE, highlightHexTile, false, 0, true);
+		viewLayer.addEventListener(MouseEvent.MOUSE_DOWN, checkHexTile, false, 0, true);
+		
+		redraw();
+	}
+	
+	function handleMapRequiresRedraw(?model):Void
+	{
+		redraw();
 	}
 	
 	function highlightHexTile(mouseEvent:MouseEvent):Void
@@ -69,12 +81,12 @@ class MapUI extends BaseUI
 		{
 			highlightedHex.q = tile.q;
 			highlightedHex.r = tile.r;
-			highlightedHex.bitmap.bitmapData = HexProvider.FILLED_HEX;
-			drawHex(highlightedHex);
+			highlightedHexImage.bitmapData = HexProvider.FILLED_HEX;
+			drawHex(highlightedHex, highlightedHexImage);
 		}
 		else
 		{
-			highlightedHex.bitmap.bitmapData = null;
+			highlightedHexImage.bitmapData = null;
 		}
 	}
 	
@@ -84,7 +96,7 @@ class MapUI extends BaseUI
 		
 		var qr = HexTile.xy2qr(hex_x, hex_y);
 		
-		var tile:HexTile = model.getHexTile(qr[0], qr[1]);
+		var tile:HexTile = currentModel.getHexTile(qr[0], qr[1]);
 		
 		return tile;
 	}
@@ -93,7 +105,16 @@ class MapUI extends BaseUI
 	{
 		var tile:HexTile = hexUnderMouse(mouseEvent);
 		if (tile != null) {
-			EventBus.displayNewStatusMessage.dispatch("Selected hex: " + tile.key() + ", contains: " + tile.listContents().length + " things.");
+			var contents = tile.listContents();
+			EventBus.displayNewStatusMessage.dispatch("Selected hex: " + tile.key() + ", contains: " + contents.length + " things.");
+			
+			for (thing in contents) {
+				if (Std.is(thing, MapModel))
+				{
+					var world:MapModel = cast thing;
+					setup(world);
+				}
+			}
 		}
 	}
 	
@@ -101,8 +122,8 @@ class MapUI extends BaseUI
 		var graphics:Graphics = artwork.graphics;
 		graphics.clear();
 		
-		while (thingBitmaps.length > 0) {
-			var thing = thingBitmaps.pop();
+		while (bitmapsInUse.length > 0) {
+			var thing = bitmapsInUse.pop();
 			recycler.addChild(thing);
 			unusedThings.push(thing);
 		}
@@ -114,44 +135,41 @@ class MapUI extends BaseUI
 			}
 		}
 		
-		var hexes = model.hexes;
+		var hexes = currentModel.hexes;
 		for (hex in hexes) {
 			drawHex(hex);
 			drawThingsInHex(hex);
 		}
 		
-		hexes.get("0,0").bitmap.bitmapData = HexProvider.FILLED_HEX;
+		viewLayer.x = MAP_WIDTH / 2;
+		viewLayer.y = MAP_HEIGHT / 2;
 		
-		var view_x = MAP_WIDTH / 2;
-		var view_y = MAP_HEIGHT / 2;
+		artwork.addChild(mapImage);
+		artwork.addChild(viewLayer);
+		viewLayer.addChild(hexLayer);
+		viewLayer.addChild(highlightedHexImage);
+		viewLayer.addChild(thingsLayer);
 		
-		hexLayer.x = view_x;
-		hexLayer.y = view_y;
-		
-		thingsLayer.x = view_x;
-		thingsLayer.y = view_y;
-		
-		artwork.addChild(hexLayer);
-		artwork.addChild(highlightedHex.bitmap);
-		artwork.addChild(thingsLayer);
+		EventBus.mapViewChanged.dispatch(this);
 	}
 	
-	inline function drawHex(hex:HexTile):Void
+	inline function drawHex(hex:HexTile, ?container:Bitmap):Void
 	{
 		var hex_x = hex.x();
 		var hex_y = hex.y();
 		var x = (hexImage.width * hex_x) - (hexImage.width / 2);
 		var y = (hexImage.height * hex_y) - (hexImage.height / 2);
 
-		if (hex.bitmap == null)
-		{
-			var bmp = new Bitmap(hexImage);
-			hex.bitmap = bmp;
+		var bitmap:Bitmap = container;
+		if(bitmap == null) {
+			bitmap = (unusedThings.length > 0) ? unusedThings.pop() : new Bitmap();
+			bitmap.bitmapData = hexImage;
+			hexLayer.addChild(bitmap);
+			bitmapsInUse.push(bitmap);
 		}
 		
-		hex.bitmap.x = x;
-		hex.bitmap.y = y;
-		hexLayer.addChild(hex.bitmap);
+		bitmap.x = x;
+		bitmap.y = y;
 	}
 	
 	inline function drawThingsInHex(hex:HexTile):Void
@@ -163,7 +181,7 @@ class MapUI extends BaseUI
 			var bitmap = (unusedThings.length > 0) ? unusedThings.pop() : new Bitmap();
 			bitmap.bitmapData = thing.getIcon();
 			thingsLayer.addChildAt(bitmap, thing.getDepth());
-			thingBitmaps.push(bitmap);
+			bitmapsInUse.push(bitmap);
 			
 			// recalculate position of hex
 			var hex_x = hex.x();
@@ -172,15 +190,10 @@ class MapUI extends BaseUI
 			var y = (hexImage.height * hex_y) - (hexImage.height / 2);
 			
 			// center thing on hex
-			bitmap.x = x + (hex.bitmap.width / 2) - (bitmap.width / 2);
-			bitmap.y = y + (hex.bitmap.height / 2) - (bitmap.height / 2);
+			bitmap.x = x + (hexImage.width / 2) - (bitmap.width / 2);
+			bitmap.y = y + (hexImage.height / 2) - (bitmap.height / 2);
 
 		}
-	}
-	
-	function onModelChanged(model:MapModel)
-	{
-		redraw();
 	}
 	
 }

@@ -17,6 +17,10 @@ class EventBus
 	public static var activePlayerChanged = new Signal();
 	public static var displayNewStatusMessage = new Signal();
 	
+	// map stuff
+	public static var mapRequiresRedraw = new Signal();
+	public static var mapViewChanged = new Signal();
+	
 	public function new() 
 	{
 		

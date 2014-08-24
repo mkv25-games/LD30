@@ -22,6 +22,7 @@ class GameFlowController
 		Index.activeGame.selectNextPlayer();
 		
 		Index.screenController.showScreen(Index.mainScreen);
+		EventBus.mapRequiresRedraw.dispatch(this);
 	}
 	
 	private function handle_restartGame(?model) {

@@ -58,6 +58,7 @@ class ActiveGame extends CoreModel
 	{
 		var world:MapModel = new MapModel();
 		world.setup(Assets.getBitmapData(backgroundAsset), IconProvider.WORLD_ICONS[id]);
+		world.hexes = MapModel.createRectangle(13, 9);
 		
 		var hex:HexTile = space.getHexTile(q, r);
 		hex.add(world);

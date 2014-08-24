@@ -21,8 +21,6 @@ class HexTile
 	{
 		this.q = 0;
 		this.r = 0;
-		
-		this.bitmap = null;
 	}
 	
 	public function x():Float {

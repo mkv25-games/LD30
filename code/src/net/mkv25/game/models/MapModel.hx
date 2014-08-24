@@ -51,19 +51,42 @@ class MapModel extends CoreModel implements IMapThing
 	{
 		var hexes = new StringMap<HexTile>();
 		
-		var hex:HexTile;
 		for (i in -radius...radius+1) {
 			for (j in -radius...radius+1) {
 				if(validCircleCoordinate(i, j, radius)) {
-					hex = new HexTile();
-					hex.q = i;
-					hex.r = j;
-					hexes.set(hex.key(), hex);
+					safeAdd(hexes, i, j);
 				}
 			}
 		}
 		
 		return hexes;
+	}
+	
+	public static function createRectangle(width:Int, height:Int):StringMap<HexTile>
+	{
+		var hexes = new StringMap<HexTile>();
+		var offset_x = -Math.floor(width / 2);
+		var offset_y = -Math.floor(height / 2);
+		
+		for (j in 0...width) {
+			for (i in 0...height) {
+				var q = j + offset_x;
+				var r = i + offset_y;
+				safeAdd(hexes, q,  r - Math.floor(q / 2));
+			}
+		}
+		
+		return hexes;
+	}
+	
+	public static function safeAdd(hexes:StringMap<HexTile>, q:Int, r:Int):Void
+	{
+		if(!hexes.exists(q + "," + r)) {
+			var hex = new HexTile();
+			hex.q = q;
+			hex.r = r;
+			hexes.set(hex.key(), hex);
+		}
 	}
 	
 	private static inline function validCircleCoordinate(q:Int, r:Int, radius:Int):Bool {

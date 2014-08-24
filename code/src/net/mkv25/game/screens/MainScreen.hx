@@ -18,7 +18,8 @@ import openfl.Assets;
 
 class MainScreen extends Screen
 {
-	var button:ButtonUI;
+	var button:IconButtonUI;
+	
 	var map:MapUI;
 	var statusBar:StatusBarUI;
 	var playerHand:PlayerHandUI;
@@ -42,9 +43,9 @@ class MainScreen extends Screen
 	{
 		setBackground("img/main-layout-player6.png");
 		
-		button = new ButtonUI();
-		button.setup("BACK", onBackAction);
-		button.move(horizontalCenter, verticalCenter);
+		button = new IconButtonUI();
+		button.setup("img/icon-back.png", returnToSpaceMap);
+		button.move(60, 80);
 		
 		map = new MapUI();
 		map.move(0, 50);
@@ -64,6 +65,7 @@ class MainScreen extends Screen
 		
 		EventBus.activePlayerChanged.add(setBackgroundToMatchPlayer);
 		EventBus.displayNewStatusMessage.add(handleDisplayNewStatus);
+		EventBus.mapViewChanged.add(onMapViewChanged);
 	}
 	
 	function setBackgroundToMatchPlayer(activePlayer:PlayerModel)
@@ -107,11 +109,23 @@ class MainScreen extends Screen
 		}
 	}
 	
-	function onBackAction(?model:ButtonUI)
+	function onMapViewChanged(?model)
+	{
+		if (map.currentModel != Index.activeGame.space)
+		{
+			button.show();
+		}
+		else
+		{
+			button.hide();
+		}
+	}
+	
+	function returnToSpaceMap(?model)
 	{
 		var bloopSfx = Assets.getSound("sounds/bloop.wav");
 		bloopSfx.play();
 		
-		EventBus.restartGame.dispatch(this);
+		map.setup(Index.activeGame.space);
 	}
 }
