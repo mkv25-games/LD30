@@ -12,7 +12,7 @@ class MapModel extends CoreModel
 	{
 		super();
 		
-		hexes = MapModel.createCircle(3);
+		hexes = MapModel.createCircle(5);
 	}
 	
 	public static function createCircle(radius:Int):StringMap<HexTile>
@@ -22,7 +22,7 @@ class MapModel extends CoreModel
 		var hex:HexTile;
 		for (i in -radius...radius+1) {
 			for (j in -radius...radius+1) {
-				if(Math.abs(i + j) <= radius) {
+				if(validCircleCoordinate(i, j, radius)) {
 					hex = new HexTile();
 					hex.q = i;
 					hex.r = j;
@@ -32,6 +32,18 @@ class MapModel extends CoreModel
 		}
 		
 		return hexes;
+	}
+	
+	private static inline function validCircleCoordinate(q:Int, r:Int, radius:Int):Bool {
+		return insideRadius(q, r, radius) && !isCorner(q, r, radius);
+	}
+	
+	private static inline function insideRadius(q:Int, r:Int, radius:Int):Bool {
+		return (Math.abs(q + r) <= radius);
+	}
+	
+	private static inline function isCorner(q:Int, r:Int, radius:Int):Bool {
+		return (Math.abs(q) == radius && r == 0) || (Math.abs(r) == radius && q == 0) || (Math.abs(q) == radius && Math.abs(r) == radius);
 	}
 	
 	

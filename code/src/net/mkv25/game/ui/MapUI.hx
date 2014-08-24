@@ -65,8 +65,8 @@ class MapUI extends BaseUI
 		
 		var hex_x = hex.x();
 		var hex_y = hex.y();
-		var x = view_x + hexImage.width * hex_x;
-		var y = view_y + hexImage.height * hex_y;
+		var x = view_x + hexImage.width * hex_x - hexImage.width / 2;
+		var y = view_y + hexImage.height * hex_y - hexImage.height / 2;
 		
 		/*
 		var matrix:Matrix = new Matrix(0, 0, 0, 0, -x, -y);
