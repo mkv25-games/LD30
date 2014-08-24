@@ -55,7 +55,7 @@ Setup
 1. Add 1 planet board for each player in the game
 2. For each world board, add a corresponding planet counter to the space map on one of the homeworld (H) hexes.
 3. Each player gets 1 base on a world of their choosing (fight!)
-4. Each player gets a starting deck of 10 cards - 3 Harvester, 1 Portal, 2 Scientst, 2 Engineers, 2 Units
+4. Each player gets a starting deck of 10 cards - 3 Harvester, 1 Portal, 2 Scientst, 2 Engineers, 2 Assault Team
 5. Each player shuffles their starting deck
 6. Choose Player 1 - humans automatically go first. If there is more than one human, then the youngest human goes first.
 7. Play goes clockwise from Player 1
@@ -168,39 +168,45 @@ Action Card Types
 ```javascript
 {
 	"Scientists": {
-		cost: 5
+		cost: 5,
 		movement: 1,
-		action: "research"
+		action: "research",
+		pictureTile: 0
 	},
 	"Engineers": {
-		cost: 5
+		cost: 5,
 		movement: 1,
-		action: "build units"
+		action: "build units",
+		pictureTile: 1
 	},
 	"Portal": {
 		cost: 8,
 		movement: 2,
-		action: "connect bases"
+		action: "connect bases",
+		pictureTile: 2
 	},
 	"Harvester": {
 		cost: 3,
 		movement: 3,
 		action: "gather resources",
-		resources: 3
+		resources: 3,
+		pictureTile: 3
 	},
 	"Excavater": {
 		cost: 6,
 		movement: 2,
 		action: "gather resources",
-		resources: 4
+		resources: 4,
+		pictureTile: 4
 	},
 	"Plasma Furnace": {
 		cost: 9,
 		movement: 1,
 		action: "gather resources",
-		resources: 5
+		resources: 5,
+		pictureTile: 5
 	}
-}
+};
 ```
 
 Units and Unit Card Types
@@ -210,40 +216,48 @@ Units and Unit Card Types
 	"Standard Base": {
 		strength: 1,
 		cost: 5,
-		base: true
+		base: true,
+		pictureTile: 6
 	},
 	"Advanced Base": {
 		strength: 2,
 		cost: 10,
-		base: true
+		base: true,
+		pictureTile: 7
 	},
 	"Outpost": {
 		strength: 3,
 		cost: 20,
-		base: true
+		base: true,
+		pictureTile: 8
 	},
 	"Metroplex": {
 		strength: 4,
 		cost: 40,
-		base: true
+		base: true,
+		pictureTile: 9
 	},
 	"Assault Team": {
 		strength: 2,
-		cost: 3
+		cost: 3,
+		pictureTile: 12
 	},
 	"Armoured Core": {
 		strength: 3,
-		cost: 6
+		cost: 6,
+		pictureTile: 13
 	},
 	"Titan Force": {
 		strength: 4,
 		cost: 12,
+		pictureTile: 14
 	},
 	"Capital Army": {
 		strength: 5,
-		cost: 24
+		cost: 24,
+		pictureTile: 15
 	}
-}
+};
 ```
 
 	
