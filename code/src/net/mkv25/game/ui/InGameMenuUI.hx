@@ -127,7 +127,7 @@ class InGameMenuUI extends BaseUI
 	
 	function cancelAction(?model):Void
 	{
-		EventBus.playerWantsToCancelTheCurrentAction.dispatch(this);
+		EventBus.playerWantsTo_cancelTheCurrentAction.dispatch(this);
 		hide();
 	}
 }

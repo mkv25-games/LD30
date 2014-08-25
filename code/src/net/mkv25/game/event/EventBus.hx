@@ -8,19 +8,28 @@ class EventBus
 	public static var requestNextScreen = new Signal();
 	public static var requestLastScreen = new Signal();
 	
-	// specific actions
+	// general actions actions
 	public static var startNewGame = new Signal();
 	public static var restartGame = new Signal();
-	public static var cardSelectedFromHandByPlayer = new Signal();
-	public static var askPlayerHowTheyWantToPlayTheirActionCard = new Signal();
-	public static var askPlayerWhereTheyWantToDeployTheirUnitCard = new Signal();
-	public static var playerWantsToMoveAUnit = new Signal();
-	public static var playerWantsToPerformASpecialAction = new Signal();
-	public static var playerWantsToCancelTheCurrentAction = new Signal();
-	
-	// global events
-	public static var activePlayerChanged = new Signal();
 	public static var displayNewStatusMessage = new Signal();
+	
+	// card actions
+	public static var cardSelectedFromHandByPlayer = new Signal();
+	public static var removeCardFromActivePlayersHand = new Signal();
+	public static var activePlayerResourcesChanged = new Signal();
+	public static var playerHasRanOutCards = new Signal();
+	
+	// actions while figuring out what the player wants to do
+	public static var askPlayer_howTheyWantToPlayTheirActionCard = new Signal();
+	public static var askPlayer_whereTheyWantToDeployTheirUnitCard = new Signal();
+	public static var playerWantsTo_cancelTheCurrentAction = new Signal();
+	public static var playerWantsTo_moveAUnit = new Signal();
+	public static var playerWantsTo_performASpecialAction = new Signal();
+	public static var playerWantsTo_deployAUnitOnPlanet = new Signal();
+	public static var playerWantsTo_deployAUnitInSpace = new Signal();
+	
+	// game turn events
+	public static var activePlayerChanged = new Signal();
 	
 	// map stuff
 	public static var mapRequiresRedraw = new Signal();

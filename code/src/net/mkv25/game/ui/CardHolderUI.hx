@@ -64,6 +64,11 @@ class CardHolderUI extends BitmapUI
 		upState();
 	}
 	
+	public function isSelected():Bool
+	{
+		return flagSelected;
+	}
+	
 	function selectedState():Void
 	{
 		center(bitmap, 0, -40);

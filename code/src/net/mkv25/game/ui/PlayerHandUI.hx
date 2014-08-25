@@ -4,6 +4,7 @@ import flash.display.Sprite;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.game.event.EventBus;
+import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.models.PlayerHand;
 
 class PlayerHandUI extends BaseUI
@@ -32,7 +33,8 @@ class PlayerHandUI extends BaseUI
 			cards.push(card);
 		}
 		
-		EventBus.playerWantsToCancelTheCurrentAction.add(deselectTheActiveCard);
+		EventBus.playerWantsTo_cancelTheCurrentAction.add(deselectTheActiveCard);
+		EventBus.removeCardFromActivePlayersHand.add(removeCardFromHand);
 	}
 	
 	public function display(playersHand:PlayerHand):PlayerHandUI
@@ -47,7 +49,7 @@ class PlayerHandUI extends BaseUI
 			{
 				var card = playersHand.hand[i];
 				cardHolder.setupCard(card);
-				artwork.addChild(cardHolder.artwork);
+				cardHolder.enable();
 				
 				var overlap = 50;
 				cardHolder.move((cardHolder.artwork.width / 2) + (i * (cardHolder.artwork.width - overlap)), cardHolder.artwork.height / 2);
@@ -62,6 +64,7 @@ class PlayerHandUI extends BaseUI
 		// reset selection state of cards
 		for (card in cards)
 		{
+			artwork.addChild(card.artwork);
 			card.deselect();
 		}
 		
@@ -94,7 +97,27 @@ class PlayerHandUI extends BaseUI
 		// reset selection state of cards
 		for (card in cards)
 		{
+			artwork.addChild(card.artwork);
 			card.deselect();
+		}
+	}
+	
+	function removeCardFromHand(selectedCard:PlayableCard):Void
+	{
+		model.hand.remove(selectedCard);
+		model.discards.push(selectedCard);
+			
+		for (card in cards)
+		{
+			if (card.isSelected()) {
+				card.disable();
+				card.popOut();
+			}
+		}
+		
+		if (model.hand.length == 0)
+		{
+			EventBus.playerHasRanOutCards.dispatch(this);
 		}
 	}
 }

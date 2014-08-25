@@ -64,14 +64,20 @@ class MainScreen extends Screen
 		artwork.addChild(playerHand.artwork);
 		artwork.addChild(adviceText.artwork);
 		
-		EventBus.activePlayerChanged.add(setBackgroundToMatchPlayer);
+		EventBus.activePlayerChanged.add(handleActivePlayerChange);
 		EventBus.displayNewStatusMessage.add(handleDisplayNewStatus);
 		EventBus.mapViewChanged.add(onMapViewChanged);
 	}
 	
-	function setBackgroundToMatchPlayer(activePlayer:PlayerModel)
+	function handleActivePlayerChange(activePlayer:PlayerModel)
 	{
-		var layoutAsset = MainScreen.LAYOUTS[activePlayer.playerNumberZeroBased];
+		setBackgroundToMatchPlayer(Index.activeGame.activePlayer);
+		playerHand.display(Index.activeGame.activePlayer.playerHand);
+	}
+	
+	function setBackgroundToMatchPlayer(player:PlayerModel)
+	{
+		var layoutAsset = MainScreen.LAYOUTS[player.playerNumberZeroBased];
 		setBackground(layoutAsset);
 	}
 	
@@ -85,8 +91,12 @@ class MainScreen extends Screen
 		super.show();
 		
 		Index.activeGame.space.changed.dispatch(Index.activeGame.space);
-		setBackgroundToMatchPlayer(Index.activeGame.activePlayer);
-		playerHand.display(Index.activeGame.activePlayer.playerHand);
+		
+		if (Index.activeGame.activePlayer != null) 
+		{
+			setBackgroundToMatchPlayer(Index.activeGame.activePlayer);
+			playerHand.display(Index.activeGame.activePlayer.playerHand);
+		}
 	}
 	
 	override public function handleKeyAction(event:KeyboardEvent):Void

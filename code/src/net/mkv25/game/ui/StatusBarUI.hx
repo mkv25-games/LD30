@@ -5,6 +5,8 @@ import net.mkv25.base.core.Screen;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.base.ui.TextUI;
+import net.mkv25.game.event.EventBus;
+import net.mkv25.game.models.PlayerModel;
 import net.mkv25.game.provider.IconProvider;
 
 class StatusBarUI extends BaseUI
@@ -24,6 +26,9 @@ class StatusBarUI extends BaseUI
 		super();
 		
 		init();
+	
+		EventBus.activePlayerChanged.add(onActivePlayerChanged);
+		EventBus.activePlayerResourcesChanged.add(onResourcesChanged);
 	}
 	
 	private function init():Void
@@ -49,6 +54,28 @@ class StatusBarUI extends BaseUI
 		artwork.addChild(iconUnits.artwork);
 		artwork.addChild(iconTerritory.artwork);
 		artwork.addChild(iconResources.artwork);
+	}
+	
+	function onActivePlayerChanged(player:PlayerModel):Void
+	{
+		counterResourcesText.setText(Std.string(player.resources));
+		counterTerritoryText.setText(Std.string(player.territory));
+		counterUnitsText.setText(Std.string(player.unitCount));
+	}
+	
+	function onResourcesChanged(player:PlayerModel):Void
+	{
+		counterResourcesText.setText(Std.string(player.resources));
+	}
+	
+	function onTerritoryChanged(player:PlayerModel):Void
+	{
+		counterTerritoryText.setText(Std.string(player.territory));
+	}
+	
+	function onUnitCountChange(player:PlayerModel):Void
+	{
+		counterUnitsText.setText(Std.string(player.unitCount));
 	}
 	
 }

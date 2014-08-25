@@ -24,9 +24,10 @@ class GameFlowController
 		var number_of_players = 6;
 		
 		Index.activeGame = new ActiveGame(number_of_players);
-		Index.activeGame.selectNextPlayer();
 		
 		Index.screenController.showScreen(Index.mainScreen);
+		Index.activeGame.selectNextPlayer();
+		
 		EventBus.mapRequiresRedraw.dispatch(this);
 	}
 	
@@ -45,13 +46,13 @@ class GameFlowController
 		
 		if (card.deployable)
 		{
-			EventBus.askPlayerWhereTheyWantToDeployTheirUnitCard.dispatch(card);
+			EventBus.askPlayer_whereTheyWantToDeployTheirUnitCard.dispatch(card);
 			return;
 		}
 		
 		if (card.movement > 0)
 		{
-			EventBus.askPlayerHowTheyWantToPlayTheirActionCard.dispatch(card);
+			EventBus.askPlayer_howTheyWantToPlayTheirActionCard.dispatch(card);
 			return;
 		}
 		
