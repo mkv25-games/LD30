@@ -8,12 +8,12 @@ class HexProvider
 	public static var HEX_SIZE:Int = 50;
 
 	public static var EMPTY_HEX:BitmapData;
-	public static var FILLED_HEX:BitmapData;
+	public static var HIGHLIGHTED_HEX:BitmapData;
 	
 	public static function setup():Void
 	{
 		EMPTY_HEX = getHex(1);
-		FILLED_HEX = getHex(3);
+		HIGHLIGHTED_HEX = getHex(2);
 	}
 	
 	private static function getHex(index:Int = 1):BitmapData {

@@ -83,7 +83,7 @@ class MapUI extends BaseUI
 		{
 			highlightedHex.q = tile.q;
 			highlightedHex.r = tile.r;
-			highlightedHexImage.bitmapData = HexProvider.FILLED_HEX;
+			highlightedHexImage.bitmapData = HexProvider.HIGHLIGHTED_HEX;
 			drawHex(highlightedHex, highlightedHexImage);
 		}
 		else

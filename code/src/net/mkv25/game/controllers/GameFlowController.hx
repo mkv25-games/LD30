@@ -18,7 +18,9 @@ class GameFlowController
 	}
 	
 	private function handle_startNewGame(?model) {
-		Index.activeGame = new ActiveGame(2);
+		var number_of_players = 6;
+		
+		Index.activeGame = new ActiveGame(number_of_players);
 		Index.activeGame.selectNextPlayer();
 		
 		Index.screenController.showScreen(Index.mainScreen);
