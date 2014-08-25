@@ -1,12 +1,17 @@
 package net.mkv25.game.controllers;
+
 import net.mkv25.base.core.ScreenController;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayableCard;
+import net.mkv25.game.ui.ConstructionMenuUI;
 import net.mkv25.game.ui.InGameMenuUI;
+import net.mkv25.game.ui.ResearchMenuUI;
 
 class CardActionController
 {
-	var menu:InGameMenuUI;
+	var optionMenu:InGameMenuUI;
+	var researchMenu:ResearchMenuUI;
+	var constructionMenu:ConstructionMenuUI;
 	var activeCard:PlayableCard;
 	var specialActions:Dynamic;
 
@@ -21,11 +26,8 @@ class CardActionController
 		EventBus.askPlayer_whereTheyWantToDeployTheirUnitCard.add(showOptionsForUnitCard);
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(clearAnyActiveState);
 		EventBus.playerWantsTo_performASpecialAction.add(figureOutWhichActionIsOnTheCard);
-		
-		menu = new InGameMenuUI();
-		menu.hide();
-		
-		screenController.addLayer(menu.artwork);
+
+		createMenus(screenController);
 		
 		specialActions = {
 			"research": playerWantsToResearch,
@@ -33,6 +35,21 @@ class CardActionController
 			"connect bases": playerWantsToConnectBases,
 			"gather resources": playerWantsToGatherResources
 		}
+	}
+	
+	function createMenus(screenController:ScreenController):Void
+	{		
+		optionMenu = new InGameMenuUI();
+		optionMenu.hide();
+		screenController.addLayer(optionMenu.artwork);
+		
+		researchMenu = new ResearchMenuUI();
+		researchMenu.hide();
+		screenController.addLayer(researchMenu.artwork);
+		
+		constructionMenu = new ConstructionMenuUI();
+		constructionMenu.hide();
+		screenController.addLayer(constructionMenu.artwork);
 	}
 	
 	function clearAnyActiveState(?model):Void
@@ -46,11 +63,11 @@ class CardActionController
 		activeCard = card;
 		
 		EventBus.displayNewStatusMessage.dispatch("Pick an option");
-		menu.setCardName(card.name);
-		menu.setOption1("move a unit".toUpperCase(), EventBus.playerWantsTo_moveAUnit.dispatch, card);
-		menu.setOption2(card.action.toUpperCase(), EventBus.playerWantsTo_performASpecialAction.dispatch, card);
+		optionMenu.setCardName(card.name);
+		optionMenu.setOption1("move a unit".toUpperCase(), EventBus.playerWantsTo_moveAUnit.dispatch, card);
+		optionMenu.setOption2(card.action.toUpperCase(), EventBus.playerWantsTo_performASpecialAction.dispatch, card);
 		
-		menu.show();
+		optionMenu.show();
 	}
 	
 	function showOptionsForUnitCard(card:PlayableCard):Void
@@ -58,11 +75,11 @@ class CardActionController
 		activeCard = card;
 		
 		EventBus.displayNewStatusMessage.dispatch("Pick an option");
-		menu.setCardName(card.name);
-		menu.setOption1("deploy in space".toUpperCase(), EventBus.playerWantsTo_deployAUnitInSpace.dispatch, card);
-		menu.setOption2("deploy on planet".toUpperCase(), EventBus.playerWantsTo_deployAUnitOnPlanet.dispatch, card);
+		optionMenu.setCardName(card.name);
+		optionMenu.setOption1("deploy in space".toUpperCase(), EventBus.playerWantsTo_deployAUnitInSpace.dispatch, card);
+		optionMenu.setOption2("deploy on planet".toUpperCase(), EventBus.playerWantsTo_deployAUnitOnPlanet.dispatch, card);
 		
-		menu.show();
+		optionMenu.show();
 	}
 	
 	function figureOutWhichActionIsOnTheCard(card:PlayableCard):Void
@@ -79,12 +96,12 @@ class CardActionController
 	
 	function playerWantsToResearch(card:PlayableCard):Void
 	{
-		
+		researchMenu.show();
 	}
 	
 	function playerWantsToBuildUnits(card:PlayableCard):Void
 	{
-		
+		constructionMenu.show();
 	}
 	
 	function playerWantsToConnectBases(card:PlayableCard):Void

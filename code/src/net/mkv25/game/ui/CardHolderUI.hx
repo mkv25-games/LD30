@@ -42,6 +42,7 @@ class CardHolderUI extends BitmapUI
 		else
 		{
 			this.setBitmapData(assignedCard.picture);
+			this.bitmap.smoothing = true;
 			
 			// draw extended hit box
 			graphics.beginFill(0x000000, 0.01);

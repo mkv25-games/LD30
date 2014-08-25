@@ -43,6 +43,17 @@ class CardProvider
 			actionCards.push(card);
 			allCards.set(card.name, card);
 		}
+		
+		unitCards.sort(sortActionCardsByCost);
+	}
+	
+	function sortActionCardsByCost(a:PlayableCard, b:PlayableCard):Int
+	{
+		if (a.cost > b.cost)
+			return 1;
+		if (a.cost < b.cost)
+			return -1;
+		return 0;
 	}
 	
 	private function populateUnitCardsFrom(json:Dynamic):Void
@@ -58,5 +69,22 @@ class CardProvider
 			unitCards.push(card);
 			allCards.set(card.name, card);
 		}
+		
+		actionCards.sort(sortUnitCardsByCost);
+	}
+	
+	function sortUnitCardsByCost(a:PlayableCard, b:PlayableCard):Int
+	{
+		// units before hoes
+		if (a.base && !b.base)
+			return -1;
+		if (!a.base && b.base)
+			return 1;
+			
+		if (a.cost > b.cost)
+			return 1;
+		if (a.cost < b.cost)
+			return -1;
+		return 0;
 	}
 }
