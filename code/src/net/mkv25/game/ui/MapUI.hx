@@ -10,6 +10,7 @@ import flash.events.MouseEvent;
 import flash.geom.Matrix;
 import net.mkv25.base.core.Image.ImageRegion;
 import net.mkv25.base.ui.BaseUI;
+import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.HexTile;
 import net.mkv25.game.models.MapModel;
@@ -25,7 +26,7 @@ class MapUI extends BaseUI
 	var hexes:Array<Bitmap>;
 	var hexImage:BitmapData;
 	var highlightedHex:HexTile;
-	var highlightedHexImage:Bitmap;
+	var highlightImage:BitmapUI;
 	
 	var mapImage:Bitmap;
 	var viewLayer:Sprite;
@@ -42,7 +43,8 @@ class MapUI extends BaseUI
 		
 		hexes = new Array<Bitmap>();
 		highlightedHex = new HexTile();
-		highlightedHexImage = new Bitmap();
+		highlightImage = new BitmapUI();
+		highlightImage.artwork.mouseEnabled = highlightImage.artwork.mouseChildren = false;
 		
 		mapImage = new Bitmap();
 		viewLayer = new Sprite();
@@ -59,7 +61,7 @@ class MapUI extends BaseUI
 		EventBus.mapRequiresRedraw.add(handleMapRequiresRedraw);
 	}
 	
-	public function setup(model:MapModel)
+	public function setupMap(model:MapModel)
 	{
 		this.currentModel = model;
 		
@@ -83,12 +85,16 @@ class MapUI extends BaseUI
 		{
 			highlightedHex.q = tile.q;
 			highlightedHex.r = tile.r;
-			highlightedHexImage.bitmapData = HexProvider.HIGHLIGHTED_HEX;
-			drawHex(highlightedHex, highlightedHexImage);
+			highlightImage.setBitmapData(HexProvider.HIGHLIGHTED_HEX);
+			drawHex(highlightedHex, highlightImage.artwork);
+			highlightImage.show();
+			
+			var contents = tile.listContents();
+			EventBus.displayNewStatusMessage.dispatch("Selected hex: " + tile.key() + ", contains: " + contents.length + " things.");
 		}
 		else
 		{
-			highlightedHexImage.bitmapData = null;
+			highlightImage.hide();
 		}
 	}
 	
@@ -108,15 +114,16 @@ class MapUI extends BaseUI
 		var tile:HexTile = hexUnderMouse(mouseEvent);
 		if (tile != null) {
 			var contents = tile.listContents();
-			EventBus.displayNewStatusMessage.dispatch("Selected hex: " + tile.key() + ", contains: " + contents.length + " things.");
 			
 			for (thing in contents) {
 				if (Std.is(thing, MapModel))
 				{
 					var world:MapModel = cast thing;
-					setup(world);
+					setupMap(world);
 				}
 			}
+			
+			highlightImage.popIn();
 		}
 	}
 	
@@ -149,29 +156,33 @@ class MapUI extends BaseUI
 		artwork.addChild(mapImage);
 		artwork.addChild(viewLayer);
 		viewLayer.addChild(hexLayer);
-		viewLayer.addChild(highlightedHexImage);
 		viewLayer.addChild(thingsLayer);
+		viewLayer.addChild(highlightImage.artwork);
 		
 		EventBus.mapViewChanged.dispatch(this);
 	}
 	
-	inline function drawHex(hex:HexTile, ?container:Bitmap):Void
+	inline function drawHex(hex:HexTile, ?container:DisplayObject):Void
 	{
 		var hex_x = hex.x();
 		var hex_y = hex.y();
-		var x = (hexImage.width * hex_x) - (hexImage.width / 2);
-		var y = (hexImage.height * hex_y) - (hexImage.height / 2);
+		var x = (hexImage.width * hex_x);
+		var y = (hexImage.height * hex_y);
 
-		var bitmap:Bitmap = container;
-		if(bitmap == null) {
-			bitmap = (unusedThings.length > 0) ? unusedThings.pop() : new Bitmap();
+		if (container == null) {
+			var bitmap:Bitmap = (unusedThings.length > 0) ? unusedThings.pop() : new Bitmap();
 			bitmap.bitmapData = hexImage;
 			hexLayer.addChild(bitmap);
 			bitmapsInUse.push(bitmap);
+			
+			bitmap.x = x - (bitmap.width / 2);
+			bitmap.y = y - (bitmap.height / 2);
 		}
-		
-		bitmap.x = x;
-		bitmap.y = y;
+		else
+		{
+			container.x = x;
+			container.y = y;
+		}
 	}
 	
 	inline function drawThingsInHex(hex:HexTile):Void

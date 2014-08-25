@@ -49,7 +49,7 @@ class MainScreen extends Screen
 		
 		map = new MapUI();
 		map.move(0, 50);
-		map.setup(Index.activeGame.space);
+		map.setupMap(Index.activeGame.space);
 		
 		statusBar = new StatusBarUI();
 		playerHand = new PlayerHandUI();
@@ -126,6 +126,6 @@ class MainScreen extends Screen
 		var bloopSfx = Assets.getSound("sounds/bloop.wav");
 		bloopSfx.play();
 		
-		map.setup(Index.activeGame.space);
+		map.setupMap(Index.activeGame.space);
 	}
 }
