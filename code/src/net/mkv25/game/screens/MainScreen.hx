@@ -11,6 +11,7 @@ import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayerHand;
 import net.mkv25.game.models.PlayerModel;
+import net.mkv25.game.ui.InGameMenuUI;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.PlayerHandUI;
 import net.mkv25.game.ui.StatusBarUI;

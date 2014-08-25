@@ -22,16 +22,7 @@ class Main extends Sprite
 		inited = true;
 
 		// set up the index
-		Index.setup();
-		
-		// wire up the index - this stuff might normally live in a controller
-		Index.screenController.setup(stage);
-		Index.screenController.addScreen(Index.introScreen);
-		EventBus.requestNextScreen.add(Index.screenController.handleRequestNextScreen);
-		EventBus.requestLastScreen.add(Index.screenController.handleRequestLastScreen);
-		
-		// go!
-		EventBus.requestNextScreen.dispatch(this);
+		Index.setup(stage);
 	}
 
 	/* SETUP */

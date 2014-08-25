@@ -90,7 +90,7 @@ class MapUI extends BaseUI
 			highlightImage.show();
 			
 			var contents = tile.listContents();
-			EventBus.displayNewStatusMessage.dispatch("Selected hex: " + tile.key() + ", contains: " + contents.length + " things.");
+			// EventBus.displayNewStatusMessage.dispatch("Selected hex: " + tile.key() + ", contains: " + contents.length + " things.");
 		}
 		else
 		{

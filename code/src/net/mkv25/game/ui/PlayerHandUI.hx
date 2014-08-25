@@ -31,6 +31,8 @@ class PlayerHandUI extends BaseUI
 			card.selected.add(onCardHolderSelected);
 			cards.push(card);
 		}
+		
+		EventBus.playerWantsToCancelTheCurrentAction.add(deselectTheActiveCard);
 	}
 	
 	public function display(playersHand:PlayerHand):PlayerHandUI
@@ -85,5 +87,14 @@ class PlayerHandUI extends BaseUI
 		// tell the world
 		EventBus.displayNewStatusMessage.dispatch("Card selected: " + selectedCard.assignedCard.name);
 		EventBus.cardSelectedFromHandByPlayer.dispatch(selectedCard.assignedCard);
+	}
+	
+	function deselectTheActiveCard(?model):Void
+	{
+		// reset selection state of cards
+		for (card in cards)
+		{
+			card.deselect();
+		}
 	}
 }

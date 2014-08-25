@@ -25,7 +25,7 @@ class ButtonUI extends BaseUI
 		super();
 		
 		bitmap = new Bitmap();
-		textField = Text.makeTextField("fonts/trebuc.ttf", 28, 0xFFFFFF, TextFormatAlign.CENTER);
+		textField = Text.makeTextField("fonts/trebuc.ttf", 24, 0xFFFFFF, TextFormatAlign.CENTER);
 		assetPrefix = DEFAULT_ASSET_PREFIX;
 		
 		waitingOnActivation = false;

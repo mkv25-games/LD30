@@ -2,6 +2,7 @@ package net.mkv25.game.controllers;
 
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.ActiveGame;
+import net.mkv25.game.models.PlayableCard;
 
 class GameFlowController
 {
@@ -15,9 +16,11 @@ class GameFlowController
 	{
 		EventBus.startNewGame.add(handle_startNewGame);
 		EventBus.restartGame.add(handle_restartGame);
+		
+		EventBus.cardSelectedFromHandByPlayer.add(handle_cardSelectedByPlayer);
 	}
 	
-	private function handle_startNewGame(?model) {
+	function handle_startNewGame(?model) {
 		var number_of_players = 6;
 		
 		Index.activeGame = new ActiveGame(number_of_players);
@@ -27,8 +30,32 @@ class GameFlowController
 		EventBus.mapRequiresRedraw.dispatch(this);
 	}
 	
-	private function handle_restartGame(?model) {
+	function handle_restartGame(?model) {
 		Index.screenController.showScreen(Index.introScreen);
+	}
+	
+	function handle_cardSelectedByPlayer(?model) {
+		var card:PlayableCard;
+		if (Std.is(model, PlayableCard)) {
+			card = cast model;
+		}
+		else {
+			throw "Selected thing was not a playable card.";
+		}
+		
+		if (card.deployable)
+		{
+			EventBus.askPlayerWhereTheyWantToDeployTheirUnitCard.dispatch(card);
+			return;
+		}
+		
+		if (card.movement > 0)
+		{
+			EventBus.askPlayerHowTheyWantToPlayTheirActionCard.dispatch(card);
+			return;
+		}
+		
+		throw "Don't know what to do with card: (" + card.name + ")";
 	}
 	
 }

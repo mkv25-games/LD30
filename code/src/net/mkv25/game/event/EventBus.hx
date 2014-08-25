@@ -12,6 +12,11 @@ class EventBus
 	public static var startNewGame = new Signal();
 	public static var restartGame = new Signal();
 	public static var cardSelectedFromHandByPlayer = new Signal();
+	public static var askPlayerHowTheyWantToPlayTheirActionCard = new Signal();
+	public static var askPlayerWhereTheyWantToDeployTheirUnitCard = new Signal();
+	public static var playerWantsToMoveAUnit = new Signal();
+	public static var playerWantsToPerformASpecialAction = new Signal();
+	public static var playerWantsToCancelTheCurrentAction = new Signal();
 	
 	// global events
 	public static var activePlayerChanged = new Signal();

@@ -1,10 +1,12 @@
 package net.mkv25.game;
 
+import flash.display.Stage;
 import net.mkv25.base.core.CoreModel;
 import net.mkv25.base.core.Screen;
 import net.mkv25.base.core.ScreenController;
 import net.mkv25.base.ui.DebugUI;
 import net.mkv25.game.controllers.GameFlowController;
+import net.mkv25.game.controllers.CardActionController;
 import net.mkv25.game.models.ActiveGame;
 import net.mkv25.game.models.MapModel;
 import net.mkv25.game.provider.CardProvider;
@@ -21,6 +23,7 @@ class Index
 	// controllers
 	public static var screenController:ScreenController;
 	public static var gameFlowController:GameFlowController;
+	public static var cardActionController:CardActionController;
 	
 	// providers
 	public static var cardProvider:CardProvider;
@@ -33,7 +36,7 @@ class Index
 	public static var debug:DebugUI;
 	
 	// play time
-	public static function setup():Void
+	public static function setup(stage:Stage):Void
 	{
 		// prevent method from being executed more then once
 		if (failsafe)
@@ -48,6 +51,7 @@ class Index
 		// controllers
 		screenController = new ScreenController();
 		gameFlowController = new GameFlowController();
+		cardActionController = new CardActionController();
 		
 		// providers
 		cardProvider = new CardProvider();
@@ -60,7 +64,12 @@ class Index
 		// debug = new DebugUI(screenController);
 		
 		// wiring
-		gameFlowController.setup();
+		screenController.setup(stage);
 		cardProvider.setup();
+		gameFlowController.setup();
+		cardActionController.setup(screenController);
+		
+		// start
+		Index.screenController.showScreen(Index.introScreen);
 	}
 }
