@@ -77,25 +77,6 @@ class ResearchMenuUI extends BaseUI
 		artwork.addChild(cardLayer);
 	}
 	
-	function positionCards()
-	{
-		var columns = 3;
-		
-		var n:Int = 0;
-		for (card in cards)
-		{
-			var column = n % columns;
-			var row = Math.floor(n / columns);
-			
-			card.move((column + 0.5) * card.artwork.width, (row + 0.5) * card.artwork.height);
-			
-			n++;
-		}
-		
-		cardLayer.x = (ResearchMenuUI.SIZE / 2) - (cardLayer.width / 2);
-		cardLayer.y = (ResearchMenuUI.SIZE / 2) - (cardLayer.height / 2) + 20;
-	}
-	
 	function updateCards()
 	{
 		var player:PlayerModel = Index.activeGame.activePlayer;
@@ -112,6 +93,27 @@ class ResearchMenuUI extends BaseUI
 		}
 		
 		positionCards();
+	}
+	
+	function positionCards()
+	{
+		var columns = 3;
+		
+		var n:Int = 0;
+		for (card in cards)
+		{
+			var column = n % columns;
+			var row = Math.floor(n / columns);
+			
+			card.scale = 0.8;
+			card.artwork.x = (column + 0.5) * card.artwork.width;
+			card.artwork.y = (row + 0.5) * card.artwork.height;
+			
+			n++;
+		}
+		
+		cardLayer.x = (ResearchMenuUI.SIZE / 2) - (cardLayer.width / 2);
+		cardLayer.y = (ResearchMenuUI.SIZE / 2) - (cardLayer.height / 2) + 20;
 	}
 	
 	function createBackgroundCover()

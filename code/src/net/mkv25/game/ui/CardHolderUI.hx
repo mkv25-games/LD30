@@ -50,6 +50,8 @@ class CardHolderUI extends BitmapUI
 			graphics.endFill();
 		}
 		
+		upState();
+		
 		return this;
 	}
 	

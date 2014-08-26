@@ -44,7 +44,7 @@ class CardProvider
 			allCards.set(card.name, card);
 		}
 		
-		unitCards.sort(sortActionCardsByCost);
+		actionCards.sort(sortActionCardsByCost);
 	}
 	
 	function sortActionCardsByCost(a:PlayableCard, b:PlayableCard):Int
@@ -70,16 +70,16 @@ class CardProvider
 			allCards.set(card.name, card);
 		}
 		
-		actionCards.sort(sortUnitCardsByCost);
+		unitCards.sort(sortUnitCardsByCost);
 	}
 	
 	function sortUnitCardsByCost(a:PlayableCard, b:PlayableCard):Int
 	{
 		// units before hoes
 		if (a.base && !b.base)
-			return -1;
-		if (!a.base && b.base)
 			return 1;
+		if (!a.base && b.base)
+			return -1;
 			
 		if (a.cost > b.cost)
 			return 1;

@@ -69,18 +69,18 @@ class ScreenController
 	
 	public function updateScreenSize()
 	{
-		var expectedWidth:Int = 960;
-		var actualWidth:Int = cast stage.stageWidth;
+		var expectedHeight:Int = 800;
+		var actualHeight:Int = cast stage.stageHeight;
 		
-		var startScale = zoomContainer.scaleX;
+		var startScale = zoomContainer.scaleY;
 		var idealScale:Float;
 		
 		// scale to fit
-		zoomContainer.width = stage.stageWidth;
-		zoomContainer.scaleY = zoomContainer.scaleX;
+		zoomContainer.height = stage.stageHeight;
+		zoomContainer.scaleX = zoomContainer.scaleY;
 		
 		// set ideal scaling
-		idealScale = zoomContainer.scaleX;
+		idealScale = zoomContainer.scaleY;
 		
 		// animate scale
 		if (idealScale != startScale)
