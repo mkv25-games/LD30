@@ -37,6 +37,9 @@ class EventBus
 	// map stuff
 	public static var mapRequiresRedraw = new Signal();
 	public static var mapViewChanged = new Signal();
+	public static var enableMapHexSelectionForDeployment = new Signal();
+	public static var disableMapHexSelectionForDeployment = new Signal();
+	
 	
 	public function new() 
 	{

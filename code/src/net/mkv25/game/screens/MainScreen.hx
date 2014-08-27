@@ -11,6 +11,7 @@ import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayerHand;
 import net.mkv25.game.models.PlayerModel;
+import net.mkv25.game.ui.DeploymentUI;
 import net.mkv25.game.ui.InGameMenuUI;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.PlayerHandUI;
@@ -19,9 +20,9 @@ import openfl.Assets;
 
 class MainScreen extends Screen
 {
-	var button:IconButtonUI;
-	
 	var map:MapUI;
+	var deployment:DeploymentUI;
+	
 	var statusBar:StatusBarUI;
 	var playerHand:PlayerHandUI;
 	var adviceText:TextUI;
@@ -44,13 +45,13 @@ class MainScreen extends Screen
 	{
 		setBackground("img/main-layout-player6.png");
 		
-		button = new IconButtonUI();
-		button.setup("img/icon-back.png", returnToSpaceMap);
-		button.move(60, 80);
-		
-		map = new MapUI();
+		map = Index.mapHud;
 		map.move(0, 50);
 		map.setupMap(Index.activeGame.space);
+		
+		deployment = Index.deploymentHud;
+		deployment.move(0, 50);
+		deployment.hide();
 		
 		statusBar = new StatusBarUI();
 		playerHand = new PlayerHandUI();
@@ -59,14 +60,12 @@ class MainScreen extends Screen
 		adviceText = cast TextUI.makeFor("Welcome to the game", 0x000000).fontSize(28).size(Screen.WIDTH, 40).move(0, Screen.HEIGHT - 45);
 		
 		artwork.addChild(map.artwork);
-		artwork.addChild(button.artwork);
 		artwork.addChild(statusBar.artwork);
 		artwork.addChild(playerHand.artwork);
 		artwork.addChild(adviceText.artwork);
 		
 		EventBus.activePlayerChanged.add(onActivePlayerChange);
 		EventBus.displayNewStatusMessage.add(handleDisplayNewStatus);
-		EventBus.mapViewChanged.add(onMapViewChanged);
 	}
 	
 	function onActivePlayerChange(activePlayer:PlayerModel)
@@ -118,25 +117,5 @@ class MainScreen extends Screen
 		{
 			
 		}
-	}
-	
-	function onMapViewChanged(?model)
-	{
-		if (map.currentModel != Index.activeGame.space)
-		{
-			button.show();
-		}
-		else
-		{
-			button.hide();
-		}
-	}
-	
-	function returnToSpaceMap(?model)
-	{
-		var bloopSfx = Assets.getSound("sounds/bloop.wav");
-		bloopSfx.play();
-		
-		map.setupMap(Index.activeGame.space);
 	}
 }

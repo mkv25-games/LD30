@@ -99,17 +99,25 @@ class InGameMenuUI extends BaseUI
 		this.cardNameText.setText(text.toUpperCase());
 	}
 	
-	public function setOption1(text:String, action:Dynamic->Void, model:Dynamic):Void
+	public function setOption1(text:String, ?action:Dynamic->Void, ?model:Dynamic):Void
 	{
-		this.option1.setup(text, selectOption1);
+		var option = this.option1;
+		
+		(action == null) ? option.disable() : option.enable();
+		
+		option.setup(text, selectOption1);
 		
 		this.option1action = action;
 		this.option1model = model;
 	}
 	
-	public function setOption2(text:String, action:Dynamic->Void, model:Dynamic):Void
+	public function setOption2(text:String, ?action:Dynamic->Void, ?model:Dynamic):Void
 	{
-		this.option2.setup(text, selectOption2);
+		var option = this.option2;
+		
+		(action == null) ? option.disable() : option.enable();
+		
+		option.setup(text, selectOption2);
 		
 		this.option2action = action;
 		this.option2model = model;

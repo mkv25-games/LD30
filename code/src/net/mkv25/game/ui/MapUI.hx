@@ -11,10 +11,12 @@ import flash.geom.Matrix;
 import net.mkv25.base.core.Image.ImageRegion;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
+import net.mkv25.base.ui.IconButtonUI;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.HexTile;
 import net.mkv25.game.models.MapModel;
 import net.mkv25.game.provider.HexProvider;
+import openfl.Assets;
 
 class MapUI extends BaseUI
 {
@@ -32,6 +34,7 @@ class MapUI extends BaseUI
 	var viewLayer:Sprite;
 	var hexLayer:Sprite;
 	var thingsLayer:Sprite;
+	var backButton:IconButtonUI;
 	
 	var bitmapsInUse:Array<Bitmap>;
 	var unusedThings:Array<Bitmap>;
@@ -50,6 +53,10 @@ class MapUI extends BaseUI
 		viewLayer = new Sprite();
 		hexLayer = new Sprite();
 		thingsLayer = new Sprite();
+		
+		backButton = new IconButtonUI();
+		backButton.setup("img/icon-back.png", returnToSpaceMap);
+		backButton.move(60, 30);
 		
 		bitmapsInUse = new Array<Bitmap>();
 		unusedThings = new Array<Bitmap>();
@@ -158,7 +165,9 @@ class MapUI extends BaseUI
 		viewLayer.addChild(hexLayer);
 		viewLayer.addChild(thingsLayer);
 		viewLayer.addChild(highlightImage.artwork);
+		artwork.addChild(backButton.artwork);
 		
+		updateButtons();
 		EventBus.mapViewChanged.dispatch(this);
 	}
 	
@@ -212,6 +221,26 @@ class MapUI extends BaseUI
 	{
 		var depth:Int = cast Math.min(depth, container.numChildren);
 		container.addChildAt(item, depth);
+	}
+	
+	function updateButtons(?model)
+	{
+		if (currentModel != Index.activeGame.space)
+		{
+			backButton.show();
+		}
+		else
+		{
+			backButton.hide();
+		}
+	}
+	
+	function returnToSpaceMap(?model)
+	{
+		var bloopSfx = Assets.getSound("sounds/bloop.wav");
+		bloopSfx.play();
+		
+		setupMap(Index.activeGame.space);
 	}
 	
 }

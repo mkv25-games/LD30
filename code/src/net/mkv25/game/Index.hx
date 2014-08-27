@@ -5,6 +5,7 @@ import net.mkv25.base.core.CoreModel;
 import net.mkv25.base.core.Screen;
 import net.mkv25.base.core.ScreenController;
 import net.mkv25.base.ui.DebugUI;
+import net.mkv25.game.controllers.DeployUnitController;
 import net.mkv25.game.controllers.GameFlowController;
 import net.mkv25.game.controllers.CardActionController;
 import net.mkv25.game.models.ActiveGame;
@@ -12,6 +13,8 @@ import net.mkv25.game.models.MapModel;
 import net.mkv25.game.provider.CardProvider;
 import net.mkv25.game.screens.IntroScreen;
 import net.mkv25.game.screens.MainScreen;
+import net.mkv25.game.ui.DeploymentUI;
+import net.mkv25.game.ui.MapUI;
 
 class Index
 {
@@ -24,6 +27,7 @@ class Index
 	public static var screenController:ScreenController;
 	public static var gameFlowController:GameFlowController;
 	public static var cardActionController:CardActionController;
+	public static var deployUnitController:DeployUnitController;
 	
 	// providers
 	public static var cardProvider:CardProvider;
@@ -31,6 +35,10 @@ class Index
 	// screens
 	public static var introScreen:Screen;
 	public static var mainScreen:Screen;
+	
+	// core ui elements
+	public static var mapHud:MapUI;
+	public static var deploymentHud:DeploymentUI;
 	
 	// debug
 	public static var debug:DebugUI;
@@ -52,6 +60,7 @@ class Index
 		screenController = new ScreenController();
 		gameFlowController = new GameFlowController();
 		cardActionController = new CardActionController();
+		deployUnitController = new DeployUnitController();
 		
 		// providers
 		cardProvider = new CardProvider();
@@ -59,6 +68,10 @@ class Index
 		// screens
 		introScreen = new IntroScreen();
 		mainScreen = new MainScreen();
+		
+		// core ui elements
+		mapHud = new MapUI();
+		deploymentHud = new DeploymentUI();
 		
 		// debug
 		// debug = new DebugUI(screenController);
@@ -68,6 +81,7 @@ class Index
 		cardProvider.setup();
 		gameFlowController.setup();
 		cardActionController.setup(screenController);
+		deployUnitController.setup(mapHud, deploymentHud);
 		
 		// start
 		Index.screenController.showScreen(Index.introScreen);
