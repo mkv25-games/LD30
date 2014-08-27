@@ -1,6 +1,10 @@
 package net.mkv25.game.controllers;
 import net.mkv25.game.event.EventBus;
+import net.mkv25.game.models.HexTile;
+import net.mkv25.game.models.MapUnit;
 import net.mkv25.game.models.PlayableCard;
+import net.mkv25.game.models.PlayerModel;
+import net.mkv25.game.provider.UnitProvider;
 import net.mkv25.game.ui.DeploymentUI;
 import net.mkv25.game.ui.MapUI;
 
@@ -9,10 +13,18 @@ class DeployUnitController
 	private var map:MapUI;
 	private var deployment:DeploymentUI;
 	
+	private var activeUnitCard:PlayableCard;
+	private var markedHex:HexTile;
+	
 	public function new()
 	{
 		EventBus.playerWantsTo_deployAUnitOnPlanet.add(suggestUnitPlanetDeploymentOptionsToPlayer);
 		EventBus.playerWantsTo_deployAUnitInSpace.add(suggestUnitSpaceDeploymentOptionsToPlayer);
+		EventBus.playerWantsTo_deployUnitAtSelectedLocationButton.add(attemptToPlaceUnitAtSelectedLocation);
+		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelDeployment);
+		
+		EventBus.mapMarkerPlacedOnMap.add(updateDeploymentAvailability);
+		EventBus.mapMarkerRemovedFromMap.add(disableDeploymentButton);
 	}
 	
 	public function setup(map:MapUI, deployment:DeploymentUI):Void
@@ -23,12 +35,56 @@ class DeployUnitController
 	
 	function suggestUnitPlanetDeploymentOptionsToPlayer(card:PlayableCard):Void
 	{
+		this.activeUnitCard = card;
+		
 		enableDeployment();
+		EventBus.displayNewStatusMessage.dispatch("Choose a planet to deploy to.");
 	}
 	
 	function suggestUnitSpaceDeploymentOptionsToPlayer(card:PlayableCard):Void
 	{
+		this.activeUnitCard = card;
+		
 		enableDeployment();
+		EventBus.displayNewStatusMessage.dispatch("Choose a location to deploy to.");
+	}
+	
+	function attemptToPlaceUnitAtSelectedLocation(?model):Void
+	{
+		// TODO:
+		// validate active card is a unit
+		// validate location for placement
+		// place unit
+		// move card to discard pile
+		// disable deployment
+		// status update
+		
+		var player:PlayerModel = Index.activeGame.activePlayer;
+		
+		if (markedHex != null)
+		{
+			var location:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
+			var unit:MapUnit = UnitProvider.getUnit(player, activeUnitCard);
+			location.add(unit);
+			
+			EventBus.mapRequiresRedraw.dispatch(this);
+			
+			EventBus.trashCardFromActivePlayersHand.dispatch(activeUnitCard);
+			
+			disableDeployment();
+		}
+		else
+		{
+			cancelDeployment();
+		}
+	}
+	
+	function cancelDeployment(?model)
+	{
+		this.activeUnitCard = null;
+		this.markedHex = null;
+		
+		disableDeployment();
 	}
 	
 	function enableDeployment()
@@ -37,9 +93,27 @@ class DeployUnitController
 		deployment.show();
 	}
 	
-	function endDeployment()
+	function disableDeployment()
 	{
 		deployment.disable();
 		deployment.hide();
+	}
+	
+	function updateDeploymentAvailability(marker:HexTile):Void
+	{
+		this.markedHex = marker;
+		// TODO:
+		// validate location for placement
+		// prevent player placing outside of their territory
+		// prevent player putting bases in the same time
+		
+		deployment.deployButton.enable();
+	}
+	
+	function disableDeploymentButton(marker:HexTile):Void
+	{
+		this.markedHex = null;
+		
+		deployment.deployButton.disable();
 	}
 }

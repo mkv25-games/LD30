@@ -20,15 +20,19 @@ import openfl.Assets;
 
 class MapUI extends BaseUI
 {
-	static var MAP_WIDTH:Int = 500;
-	static var MAP_HEIGHT:Int = 500;
+	public static var MAP_WIDTH:Int = 500;
+	public static var MAP_HEIGHT:Int = 500;
 	
 	public var currentModel:MapModel;
 	
-	var hexes:Array<Bitmap>;
 	var hexImage:BitmapData;
+	var hexes:Array<Bitmap>;
+	
 	var highlightedHex:HexTile;
 	var highlightImage:BitmapUI;
+	
+	var markedHex:HexTile;
+	var markedImage:BitmapUI;
 	
 	var mapImage:Bitmap;
 	var viewLayer:Sprite;
@@ -44,10 +48,17 @@ class MapUI extends BaseUI
 	{
 		super();
 		
+		HexProvider.setup();
+		hexImage = HexProvider.EMPTY_HEX;
 		hexes = new Array<Bitmap>();
+		
 		highlightedHex = new HexTile();
 		highlightImage = new BitmapUI();
 		highlightImage.artwork.mouseEnabled = highlightImage.artwork.mouseChildren = false;
+		
+		markedHex = new HexTile();
+		markedImage = new BitmapUI();
+		markedImage.artwork.mouseEnabled = markedImage.artwork.mouseChildren = false;
 		
 		mapImage = new Bitmap();
 		viewLayer = new Sprite();
@@ -56,14 +67,11 @@ class MapUI extends BaseUI
 		
 		backButton = new IconButtonUI();
 		backButton.setup("img/icon-back.png", returnToSpaceMap);
-		backButton.move(60, 30);
+		backButton.move(40, 40);
 		
 		bitmapsInUse = new Array<Bitmap>();
 		unusedThings = new Array<Bitmap>();
 		recycler = new Sprite();
-		
-		HexProvider.setup();
-		hexImage = HexProvider.EMPTY_HEX;
 		
 		EventBus.mapRequiresRedraw.add(handleMapRequiresRedraw);
 	}
@@ -75,7 +83,14 @@ class MapUI extends BaseUI
 		mapImage.bitmapData = model.background;
 		
 		viewLayer.addEventListener(MouseEvent.MOUSE_MOVE, highlightHexTile, false, 0, true);
-		viewLayer.addEventListener(MouseEvent.MOUSE_DOWN, checkHexTile, false, 0, true);
+		viewLayer.addEventListener(MouseEvent.MOUSE_DOWN, markSelectedHex, false, 0, true);
+		
+		// reset marked hex
+		markedHex.q = -9001;
+		markedHex.r = -9001;
+		markedHex.map = null;
+		markedImage.hide();
+		EventBus.mapMarkerRemovedFromMap.dispatch(markedHex);
 		
 		redraw();
 	}
@@ -83,6 +98,17 @@ class MapUI extends BaseUI
 	function handleMapRequiresRedraw(?model):Void
 	{
 		redraw();
+	}
+	
+	function hexUnderMouse(mouseEvent:MouseEvent):HexTile {
+		var hex_x = mouseEvent.localX / hexImage.width;
+		var hex_y = mouseEvent.localY /  hexImage.height;
+		
+		var qr = HexTile.xy2qr(hex_x, hex_y);
+		
+		var tile:HexTile = currentModel.getHexTile(qr[0], qr[1]);
+		
+		return tile;
 	}
 	
 	function highlightHexTile(mouseEvent:MouseEvent):Void
@@ -105,32 +131,38 @@ class MapUI extends BaseUI
 		}
 	}
 	
-	function hexUnderMouse(mouseEvent:MouseEvent):HexTile {
-		var hex_x = mouseEvent.localX / hexImage.width;
-		var hex_y = mouseEvent.localY /  hexImage.height;
-		
-		var qr = HexTile.xy2qr(hex_x, hex_y);
-		
-		var tile:HexTile = currentModel.getHexTile(qr[0], qr[1]);
-		
-		return tile;
-	}
-	
-	function checkHexTile(mouseEvent:MouseEvent):Void
+	function markSelectedHex(mouseEvent:MouseEvent):Void
 	{
 		var tile:HexTile = hexUnderMouse(mouseEvent);
 		if (tile != null) {
 			var contents = tile.listContents();
 			
-			for (thing in contents) {
-				if (Std.is(thing, MapModel))
-				{
-					var world:MapModel = cast thing;
-					setupMap(world);
+			// marking the same hex for the second time
+			if (markedHex.map == tile.map && markedHex.r == tile.r && markedHex.q == tile.q)
+			{
+				for (thing in contents) {
+					if (Std.is(thing, MapModel))
+					{
+						var world:MapModel = cast thing;
+						setupMap(world);
+					}
 				}
 			}
-			
-			highlightImage.popIn();
+			else
+			{
+				// selecting a new hex
+				markedHex.r = tile.r;
+				markedHex.q = tile.q;
+				markedHex.map = tile.map;
+				markedImage.setBitmapData(HexProvider.MARKED_HEX);
+				drawHex(markedHex, markedImage.artwork);
+				markedImage.show();
+				markedImage.zoomIn();
+				
+				EventBus.mapMarkerPlacedOnMap.dispatch(markedHex);
+				
+				highlightImage.popIn();
+			}
 		}
 	}
 	
@@ -164,6 +196,7 @@ class MapUI extends BaseUI
 		artwork.addChild(viewLayer);
 		viewLayer.addChild(hexLayer);
 		viewLayer.addChild(thingsLayer);
+		viewLayer.addChild(markedImage.artwork);
 		viewLayer.addChild(highlightImage.artwork);
 		artwork.addChild(backButton.artwork);
 		

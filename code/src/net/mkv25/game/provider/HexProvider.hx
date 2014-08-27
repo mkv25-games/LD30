@@ -9,11 +9,15 @@ class HexProvider
 
 	public static var EMPTY_HEX:BitmapData;
 	public static var HIGHLIGHTED_HEX:BitmapData;
+	public static var MARKED_HEX:BitmapData;
+	public static var BLOCKED_HEX:BitmapData;
 	
 	public static function setup():Void
 	{
 		EMPTY_HEX = getHex(1);
 		HIGHLIGHTED_HEX = getHex(2);
+		MARKED_HEX = getHex(9);
+		BLOCKED_HEX = getHex(10);
 	}
 	
 	private static function getHex(index:Int = 1):BitmapData {

@@ -16,6 +16,7 @@ class EventBus
 	// card actions
 	public static var cardSelectedFromHandByPlayer = new Signal();
 	public static var removeCardFromActivePlayersHand = new Signal();
+	public static var trashCardFromActivePlayersHand = new Signal();
 	public static var addNewCardToActivePlayersDiscardPile = new Signal();
 	public static var activePlayerResourcesChanged = new Signal();
 	public static var playerHasRanOutCards = new Signal();
@@ -23,6 +24,7 @@ class EventBus
 	// actions while figuring out what the player wants to do
 	public static var askPlayer_howTheyWantToPlayTheirActionCard = new Signal();
 	public static var askPlayer_whereTheyWantToDeployTheirUnitCard = new Signal();
+	public static var playerWantsTo_deployUnitAtSelectedLocationButton = new Signal();
 	public static var playerWantsTo_cancelTheCurrentAction = new Signal();
 	public static var playerWantsTo_discardTheCurrentCard = new Signal();
 	public static var playerWantsTo_moveAUnit = new Signal();
@@ -37,9 +39,8 @@ class EventBus
 	// map stuff
 	public static var mapRequiresRedraw = new Signal();
 	public static var mapViewChanged = new Signal();
-	public static var enableMapHexSelectionForDeployment = new Signal();
-	public static var disableMapHexSelectionForDeployment = new Signal();
-	
+	public static var mapMarkerPlacedOnMap = new Signal();
+	public static var mapMarkerRemovedFromMap = new Signal();
 	
 	public function new() 
 	{

@@ -17,7 +17,7 @@ class MapModel extends CoreModel implements IMapThing
 	{
 		super();
 		
-		hexes = MapModel.createCircle(5);
+		hexes = new StringMap<HexTile>();
 		
 		background = null;
 		mapIcon = null;
@@ -45,6 +45,14 @@ class MapModel extends CoreModel implements IMapThing
 		var key:String = q + "," + r;
 		
 		return hexes.get(key);
+	}
+	
+	public function indexTiles():Void
+	{
+		for (hex in hexes)
+		{
+			hex.map = this;
+		}
 	}
 	
 	public static function createCircle(radius:Int):StringMap<HexTile>

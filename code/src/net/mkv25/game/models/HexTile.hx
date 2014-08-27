@@ -11,8 +11,10 @@ class HexTile
 	   [-1, 0], [-1,  1], [0,  1]
 	];
 	
-	public var q:Float;
-	public var r:Float;
+	public var q:Int;
+	public var r:Int;
+	
+	public var map:MapModel;
 	
 	public var bitmap:Bitmap;
 	private var contents:Array<IMapThing>;

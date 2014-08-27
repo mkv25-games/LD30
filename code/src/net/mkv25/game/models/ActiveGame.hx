@@ -43,7 +43,9 @@ class ActiveGame extends CoreModel
 	function createMaps(numberOfPlayers:Int):Void
 	{
 		space = new MapModel();
+		space.hexes = MapModel.createCircle(5);
 		space.background = Assets.getBitmapData("img/starfield-small.png");
+		space.indexTiles();
 		
 		worlds = new Array<MapModel>();
 		
@@ -75,6 +77,7 @@ class ActiveGame extends CoreModel
 		var world:MapModel = new MapModel();
 		world.setup(Assets.getBitmapData(backgroundAsset), IconProvider.WORLD_ICONS[id]);
 		world.hexes = MapModel.createRectangle(13, 9);
+		world.indexTiles();
 		
 		var hex:HexTile = space.getHexTile(q, r);
 		hex.add(world);

@@ -38,6 +38,7 @@ class PlayerHandUI extends BaseUI
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(deselectTheActiveCard);
 		EventBus.addNewCardToActivePlayersDiscardPile.add(addNewCardToDiscardPile);
 		EventBus.removeCardFromActivePlayersHand.add(removeCardFromHand);
+		EventBus.trashCardFromActivePlayersHand.add(trashCardFromHand);
 	}
 	
 	override public function disable() 
@@ -133,6 +134,24 @@ class PlayerHandUI extends BaseUI
 	function removeCardFromHand(selectedCard:PlayableCard):Void
 	{
 		model.removeCardFromHand(selectedCard);
+		
+		for (card in cards)
+		{
+			if (card.isSelected()) {
+				card.disable();
+				card.popOut();
+			}
+		}
+		
+		if (model.numberOfCardsInHand() == 0)
+		{
+			EventBus.playerHasRanOutCards.dispatch(this);
+		}
+	}
+	
+	function trashCardFromHand(selectedCard:PlayableCard):Void
+	{
+		model.trashCardFromHand(selectedCard);
 		
 		for (card in cards)
 		{

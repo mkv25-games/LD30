@@ -60,6 +60,7 @@ class MainScreen extends Screen
 		adviceText = cast TextUI.makeFor("Welcome to the game", 0x000000).fontSize(28).size(Screen.WIDTH, 40).move(0, Screen.HEIGHT - 45);
 		
 		artwork.addChild(map.artwork);
+		artwork.addChild(deployment.artwork);
 		artwork.addChild(statusBar.artwork);
 		artwork.addChild(playerHand.artwork);
 		artwork.addChild(adviceText.artwork);

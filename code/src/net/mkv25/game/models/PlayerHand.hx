@@ -110,5 +110,10 @@ class PlayerHand extends CoreModel
 		hand.remove(card);
 		discards.push(card);
 	}
+	
+	public function trashCardFromHand(card:PlayableCard):Void
+	{
+		hand.remove(card);
+	}
 			
 }
