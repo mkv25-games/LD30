@@ -22,11 +22,13 @@ class CardActionController
 	
 	public function setup(screenController:ScreenController):Void
 	{
+		EventBus.cardSelectedFromHandByPlayer.add(checkTypeOfCardSelectedByPlayer);
 		EventBus.askPlayer_howTheyWantToPlayTheirActionCard.add(showOptionsForActionCard);
 		EventBus.askPlayer_whereTheyWantToDeployTheirUnitCard.add(showOptionsForUnitCard);
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(clearAnyActiveState);
 		EventBus.playerWantsTo_performASpecialAction.add(figureOutWhichActionIsOnTheCard);
 		EventBus.playerWantsTo_buyACard.add(processCardPurchase);
+		EventBus.playerWantsTo_discardTheCurrentCard.add(removeTheActiveCardFromThePlayersHand);
 
 		createMenus(screenController);
 		
@@ -36,6 +38,31 @@ class CardActionController
 			"connect bases": playerWantsToConnectBases,
 			"gather resources": playerWantsToGatherResources
 		}
+	}
+	
+	function checkTypeOfCardSelectedByPlayer(?model)
+	{
+		var card:PlayableCard;
+		if (Std.is(model, PlayableCard)) {
+			card = cast model;
+		}
+		else {
+			throw "Selected thing was not a playable card.";
+		}
+		
+		if (card.deployable)
+		{
+			EventBus.askPlayer_whereTheyWantToDeployTheirUnitCard.dispatch(card);
+			return;
+		}
+		
+		if (card.movement > 0)
+		{
+			EventBus.askPlayer_howTheyWantToPlayTheirActionCard.dispatch(card);
+			return;
+		}
+		
+		throw "Don't know what to do with card: (" + card.name + ")";
 	}
 	
 	function createMenus(screenController:ScreenController):Void
@@ -133,10 +160,14 @@ class CardActionController
 			
 			EventBus.activePlayerResourcesChanged.dispatch(activePlayer);
 			EventBus.addNewCardToActivePlayersDiscardPile.dispatch(card);
-			EventBus.removeCardFromActivePlayersHand.dispatch(card);
 			
 			discardActiveCard();
 		}
+	}
+	
+	function removeTheActiveCardFromThePlayersHand(?model):Void
+	{
+		discardActiveCard();
 	}
 	
 	function discardActiveCard():Void

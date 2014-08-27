@@ -8,9 +8,9 @@ class PlayerHand extends CoreModel
 {
 	public inline static var MAX_HAND_SIZE:Int = 5;
 	
-	public var hand:Array<PlayableCard>;
-	public var deck:Array<PlayableCard>;
-	public var discards:Array<PlayableCard>;
+	private var hand:Array<PlayableCard>;
+	private var deck:Array<PlayableCard>;
+	private var discards:Array<PlayableCard>;
 	
 	public function new() 
 	{
@@ -21,6 +21,26 @@ class PlayerHand extends CoreModel
 		discards = new Array<PlayableCard>();
 		
 		populateStartingDeck();
+	}
+	
+	public function getHand():Array<PlayableCard>
+	{
+		return hand;
+	}
+	
+	public function getDeck():Array<PlayableCard>
+	{
+		return deck;
+	}
+	
+	public function getDiscards():Array<PlayableCard>
+	{
+		return discards;
+	}
+	
+	public function numberOfCardsInHand():Int
+	{
+		return hand.length;
 	}
 	
 	public function populateStartingDeck():PlayerHand
@@ -79,4 +99,16 @@ class PlayerHand extends CoreModel
 			deck.insert(index, card);
 		}
 	}
+	
+	public function addCardToDiscards(card:PlayableCard):Void
+	{
+		discards.push(card);
+	}
+	
+	public function removeCardFromHand(card:PlayableCard):Void
+	{
+		hand.remove(card);
+		discards.push(card);
+	}
+			
 }

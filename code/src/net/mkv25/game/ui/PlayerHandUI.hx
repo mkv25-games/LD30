@@ -1,11 +1,13 @@
 package net.mkv25.game.ui;
 
 import flash.display.Sprite;
+import motion.Actuate;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.models.PlayerHand;
+import net.mkv25.game.provider.CardPictureProvider;
 
 class PlayerHandUI extends BaseUI
 {
@@ -38,22 +40,38 @@ class PlayerHandUI extends BaseUI
 		EventBus.removeCardFromActivePlayersHand.add(removeCardFromHand);
 	}
 	
+	override public function disable() 
+	{
+		super.disable();
+		
+		artwork.alpha = 1.0;
+	}
+	
 	public function display(playersHand:PlayerHand):PlayerHandUI
 	{
 		this.model = playersHand;
 		
+		// while animating
+		disable();
+		
 		// populate cards with data
+		var cardsInHand = playersHand.getHand();
 		for (i in 0...cards.length)
 		{
 			var cardHolder = cards[i];
-			if (i < playersHand.hand.length)
+			if (i < playersHand.numberOfCardsInHand())
 			{
-				var card = playersHand.hand[i];
+				var card = cardsInHand[i];
 				cardHolder.setupCard(card);
 				cardHolder.enable();
+				cardHolder.scale = 1.0;
 				
 				var overlap = 50;
-				cardHolder.move((cardHolder.artwork.width / 2) + (i * (cardHolder.artwork.width - overlap)), cardHolder.artwork.height / 2);
+				cardHolder.artwork.x = (CardPictureProvider.PICTURE_WIDTH / 2) + (i * (CardPictureProvider.PICTURE_WIDTH - overlap));
+				cardHolder.artwork.y = CardPictureProvider.PICTURE_HEIGHT / 2;
+				
+				cardHolder.hide();
+				Actuate.timer(0.5 + i * 0.15).onComplete(cardHolder.zoomIn);
 			}
 			else
 			{
@@ -68,6 +86,10 @@ class PlayerHandUI extends BaseUI
 			artwork.addChild(card.artwork);
 			card.deselect();
 		}
+		
+		// renable after a delay for animations
+		var totalAnimationTime = 0.5 + (cards.length * 0.15) + 1.0;
+		Actuate.timer(totalAnimationTime).onComplete(enable);
 		
 		return this;
 	}
@@ -105,14 +127,13 @@ class PlayerHandUI extends BaseUI
 	
 	function addNewCardToDiscardPile(card:PlayableCard):Void
 	{
-		model.discards.push(card);
+		model.addCardToDiscards(card);
 	}
 	
 	function removeCardFromHand(selectedCard:PlayableCard):Void
 	{
-		model.hand.remove(selectedCard);
-		model.discards.push(selectedCard);
-			
+		model.removeCardFromHand(selectedCard);
+		
 		for (card in cards)
 		{
 			if (card.isSelected()) {
@@ -121,7 +142,7 @@ class PlayerHandUI extends BaseUI
 			}
 		}
 		
-		if (model.hand.length == 0)
+		if (model.numberOfCardsInHand() == 0)
 		{
 			EventBus.playerHasRanOutCards.dispatch(this);
 		}

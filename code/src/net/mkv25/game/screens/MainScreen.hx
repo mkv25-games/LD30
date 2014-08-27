@@ -64,12 +64,12 @@ class MainScreen extends Screen
 		artwork.addChild(playerHand.artwork);
 		artwork.addChild(adviceText.artwork);
 		
-		EventBus.activePlayerChanged.add(handleActivePlayerChange);
+		EventBus.activePlayerChanged.add(onActivePlayerChange);
 		EventBus.displayNewStatusMessage.add(handleDisplayNewStatus);
 		EventBus.mapViewChanged.add(onMapViewChanged);
 	}
 	
-	function handleActivePlayerChange(activePlayer:PlayerModel)
+	function onActivePlayerChange(activePlayer:PlayerModel)
 	{
 		setBackgroundToMatchPlayer(Index.activeGame.activePlayer);
 		playerHand.display(Index.activeGame.activePlayer.playerHand);

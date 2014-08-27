@@ -24,6 +24,7 @@ class EventBus
 	public static var askPlayer_howTheyWantToPlayTheirActionCard = new Signal();
 	public static var askPlayer_whereTheyWantToDeployTheirUnitCard = new Signal();
 	public static var playerWantsTo_cancelTheCurrentAction = new Signal();
+	public static var playerWantsTo_discardTheCurrentCard = new Signal();
 	public static var playerWantsTo_moveAUnit = new Signal();
 	public static var playerWantsTo_performASpecialAction = new Signal();
 	public static var playerWantsTo_deployAUnitOnPlanet = new Signal();

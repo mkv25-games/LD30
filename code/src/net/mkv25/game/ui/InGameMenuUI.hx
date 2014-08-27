@@ -19,6 +19,7 @@ class InGameMenuUI extends BaseUI
 	var option1:ButtonUI;
 	var option2:ButtonUI;
 	var cancelButton:IconButtonUI;
+	var discardButton:IconButtonUI;
 	
 	var option1action:Dynamic->Void;
 	var option1model:Dynamic;
@@ -52,11 +53,16 @@ class InGameMenuUI extends BaseUI
 		
 		cancelButton = new IconButtonUI();
 		cancelButton.setup("img/icon-back.png", cancelAction);
-		cancelButton.move(hs, hs + 150);
+		cancelButton.move(hs - 50, hs + 150);
+		
+		discardButton = new IconButtonUI();
+		discardButton.setup("img/icon-discard.png", discardAction);
+		discardButton.move(hs + 50, hs + 150);
 		
 		artwork.addChild(option1.artwork);
 		artwork.addChild(option2.artwork);
 		artwork.addChild(cancelButton.artwork);
+		artwork.addChild(discardButton.artwork);
 		artwork.addChild(cardNameText.artwork);
 	}
 	
@@ -128,6 +134,12 @@ class InGameMenuUI extends BaseUI
 	function cancelAction(?model):Void
 	{
 		EventBus.playerWantsTo_cancelTheCurrentAction.dispatch(this);
+		hide();
+	}
+	
+	function discardAction(?model):Void
+	{
+		EventBus.playerWantsTo_discardTheCurrentCard.dispatch(this);
 		hide();
 	}
 }

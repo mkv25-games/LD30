@@ -18,6 +18,12 @@ class BitmapUI extends BaseUI
 	
 	public function setup(path:String):BitmapUI
 	{
+		if (path == null)
+		{
+			bitmap.bitmapData = null;
+			return this;
+		}
+		
 		bitmap.bitmapData = Assets.getBitmapData(path);
 		
 		center(bitmap);

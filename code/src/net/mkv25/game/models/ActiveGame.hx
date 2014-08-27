@@ -91,7 +91,7 @@ class ActiveGame extends CoreModel
 		}
 	}
 	
-	public function selectNextPlayer():PlayerModel
+	public function startNextPlayersTurn():PlayerModel
 	{
 		if (players.length == 0) {
 			throw "No players to select from.";
@@ -106,6 +106,9 @@ class ActiveGame extends CoreModel
 			var index = (activePlayer.playerNumberZeroBased + 1) % players.length;
 			activePlayer = players[index];
 		}
+		
+		// draw a new hand for the player
+		activePlayer.playerHand.drawHand();
 			
 		EventBus.activePlayerChanged.dispatch(activePlayer);
 			

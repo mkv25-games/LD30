@@ -35,7 +35,7 @@ class StatusBarUI extends BaseUI
 	{
 		IconProvider.setup();
 		
-		playerNameText = cast TextUI.makeFor("Player 1's Turn", 0x000000).fontSize(28).align(TextFormatAlign.LEFT).size(300, 40).move(10, 5);
+		playerNameText = cast TextUI.makeFor("Setup phase", 0x000000).fontSize(28).align(TextFormatAlign.LEFT).size(300, 40).move(10, 5);
 		
 		var rhs = Screen.WIDTH - 40;
 		var spacing = 70;
@@ -58,6 +58,8 @@ class StatusBarUI extends BaseUI
 	
 	function onActivePlayerChanged(player:PlayerModel):Void
 	{
+		playerNameText.setText("Player " + (player.playerNumberZeroBased + 1) + "'s Turn");
+		
 		counterResourcesText.setText(Std.string(player.resources));
 		counterTerritoryText.setText(Std.string(player.territory));
 		counterUnitsText.setText(Std.string(player.unitCount));
