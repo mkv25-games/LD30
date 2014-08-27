@@ -1,5 +1,5 @@
-LD30
-====
+LD30 - Connect the worlds, rule the universe
+============================================
 
 My entry for Ludum Dare 30.
 
