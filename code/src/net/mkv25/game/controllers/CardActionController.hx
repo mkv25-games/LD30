@@ -26,6 +26,7 @@ class CardActionController
 		EventBus.askPlayer_whereTheyWantToDeployTheirUnitCard.add(showOptionsForUnitCard);
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(clearAnyActiveState);
 		EventBus.playerWantsTo_performASpecialAction.add(figureOutWhichActionIsOnTheCard);
+		EventBus.playerWantsTo_buyACard.add(processCardPurchase);
 
 		createMenus(screenController);
 		
@@ -106,7 +107,9 @@ class CardActionController
 	
 	function playerWantsToConnectBases(card:PlayableCard):Void
 	{
-		
+		// TODO: Count the number of bases
+		// Warn if there are too few bases to connect
+		// Ask player to select two bases
 	}
 	
 	function playerWantsToGatherResources(card:PlayableCard):Void
@@ -117,7 +120,35 @@ class CardActionController
 			activePlayer.resources += resources;
 			
 			EventBus.activePlayerResourcesChanged.dispatch(activePlayer);
+			
+			discardActiveCard();
+		}
+	}
+	
+	function processCardPurchase(card:PlayableCard):Void
+	{
+		var activePlayer = Index.activeGame.activePlayer;
+		if (activePlayer.resources >= card.cost) {
+			activePlayer.resources = activePlayer.resources - card.cost;
+			
+			EventBus.activePlayerResourcesChanged.dispatch(activePlayer);
+			EventBus.addNewCardToActivePlayersDiscardPile.dispatch(card);
 			EventBus.removeCardFromActivePlayersHand.dispatch(card);
+			
+			discardActiveCard();
+		}
+	}
+	
+	function discardActiveCard():Void
+	{
+		if (activeCard != null)
+		{
+			EventBus.removeCardFromActivePlayersHand.dispatch(activeCard);
+			activeCard = null;
+		}
+		else
+		{
+			throw "No active card set to discard.";
 		}
 	}
 	

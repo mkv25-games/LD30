@@ -34,6 +34,7 @@ class PlayerHandUI extends BaseUI
 		}
 		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(deselectTheActiveCard);
+		EventBus.addNewCardToActivePlayersDiscardPile.add(addNewCardToDiscardPile);
 		EventBus.removeCardFromActivePlayersHand.add(removeCardFromHand);
 	}
 	
@@ -100,6 +101,11 @@ class PlayerHandUI extends BaseUI
 			artwork.addChild(card.artwork);
 			card.deselect();
 		}
+	}
+	
+	function addNewCardToDiscardPile(card:PlayableCard):Void
+	{
+		model.discards.push(card);
 	}
 	
 	function removeCardFromHand(selectedCard:PlayableCard):Void

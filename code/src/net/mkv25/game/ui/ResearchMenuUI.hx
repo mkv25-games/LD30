@@ -158,5 +158,6 @@ class ResearchMenuUI extends BaseUI
 	function onCardSelectedForPurchase(card:CardHolderUI)
 	{
 		EventBus.playerWantsTo_buyACard.dispatch(card.assignedCard);
+		hide();
 	}
 }

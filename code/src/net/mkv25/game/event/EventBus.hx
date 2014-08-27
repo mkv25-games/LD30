@@ -16,6 +16,7 @@ class EventBus
 	// card actions
 	public static var cardSelectedFromHandByPlayer = new Signal();
 	public static var removeCardFromActivePlayersHand = new Signal();
+	public static var addNewCardToActivePlayersDiscardPile = new Signal();
 	public static var activePlayerResourcesChanged = new Signal();
 	public static var playerHasRanOutCards = new Signal();
 	
