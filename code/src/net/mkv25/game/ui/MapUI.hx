@@ -213,9 +213,10 @@ class MapUI extends BaseUI
 
 		if (container == null) {
 			var bitmap:Bitmap = (unusedThings.length > 0) ? unusedThings.pop() : new Bitmap();
-			bitmap.bitmapData = hexImage;
-			hexLayer.addChild(bitmap);
 			bitmapsInUse.push(bitmap);
+			hexLayer.addChild(bitmap);
+			
+			bitmap.bitmapData = (hex.territoryOwner == null) ? hexImage : HexProvider.PLAYER_TERRITORY_HEXES[hex.territoryOwner.playerNumberZeroBased];
 			
 			bitmap.x = x - (bitmap.width / 2);
 			bitmap.y = y - (bitmap.height / 2);

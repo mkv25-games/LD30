@@ -1,5 +1,6 @@
 package net.mkv25.game.models;
 import flash.display.Bitmap;
+import net.mkv25.game.event.EventBus;
 
 class HexTile
 {
@@ -15,6 +16,7 @@ class HexTile
 	public var r:Int;
 	
 	public var map:MapModel;
+	public var territoryOwner:PlayerModel;
 	
 	public var bitmap:Bitmap;
 	private var contents:Array<IMapThing>;
@@ -46,6 +48,8 @@ class HexTile
 		checkContents();
 		
 		contents.push(thing);
+		
+		updateTerritory(thing);
 	}
 	
 	public function remove(thing:IMapThing):Void
@@ -71,6 +75,46 @@ class HexTile
 		if (contents == null) {
 			this.contents = new Array<IMapThing>();
 		}
+	}
+	
+	function updateTerritory(thing:IMapThing):Void
+	{
+		// check for base, set territory
+		if (Std.is(thing, MapUnit))
+		{
+			var unit:MapUnit = cast thing;
+			if (unit.type.base) {
+				this.territoryOwner = unit.owner;
+				
+				// set territory for neighbouring hexes
+				var neighbours = getNeighbours();
+				for (hex in neighbours)
+				{
+					hex.territoryOwner = unit.owner;
+				}
+			}
+		}
+		else
+		{
+			this.territoryOwner = null;
+		}
+	}
+	
+	public function getNeighbours():Array<HexTile>
+	{
+		var neighbours = new Array<HexTile>();
+		
+		if (map != null) {
+			for (coord in HexTile.NEIGHBOURS)
+			{
+				var hex = map.getHexTile(q + coord[0], r + coord[1]);
+				if (hex != null) {
+					neighbours.push(hex);
+				}
+			}
+		}
+		
+		return neighbours;
 	}
 	
 	public static function xy2qr(x:Float, y:Float):Array<Int>

@@ -3,6 +3,7 @@ package net.mkv25.game.models;
 import net.mkv25.base.core.CoreModel;
 import net.mkv25.game.enums.PlayableCardType;
 import net.mkv25.game.event.EventBus;
+import net.mkv25.game.provider.HexProvider;
 import net.mkv25.game.provider.IconProvider;
 import net.mkv25.game.provider.UnitProvider;
 import net.mkv25.game.resources.UnitCards;
