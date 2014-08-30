@@ -42,6 +42,8 @@ Free Version Release Work
 + Certificate and signing for Android build
 + Fix bugs unique to mobile
 + IOS build
++ Google play store submission
++ IOS Store submission
 
 Commercial Version Release Work
 -------------------------
@@ -61,4 +63,5 @@ Wish list
 + Asynchronous multiplayer, players have a time limit to make their move, play continues if players miss a turn
 + Single player story campaign
 + Additional cards, variety of game modes
++ Facebook version with ingame purchases to unlock features
 
