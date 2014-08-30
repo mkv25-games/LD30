@@ -39,13 +39,47 @@ class MoveUnitController
 		this.activeMovementCard = card;
 		
 		enableMovement();
+		
 		EventBus.displayNewStatusMessage.dispatch("Choose a unit or base to move.");
 	}
 	
 	function suggestMovementOptionsFromSelectedLocation(?model):Void
 	{
-		// TODO:
 		// highlight valid, adjacent movement tiles
+		if (markedHex == null)
+		{
+			return;
+		}
+		
+		var location:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
+		var unit:MapUnit = selectUnitForPlayerFrom(location, Index.activeGame.activePlayer);
+		if (unit != null) 
+		{
+			map.enableMovementOverlayFrom(markedHex);
+			EventBus.displayNewStatusMessage.dispatch("Select a tile to move to.");
+		}
+		else
+		{
+			throw "Selected location does not contain a valid unit for the active player.";
+		}
+	}
+	
+	function selectUnitForPlayerFrom(hex:HexTile, player:PlayerModel):Null<MapUnit>
+	{
+		var contents = hex.listContents();
+		for (thing in contents)
+		{
+			if (Std.is(thing, MapUnit))
+			{
+				var unit:MapUnit = cast thing;
+				if (unit.owner == player)
+				{
+					return unit;
+				}
+			}
+		}
+		
+		return null;
 	}
 	
 	function cancelMovement(?model)
@@ -66,6 +100,8 @@ class MoveUnitController
 	{
 		movement.disable();
 		movement.hide();
+		
+		map.disableMovementOverlay();
 	}
 	
 	function updateMovementAvailability(marker:HexTile):Void

@@ -11,6 +11,7 @@ class HexProvider
 	public static var HIGHLIGHTED_HEX:BitmapData;
 	public static var MARKED_HEX:BitmapData;
 	public static var CONTESTED_HEX:BitmapData;
+	public static var MOVEMENT_HEX:BitmapData;
 	
 	public static var PLAYER_TERRITORY_HEXES:Array<BitmapData>;
 	
@@ -20,6 +21,7 @@ class HexProvider
 		HIGHLIGHTED_HEX = getHex(2);
 		MARKED_HEX = getHex(9);
 		CONTESTED_HEX = getHex(10);
+		MOVEMENT_HEX = getHex(11);
 		
 		var territory = new Array<BitmapData>();
 		for(i in 0...6) {

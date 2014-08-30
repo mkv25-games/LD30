@@ -12,6 +12,7 @@ class MapModel extends CoreModel implements IMapThing
 	public var background:BitmapData;
 	public var mapIcon:BitmapData;
 	public var mapDepth:Int;
+	public var spaceHex:HexTile;
 	
 	public function new() 
 	{

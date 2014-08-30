@@ -82,6 +82,7 @@ class ActiveGame extends CoreModel
 		
 		var hex:HexTile = space.getHexTile(q, r);
 		hex.add(world);
+		world.spaceHex = hex;
 		
 		worlds.push(world);
 	}

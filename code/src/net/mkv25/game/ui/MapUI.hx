@@ -14,7 +14,9 @@ import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.base.ui.IconButtonUI;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.HexTile;
+import net.mkv25.game.models.IMapThing;
 import net.mkv25.game.models.MapModel;
+import net.mkv25.game.models.MapUnit;
 import net.mkv25.game.provider.HexProvider;
 import openfl.Assets;
 
@@ -26,7 +28,6 @@ class MapUI extends BaseUI
 	public var currentModel:MapModel;
 	
 	var hexImage:BitmapData;
-	var hexes:Array<Bitmap>;
 	
 	var highlightedHex:HexTile;
 	var highlightImage:BitmapUI;
@@ -34,11 +35,14 @@ class MapUI extends BaseUI
 	var markedHex:HexTile;
 	var markedImage:BitmapUI;
 	
+	var movementFocusHex:HexTile;
+	
 	var mapImage:Bitmap;
 	var viewLayer:Sprite;
 	var hexLayer:Sprite;
+	var movementLayer:Sprite;
 	var thingsLayer:Sprite;
-	var backButton:IconButtonUI;
+	var spaceViewButton:IconButtonUI;
 	
 	var bitmapsInUse:Array<Bitmap>;
 	var unusedThings:Array<Bitmap>;
@@ -50,7 +54,6 @@ class MapUI extends BaseUI
 		
 		HexProvider.setup();
 		hexImage = HexProvider.EMPTY_HEX;
-		hexes = new Array<Bitmap>();
 		
 		highlightedHex = new HexTile();
 		highlightImage = new BitmapUI();
@@ -60,14 +63,17 @@ class MapUI extends BaseUI
 		markedImage = new BitmapUI();
 		markedImage.artwork.mouseEnabled = markedImage.artwork.mouseChildren = false;
 		
+		movementFocusHex = new HexTile();
+		
 		mapImage = new Bitmap();
 		viewLayer = new Sprite();
 		hexLayer = new Sprite();
+		movementLayer = new Sprite();
 		thingsLayer = new Sprite();
 		
-		backButton = new IconButtonUI();
-		backButton.setup("img/icon-back.png", returnToSpaceMap);
-		backButton.move(40, 40);
+		spaceViewButton = new IconButtonUI();
+		spaceViewButton.setup("img/icon-back.png", switchToSpaceMap);
+		spaceViewButton.move(40, 40);
 		
 		bitmapsInUse = new Array<Bitmap>();
 		unusedThings = new Array<Bitmap>();
@@ -90,10 +96,13 @@ class MapUI extends BaseUI
 		markedHex.r = -9001;
 		markedHex.map = null;
 		markedImage.hide();
+		
 		EventBus.mapMarkerRemovedFromMap.dispatch(markedHex);
 		
 		redraw();
 	}
+	
+	/// Internal Draw Methods ///
 	
 	function handleMapRequiresRedraw(?model):Void
 	{
@@ -170,53 +179,89 @@ class MapUI extends BaseUI
 		var graphics:Graphics = artwork.graphics;
 		graphics.clear();
 		
+		// recycle all bitmaps in use
 		while (bitmapsInUse.length > 0) {
 			var thing = bitmapsInUse.pop();
 			recycler.addChild(thing);
 			unusedThings.push(thing);
 		}
 		
-		while (hexes.length > 0) {
-			var bmp = hexes.pop();
-			if (bmp.parent == artwork) {
-				artwork.removeChild(bmp);
-			}
-		}
-		
+		// draw all hexes currently in view
 		var hexes = currentModel.hexes;
 		for (hex in hexes) {
 			drawHex(hex);
 			drawThingsInHex(hex);
 		}
 		
+		// check if movement options should be rendered
+		if (movementFocusHex != null)
+		{
+			highlightValidMovementFrom(movementFocusHex);
+		}
+		
+		// position view layer
 		viewLayer.x = MAP_WIDTH / 2;
 		viewLayer.y = MAP_HEIGHT / 2;
 		
+		// reset the order of the layers
 		artwork.addChild(mapImage);
 		artwork.addChild(viewLayer);
 		viewLayer.addChild(hexLayer);
+		viewLayer.addChild(movementLayer);
 		viewLayer.addChild(thingsLayer);
 		viewLayer.addChild(markedImage.artwork);
 		viewLayer.addChild(highlightImage.artwork);
-		artwork.addChild(backButton.artwork);
+		artwork.addChild(spaceViewButton.artwork);
 		
 		updateButtons();
+		
 		EventBus.mapViewChanged.dispatch(this);
 	}
 	
-	inline function drawHex(hex:HexTile, ?container:DisplayObject):Void
+	function highlightValidMovementFrom(location:HexTile)
+	{
+		if (location.map == null)
+		{
+			return;
+		}
+		
+		if (location.map == currentModel)
+		{
+			// Highlight tiles from the perspective of neighbouring tiles on the same map
+			var hexes:Array<HexTile> = location.getNeighbours();
+			for (hex in hexes)
+			{
+				drawHex(hex, null, movementLayer, HexProvider.MOVEMENT_HEX);
+			}
+		}
+		else if(location.map.spaceHex != null && currentModel == Index.activeGame.space)
+		{
+			// Highlight tiles from the perspective of a world accessing space
+			drawHex(location.map.spaceHex, null, movementLayer, HexProvider.MOVEMENT_HEX);
+		}
+			
+		movementLayer.visible = true;
+	}
+	
+	/// Inline Helper Methods ///
+	
+	inline function drawHex(hex:HexTile, ?container:DisplayObject, ?layer:Sprite, ?image:BitmapData):Void
 	{
 		var hex_x = hex.x();
 		var hex_y = hex.y();
 		var x = (hexImage.width * hex_x);
 		var y = (hexImage.height * hex_y);
 
-		if (container == null) {
+		if (container == null)
+		{
+			layer = (layer == null) ? hexLayer : layer;
+			image = (image == null) ? getBitmapDataForHex(hex) : image;
+			
 			var bitmap:Bitmap = (unusedThings.length > 0) ? unusedThings.pop() : new Bitmap();
 			bitmapsInUse.push(bitmap);
-			hexLayer.addChild(bitmap);
+			layer.addChild(bitmap);
 			
-			bitmap.bitmapData = getBitmapDataForHex(hex);
+			bitmap.bitmapData = image;
 			
 			bitmap.x = x - (bitmap.width / 2);
 			bitmap.y = y - (bitmap.height / 2);
@@ -265,6 +310,25 @@ class MapUI extends BaseUI
 		}
 	}
 	
+	/// Public methods ///
+	
+	public function enableMovementOverlayFrom(location:HexTile):Void
+	{
+		// copy location details
+		this.movementFocusHex.q = location.q;
+		this.movementFocusHex.r = location.r;
+		this.movementFocusHex.map = location.map;
+		
+		highlightValidMovementFrom(location);
+	}
+	
+	public function disableMovementOverlay():Void
+	{
+		this.movementFocusHex = null;		
+		
+		movementLayer.visible = false;
+	}
+	
 	function safeAddAt(container:DisplayObjectContainer, item:DisplayObject, depth:Int):Void
 	{
 		var depth:Int = cast Math.min(depth, container.numChildren);
@@ -275,15 +339,15 @@ class MapUI extends BaseUI
 	{
 		if (currentModel != Index.activeGame.space)
 		{
-			backButton.show();
+			spaceViewButton.show();
 		}
 		else
 		{
-			backButton.hide();
+			spaceViewButton.hide();
 		}
 	}
 	
-	function returnToSpaceMap(?model)
+	function switchToSpaceMap(?model)
 	{
 		var bloopSfx = Assets.getSound("sounds/bloop.wav");
 		bloopSfx.play();
