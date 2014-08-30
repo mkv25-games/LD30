@@ -79,6 +79,7 @@ class MapUI extends BaseUI
 		unusedThings = new Array<Bitmap>();
 		recycler = new Sprite();
 		
+		EventBus.playerWantsTo_cancelTheCurrentAction.add(removeMapMarker);
 		EventBus.mapRequiresRedraw.add(handleMapRequiresRedraw);
 	}
 	
@@ -91,6 +92,11 @@ class MapUI extends BaseUI
 		viewLayer.addEventListener(MouseEvent.MOUSE_MOVE, highlightHexTile, false, 0, true);
 		viewLayer.addEventListener(MouseEvent.MOUSE_DOWN, markSelectedHex, false, 0, true);
 		
+		redraw();
+	}
+	
+	function removeMapMarker(?model):Void
+	{
 		// reset marked hex
 		markedHex.q = -9001;
 		markedHex.r = -9001;
@@ -98,8 +104,6 @@ class MapUI extends BaseUI
 		markedImage.hide();
 		
 		EventBus.mapMarkerRemovedFromMap.dispatch(markedHex);
-		
-		redraw();
 	}
 	
 	/// Internal Draw Methods ///
@@ -315,11 +319,12 @@ class MapUI extends BaseUI
 	public function enableMovementOverlayFrom(location:HexTile):Void
 	{
 		// copy location details
+		this.movementFocusHex = new HexTile();
 		this.movementFocusHex.q = location.q;
 		this.movementFocusHex.r = location.r;
 		this.movementFocusHex.map = location.map;
 		
-		highlightValidMovementFrom(location);
+		highlightValidMovementFrom(movementFocusHex);
 	}
 	
 	public function disableMovementOverlay():Void

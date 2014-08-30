@@ -16,7 +16,8 @@ class MoveUnitController
 	private var movement:MovementUI;
 	
 	private var activeMovementCard:PlayableCard;
-	private var markedHex:HexTile;
+	private var markedLocation:HexTile;
+	private var selectedLocation:HexTile;
 	
 	public function new()
 	{
@@ -25,7 +26,7 @@ class MoveUnitController
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelMovement);
 		
 		EventBus.mapMarkerPlacedOnMap.add(updateMovementAvailability);
-		EventBus.mapMarkerRemovedFromMap.add(disableMovementButton);
+		// EventBus.mapMarkerRemovedFromMap.add(disableMovementButton);
 	}
 	
 	public function setup(map:MapUI, movement:MovementUI):Void
@@ -40,22 +41,25 @@ class MoveUnitController
 		
 		enableMovement();
 		
+		updateMovementAvailability(markedLocation);
+		
 		EventBus.displayNewStatusMessage.dispatch("Choose a unit or base to move.");
 	}
 	
 	function suggestMovementOptionsFromSelectedLocation(?model):Void
 	{
 		// highlight valid, adjacent movement tiles
-		if (markedHex == null)
+		if (markedLocation == null)
 		{
 			return;
 		}
 		
-		var location:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
-		var unit:MapUnit = selectUnitForPlayerFrom(location, Index.activeGame.activePlayer);
+		selectedLocation = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
+		var unit:MapUnit = selectUnitForPlayerFrom(selectedLocation, Index.activeGame.activePlayer);
 		if (unit != null) 
 		{
-			map.enableMovementOverlayFrom(markedHex);
+			map.enableMovementOverlayFrom(markedLocation);
+			movement.confirmButton.enable();
 			EventBus.displayNewStatusMessage.dispatch("Select a tile to move to.");
 		}
 		else
@@ -85,7 +89,7 @@ class MoveUnitController
 	function cancelMovement(?model)
 	{
 		this.activeMovementCard = null;
-		this.markedHex = null;
+		this.markedLocation = null;
 		
 		disableMovement();
 	}
@@ -106,16 +110,18 @@ class MoveUnitController
 	
 	function updateMovementAvailability(marker:HexTile):Void
 	{
-		this.markedHex = marker;
+		this.markedLocation = marker;
 		if (activeMovementCard == null)
 		{
+			movement.moveButton.disable();
+			movement.confirmButton.disable();
 			return;
 		}
 		
 		// check that a player owned base exists in a neighbouring tile
-		if (markedHex != null)
+		if (markedLocation != null)
 		{
-			var location:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
+			var location:HexTile = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
 			if (location.containsUnit(Index.activeGame.activePlayer))
 			{
 				// Rule: players can only move their own units
@@ -123,13 +129,6 @@ class MoveUnitController
 				return;
 			}
 		}
-		
-		movement.moveButton.disable();
-	}
-	
-	function disableMovementButton(?marker:HexTile):Void
-	{
-		this.markedHex = null;
 		
 		movement.moveButton.disable();
 	}
