@@ -324,7 +324,7 @@ class MapUI extends BaseUI
 		this.movementFocusHex.r = location.r;
 		this.movementFocusHex.map = location.map;
 		
-		highlightValidMovementFrom(movementFocusHex);
+		redraw();
 	}
 	
 	public function disableMovementOverlay():Void
