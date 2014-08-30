@@ -1,5 +1,6 @@
 package net.mkv25.game.controllers;
 
+import net.mkv25.game.enums.PlayableCardType;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.HexTile;
 import net.mkv25.game.models.MapUnit;
@@ -54,21 +55,28 @@ class DeployUnitController
 	
 	function attemptToPlaceUnitAtSelectedLocation(?model):Void
 	{
-		// TODO:
-		// validate active card is a unit
-		// validate location for placement
-		// place unit
-		// move card to discard pile
-		// disable deployment
-		// status update
+		// Checklist:
+		// + validate active card is a unit
+		// + validate location for placement
+		// + place unit
+		// + status update
+		// + move card to discard pile
+		// + disable deployment
+		
+		if (activeUnitCard == null || activeUnitCard.deployable == false)
+		{
+			return;
+		}
 		
 		var player:PlayerModel = Index.activeGame.activePlayer;
 		
-		if (markedHex != null)
+		if (checkIfPlayerCanDeployUnitToLocation(player, activeUnitCard, markedHex))
 		{
 			var location:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
 			var unit:MapUnit = UnitProvider.getUnit(player, activeUnitCard);
 			location.add(unit);
+			
+			EventBus.displayNewStatusMessage.dispatch(unit.type.name + " deployed");
 			
 			EventBus.mapRequiresRedraw.dispatch(this);
 			
@@ -105,33 +113,50 @@ class DeployUnitController
 	function updateDeploymentAvailability(marker:HexTile):Void
 	{
 		this.markedHex = marker;
-		if (activeUnitCard == null)
+		
+		if (checkIfPlayerCanDeployUnitToLocation(Index.activeGame.activePlayer, activeUnitCard, markedHex))
 		{
-			return;
+			deployment.deployButton.enable();
+		}
+		else
+		{
+			deployment.deployButton.disable();
+		}
+	}
+	
+	function checkIfPlayerCanDeployUnitToLocation(player:PlayerModel, unitType:PlayableCard, location:HexTile):Bool
+	{
+		if (player == null || unitType == null || location == null)
+		{
+			return false;
 		}
 		
-		// inspect marked location
-		var location:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
-		if (activeUnitCard.base && location.containsBase())
+		location = location.map.getHexTile(location.q, location.r);
+		
+		if (location.containsBase() && unitType.base)
 		{
 			// Rule: bases cannot exist in the same hex
-			deployment.deployButton.disable();
-			return;
+			return false;
+		}
+		
+		if(location.containsBase(player) && !unitType.base)
+		{
+			// Rule: non-base units can be deployed in same hex as a base
+			return true;
 		}
 		
 		// check that a player owned base exists in a neighbouring tile
 		var neighbours = location.getNeighbours();
 		for (hex in neighbours)
 		{
-			if (hex.containsBase(Index.activeGame.activePlayer))
+			if (hex.containsBase(player))
 			{
 				// Rule: units can only be deployed in player owned territory
-				deployment.deployButton.enable();
-				return;
+				return true;
 			}
 		}
 		
-		deployment.deployButton.disable();
+		return false;
 	}
 	
 	function disableDeploymentButton(?marker:HexTile):Void
