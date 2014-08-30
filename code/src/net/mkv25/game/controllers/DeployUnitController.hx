@@ -1,4 +1,5 @@
 package net.mkv25.game.controllers;
+
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.HexTile;
 import net.mkv25.game.models.MapUnit;
@@ -20,7 +21,7 @@ class DeployUnitController
 	{
 		EventBus.playerWantsTo_deployAUnitOnPlanet.add(suggestUnitPlanetDeploymentOptionsToPlayer);
 		EventBus.playerWantsTo_deployAUnitInSpace.add(suggestUnitSpaceDeploymentOptionsToPlayer);
-		EventBus.playerWantsTo_deployUnitAtSelectedLocationButton.add(attemptToPlaceUnitAtSelectedLocation);
+		EventBus.playerWantsTo_deployUnitAtSelectedLocation.add(attemptToPlaceUnitAtSelectedLocation);
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelDeployment);
 		
 		EventBus.mapMarkerPlacedOnMap.add(updateDeploymentAvailability);
@@ -131,7 +132,7 @@ class DeployUnitController
 		deployment.deployButton.disable();
 	}
 	
-	function disableDeploymentButton(marker:HexTile):Void
+	function disableDeploymentButton(?marker:HexTile):Void
 	{
 		this.markedHex = null;
 		

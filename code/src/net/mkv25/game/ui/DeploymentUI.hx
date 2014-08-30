@@ -33,7 +33,7 @@ class DeploymentUI extends BaseUI
 	
 	function deployButtonSelected(?model) 
 	{
-		EventBus.playerWantsTo_deployUnitAtSelectedLocationButton.dispatch(this);
+		EventBus.playerWantsTo_deployUnitAtSelectedLocation.dispatch(this);
 	}
 	
 	function cancelButtonSelected(?model) 

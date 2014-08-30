@@ -123,6 +123,26 @@ class HexTile
 		return false;
 	}
 	
+	public function containsUnit(?player:PlayerModel):Bool
+	{
+		for (thing in contents)
+		{
+			if (Std.is(thing, MapUnit))
+			{
+				var unit:MapUnit = cast thing;
+				if (player == null)
+				{
+					// hex contains any base for any player
+					return true;
+				}
+				
+				// hex contains a base for a specific player
+				return (unit.owner == player);
+			}
+		}
+		return false;
+	}
+	
 	public function claim(player:PlayerModel):Void
 	{
 		if (this.contested)

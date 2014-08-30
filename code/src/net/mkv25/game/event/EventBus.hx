@@ -24,7 +24,8 @@ class EventBus
 	// actions while figuring out what the player wants to do
 	public static var askPlayer_howTheyWantToPlayTheirActionCard = new Signal();
 	public static var askPlayer_whereTheyWantToDeployTheirUnitCard = new Signal();
-	public static var playerWantsTo_deployUnitAtSelectedLocationButton = new Signal();
+	public static var playerWantsTo_deployUnitAtSelectedLocation = new Signal();
+	public static var playerWantsTo_moveUnitAtSelectedLocation = new Signal();
 	public static var playerWantsTo_cancelTheCurrentAction = new Signal();
 	public static var playerWantsTo_discardTheCurrentCard = new Signal();
 	public static var playerWantsTo_moveAUnit = new Signal();
