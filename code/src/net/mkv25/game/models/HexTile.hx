@@ -102,6 +102,8 @@ class HexTile
 	
 	public function containsBase(?player:PlayerModel):Bool
 	{
+		checkContents();
+		
 		for (thing in contents)
 		{
 			if (Std.is(thing, MapUnit))
@@ -125,6 +127,8 @@ class HexTile
 	
 	public function containsUnit(?player:PlayerModel):Bool
 	{
+		checkContents();
+		
 		for (thing in contents)
 		{
 			if (Std.is(thing, MapUnit))
@@ -145,6 +149,8 @@ class HexTile
 	
 	public function containsWorld():Bool
 	{
+		checkContents();
+		
 		for (thing in contents)
 		{
 			if (Std.is(thing, MapModel))

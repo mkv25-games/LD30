@@ -4,6 +4,9 @@ class MovementModel
 {
 	public static function getValidMovementDestinationsFor(location:HexTile, unit:MapUnit):Array<HexTile>
 	{
+		// check for the real location
+		location = location.map.getHexTile(location.q, location.r);
+		
 		var validHexes:Array<HexTile> = new Array<HexTile>();
 		
 		// Rule: players can move units to adjacent tiles on the same map

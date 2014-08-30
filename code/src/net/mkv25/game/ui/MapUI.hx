@@ -17,6 +17,7 @@ import net.mkv25.game.models.HexTile;
 import net.mkv25.game.models.IMapThing;
 import net.mkv25.game.models.MapModel;
 import net.mkv25.game.models.MapUnit;
+import net.mkv25.game.models.MovementModel;
 import net.mkv25.game.provider.HexProvider;
 import openfl.Assets;
 
@@ -36,6 +37,7 @@ class MapUI extends BaseUI
 	var markedImage:BitmapUI;
 	
 	var movementFocusHex:HexTile;
+	var movementFocusUnit:MapUnit;
 	
 	var mapImage:Bitmap;
 	var viewLayer:Sprite;
@@ -63,7 +65,8 @@ class MapUI extends BaseUI
 		markedImage = new BitmapUI();
 		markedImage.artwork.mouseEnabled = markedImage.artwork.mouseChildren = false;
 		
-		movementFocusHex = new HexTile();
+		movementFocusHex = null;
+		movementFocusUnit = null;
 		
 		mapImage = new Bitmap();
 		viewLayer = new Sprite();
@@ -198,9 +201,9 @@ class MapUI extends BaseUI
 		}
 		
 		// check if movement options should be rendered
-		if (movementFocusHex != null)
+		if (movementFocusHex != null && movementFocusUnit != null)
 		{
-			highlightValidMovementFrom(movementFocusHex);
+			highlightValidMovementFor(movementFocusHex, movementFocusUnit);
 		}
 		
 		// position view layer
@@ -222,26 +225,20 @@ class MapUI extends BaseUI
 		EventBus.mapViewChanged.dispatch(this);
 	}
 	
-	function highlightValidMovementFrom(location:HexTile)
+	function highlightValidMovementFor(location:HexTile, unit:MapUnit)
 	{
-		if (location.map == null)
+		if (location.map == null || unit == null)
 		{
 			return;
 		}
 		
-		if (location.map == currentModel)
+		var hexes = MovementModel.getValidMovementDestinationsFor(location, unit);
+		for (hex in hexes)
 		{
-			// Highlight tiles from the perspective of neighbouring tiles on the same map
-			var hexes:Array<HexTile> = location.getNeighbours();
-			for (hex in hexes)
+			if (hex.map == currentModel)
 			{
 				drawHex(hex, null, movementLayer, HexProvider.MOVEMENT_HEX);
 			}
-		}
-		else if(location.map.spaceHex != null && currentModel == Index.activeGame.space)
-		{
-			// Highlight tiles from the perspective of a world accessing space
-			drawHex(location.map.spaceHex, null, movementLayer, HexProvider.MOVEMENT_HEX);
 		}
 			
 		movementLayer.visible = true;
@@ -316,13 +313,15 @@ class MapUI extends BaseUI
 	
 	/// Public methods ///
 	
-	public function enableMovementOverlayFrom(location:HexTile):Void
+	public function enableMovementOverlayFor(location:HexTile, unit:MapUnit):Void
 	{
 		// copy location details
 		this.movementFocusHex = new HexTile();
 		this.movementFocusHex.q = location.q;
 		this.movementFocusHex.r = location.r;
 		this.movementFocusHex.map = location.map;
+		
+		this.movementFocusUnit = unit;
 		
 		redraw();
 	}

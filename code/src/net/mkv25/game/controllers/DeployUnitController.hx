@@ -22,7 +22,9 @@ class DeployUnitController
 		EventBus.playerWantsTo_deployAUnitOnPlanet.add(suggestUnitPlanetDeploymentOptionsToPlayer);
 		EventBus.playerWantsTo_deployAUnitInSpace.add(suggestUnitSpaceDeploymentOptionsToPlayer);
 		EventBus.playerWantsTo_deployUnitAtSelectedLocation.add(attemptToPlaceUnitAtSelectedLocation);
+		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelDeployment);
+		EventBus.cardSelectedFromHandByPlayer.add(cancelDeployment);
 		
 		EventBus.mapMarkerPlacedOnMap.add(updateDeploymentAvailability);
 		EventBus.mapMarkerRemovedFromMap.add(disableDeploymentButton);

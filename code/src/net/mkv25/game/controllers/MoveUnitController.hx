@@ -27,10 +27,11 @@ class MoveUnitController
 		EventBus.playerWantsTo_moveAUnit.add(suggestUnitMovementOptionsToPlayer);
 		EventBus.playerWantsTo_moveUnitAtSelectedLocation.add(suggestMovementOptionsFromSelectedLocation);
 		EventBus.playerWantsTo_confirmTheSelectedMovementAction.add(attemptToMoveUnitToSelectedLocation);
+		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelMovement);
+		EventBus.cardSelectedFromHandByPlayer.add(cancelMovement);
 		
 		EventBus.mapMarkerPlacedOnMap.add(updateMovementAvailability);
-		// EventBus.mapMarkerRemovedFromMap.add(disableMovementButton);
 	}
 	
 	public function setup(map:MapUI, movement:MovementUI):Void
@@ -62,7 +63,7 @@ class MoveUnitController
 		selectedUnit = selectUnitForPlayerFrom(selectedLocation, Index.activeGame.activePlayer);
 		if (selectedUnit != null) 
 		{
-			map.enableMovementOverlayFrom(markedLocation);
+			map.enableMovementOverlayFor(selectedLocation, selectedUnit);
 			movement.confirmButton.enable();
 			EventBus.displayNewStatusMessage.dispatch("Select a tile to move to");
 		}
