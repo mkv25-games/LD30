@@ -230,11 +230,16 @@ class MapUI extends BaseUI
 	
 	inline function getBitmapDataForHex(hex:HexTile):BitmapData
 	{
+		var bitmap:BitmapData;
 		if (hex.contested) {
-			return HexProvider.CONTESTED_HEX;
+			bitmap = HexProvider.CONTESTED_HEX;
+		}
+		else
+		{
+			bitmap = (hex.territoryOwner == null) ? HexProvider.EMPTY_HEX : HexProvider.PLAYER_TERRITORY_HEXES[hex.territoryOwner.playerNumberZeroBased];
 		}
 		
-		return (hex.territoryOwner == null) ? HexProvider.EMPTY_HEX : HexProvider.PLAYER_TERRITORY_HEXES[hex.territoryOwner.playerNumberZeroBased];
+		return bitmap;
 	}
 	
 	inline function drawThingsInHex(hex:HexTile):Void
