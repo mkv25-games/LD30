@@ -143,6 +143,22 @@ class HexTile
 		return false;
 	}
 	
+	public function containsWorld():Bool
+	{
+		for (thing in contents)
+		{
+			if (Std.is(thing, MapModel))
+			{
+				var world:MapModel = cast thing;
+				if (world.spaceHex != null)
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 	public function claim(player:PlayerModel):Void
 	{
 		if (this.contested)
@@ -183,6 +199,22 @@ class HexTile
 		
 		return neighbours;
 	}
+	
+	/**
+	 * Equal if location coordinates are equal, does not consider contents
+	 * @param	hex
+	 * @return  true if equal, false if not
+	 */
+	public function equals(hex:HexTile):Bool
+	{
+		return (
+			this.q == hex.q &&
+			this.r == hex.r &&
+			this.map == hex.map
+		);
+	}
+	
+	/// Static helper methods ///
 	
 	public static function xy2qr(x:Float, y:Float):Array<Int>
 	{

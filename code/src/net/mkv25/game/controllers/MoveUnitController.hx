@@ -1,8 +1,10 @@
 package net.mkv25.game.controllers;
 
 import net.mkv25.game.event.EventBus;
+import net.mkv25.game.models.CombatModel;
 import net.mkv25.game.models.HexTile;
 import net.mkv25.game.models.MapUnit;
+import net.mkv25.game.models.MovementModel;
 import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.models.PlayerModel;
 import net.mkv25.game.provider.UnitProvider;
@@ -18,11 +20,13 @@ class MoveUnitController
 	private var activeMovementCard:PlayableCard;
 	private var markedLocation:HexTile;
 	private var selectedLocation:HexTile;
+	private var selectedUnit:MapUnit;
 	
 	public function new()
 	{
 		EventBus.playerWantsTo_moveAUnit.add(suggestUnitMovementOptionsToPlayer);
 		EventBus.playerWantsTo_moveUnitAtSelectedLocation.add(suggestMovementOptionsFromSelectedLocation);
+		EventBus.playerWantsTo_confirmTheSelectedMovementAction.add(attemptToMoveUnitToSelectedLocation);
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelMovement);
 		
 		EventBus.mapMarkerPlacedOnMap.add(updateMovementAvailability);
@@ -43,7 +47,7 @@ class MoveUnitController
 		
 		updateMovementAvailability(markedLocation);
 		
-		EventBus.displayNewStatusMessage.dispatch("Choose a unit or base to move.");
+		EventBus.displayNewStatusMessage.dispatch("Choose a unit or base to move");
 	}
 	
 	function suggestMovementOptionsFromSelectedLocation(?model):Void
@@ -55,12 +59,12 @@ class MoveUnitController
 		}
 		
 		selectedLocation = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
-		var unit:MapUnit = selectUnitForPlayerFrom(selectedLocation, Index.activeGame.activePlayer);
-		if (unit != null) 
+		selectedUnit = selectUnitForPlayerFrom(selectedLocation, Index.activeGame.activePlayer);
+		if (selectedUnit != null) 
 		{
 			map.enableMovementOverlayFrom(markedLocation);
 			movement.confirmButton.enable();
-			EventBus.displayNewStatusMessage.dispatch("Select a tile to move to.");
+			EventBus.displayNewStatusMessage.dispatch("Select a tile to move to");
 		}
 		else
 		{
@@ -90,6 +94,8 @@ class MoveUnitController
 	{
 		this.activeMovementCard = null;
 		this.markedLocation = null;
+		this.selectedLocation = null;
+		this.selectedUnit = null;
 		
 		disableMovement();
 	}
@@ -118,6 +124,12 @@ class MoveUnitController
 			return;
 		}
 		
+		updateMovementSelection();
+		updateMovementConfirmation();
+	}
+	
+	function updateMovementSelection():Void
+	{
 		// check that a player owned base exists in a neighbouring tile
 		if (markedLocation != null)
 		{
@@ -131,5 +143,50 @@ class MoveUnitController
 		}
 		
 		movement.moveButton.disable();
+	}
+	
+	function updateMovementConfirmation():Void
+	{
+		// check that marked location is a valid movement tile
+		if (markedLocation != null && selectedLocation != null && selectedUnit != null)
+		{
+			var destinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit);
+			if (MovementModel.listContainsLocation(destinations, markedLocation))
+			{
+				movement.confirmButton.enable();
+				EventBus.displayNewStatusMessage.dispatch("Valid movement location");
+				return;
+			}
+		}
+		
+		movement.confirmButton.disable();
+		EventBus.displayNewStatusMessage.dispatch("Cannot move unit to that location");
+	}
+	
+	function attemptToMoveUnitToSelectedLocation(?model):Void
+	{
+		// check that all the correct data is present at this point
+		if (activeMovementCard == null || selectedLocation == null || selectedUnit == null || markedLocation == null)
+		{
+			movement.moveButton.disable();
+			movement.confirmButton.disable();
+			return;
+		}
+		
+		// get list of valid locations
+		var destinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit);
+		for (destination in destinations)
+		{
+			// validate that marked location is in the list of valid destination
+			if (destination.equals(markedLocation))
+			{
+				var targetLocation = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
+				
+				EventBus.removeCardFromActivePlayersHand.dispatch(activeMovementCard);
+				CombatModel.moveUnit(selectedUnit, selectedLocation, targetLocation);
+				cancelMovement();
+				return;
+			}
+		}
 	}
 }
