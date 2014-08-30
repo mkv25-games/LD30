@@ -71,6 +71,11 @@ class MapModel extends CoreModel implements IMapThing
 		}
 	}
 	
+	public function isWorld():Bool
+	{
+		return (this.spaceHex != null);
+	}
+	
 	public static function createCircle(radius:Int):StringMap<HexTile>
 	{
 		var hexes = new StringMap<HexTile>();

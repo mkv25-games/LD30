@@ -89,11 +89,14 @@ class HexTile
 				if (unit.type.base) {
 					this.claim(unit.owner);
 					
-					// set territory for neighbouring hexes
-					var neighbours = getNeighbours();
-					for (hex in neighbours)
+					// on planets, set territory for neighbouring hexes
+					if (this.map.isWorld())
 					{
-						hex.claim(unit.owner);
+						var neighbours = getNeighbours();
+						for (hex in neighbours)
+						{
+							hex.claim(unit.owner);
+						}
 					}
 				}
 			}
@@ -155,8 +158,8 @@ class HexTile
 		{
 			if (Std.is(thing, MapModel))
 			{
-				var world:MapModel = cast thing;
-				if (world.spaceHex != null)
+				var map:MapModel = cast thing;
+				if (map.isWorld())
 				{
 					return true;
 				}
