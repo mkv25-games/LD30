@@ -16,7 +16,6 @@ Bugs
 + Marked hex not recognised if selected before selecting deployment action
 + Territory in space should be limited to a single tile
 + Cannot deploy units to the same tile as a base
-
 + Deploy to space option makes no sense, should just be deploy
 
 Improvements
@@ -24,7 +23,7 @@ Improvements
 + Icon language of cards should match on screen icons
 + Plain instead of blue tinted icons for units on cards
 + Add discard count and deck count to interface
-+ Standardardise discard icon with interface
++ Standardise discard icon with interface
 + Player selection screen, number of players
 + Saving of game state
 + Exit button to end game
@@ -43,17 +42,17 @@ Free Version Release Work
 + Fix bugs unique to mobile
 + IOS build
 + Google play store submission
-+ IOS Store submission
++ Apple store submission
 
 Commercial Version Release Work
 -------------------------
 + In-game purchase
 + Online multi player mode
-+ Matching making
++ Match making
 + Active games list
 + Turn processing server and anti-cheat system
 + Google analytics
-+ Scores + Leaderboard
++ Scores + leaderboard
 + IOS / Android notifications
 
 Wish list
