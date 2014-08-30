@@ -10,7 +10,7 @@ class HexProvider
 	public static var EMPTY_HEX:BitmapData;
 	public static var HIGHLIGHTED_HEX:BitmapData;
 	public static var MARKED_HEX:BitmapData;
-	public static var BLOCKED_HEX:BitmapData;
+	public static var CONTESTED_HEX:BitmapData;
 	
 	public static var PLAYER_TERRITORY_HEXES:Array<BitmapData>;
 	
@@ -19,7 +19,7 @@ class HexProvider
 		EMPTY_HEX = getHex(1);
 		HIGHLIGHTED_HEX = getHex(2);
 		MARKED_HEX = getHex(9);
-		BLOCKED_HEX = getHex(10);
+		CONTESTED_HEX = getHex(10);
 		
 		var territory = new Array<BitmapData>();
 		for(i in 0...6) {

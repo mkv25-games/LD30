@@ -55,6 +55,21 @@ class MapModel extends CoreModel implements IMapThing
 		}
 	}
 	
+	public function recalculateTerritory():Void
+	{
+		// reset all tiles
+		for (hex in hexes)
+		{
+			hex.resetOwnership();
+		}
+		
+		// recalcuate all tiles
+		for (hex in hexes)
+		{
+			hex.updateTerritory();
+		}
+	}
+	
 	public static function createCircle(radius:Int):StringMap<HexTile>
 	{
 		var hexes = new StringMap<HexTile>();

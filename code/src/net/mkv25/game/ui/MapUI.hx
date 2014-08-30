@@ -216,7 +216,7 @@ class MapUI extends BaseUI
 			bitmapsInUse.push(bitmap);
 			hexLayer.addChild(bitmap);
 			
-			bitmap.bitmapData = (hex.territoryOwner == null) ? hexImage : HexProvider.PLAYER_TERRITORY_HEXES[hex.territoryOwner.playerNumberZeroBased];
+			bitmap.bitmapData = getBitmapDataForHex(hex);
 			
 			bitmap.x = x - (bitmap.width / 2);
 			bitmap.y = y - (bitmap.height / 2);
@@ -226,6 +226,15 @@ class MapUI extends BaseUI
 			container.x = x;
 			container.y = y;
 		}
+	}
+	
+	inline function getBitmapDataForHex(hex:HexTile):BitmapData
+	{
+		if (hex.contested) {
+			return HexProvider.CONTESTED_HEX;
+		}
+		
+		return (hex.territoryOwner == null) ? HexProvider.EMPTY_HEX : HexProvider.PLAYER_TERRITORY_HEXES[hex.territoryOwner.playerNumberZeroBased];
 	}
 	
 	inline function drawThingsInHex(hex:HexTile):Void

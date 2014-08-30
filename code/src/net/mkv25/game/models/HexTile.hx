@@ -17,6 +17,7 @@ class HexTile
 	
 	public var map:MapModel;
 	public var territoryOwner:PlayerModel;
+	public var contested:Bool;
 	
 	public var bitmap:Bitmap;
 	private var contents:Array<IMapThing>;
@@ -49,7 +50,7 @@ class HexTile
 		
 		contents.push(thing);
 		
-		updateTerritory(thing);
+		updateTerritory();
 	}
 	
 	public function remove(thing:IMapThing):Void
@@ -77,27 +78,50 @@ class HexTile
 		}
 	}
 	
-	function updateTerritory(thing:IMapThing):Void
+	public function updateTerritory():Void
 	{
 		// check for base, set territory
-		if (Std.is(thing, MapUnit))
+		for (thing in contents)
 		{
-			var unit:MapUnit = cast thing;
-			if (unit.type.base) {
-				this.territoryOwner = unit.owner;
-				
-				// set territory for neighbouring hexes
-				var neighbours = getNeighbours();
-				for (hex in neighbours)
-				{
-					hex.territoryOwner = unit.owner;
+			if (Std.is(thing, MapUnit))
+			{
+				var unit:MapUnit = cast thing;
+				if (unit.type.base) {
+					this.claim(unit.owner);
+					
+					// set territory for neighbouring hexes
+					var neighbours = getNeighbours();
+					for (hex in neighbours)
+					{
+						hex.claim(unit.owner);
+					}
 				}
 			}
 		}
-		else
+	}
+	
+	public function claim(player:PlayerModel):Void
+	{
+		if (this.contested)
 		{
+			return;
+		}
+		
+		if (this.territoryOwner == null)
+		{
+			this.territoryOwner = player;
+		}
+		else if(this.territoryOwner != player)
+		{
+			this.contested = true;
 			this.territoryOwner = null;
 		}
+	}
+	
+	public function resetOwnership():Void
+	{
+		this.territoryOwner = null;
+		this.contested = false;
 	}
 	
 	public function getNeighbours():Array<HexTile>

@@ -45,6 +45,8 @@ class PlayerHand extends CoreModel
 	
 	public function populateStartingDeck():PlayerHand
 	{
+		// normal starting cards, 3x harvester, 1x portal, 2x scientists, 2x engineers, 2x assault teams
+		/*
 		discards.push(PlayableCardType.HARVESTER);
 		discards.push(PlayableCardType.HARVESTER);
 		discards.push(PlayableCardType.HARVESTER);
@@ -59,6 +61,15 @@ class PlayerHand extends CoreModel
 		
 		discards.push(PlayableCardType.ASSAULT_TEAM);
 		discards.push(PlayableCardType.ASSAULT_TEAM);
+		//*/
+		
+		//*
+		// start with level 4 bases only
+		discards.push(PlayableCardType.PORTAL);
+		for (i in 0...9) {
+			discards.push(PlayableCardType.METROPLEX);
+		}
+		//*/
 		
 		drawHand();
 		
@@ -67,11 +78,16 @@ class PlayerHand extends CoreModel
 	
 	public function drawHand():Void
 	{
-		while (hand.length < PlayerHand.MAX_HAND_SIZE)
+		while (hand.length < PlayerHand.MAX_HAND_SIZE && cardsExistToDraw())
 		{
 			var card = drawCardFromDeck();
 			hand.push(card);
 		}
+	}
+	
+	public function cardsExistToDraw():Bool
+	{
+		return (discards.length > 0 || deck.length > 0);
 	}
 	
 	public function drawCardFromDeck():PlayableCard
