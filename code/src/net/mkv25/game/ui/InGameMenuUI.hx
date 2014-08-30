@@ -102,10 +102,15 @@ class InGameMenuUI extends BaseUI
 	public function setOption1(text:String, ?action:Dynamic->Void, ?model:Dynamic):Void
 	{
 		var option = this.option1;
-		
+		if (text == null) 
+		{
+			option.hide();
+			return;
+		}
 		(action == null) ? option.disable() : option.enable();
 		
 		option.setup(text, selectOption1);
+		option.show();
 		
 		this.option1action = action;
 		this.option1model = model;
@@ -114,10 +119,15 @@ class InGameMenuUI extends BaseUI
 	public function setOption2(text:String, ?action:Dynamic->Void, ?model:Dynamic):Void
 	{
 		var option = this.option2;
-		
+		if (text == null) 
+		{
+			option.hide();
+			return;
+		}
 		(action == null) ? option.disable() : option.enable();
 		
 		option.setup(text, selectOption2);
+		option.show();
 		
 		this.option2action = action;
 		this.option2model = model;

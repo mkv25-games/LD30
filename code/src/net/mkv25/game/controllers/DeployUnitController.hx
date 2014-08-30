@@ -20,8 +20,7 @@ class DeployUnitController
 	
 	public function new()
 	{
-		EventBus.playerWantsTo_deployAUnitOnPlanet.add(suggestUnitPlanetDeploymentOptionsToPlayer);
-		EventBus.playerWantsTo_deployAUnitInSpace.add(suggestUnitSpaceDeploymentOptionsToPlayer);
+		EventBus.playerWantsTo_deployAUnit.add(suggestUnitPlanetDeploymentOptionsToPlayer);
 		EventBus.playerWantsTo_deployUnitAtSelectedLocation.add(attemptToPlaceUnitAtSelectedLocation);
 		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelDeployment);
@@ -42,15 +41,7 @@ class DeployUnitController
 		this.activeUnitCard = card;
 		
 		enableDeployment();
-		EventBus.displayNewStatusMessage.dispatch("Choose a planet to deploy to.");
-	}
-	
-	function suggestUnitSpaceDeploymentOptionsToPlayer(card:PlayableCard):Void
-	{
-		this.activeUnitCard = card;
-		
-		enableDeployment();
-		EventBus.displayNewStatusMessage.dispatch("Choose a location to deploy to.");
+		EventBus.displayNewStatusMessage.dispatch("Choose a location to deploy to");
 	}
 	
 	function attemptToPlaceUnitAtSelectedLocation(?model):Void

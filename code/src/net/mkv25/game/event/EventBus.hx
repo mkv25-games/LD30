@@ -31,8 +31,7 @@ class EventBus
 	public static var playerWantsTo_discardTheCurrentCard = new Signal();
 	public static var playerWantsTo_moveAUnit = new Signal();
 	public static var playerWantsTo_performASpecialAction = new Signal();
-	public static var playerWantsTo_deployAUnitOnPlanet = new Signal();
-	public static var playerWantsTo_deployAUnitInSpace = new Signal();
+	public static var playerWantsTo_deployAUnit = new Signal();
 	public static var playerWantsTo_buyACard = new Signal();
 	
 	// game turn events

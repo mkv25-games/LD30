@@ -104,8 +104,8 @@ class CardActionController
 		
 		EventBus.displayNewStatusMessage.dispatch("Pick an option");
 		optionMenu.setCardName(card.name);
-		optionMenu.setOption1("deploy in space".toUpperCase(), null); // EventBus.playerWantsTo_deployAUnitInSpace.dispatch, card);
-		optionMenu.setOption2("deploy on planet".toUpperCase(), EventBus.playerWantsTo_deployAUnitOnPlanet.dispatch, card);
+		optionMenu.setOption1("deploy unit".toUpperCase(), EventBus.playerWantsTo_deployAUnit.dispatch, card);
+		optionMenu.setOption2(null, null);
 		
 		optionMenu.show();
 	}
