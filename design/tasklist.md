@@ -11,7 +11,6 @@ Incomplete features
 
 Bugs
 ----
-+ Deploy to space option makes no sense, should just be deploy
 + Impossible to select tile to move to in space around planet on mobile, always changes view to planet
 - Marked hex not recognised if selected before selecting movement action
 - Marked hex not recognised if selected before selecting deployment action
