@@ -102,12 +102,33 @@ class DeployUnitController
 	function updateDeploymentAvailability(marker:HexTile):Void
 	{
 		this.markedHex = marker;
-		// TODO:
-		// validate location for placement
-		// prevent player placing outside of their territory
-		// prevent player putting bases in the same time
+		if (activeUnitCard == null)
+		{
+			return;
+		}
 		
-		deployment.deployButton.enable();
+		// inspect marked location
+		var location:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
+		if (activeUnitCard.base && location.containsBase())
+		{
+			// Rule: bases cannot exist in the same hex
+			deployment.deployButton.disable();
+			return;
+		}
+		
+		// check that a player owned base exists in a neighbouring tile
+		var neighbours = location.getNeighbours();
+		for (hex in neighbours)
+		{
+			if (hex.containsBase(Index.activeGame.activePlayer))
+			{
+				// Rule: units can only be deployed in player owned territory
+				deployment.deployButton.enable();
+				return;
+			}
+		}
+		
+		deployment.deployButton.disable();
 	}
 	
 	function disableDeploymentButton(marker:HexTile):Void

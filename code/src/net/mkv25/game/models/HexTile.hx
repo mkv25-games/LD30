@@ -100,6 +100,29 @@ class HexTile
 		}
 	}
 	
+	public function containsBase(?player:PlayerModel):Bool
+	{
+		for (thing in contents)
+		{
+			if (Std.is(thing, MapUnit))
+			{
+				var unit:MapUnit = cast thing;
+				if (unit.type.base)
+				{
+					if (player == null)
+					{
+						// hex contains any base for any player
+						return true;
+					}
+					
+					// hex contains a base for a specific player
+					return (unit.owner == player);
+				}
+			}
+		}
+		return false;
+	}
+	
 	public function claim(player:PlayerModel):Void
 	{
 		if (this.contested)
