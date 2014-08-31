@@ -20,6 +20,8 @@ class CombatModel
 		targetLocation.map.recalculateTerritory();
 		
 		EventBus.mapRequiresRedraw.dispatch(targetLocation.map);
+		
+		Index.activeGame.updatePlayerStats();
 	}
 	
 	public static function processCombatFor(location:HexTile):CombatLogModel

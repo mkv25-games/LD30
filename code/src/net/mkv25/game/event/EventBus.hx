@@ -41,6 +41,7 @@ class EventBus
 	public static var combat_unitDestroyedAtLocation = new Signal();
 	
 	// game turn events
+	public static var activePlayerUpdated = new Signal();
 	public static var activePlayerChanged = new Signal();
 	
 	// map stuff

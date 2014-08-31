@@ -120,6 +120,58 @@ class ActiveGame extends CoreModel
 		return activePlayer;
 	}
 	
+	public function updatePlayerStats():Void
+	{
+		// reset values
+		for (player in players)
+		{
+			player.unitCount = 0;
+			player.baseCount = 0;
+			player.territory = 0;
+		}
+		
+		// begin the count
+		updatePlayerStatsFor(space);
+		for (world in worlds)
+		{
+			updatePlayerStatsFor(world);
+		}
+		
+		// dispatch update
+		EventBus.activePlayerUpdated.dispatch(activePlayer);
+	}
+	
+	function updatePlayerStatsFor(map:MapModel):Void
+	{
+		for (hex in map.hexes)
+		{
+			var things = hex.listContents();
+			for (thing in things)
+			{
+				if (Std.is(thing, MapUnit))
+				{
+					var unit:MapUnit = cast thing;
+					if (unit.type.base)
+					{
+						// count bases separately
+						unit.owner.baseCount++;
+					}
+					else
+					{
+						// units, not including bases
+						unit.owner.unitCount++;
+					}
+				}
+			}
+			
+			// count uncontested territory
+			if (hex.territoryOwner != null && !hex.contested)
+			{
+				hex.territoryOwner.territory++;
+			}
+		}
+	}
+	
 	function createNewPlayer(number:Int):PlayerModel
 	{
 		var player = new PlayerModel(number);

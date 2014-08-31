@@ -27,6 +27,7 @@ class StatusBarUI extends BaseUI
 		
 		init();
 	
+		EventBus.activePlayerUpdated.add(onActivePlayerChanged);
 		EventBus.activePlayerChanged.add(onActivePlayerChanged);
 		EventBus.activePlayerResourcesChanged.add(onResourcesChanged);
 	}
@@ -62,7 +63,7 @@ class StatusBarUI extends BaseUI
 		
 		counterResourcesText.setText(Std.string(player.resources));
 		counterTerritoryText.setText(Std.string(player.territory));
-		counterUnitsText.setText(Std.string(player.unitCount));
+		counterUnitsText.setText(Std.string(player.unitCount + player.baseCount));
 	}
 	
 	function onResourcesChanged(player:PlayerModel):Void

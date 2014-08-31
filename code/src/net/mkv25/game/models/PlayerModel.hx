@@ -10,6 +10,7 @@ class PlayerModel extends CoreModel
 	public var resources:Int;
 	public var territory:Int;
 	public var unitCount:Int;
+	public var baseCount:Int;
 
 	public function new(playerNumberZeroBased:Int) 
 	{
@@ -19,8 +20,9 @@ class PlayerModel extends CoreModel
 		this.playerHand = new PlayerHand();
 		
 		resources = 6;
-		territory = 7;
-		unitCount = 1;
+		territory = 0;
+		unitCount = 0;
+		baseCount = 0;
 	}
 	
 	public function name():String
