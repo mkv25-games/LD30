@@ -3,7 +3,6 @@ Things to do
 
 Incomplete features
 -------------------
-+ Movement, can only move one tile at a time
 + Combat rules
 + Number on hexes indicating multiple units
 + End game conditions
@@ -14,8 +13,7 @@ Incomplete features
 
 Bugs
 ----
-- Marked hex not recognised if selected before selecting movement action
-- Marked hex not recognised if selected before selecting deployment action
+
 
 Improvements
 ------------

@@ -9,10 +9,11 @@ class MapModel extends CoreModel implements IMapThing
 {
 	public var hexes:StringMap<HexTile>;
 	
-	public var background:BitmapData;
-	public var mapIcon:BitmapData;
-	public var mapDepth:Int;
-	public var spaceHex:HexTile;
+	private var id:String;
+	private var background:BitmapData;
+	private var mapIcon:BitmapData;
+	private var mapDepth:Int;
+	private var spaceHex:HexTile;
 	
 	public function new() 
 	{
@@ -25,10 +26,21 @@ class MapModel extends CoreModel implements IMapThing
 		mapDepth = 0;
 	}
 	
-	public function setup(background:BitmapData, mapIcon:BitmapData):Void
+	public function setup(id:String, background:BitmapData, mapIcon:BitmapData):Void
 	{
+		this.id = id;
 		this.background = background;
 		this.mapIcon = mapIcon;
+	}
+	
+	public function key():String
+	{
+		return id;
+	}
+	
+	public function getBackground():BitmapData
+	{
+		return background;
 	}
 
 	public function getIcon():BitmapData 
@@ -39,6 +51,16 @@ class MapModel extends CoreModel implements IMapThing
 	public function getDepth():Int 
 	{
 		return this.mapDepth;
+	}
+	
+	public function getSpaceHex():Null<HexTile>
+	{
+		return spaceHex;
+	}
+	
+	public function setSpaceHex(value:HexTile):Void
+	{
+		this.spaceHex = value;
 	}
 	
 	public function getHexTile(q:Int, r:Int):Null<HexTile>

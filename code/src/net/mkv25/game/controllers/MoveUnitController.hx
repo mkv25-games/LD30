@@ -25,7 +25,7 @@ class MoveUnitController
 	public function new()
 	{
 		EventBus.playerWantsTo_moveAUnit.add(suggestUnitMovementOptionsToPlayer);
-		EventBus.playerWantsTo_moveUnitAtSelectedLocation.add(suggestMovementOptionsFromSelectedLocation);
+		EventBus.playerWantsTo_moveUnitAtSelectedLocation.add(suggestMovementOptionsForSelectedUnit);
 		EventBus.playerWantsTo_confirmTheSelectedMovementAction.add(attemptToMoveUnitToSelectedLocation);
 		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelMovement);
@@ -51,7 +51,7 @@ class MoveUnitController
 		EventBus.displayNewStatusMessage.dispatch("Choose a unit or base to move");
 	}
 	
-	function suggestMovementOptionsFromSelectedLocation(?model):Void
+	function suggestMovementOptionsForSelectedUnit(?model):Void
 	{
 		// highlight valid, adjacent movement tiles
 		if (markedLocation == null)
@@ -63,7 +63,7 @@ class MoveUnitController
 		selectedUnit = selectUnitForPlayerFrom(selectedLocation, Index.activeGame.activePlayer);
 		if (selectedUnit != null) 
 		{
-			map.enableMovementOverlayFor(selectedLocation, selectedUnit);
+			map.enableMovementOverlayFor(selectedLocation, selectedUnit, activeMovementCard.movement);
 			updateMovementConfirmation();
 			EventBus.displayNewStatusMessage.dispatch("Select a tile to move to");
 		}
@@ -150,7 +150,7 @@ class MoveUnitController
 		// check that marked location is a valid movement tile
 		if (markedLocation != null && selectedLocation != null && selectedUnit != null)
 		{
-			var destinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit);
+			var destinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit, activeMovementCard.movement);
 			if (MovementModel.listContainsLocation(destinations, markedLocation))
 			{
 				movement.confirmButton.enable();
@@ -174,7 +174,7 @@ class MoveUnitController
 		}
 		
 		// get list of valid locations
-		var destinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit);
+		var destinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit, activeMovementCard.movement);
 		for (destination in destinations)
 		{
 			// validate that marked location is in the list of valid destination

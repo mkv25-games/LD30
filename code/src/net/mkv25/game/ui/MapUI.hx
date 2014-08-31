@@ -18,6 +18,7 @@ import net.mkv25.game.models.IMapThing;
 import net.mkv25.game.models.MapModel;
 import net.mkv25.game.models.MapUnit;
 import net.mkv25.game.models.MovementModel;
+import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.provider.HexProvider;
 import openfl.Assets;
 
@@ -38,6 +39,7 @@ class MapUI extends BaseUI
 	
 	var movementFocusHex:HexTile;
 	var movementFocusUnit:MapUnit;
+	var movementFocusDistance:Int;
 	
 	var mapImage:Bitmap;
 	var viewLayer:Sprite;
@@ -69,6 +71,7 @@ class MapUI extends BaseUI
 		
 		movementFocusHex = null;
 		movementFocusUnit = null;
+		movementFocusDistance = 0;
 		
 		mapImage = new Bitmap();
 		viewLayer = new Sprite();
@@ -97,7 +100,7 @@ class MapUI extends BaseUI
 	{
 		this.currentModel = model;
 		
-		mapImage.bitmapData = model.background;
+		mapImage.bitmapData = model.getBackground();
 		
 		viewLayer.addEventListener(MouseEvent.MOUSE_MOVE, moveHexCursor, false, 0, true);
 		viewLayer.addEventListener(MouseEvent.MOUSE_DOWN, markSelectedHex, false, 0, true);
@@ -224,9 +227,9 @@ class MapUI extends BaseUI
 		}
 		
 		// check if movement options should be rendered
-		if (movementFocusHex != null && movementFocusUnit != null)
+		if (movementFocusHex != null && movementFocusUnit != null && movementFocusDistance > 0)
 		{
-			highlightValidMovementFor(movementFocusHex, movementFocusUnit);
+			highlightValidMovementFor(movementFocusHex, movementFocusUnit, movementFocusDistance);
 		}
 		
 		// position view layer
@@ -249,14 +252,14 @@ class MapUI extends BaseUI
 		EventBus.mapViewChanged.dispatch(this);
 	}
 	
-	function highlightValidMovementFor(location:HexTile, unit:MapUnit)
+	function highlightValidMovementFor(location:HexTile, unit:MapUnit, distance:Int)
 	{
 		if (location.map == null || unit == null)
 		{
 			return;
 		}
 		
-		var hexes = MovementModel.getValidMovementDestinationsFor(location, unit);
+		var hexes = MovementModel.getValidMovementDestinationsFor(location, unit, distance);
 		for (hex in hexes)
 		{
 			if (hex.map == currentModel)
@@ -337,7 +340,7 @@ class MapUI extends BaseUI
 	
 	/// Public methods ///
 	
-	public function enableMovementOverlayFor(location:HexTile, unit:MapUnit):Void
+	public function enableMovementOverlayFor(location:HexTile, unit:MapUnit, distance:Int):Void
 	{
 		// copy location details
 		this.movementFocusHex = new HexTile();
@@ -346,6 +349,7 @@ class MapUI extends BaseUI
 		this.movementFocusHex.map = location.map;
 		
 		this.movementFocusUnit = unit;
+		this.movementFocusDistance = distance;
 		
 		redraw();
 	}

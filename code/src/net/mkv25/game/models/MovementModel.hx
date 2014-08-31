@@ -1,40 +1,27 @@
 package net.mkv25.game.models;
 
+import haxe.ds.StringMap;
+
 class MovementModel
 {
-	public static function getValidMovementDestinationsFor(location:HexTile, unit:MapUnit):Array<HexTile>
+	public static function getValidMovementDestinationsFor(location:HexTile, unit:MapUnit, distance:Int):Array<HexTile>
 	{
 		// check for the real location
 		location = location.map.getHexTile(location.q, location.r);
 		
 		var validHexes:Array<HexTile> = new Array<HexTile>();
 		
-		// Rule: players can move units to adjacent tiles on the same map
-		var neighbouringHexes:Array<HexTile> = location.getNeighbours();
+		var neighbouringHexes:StringMap<HexTile> = new StringMap<HexTile>();
+		neighbouringHexes.set(location.key(), location);
 		
-		// add space-world and world-space boundary hexes
-		if (location.map == Index.activeGame.space)
+		// iterate over neighbours, adding more neighbours
+		for (i in 0...distance)
 		{
-			if (location.containsWorld())
+			for (hex in neighbouringHexes)
 			{
-				// Rule: players can move from a space tile to any location on a world in that space tile
-				var world:MapModel = MovementModel.getWorldFrom(location);
-				if (world != null)
-				{
-					for (hex in world.hexes)
-					{
-						neighbouringHexes.push(hex);
-					}
-				}
+				addValidNeighboursFor(hex, unit, neighbouringHexes);
 			}
 		}
-		else
-		{
-			// Rule: players can move from any tile on a planet into space above the planet
-			neighbouringHexes.push(location.map.spaceHex);
-		}
-		
-		// TODO: Rule: players can move units between bases connected by portals
 		
 		// validate each neighbour
 		for (hex in neighbouringHexes)
@@ -52,6 +39,52 @@ class MovementModel
 		return validHexes;
 	}
 	
+	public static function addValidNeighboursFor(location:HexTile, unit:MapUnit, map:StringMap<HexTile>):Void
+	{
+		// Rule: players can move units to adjacent tiles on the same map
+		var neighbouringHexes:Array<HexTile> = location.getNeighbours();
+		
+		// populate map with neighbouring hexes, avoiding to add duplicates
+		for (hex in neighbouringHexes)
+		{
+			if (!map.exists(hex.key()))
+			{
+				map.set(hex.key(), hex);
+			}
+		}
+		
+		// add space-world and world-space boundary hexes
+		if (location.map == Index.activeGame.space)
+		{
+			if (location.containsWorld())
+			{
+				// Rule: players can move from a space tile to any location on a world in that space tile
+				var world:MapModel = MovementModel.getWorldFrom(location);
+				if (world != null)
+				{
+					for (hex in world.hexes)
+					{
+						if (!map.exists(hex.key()))
+						{
+							map.set(hex.key(), hex);
+						}
+					}
+				}
+			}
+		}
+		else
+		{
+			// Rule: players can move from any tile on a planet into space above the planet
+			var hex = location.map.getSpaceHex();
+			if (!map.exists(hex.key()))
+			{
+				map.set(hex.key(), hex);
+			}
+		}
+		
+		// TODO: Rule: players can move units between bases connected by portals
+	}
+	
 	public static function getWorldFrom(location:HexTile):MapModel
 	{
 		var contents = location.listContents();
@@ -59,10 +92,10 @@ class MovementModel
 		{
 			if (Std.is(thing, MapModel))
 			{
-				var world:MapModel = cast thing;
-				if (world.spaceHex != null)
+				var map:MapModel = cast thing;
+				if (map.isWorld())
 				{
-					return world;
+					return map;
 				}
 			}
 		}

@@ -3,7 +3,9 @@ package net.mkv25.game.ui;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.base.ui.IconButtonUI;
+import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.event.EventBus;
+import openfl.text.TextFormatAlign;
 
 class MovementUI extends BaseUI
 {

@@ -35,8 +35,10 @@ class HexTile
 	public function y():Float {
 		return (q + (2 * r)) * HexTile.HH;
 	}
+	
 	public function key():String {
-		return q + "," + r;
+		var mapKey = (map == null) ? "" : map.key() + ",";
+		return mapKey + q + "," + r;
 	}
 	
 	public function neighbourKey(direction:Int):String {
