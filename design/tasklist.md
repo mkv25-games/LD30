@@ -3,7 +3,6 @@ Things to do
 
 Incomplete features
 -------------------
-+ Combat rules
 + Movement should highlight combat
 + Number on hexes indicating multiple units
 + End game conditions
