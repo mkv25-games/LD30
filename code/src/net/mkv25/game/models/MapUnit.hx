@@ -11,6 +11,9 @@ class MapUnit implements IMapThing extends CoreModel
 	public var type:PlayableCard;
 	public var owner:PlayerModel;
 
+	public var foughtThisTurn:Bool;
+	public var movedThisTurn:Bool;
+	
 	public function new() 
 	{
 		super();
@@ -32,6 +35,12 @@ class MapUnit implements IMapThing extends CoreModel
 	public function getDepth():Int 
 	{
 		return this.depth;
+	}
+	
+	public function resetFlags():Void
+	{
+		foughtThisTurn = false;
+		movedThisTurn = false;
 	}
 	
 }

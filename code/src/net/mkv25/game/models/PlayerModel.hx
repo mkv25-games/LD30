@@ -23,4 +23,9 @@ class PlayerModel extends CoreModel
 		unitCount = 1;
 	}
 	
+	public function name():String
+	{
+		return "Player " + (playerNumberZeroBased + 1);
+	}
+	
 }

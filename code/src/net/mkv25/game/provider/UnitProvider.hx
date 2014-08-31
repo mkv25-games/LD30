@@ -17,4 +17,10 @@ class UnitProvider
 		return unit;
 	}
 	
+	public static function changeOwner(unit:MapUnit, newOwner:PlayerModel):Void
+	{
+		unit.owner = newOwner;
+		unit.icon = IconProvider.getUnitIconFor(newOwner, unit.type);
+	}
+	
 }

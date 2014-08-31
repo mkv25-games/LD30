@@ -4,12 +4,14 @@ Things to do
 Incomplete features
 -------------------
 + Combat rules
++ Movement should highlight combat
 + Number on hexes indicating multiple units
 + End game conditions
 + Linking bases via portals
 + Movement via portals
 + Ability to select individual unit from tile for movement
 + Game should focus back to player on turn change
++ Units can only be activated once a turn for movement
 
 Bugs
 ----
@@ -17,9 +19,11 @@ Bugs
 
 Improvements
 ------------
++ Combat report
 + Icon language of cards should match on screen icons
 + Plain instead of blue tinted icons for units on cards
 + Add discard count and deck count to interface
++ Switch discard and cancel buttons over
 + Standardise discard icon with interface
 + Player selection screen, number of players
 + Saving of game state
@@ -41,6 +45,7 @@ Free Version Release Work
 + IOS build
 + Google play store submission
 + Apple store submission
++ Rewrite the Ludum Dare blurb
 
 Commercial Version Release Work
 -------------------------
@@ -52,6 +57,7 @@ Commercial Version Release Work
 + Google analytics
 + Scores + leaderboard
 + IOS / Android notifications
++ Create a tablet sized version
 
 Wish list
 ---------
