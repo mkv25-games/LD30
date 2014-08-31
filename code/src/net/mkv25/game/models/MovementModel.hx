@@ -4,12 +4,10 @@ import haxe.ds.StringMap;
 
 class MovementModel
 {
-	public static function getValidMovementDestinationsFor(location:HexTile, unit:MapUnit, distance:Int):Array<HexTile>
+	public static function getValidMovementDestinationsFor(location:HexTile, unit:MapUnit, distance:Int):StringMap<HexTile>
 	{
 		// check for the real location
 		location = location.map.getHexTile(location.q, location.r);
-		
-		var validHexes:Array<HexTile> = new Array<HexTile>();
 		
 		var neighbouringHexes:StringMap<HexTile> = new StringMap<HexTile>();
 		neighbouringHexes.set(location.key(), location);
@@ -19,28 +17,24 @@ class MovementModel
 		{
 			for (hex in neighbouringHexes)
 			{
-				addValidNeighboursFor(hex, unit, neighbouringHexes);
+				if (hex != null)
+				{
+					addValidNeighboursFor(hex, unit, neighbouringHexes);
+				}
 			}
 		}
 		
-		// validate each neighbour
-		for (hex in neighbouringHexes)
-		{
-			if (unit.type.base && hex.containsBase())
-			{
-				// Rule: players cannot move a base unit into a tile with another base unit
-			}
-			else
-			{
-				validHexes.push(hex);
-			}
-		}
-		
-		return validHexes;
+		return neighbouringHexes;
 	}
 	
 	public static function addValidNeighboursFor(location:HexTile, unit:MapUnit, map:StringMap<HexTile>):Void
 	{
+		// Rule: units cannot move through contested hexes
+		if (CombatModel.containsEnemyCombatants(unit.owner, location))
+		{
+			return;
+		}
+		
 		// Rule: players can move units to adjacent tiles on the same map
 		var neighbouringHexes:Array<HexTile> = location.getNeighbours();
 		
@@ -83,6 +77,18 @@ class MovementModel
 		}
 		
 		// TODO: Rule: players can move units between bases connected by portals
+		
+		// Validate each neighbour
+		var validHexes:Array<HexTile> = new Array<HexTile>();
+		
+		for (hex in neighbouringHexes)
+		{
+			if (unit.type.base && hex.containsBase())
+			{
+				// Rule: players cannot move a base unit into a tile with another base unit
+				map.remove(hex.key());
+			}
+		}
 	}
 	
 	public static function getWorldFrom(location:HexTile):MapModel
@@ -102,17 +108,8 @@ class MovementModel
 		return null;
 	}
 	
-	public static function listContainsLocation(hexes:Array<HexTile>, location:HexTile):Bool
+	public static function mapContainsLocation(hexes:StringMap<HexTile>, location:HexTile):Bool
 	{
-		for (hex in hexes)
-		{
-			// validate that marked location is in the list of valid destination
-			if (hex.equals(location))
-			{
-				return true;
-			}
-		}
-		
-		return false;
+		return hexes.exists(location.key());
 	}
 }

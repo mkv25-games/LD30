@@ -14,7 +14,7 @@ Incomplete features
 
 Bugs
 ----
-+ Its possible to move through illegal tiles due to the way movement is calculated
+- Rollover on indicator does weird things to map cursor
 
 Improvements
 ------------

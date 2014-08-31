@@ -10,7 +10,7 @@ class CombatModel
 		fromLocation.remove(unit);
 		targetLocation.add(unit);
 		
-		if (CombatModel.enemyCombatantsExistIn(targetLocation))
+		if (CombatModel.enemiesExistIn(targetLocation))
 		{
 			var log:CombatLogModel = CombatModel.processCombatFor(targetLocation);
 			log.printReport();
@@ -29,7 +29,7 @@ class CombatModel
 		
 		// Rule: Units from opposing sides can not exist in the same tile an the end of a turn.
 		
-		while (CombatModel.enemyCombatantsExistIn(location))
+		while (CombatModel.enemiesExistIn(location))
 		{
 			var playerUnits:IntMap<UnitList> = sortUnitsByPlayerIn(location);
 			
@@ -143,7 +143,7 @@ class CombatModel
 		return playerUnits;
 	}
 	
-	public static function enemyCombatantsExistIn(location:HexTile):Bool
+	public static function enemiesExistIn(location:HexTile):Bool
 	{
 		var owner:PlayerModel = null;
 		
@@ -162,6 +162,24 @@ class CombatModel
 				{
 					// owners of different units exist
 					// ergo enemy combatants exist
+					return true;
+				}
+			}
+		}
+		
+		return false;
+	}
+	
+	public static function containsEnemyCombatants(player:PlayerModel, location:HexTile):Bool
+	{
+		var contents = location.listContents();
+		for (thing in contents)
+		{
+			if (Std.is(thing, MapUnit))
+			{
+				var unit:MapUnit = cast thing;
+				if (unit.owner != player)
+				{
 					return true;
 				}
 			}

@@ -151,7 +151,7 @@ class MoveUnitController
 		if (markedLocation != null && selectedLocation != null && selectedUnit != null)
 		{
 			var destinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit, activeMovementCard.movement);
-			if (MovementModel.listContainsLocation(destinations, markedLocation))
+			if (MovementModel.mapContainsLocation(destinations, markedLocation))
 			{
 				movement.confirmButton.enable();
 				EventBus.displayNewStatusMessage.dispatch("Valid movement location");
