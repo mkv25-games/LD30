@@ -2,6 +2,7 @@ package net.mkv25.game.controllers;
 
 import net.mkv25.game.enums.PlayableCardType;
 import net.mkv25.game.event.EventBus;
+import net.mkv25.game.models.CombatModel;
 import net.mkv25.game.models.HexTile;
 import net.mkv25.game.models.MapUnit;
 import net.mkv25.game.models.PlayableCard;
@@ -68,11 +69,11 @@ class DeployUnitController
 			
 			EventBus.displayNewStatusMessage.dispatch(unit.type.name + " deployed");
 			
-			EventBus.mapRequiresRedraw.dispatch(this);
-			
 			EventBus.trashCardFromActivePlayersHand.dispatch(activeUnitCard);
 			
 			disableDeployment();
+			
+			CombatModel.moveUnit(unit, location, location);
 		}
 	}
 	
