@@ -49,7 +49,6 @@ class MainScreen extends Screen
 		
 		map = Index.mapHud;
 		map.move(0, 50);
-		map.setupMap(Index.activeGame.space);
 		
 		deployment = Index.deploymentHud;
 		deployment.move(0, 50);

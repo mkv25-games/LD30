@@ -112,9 +112,11 @@ class ActiveGame extends CoreModel
 			activePlayer = players[index];
 		}
 		
+		updatePlayerStats();
+		
 		// draw a new hand for the player
 		activePlayer.playerHand.drawHand();
-			
+		
 		EventBus.activePlayerChanged.dispatch(activePlayer);
 			
 		return activePlayer;

@@ -85,7 +85,7 @@ class Index
 		// wiring
 		screenController.setup(stage);
 		cardProvider.setup();
-		gameFlowController.setup();
+		gameFlowController.setup(screenController);
 		cardActionController.setup(screenController);
 		deployUnitController.setup(mapHud, deploymentHud);
 		moveUnitController.setup(mapHud, movementHud);

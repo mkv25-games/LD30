@@ -1,6 +1,6 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Build Units" itemID="54035584-00000233" lastModified="1409504644">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Over" itemID="54038cf5-00000271" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1409518837">
   <timeline>
-    <DOMTimeline name="Screen - Build Units">
+    <DOMTimeline name="Screen - Game Over">
       <layers>
         <DOMLayer name="sections" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
           <frames>
@@ -11,7 +11,7 @@
                     <Point x="250" y="25"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Game Play Areas/Build Units Area" name="" selected="true" centerPoint3DX="250" centerPoint3DY="300">
+                <DOMSymbolInstance libraryItemName="- Game Play Areas/Map Area" name="" centerPoint3DX="250" centerPoint3DY="300">
                   <matrix>
                     <Matrix ty="50"/>
                   </matrix>
@@ -50,17 +50,17 @@
                     <Point x="60" y="90"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Cards/Card - Portal" name="" centerPoint3DX="160" centerPoint3DY="650">
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Scientists" name="" centerPoint3DX="250" centerPoint3DY="650">
                   <matrix>
-                    <Matrix tx="100" ty="560"/>
+                    <Matrix tx="190" ty="560"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="60" y="90"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Cards/Card - Scientists" name="" centerPoint3DX="250" centerPoint3DY="650">
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Engineers" name="" centerPoint3DX="340" centerPoint3DY="650">
                   <matrix>
-                    <Matrix tx="190" ty="560"/>
+                    <Matrix tx="280" ty="560"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="60" y="90"/>
@@ -82,27 +82,87 @@
                     <Point x="250" y="25"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMStaticText left="-149.75" width="443.5" height="27.9" autoExpand="true" isSelectable="false">
+                <DOMStaticText left="-111.45" width="366.9" height="27.9" autoExpand="true" isSelectable="false">
                   <matrix>
                     <Matrix tx="178" ty="759.05"/>
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
-                      <characters>Choose a unit or a base card to construct</characters>
+                      <characters>Choose an action, or another card</characters>
                       <textAttrs>
                         <DOMTextAttrs alignment="center" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS"/>
                       </textAttrs>
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
-                <DOMSymbolInstance libraryItemName="- Cards/Card - Engineers" name="" centerPoint3DX="340" centerPoint3DY="610">
+                <DOMRectangleObject objectWidth="500" objectHeight="500" x="0" y="50" lockFlag="true">
+                  <fill>
+                    <SolidColor alpha="0.8"/>
+                  </fill>
+                </DOMRectangleObject>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Portal" name="" centerPoint3DX="160" centerPoint3DY="610">
                   <matrix>
-                    <Matrix tx="280" ty="520"/>
+                    <Matrix tx="100" ty="520"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="60" y="90"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Scraps/Action Button" name="" centerPoint3DX="250" centerPoint3DY="195">
+                  <matrix>
+                    <Matrix tx="250" ty="195"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="-26.9" width="197.8" height="32.5" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="178" ty="178.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>DEPLOY - SPACE</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" alpha="0.8" size="28" bitmapSize="560" face="TrebuchetMS" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Scraps/Action Button" name="" centerPoint3DX="250" centerPoint3DY="290">
+                  <matrix>
+                    <Matrix tx="250" ty="290"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="-37.5" width="219" height="32.5" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="178" ty="273.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>DEPLOY - PLANET</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" alpha="0.8" size="28" bitmapSize="560" face="TrebuchetMS" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText left="12.55" width="118.9" height="32.5" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="178" ty="360.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>[ cancel ]</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" alpha="0.8" size="28" bitmapSize="560" face="TrebuchetMS" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
               </elements>
             </DOMFrame>
           </frames>

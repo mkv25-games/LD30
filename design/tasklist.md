@@ -3,14 +3,15 @@ Things to do
 
 Incomplete features
 -------------------
-+ End game conditions - number of units, number of bases, territory
++ End game conditions
 + Linking bases via portals
 + Movement via portals
 + Ability to select individual unit from tile for movement
 + Game should focus back to player on turn change
 + Units can only be activated once a turn for movement
 + Sensible map layouts for low-player games
-- Movement should highlight combat
+- Movement should highlight combat tiles
+- Master of Expansion end game condition
 
 Bugs
 ----
