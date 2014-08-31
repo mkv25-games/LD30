@@ -3,7 +3,7 @@ Things to do
 
 Incomplete features
 -------------------
-+ End game conditions
++ End game conditions - number of units, number of bases, territory
 + Linking bases via portals
 + Movement via portals
 + Ability to select individual unit from tile for movement
