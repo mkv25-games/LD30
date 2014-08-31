@@ -9,6 +9,7 @@ import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.geom.Matrix;
 import net.mkv25.base.core.Image.ImageRegion;
+import net.mkv25.base.core.Recycler;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.base.ui.IconButtonUI;
@@ -19,7 +20,9 @@ import net.mkv25.game.models.MapModel;
 import net.mkv25.game.models.MapUnit;
 import net.mkv25.game.models.MovementModel;
 import net.mkv25.game.models.PlayableCard;
+import net.mkv25.game.models.PlayerModel;
 import net.mkv25.game.provider.HexProvider;
+import net.mkv25.game.provider.IconProvider;
 import openfl.Assets;
 
 class MapUI extends BaseUI
@@ -50,9 +53,8 @@ class MapUI extends BaseUI
 	var spaceViewButton:IconButtonUI;
 	var worldViewButton:IconButtonUI;
 	
-	var bitmapsInUse:Array<Bitmap>;
-	var unusedThings:Array<Bitmap>;
-	var recycler:Sprite;
+	var bitmapRecycler:Recycler<Bitmap>;
+	var indicatorRecycler:Recycler<UnitCountIndicatorUI>;
 	
 	public function new() 
 	{
@@ -89,9 +91,8 @@ class MapUI extends BaseUI
 		worldViewButton.move(40, 40);
 		worldViewButton.hide();
 		
-		bitmapsInUse = new Array<Bitmap>();
-		unusedThings = new Array<Bitmap>();
-		recycler = new Sprite();
+		bitmapRecycler = new Recycler<Bitmap>(Bitmap);
+		indicatorRecycler = new Recycler<UnitCountIndicatorUI>(UnitCountIndicatorUI);
 		
 		EventBus.mapRequiresRedraw.add(handleMapRequiresRedraw);
 	}
@@ -153,7 +154,6 @@ class MapUI extends BaseUI
 			highlightImage.show();
 			
 			var contents = tile.listContents();
-			// EventBus.displayNewStatusMessage.dispatch("Selected hex: " + tile.key() + ", contains: " + contents.length + " things.");
 		}
 		else
 		{
@@ -212,12 +212,9 @@ class MapUI extends BaseUI
 		var graphics:Graphics = artwork.graphics;
 		graphics.clear();
 		
-		// recycle all bitmaps in use
-		while (bitmapsInUse.length > 0) {
-			var thing = bitmapsInUse.pop();
-			recycler.addChild(thing);
-			unusedThings.push(thing);
-		}
+		// recycle all graphics in use
+		bitmapRecycler.recycleAll();
+		indicatorRecycler.recycleAll();
 		
 		// draw all hexes currently in view
 		var hexes = currentModel.hexes;
@@ -285,8 +282,7 @@ class MapUI extends BaseUI
 			layer = (layer == null) ? hexLayer : layer;
 			image = (image == null) ? getBitmapDataForHex(hex) : image;
 			
-			var bitmap:Bitmap = (unusedThings.length > 0) ? unusedThings.pop() : new Bitmap();
-			bitmapsInUse.push(bitmap);
+			var bitmap:Bitmap = bitmapRecycler.get();
 			layer.addChild(bitmap);
 			
 			bitmap.bitmapData = image;
@@ -301,7 +297,7 @@ class MapUI extends BaseUI
 		}
 	}
 	
-	inline function getBitmapDataForHex(hex:HexTile):BitmapData
+	function getBitmapDataForHex(hex:HexTile):BitmapData
 	{
 		var bitmap:BitmapData;
 		if (hex.contested) {
@@ -315,26 +311,50 @@ class MapUI extends BaseUI
 		return bitmap;
 	}
 	
-	inline function drawThingsInHex(hex:HexTile):Void
+	function drawThingsInHex(hex:HexTile):Void
 	{
 		var things = hex.listContents();
+		var commonOwner:PlayerModel = null;
+		var unitCount:Int = 0;
+		
+		// recalculate position of hex
+		var hex_x = hex.x();
+		var hex_y = hex.y();
+		var x = (hexImage.width * hex_x) - (hexImage.width / 2);
+		var y = (hexImage.height * hex_y) - (hexImage.height / 2);
+			
 		for (thing in things)
 		{
 			// make an image for the thing
-			var bitmap = (unusedThings.length > 0) ? unusedThings.pop() : new Bitmap();
+			var bitmap = bitmapRecycler.get();
 			bitmap.bitmapData = thing.getIcon();
 			safeAddAt(thingsLayer, bitmap, thing.getDepth());
-			bitmapsInUse.push(bitmap);
-			
-			// recalculate position of hex
-			var hex_x = hex.x();
-			var hex_y = hex.y();
-			var x = (hexImage.width * hex_x) - (hexImage.width / 2);
-			var y = (hexImage.height * hex_y) - (hexImage.height / 2);
 			
 			// center thing on hex
 			bitmap.x = x + (hexImage.width / 2) - (bitmap.width / 2);
 			bitmap.y = y + (hexImage.height / 2) - (bitmap.height / 2);
+			
+			// record owner
+			if (Std.is(thing, MapUnit))
+			{
+				var unit:MapUnit = cast thing;
+				commonOwner = unit.owner;
+				unitCount++;
+			}
+		}
+		
+		// draw indicator
+		if (commonOwner != null && unitCount > 1)
+		{
+			var indicator = indicatorRecycler.get();
+			indicator.setup(commonOwner, unitCount + "");
+			safeAddAt(thingsLayer, indicator.artwork, 20);
+			
+			// place indicator on top corner of hex
+			indicator.move(
+				x + (hexImage.width * 0.75),
+				y
+			);
 		}
 	}
 	

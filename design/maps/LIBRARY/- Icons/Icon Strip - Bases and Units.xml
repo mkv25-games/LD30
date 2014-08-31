@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon Strip - Bases and Units" itemID="54035584-0000022a" lastModified="1409504644">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon Strip - Bases and Units" itemID="54035584-0000022a" lastModified="1409506240">
   <timeline>
     <DOMTimeline name="Icon Strip - Bases and Units">
       <layers>
@@ -6,9 +6,9 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="- Scraps/counter" name="" centerPoint3DX="20.2" centerPoint3DY="18">
+                <DOMSymbolInstance libraryItemName="- Scraps/counter" name="" centerPoint3DX="20.2" centerPoint3DY="20">
                   <matrix>
-                    <Matrix tx="20.2" ty="18"/>
+                    <Matrix tx="20.2" ty="20"/>
                   </matrix>
                   <transformationPoint>
                     <Point/>

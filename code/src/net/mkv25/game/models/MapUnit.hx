@@ -7,7 +7,6 @@ import net.mkv25.game.enums.PlayableCardType;
 class MapUnit implements IMapThing extends CoreModel
 {
 	public var icon:BitmapData;
-	public var depth:Int;
 	public var type:PlayableCard;
 	public var owner:PlayerModel;
 
@@ -17,8 +16,6 @@ class MapUnit implements IMapThing extends CoreModel
 	public function new() 
 	{
 		super();
-		
-		depth = 1;
 	}
 	
 	public function setup(owner:PlayerModel, type:PlayableCard):Void
@@ -34,7 +31,7 @@ class MapUnit implements IMapThing extends CoreModel
 	
 	public function getDepth():Int 
 	{
-		return this.depth;
+		return type.iconOffset;
 	}
 	
 	public function resetFlags():Void

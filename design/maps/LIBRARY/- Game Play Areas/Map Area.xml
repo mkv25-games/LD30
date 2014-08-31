@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Game Play Areas/Map Area" itemID="54035584-00000201" lastModified="1409504644">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Game Play Areas/Map Area" itemID="54035584-00000201" lastModified="1409506234">
   <timeline>
     <DOMTimeline name="Map Area">
       <layers>
@@ -172,7 +172,7 @@
                   </strokes>
                   <edges>
                     <Edge strokeStyle="2" edges="!8050 6750|7300 4584!7300 4584|8050 3286"/>
-                    <Edge strokeStyle="1" edges="!2050 3286|2800 5450!2800 5450|2050 6750!5049 5018|2800 5450"/>
+                    <Edge strokeStyle="1" edges="!5049 5018|2800 5450!2800 5450|2050 6750!2050 3286|2800 5450"/>
                   </edges>
                 </DOMShape>
               </elements>

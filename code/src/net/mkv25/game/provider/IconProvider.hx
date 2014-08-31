@@ -50,11 +50,16 @@ class IconProvider
 	
 	public static function getUnitIconFor(player:PlayerModel, type:PlayableCard):BitmapData
 	{
-		var unitOffset = type.iconOffset;
+		return IconProvider.getPlayerIconFor(player, type.iconOffset);
+	}
+	
+	public static function getPlayerIconFor(player:PlayerModel, iconOffset:Int=0):BitmapData
+	{
+		var unitOffset = iconOffset;
 		var rowOffset = (2 + player.playerNumberZeroBased) * ICON_COLS;
 		var index = rowOffset + unitOffset;
 		
-		return getIcon(index);
+		return IconProvider.getIcon(index);
 	}
 	
 }
