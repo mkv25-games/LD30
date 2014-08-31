@@ -14,7 +14,7 @@ Incomplete features
 
 Bugs
 ----
-- Rollover on indicator does weird things to map cursor
+
 
 Improvements
 ------------

@@ -23,6 +23,8 @@ class UnitCountIndicatorUI extends BaseUI
 		
 		artwork.addChild(bitmap.artwork);
 		artwork.addChild(text.artwork);
+		
+		artwork.mouseEnabled = artwork.mouseChildren = false;
 	}
 	
 	public function setup(player:PlayerModel, label:String):Void
