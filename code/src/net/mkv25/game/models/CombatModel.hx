@@ -33,8 +33,8 @@ class CombatModel
 		{
 			var playerUnits:IntMap<UnitList> = sortUnitsByPlayerIn(location);
 			
-			// Rule: When there are multiple units in a tile, the lowest strength unit on each side fights first.
-			var unitList:UnitList = getTheLowestStrengthUnitFromEachPlayer(playerUnits);
+			// Rule: When there are multiple units in a tile, the highest strength unit on each side fights first.
+			var unitList:UnitList = getTheHighestStrengthUnitFromEachPlayer(playerUnits);
 	
 			// Pick the highest strength unit (which may be equal strength) and compare against other player units
 			var firstUnit:MapUnit = unitList.getHighestStrengthUnit();
@@ -81,7 +81,7 @@ class CombatModel
 		
 		// Perform final checks for reporting purposes
 		var playerUnits:IntMap<UnitList> = sortUnitsByPlayerIn(location);
-		var units:UnitList = getTheLowestStrengthUnitFromEachPlayer(playerUnits);
+		var units:UnitList = getTheHighestStrengthUnitFromEachPlayer(playerUnits);
 		
 		if (units.length() == 0)
 		{
@@ -98,13 +98,13 @@ class CombatModel
 		return combatLog;
 	}
 	
-	public static function getTheLowestStrengthUnitFromEachPlayer(playerUnits:IntMap<UnitList>):UnitList
+	public static function getTheHighestStrengthUnitFromEachPlayer(playerUnits:IntMap<UnitList>):UnitList
 	{
 		var units:UnitList = new UnitList();
 		
 		for (unitList in playerUnits)
 		{
-			var nextUnit:MapUnit = unitList.getLowestStrengthUnit();
+			var nextUnit:MapUnit = unitList.getHighestStrengthUnit();
 			if (nextUnit != null)
 			{
 				units.addUnit(nextUnit);
