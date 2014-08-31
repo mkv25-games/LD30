@@ -16,7 +16,7 @@ class DeployUnitController
 	private var deployment:DeploymentUI;
 	
 	private var activeUnitCard:PlayableCard;
-	private var markedHex:HexTile;
+	private var markedLocation:HexTile;
 	
 	public function new()
 	{
@@ -27,7 +27,6 @@ class DeployUnitController
 		EventBus.cardSelectedFromHandByPlayer.add(cancelDeployment);
 		
 		EventBus.mapMarkerPlacedOnMap.add(updateDeploymentAvailability);
-		EventBus.mapMarkerRemovedFromMap.add(disableDeploymentButton);
 	}
 	
 	public function setup(map:MapUI, deployment:DeploymentUI):Void
@@ -61,9 +60,9 @@ class DeployUnitController
 		
 		var player:PlayerModel = Index.activeGame.activePlayer;
 		
-		if (checkIfPlayerCanDeployUnitToLocation(player, activeUnitCard, markedHex))
+		if (checkIfPlayerCanDeployUnitToLocation(player, activeUnitCard, markedLocation))
 		{
-			var location:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
+			var location:HexTile = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
 			var unit:MapUnit = UnitProvider.getUnit(player, activeUnitCard);
 			location.add(unit);
 			
@@ -75,16 +74,11 @@ class DeployUnitController
 			
 			disableDeployment();
 		}
-		else
-		{
-			cancelDeployment();
-		}
 	}
 	
 	function cancelDeployment(?model)
 	{
 		this.activeUnitCard = null;
-		this.markedHex = null;
 		
 		disableDeployment();
 	}
@@ -93,6 +87,8 @@ class DeployUnitController
 	{
 		deployment.enable();
 		deployment.show();
+		
+		updateDeploymentAvailability();
 	}
 	
 	function disableDeployment()
@@ -101,11 +97,14 @@ class DeployUnitController
 		deployment.hide();
 	}
 	
-	function updateDeploymentAvailability(marker:HexTile):Void
+	function updateDeploymentAvailability(?marker:HexTile):Void
 	{
-		this.markedHex = marker;
+		if (marker != null)
+		{
+			this.markedLocation = marker;
+		}
 		
-		if (checkIfPlayerCanDeployUnitToLocation(Index.activeGame.activePlayer, activeUnitCard, markedHex))
+		if (checkIfPlayerCanDeployUnitToLocation(Index.activeGame.activePlayer, activeUnitCard, markedLocation))
 		{
 			deployment.deployButton.enable();
 		}
@@ -136,24 +135,20 @@ class DeployUnitController
 			return true;
 		}
 		
-		// check that a player owned base exists in a neighbouring tile
-		var neighbours = location.getNeighbours();
-		for (hex in neighbours)
+		// On worlds only, check that a player owned base exists in a neighbouring tile
+		if (location.map.isWorld())
 		{
-			if (hex.containsBase(player))
+			var neighbours = location.getNeighbours();
+			for (hex in neighbours)
 			{
-				// Rule: units can only be deployed in player owned territory
-				return true;
+				if (hex.containsBase(player))
+				{
+					// Rule: units can only be deployed in player owned territory
+					return true;
+				}
 			}
 		}
 		
 		return false;
-	}
-	
-	function disableDeploymentButton(?marker:HexTile):Void
-	{
-		this.markedHex = null;
-		
-		deployment.deployButton.disable();
 	}
 }

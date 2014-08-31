@@ -64,7 +64,7 @@ class MoveUnitController
 		if (selectedUnit != null) 
 		{
 			map.enableMovementOverlayFor(selectedLocation, selectedUnit);
-			movement.confirmButton.enable();
+			updateMovementConfirmation();
 			EventBus.displayNewStatusMessage.dispatch("Select a tile to move to");
 		}
 		else
@@ -94,7 +94,6 @@ class MoveUnitController
 	function cancelMovement(?model)
 	{
 		this.activeMovementCard = null;
-		this.markedLocation = null;
 		this.selectedLocation = null;
 		this.selectedUnit = null;
 		

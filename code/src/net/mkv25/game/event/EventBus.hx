@@ -41,7 +41,6 @@ class EventBus
 	public static var mapRequiresRedraw = new Signal();
 	public static var mapViewChanged = new Signal();
 	public static var mapMarkerPlacedOnMap = new Signal();
-	public static var mapMarkerRemovedFromMap = new Signal();
 	
 	public function new() 
 	{

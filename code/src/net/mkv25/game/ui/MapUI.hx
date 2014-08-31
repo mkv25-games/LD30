@@ -30,7 +30,7 @@ class MapUI extends BaseUI
 	
 	var hexImage:BitmapData;
 	
-	var highlightedHex:HexTile;
+	var cursorHex:HexTile;
 	var highlightImage:BitmapUI;
 	
 	var markedHex:HexTile;
@@ -44,7 +44,9 @@ class MapUI extends BaseUI
 	var hexLayer:Sprite;
 	var movementLayer:Sprite;
 	var thingsLayer:Sprite;
+	
 	var spaceViewButton:IconButtonUI;
+	var worldViewButton:IconButtonUI;
 	
 	var bitmapsInUse:Array<Bitmap>;
 	var unusedThings:Array<Bitmap>;
@@ -57,7 +59,7 @@ class MapUI extends BaseUI
 		HexProvider.setup();
 		hexImage = HexProvider.EMPTY_HEX;
 		
-		highlightedHex = new HexTile();
+		cursorHex = new HexTile();
 		highlightImage = new BitmapUI();
 		highlightImage.artwork.mouseEnabled = highlightImage.artwork.mouseChildren = false;
 		
@@ -75,14 +77,19 @@ class MapUI extends BaseUI
 		thingsLayer = new Sprite();
 		
 		spaceViewButton = new IconButtonUI();
-		spaceViewButton.setup("img/icon-back.png", switchToSpaceMap);
+		spaceViewButton.setup("img/icon-starmap.png", switchToSpaceMap);
 		spaceViewButton.move(40, 40);
+		spaceViewButton.hide();
+		
+		worldViewButton = new IconButtonUI();
+		worldViewButton.setup("img/icon-world.png", switchToWorldMap);
+		worldViewButton.move(40, 40);
+		worldViewButton.hide();
 		
 		bitmapsInUse = new Array<Bitmap>();
 		unusedThings = new Array<Bitmap>();
 		recycler = new Sprite();
 		
-		EventBus.playerWantsTo_cancelTheCurrentAction.add(removeMapMarker);
 		EventBus.mapRequiresRedraw.add(handleMapRequiresRedraw);
 	}
 	
@@ -92,21 +99,25 @@ class MapUI extends BaseUI
 		
 		mapImage.bitmapData = model.background;
 		
-		viewLayer.addEventListener(MouseEvent.MOUSE_MOVE, highlightHexTile, false, 0, true);
+		viewLayer.addEventListener(MouseEvent.MOUSE_MOVE, moveHexCursor, false, 0, true);
 		viewLayer.addEventListener(MouseEvent.MOUSE_DOWN, markSelectedHex, false, 0, true);
 		
-		redraw();
-	}
-	
-	function removeMapMarker(?model):Void
-	{
-		// reset marked hex
-		markedHex.q = -9001;
-		markedHex.r = -9001;
-		markedHex.map = null;
-		markedImage.hide();
+		(markedHex.map == currentModel) ? markedImage.show() : markedImage.hide();
 		
-		EventBus.mapMarkerRemovedFromMap.dispatch(markedHex);
+		if (currentModel.isWorld())
+		{
+			spaceViewButton.show();
+			worldViewButton.hide();
+		}
+		else
+		{
+			worldViewButton.show();
+			spaceViewButton.hide();
+			
+			updateWorldViewButton();
+		}
+		
+		redraw();
 	}
 	
 	/// Internal Draw Methods ///
@@ -127,15 +138,15 @@ class MapUI extends BaseUI
 		return tile;
 	}
 	
-	function highlightHexTile(mouseEvent:MouseEvent):Void
+	function moveHexCursor(mouseEvent:MouseEvent):Void
 	{
 		var tile:HexTile = hexUnderMouse(mouseEvent);
 		if (tile != null)
 		{
-			highlightedHex.q = tile.q;
-			highlightedHex.r = tile.r;
-			highlightImage.setBitmapData(HexProvider.HIGHLIGHTED_HEX);
-			drawHex(highlightedHex, highlightImage.artwork);
+			cursorHex.q = tile.q;
+			cursorHex.r = tile.r;
+			highlightImage.setBitmapData(HexProvider.CURSOR_HEX);
+			drawHex(cursorHex, highlightImage.artwork);
 			highlightImage.show();
 			
 			var contents = tile.listContents();
@@ -150,35 +161,47 @@ class MapUI extends BaseUI
 	function markSelectedHex(mouseEvent:MouseEvent):Void
 	{
 		var tile:HexTile = hexUnderMouse(mouseEvent);
-		if (tile != null) {
-			var contents = tile.listContents();
+		if (tile != null)
+		{
+			// selecting a new hex
+			markedHex.r = tile.r;
+			markedHex.q = tile.q;
+			markedHex.map = tile.map;
+			markedImage.setBitmapData(HexProvider.MARKED_HEX);
+			drawHex(markedHex, markedImage.artwork);
+			markedImage.show();
+			markedImage.zoomIn();
 			
-			// marking the same hex for the second time
-			if (markedHex.map == tile.map && markedHex.r == tile.r && markedHex.q == tile.q)
-			{
-				for (thing in contents) {
-					if (Std.is(thing, MapModel))
-					{
-						var world:MapModel = cast thing;
-						setupMap(world);
-					}
-				}
-			}
-			else
-			{
-				// selecting a new hex
-				markedHex.r = tile.r;
-				markedHex.q = tile.q;
-				markedHex.map = tile.map;
-				markedImage.setBitmapData(HexProvider.MARKED_HEX);
-				drawHex(markedHex, markedImage.artwork);
-				markedImage.show();
-				markedImage.zoomIn();
-				
-				EventBus.mapMarkerPlacedOnMap.dispatch(markedHex);
-				
-				highlightImage.popIn();
-			}
+			EventBus.mapMarkerPlacedOnMap.dispatch(markedHex);
+			
+			highlightImage.popIn();
+		}
+		else
+		{
+			markedHex.r = -100;
+			markedHex.q = -100;
+			markedHex.map = Index.activeGame.space;
+		}
+		
+		updateWorldViewButton();
+	}
+	
+	function updateWorldViewButton():Void
+	{
+		if (markedHex == null || markedHex.map == null)
+		{
+			worldViewButton.disable();
+			return;
+		}
+		
+		var tile:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
+		if (tile.containsWorld())
+		{
+			worldViewButton.enable();
+		}
+		else
+		{
+			worldViewButton.disable();
 		}
 	}
 	
@@ -219,6 +242,7 @@ class MapUI extends BaseUI
 		viewLayer.addChild(markedImage.artwork);
 		viewLayer.addChild(highlightImage.artwork);
 		artwork.addChild(spaceViewButton.artwork);
+		artwork.addChild(worldViewButton.artwork);
 		
 		updateButtons();
 		
@@ -357,6 +381,20 @@ class MapUI extends BaseUI
 		bloopSfx.play();
 		
 		setupMap(Index.activeGame.space);
+	}
+	
+	function switchToWorldMap(?model)
+	{
+		var location:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
+		if (location.containsWorld())
+		{
+			var bloopSfx = Assets.getSound("sounds/bloop.wav");
+			bloopSfx.play();
+			
+			var world:MapModel = MovementModel.getWorldFrom(location);
+			
+			setupMap(world);
+		}
 	}
 	
 }

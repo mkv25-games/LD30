@@ -8,7 +8,7 @@ class HexProvider
 	public static var HEX_SIZE:Int = 50;
 
 	public static var EMPTY_HEX:BitmapData;
-	public static var HIGHLIGHTED_HEX:BitmapData;
+	public static var CURSOR_HEX:BitmapData;
 	public static var MARKED_HEX:BitmapData;
 	public static var CONTESTED_HEX:BitmapData;
 	public static var MOVEMENT_HEX:BitmapData;
@@ -18,7 +18,7 @@ class HexProvider
 	public static function setup():Void
 	{
 		EMPTY_HEX = getHex(1);
-		HIGHLIGHTED_HEX = getHex(2);
+		CURSOR_HEX = getHex(2);
 		MARKED_HEX = getHex(9);
 		CONTESTED_HEX = getHex(10);
 		MOVEMENT_HEX = getHex(11);

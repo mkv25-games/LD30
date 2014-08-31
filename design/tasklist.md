@@ -5,13 +5,15 @@ Incomplete features
 -------------------
 + Movement, can only move one tile at a time
 + Combat rules
++ Number on hexes indicating multiple units
 + End game conditions
 + Linking bases via portals
 + Movement via portals
++ Ability to select individual unit from tile for movement
++ Game should focus back to player on turn change
 
 Bugs
 ----
-+ Impossible to select tile to move to in space around planet on mobile, always changes view to planet
 - Marked hex not recognised if selected before selecting movement action
 - Marked hex not recognised if selected before selecting deployment action
 
@@ -30,6 +32,7 @@ Improvements
 + Sexier graphics for player interface
 + Sexier graphics for cards
 + Animations for game actions
++ Animate resources being gathered
 + Replay feature to see last turn
 
 Free Version Release Work
