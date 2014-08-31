@@ -3,7 +3,6 @@ Things to do
 
 Incomplete features
 -------------------
-+ End game conditions
 + Linking bases via portals
 + Movement via portals
 + Ability to select individual unit from tile for movement
@@ -15,7 +14,8 @@ Incomplete features
 
 Bugs
 ----
-
+- Unit can be moved back into its own tile
+- Android bug when placing advanced base next to standard base on enemy world
 
 Improvements
 ------------
