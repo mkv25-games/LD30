@@ -3,7 +3,6 @@ Things to do
 
 Incomplete features
 -------------------
-+ Movement should highlight combat
 + Number on hexes indicating multiple units
 + End game conditions
 + Linking bases via portals
@@ -11,6 +10,7 @@ Incomplete features
 + Ability to select individual unit from tile for movement
 + Game should focus back to player on turn change
 + Units can only be activated once a turn for movement
+- Movement should highlight combat
 
 Bugs
 ----
