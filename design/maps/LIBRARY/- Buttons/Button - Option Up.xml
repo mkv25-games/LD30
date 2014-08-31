@@ -1,0 +1,29 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Buttons/Button - Option Up" itemID="54035584-000001e3" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Button - Option Up">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="260" objectHeight="80" x="0" y="0" lockFlag="true" topLeftRadius="24" topRightRadius="24" bottomLeftRadius="24" bottomRightRadius="24">
+                  <fill>
+                    <SolidColor color="#660000" alpha="0.0470588235294118"/>
+                  </fill>
+                </DOMRectangleObject>
+                <DOMSymbolInstance libraryItemName="- Scraps/Action Button" name="" centerPoint3DX="130" centerPoint3DY="40">
+                  <matrix>
+                    <Matrix tx="130" ty="40"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

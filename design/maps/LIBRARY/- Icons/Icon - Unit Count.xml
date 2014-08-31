@@ -1,0 +1,39 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon - Unit Count" itemID="53f8bc00-000002f8" sourceLibraryItemHRef="Symbol 1" lastModified="1408810129" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Icon - Unit Count">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#006699"/>
+                        </FillStyle>
+                      </fills>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" weight="3" joints="miter">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge fillStyle1="1" strokeStyle="1" edges="!106 -105|-100 -105!-100 -105|2 -292!2 -292|106 -105!329 293|123 293!123 293|225 106!225 106|329 293!5 293|-160 -2!-160 -2|165 -2!165 -2|5 293!-116 293|-322 293!-322 293|-220 106!-220 106|-116 293"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

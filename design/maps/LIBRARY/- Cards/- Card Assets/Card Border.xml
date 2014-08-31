@@ -1,0 +1,53 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Cards/- Card Assets/Card Border" itemID="54035584-000001e8" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Card Border">
+      <layers>
+        <DOMLayer name="hlighlight" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFFFFF" alpha="0.145098039215686"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!2300 240|2300 1709!2300 1709|2400 1709!2400 1709|2400 240!2400 240[2400 0 2160 0!2160 0|240 0!240 0[0 0 0 240!0 240|0 1709!0 1709|100 1709!100 1709|100 240!100 240[100 100 240 100!240 100|2160 100!2160 100[2300 100 2300 240"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="black" color="#4FFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!2160 100|240 100!240 100[100 100 100 240!100 240|100 3360!100 3360[100 3500 240 3500!240 3500|2160 3500!2160 3500[2300 3500 2300 3360!2300 3360|2300 240!2300 240[2300 100 2160 100"/>
+                        <Edge fillStyle0="1" edges="!2160 0|240 0!240 0[0 0 0 240!0 240|0 3360!0 3360[0 3600 240 3600!240 3600|2160 3600!2160 3600[2400 3600 2400 3360!2400 3360|2400 240!2400 240[2400 0 2160 0"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

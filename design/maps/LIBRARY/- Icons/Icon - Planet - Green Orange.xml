@@ -1,0 +1,43 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon - Planet - Green Orange" itemID="53f8bdaf-0000032e" sourceLibraryItemHRef="Symbol 1" lastModified="1408810882">
+  <timeline>
+    <DOMTimeline name="Icon - Planet - Green Orange">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#A87440"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#69A840"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="3" joints="miter">
+                        <fill>
+                          <SolidColor color="#7197CD" alpha="0.4"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="2" strokeStyle="1" edges="!-349.5 91[-360 #2F.A7 -360 0!-360 0[-360 -148 -255 -255!-255 -255[#FFFF23.0F #FFFEDF.43 -182.5 -311.5"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!-182.5 -311.5|120 -74!120 -74|330.5 -144"/>
+                    <Edge fillStyle1="2" strokeStyle="1" edges="!330.5 -144[360 -77.78125 360 0!360 0[360 #41.76 339.5 122.5"/>
+                    <Edge fillStyle0="1" fillStyle1="2" edges="!339.5 122.5|40 166!40 166|-140 36!-140 36|-349.5 91"/>
+                    <Edge fillStyle0="1" strokeStyle="1" edges="!-349.5 91[#FFFEB9.95 #B6.95 -255 254!-255 254[-149 360 0 360!0 360[149 360 254 254!254 254[#139.6E #C3.22 339.5 122.5"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!-182.5 -311.5[-101.125 -360 0 -360!0 -360[149 -360 254 -255!254 -255[#130.4A #FFFF33.C4 330.5 -144"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

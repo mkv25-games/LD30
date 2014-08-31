@@ -1,0 +1,109 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Game Play Areas/Develop Technology Area" itemID="54035584-00000200" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Develop Technology Area">
+      <layers>
+        <DOMLayer name="cards" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText left="42.3" width="396" height="30.2" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-20.3" ty="27"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Develop a technology: </characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" size="26" bitmapSize="520" face="TrebuchetMS" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Engineers" name="" centerPoint3DX="249.6" centerPoint3DY="148">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="201.6" ty="76"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Scientists" name="" centerPoint3DX="136.4" centerPoint3DY="148">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="88.4" ty="76"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Portal" name="" centerPoint3DX="363.6" centerPoint3DY="148">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="315.6" ty="76"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Excavater" name="" centerPoint3DX="249.6" centerPoint3DY="322">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="201.6" ty="250"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Harvester" name="" centerPoint3DX="136.4" centerPoint3DY="322">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="88.4" ty="250"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Plasma Furnace" name="" centerPoint3DX="363.6" centerPoint3DY="322">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="315.6" ty="250"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="starfield" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance name="" referenceID="" libraryItemName="- Bitmaps/starfield-small.png"/>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="box" color="#4FFF4F" locked="true" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="500" objectHeight="500" x="-40" y="-30" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="30"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#009933" alpha="0.2"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

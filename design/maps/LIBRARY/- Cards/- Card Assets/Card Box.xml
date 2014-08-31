@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Cards/- Card Assets/Card Box" itemID="54035584-000001e9" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Card Box">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <LinearGradient>
+                        <matrix>
+                          <Matrix a="0" b="0.046966552734375" c="-0.0732421875" d="0" tx="60" ty="132.45"/>
+                        </matrix>
+                        <GradientEntry color="#FF7048" ratio="0"/>
+                        <GradientEntry color="#D47300" ratio="1"/>
+                      </LinearGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!2160 0|240 0!240 0[0 0 0 240!0 240|0 3360!0 3360[0 3600 240 3600!240 3600|2160 3600!2160 3600[2400 3600 2400 3360!2400 3360|2400 240!2400 240[2400 0 2160 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

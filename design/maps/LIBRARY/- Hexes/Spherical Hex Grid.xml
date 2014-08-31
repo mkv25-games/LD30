@@ -1,0 +1,696 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Hexes/Spherical Hex Grid" itemID="54035584-00000212" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Spherical Hex Grid">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="8" centerPoint3DY="7">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-25" ty="-21.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="45.55" centerPoint3DY="-14.75">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="12.5" ty="-43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="45.55" centerPoint3DY="28.55">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="12.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="8.05" centerPoint3DY="-36.35">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-25" ty="-64.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="8.05" centerPoint3DY="50.25">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-25" ty="21.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-29.45" centerPoint3DY="-14.75">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-62.5" ty="-43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-29.45" centerPoint3DY="28.55">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-62.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="8" centerPoint3DY="136.9">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-25" ty="108.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="8.05" centerPoint3DY="93.55">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-25" ty="65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="8.05" centerPoint3DY="180.15">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-25" ty="151.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="8" centerPoint3DY="-122.9">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-25" ty="-151.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="8.05" centerPoint3DY="-166.25">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-25" ty="-194.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="8.05" centerPoint3DY="-79.65">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-25" ty="-108.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-29.5" centerPoint3DY="-101.3">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-62.5" ty="-129.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-29.45" centerPoint3DY="-144.65">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-62.5" ty="-173.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-29.45" centerPoint3DY="-58.05">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-62.5" ty="-86.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="45.5" centerPoint3DY="-101.3">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="12.5" ty="-129.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="45.55" centerPoint3DY="-144.65">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="12.5" ty="-173.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="45.55" centerPoint3DY="-58.05">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="12.5" ty="-86.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-29.5" centerPoint3DY="115.2">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-62.5" ty="86.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-29.45" centerPoint3DY="71.85">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-62.5" ty="43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-29.45" centerPoint3DY="158.45">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-62.5" ty="129.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="45.5" centerPoint3DY="115.2">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="12.5" ty="86.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="45.55" centerPoint3DY="71.85">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="12.5" ty="43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="45.55" centerPoint3DY="158.45">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="12.5" ty="129.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="83.05" centerPoint3DY="-36.35">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="50" ty="-64.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="83.05" centerPoint3DY="6.95">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="50" ty="-21.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="83" centerPoint3DY="-122.9">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="50" ty="-151.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="83.05" centerPoint3DY="-79.65">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="50" ty="-108.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="83" centerPoint3DY="93.6">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="50" ty="65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="83.05" centerPoint3DY="50.25">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="50" ty="21.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="83.05" centerPoint3DY="136.85">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="50" ty="108.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-66.95" centerPoint3DY="-36.35">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-100" ty="-64.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-66.95" centerPoint3DY="6.95">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-100" ty="-21.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-67" centerPoint3DY="-122.9">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-100" ty="-151.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-66.95" centerPoint3DY="-79.65">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-100" ty="-108.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-67" centerPoint3DY="93.6">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-100" ty="65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-66.95" centerPoint3DY="50.25">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-100" ty="21.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-66.95" centerPoint3DY="136.85">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-100" ty="108.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="120.55" centerPoint3DY="-58.05">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="87.5" ty="-86.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="120.55" centerPoint3DY="-14.75">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="87.5" ty="-43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="120.55" centerPoint3DY="-101.35">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="87.5" ty="-129.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="120.5" centerPoint3DY="71.9">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="87.5" ty="43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="120.55" centerPoint3DY="28.55">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="87.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="120.55" centerPoint3DY="115.15">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="87.5" ty="86.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-104.45" centerPoint3DY="-58.05">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-137.5" ty="-86.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-104.45" centerPoint3DY="-14.75">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-137.5" ty="-43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-104.45" centerPoint3DY="-101.35">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-137.5" ty="-129.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-104.5" centerPoint3DY="71.9">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-137.5" ty="43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-104.45" centerPoint3DY="28.55">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-137.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-104.45" centerPoint3DY="115.15">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-137.5" ty="86.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="158.05" centerPoint3DY="-79.65">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="125" ty="-108.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="158.05" centerPoint3DY="-36.35">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="125" ty="-64.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="158" centerPoint3DY="50.3">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="125" ty="21.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="158.05" centerPoint3DY="6.95">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="125" ty="-21.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="158.05" centerPoint3DY="93.55">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="125" ty="65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-141.95" centerPoint3DY="-79.65">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-175" ty="-108.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-141.95" centerPoint3DY="-36.35">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-175" ty="-64.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-142" centerPoint3DY="50.3">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-175" ty="21.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-141.95" centerPoint3DY="6.95">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-175" ty="-21.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-141.95" centerPoint3DY="93.55">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-175" ty="65"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="45.55" centerPoint3DY="-187.95">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="12.5" ty="-216.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="83.05" centerPoint3DY="-166.25">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="50" ty="-194.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="120.55" centerPoint3DY="-144.65">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="87.5" ty="-173.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" selected="true" centerPoint3DX="158.05" centerPoint3DY="-122.95">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="125" ty="-151.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-29.45" centerPoint3DY="-187.95">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-62.5" ty="-216.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-66.95" centerPoint3DY="-166.25">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-100" ty="-194.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-104.45" centerPoint3DY="-144.65">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-137.5" ty="-173.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-141.95" centerPoint3DY="-122.95">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-175" ty="-151.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-141.95" centerPoint3DY="136.85">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-175" ty="108.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-104.45" centerPoint3DY="158.45">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-137.5" ty="129.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-66.95" centerPoint3DY="180.15">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-100" ty="151.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-29.45" centerPoint3DY="201.75">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-62.5" ty="173.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="45.55" centerPoint3DY="201.75">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="12.5" ty="173.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="83.05" centerPoint3DY="180.15">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="50" ty="151.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="120.55" centerPoint3DY="158.45">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="87.5" ty="129.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="158.05" centerPoint3DY="136.85">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="125" ty="108.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="195.55" centerPoint3DY="-58.05">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="162.5" ty="-86.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="195.5" centerPoint3DY="28.6">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="162.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="195.55" centerPoint3DY="-14.75">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="162.5" ty="-43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="195.55" centerPoint3DY="71.85">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="162.5" ty="43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-179.4" centerPoint3DY="-58.05">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-212.45" ty="-86.6"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-179.45" centerPoint3DY="28.6">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-212.45"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-179.4" centerPoint3DY="-14.75">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-212.45" ty="-43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-179.4" centerPoint3DY="71.85">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-212.45" ty="43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

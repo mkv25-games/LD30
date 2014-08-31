@@ -1,0 +1,35 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon Strip - Bases and Units" itemID="54035584-0000022a" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Icon Strip - Bases and Units">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Scraps/counter" name="" centerPoint3DX="20.2" centerPoint3DY="18">
+                  <matrix>
+                    <Matrix tx="20.2" ty="18"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="-25" saturation="40"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Unit Strip - Bases and Units" name="" centerPoint3DX="203" centerPoint3DY="20">
+                  <matrix>
+                    <Matrix tx="40"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="163.55" y="19.75"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

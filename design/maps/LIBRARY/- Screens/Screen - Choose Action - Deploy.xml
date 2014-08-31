@@ -1,0 +1,173 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Choose Action - Deploy" itemID="54035584-00000234" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Screen - Choose Action - Deploy">
+      <layers>
+        <DOMLayer name="sections" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Game Play Areas/Status Bar" name="" centerPoint3DX="250" centerPoint3DY="25">
+                  <transformationPoint>
+                    <Point x="250" y="25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Game Play Areas/Map Area" name="" centerPoint3DX="250" centerPoint3DY="300">
+                  <matrix>
+                    <Matrix ty="50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="250" y="250"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMRectangleObject objectWidth="500" objectHeight="200" x="-40" y="-30" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="580"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#009933" alpha="0.2"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="500" objectHeight="200" x="-40" y="-30" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="580"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#0066CC"/>
+                  </fill>
+                </DOMRectangleObject>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Harvester" name="" centerPoint3DX="70" centerPoint3DY="650">
+                  <matrix>
+                    <Matrix tx="10" ty="560"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Scientists" name="" centerPoint3DX="250" centerPoint3DY="650">
+                  <matrix>
+                    <Matrix tx="190" ty="560"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Engineers" name="" centerPoint3DX="340" centerPoint3DY="650">
+                  <matrix>
+                    <Matrix tx="280" ty="560"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Assault Team" name="" centerPoint3DX="430" centerPoint3DY="650">
+                  <matrix>
+                    <Matrix tx="370" ty="560"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Game Play Areas/Action Area" name="" centerPoint3DX="250" centerPoint3DY="775">
+                  <matrix>
+                    <Matrix ty="750"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="250" y="25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="-111.45" width="366.9" height="27.9" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="178" ty="759.05"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Choose an action, or another card</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMRectangleObject objectWidth="500" objectHeight="500" x="0" y="50" lockFlag="true">
+                  <fill>
+                    <SolidColor alpha="0.8"/>
+                  </fill>
+                </DOMRectangleObject>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Portal" name="" centerPoint3DX="160" centerPoint3DY="610">
+                  <matrix>
+                    <Matrix tx="100" ty="520"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Scraps/Action Button" name="" centerPoint3DX="250" centerPoint3DY="195">
+                  <matrix>
+                    <Matrix tx="250" ty="195"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="-26.9" width="197.8" height="32.5" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="178" ty="178.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>DEPLOY - SPACE</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" alpha="0.8" size="28" bitmapSize="560" face="TrebuchetMS" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Scraps/Action Button" name="" centerPoint3DX="250" centerPoint3DY="290">
+                  <matrix>
+                    <Matrix tx="250" ty="290"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="-37.5" width="219" height="32.5" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="178" ty="273.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>DEPLOY - PLANET</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" alpha="0.8" size="28" bitmapSize="560" face="TrebuchetMS" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText left="12.55" width="118.9" height="32.5" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="178" ty="360.75"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>[ cancel ]</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" alpha="0.8" size="28" bitmapSize="560" face="TrebuchetMS" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

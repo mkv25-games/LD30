@@ -1,0 +1,139 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Game Play Areas/Status Bar" itemID="54035584-0000020b" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Status Bar">
+      <layers>
+        <DOMLayer name="text" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText left="-5.1" width="154.2" height="27.9" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="15.1" ty="10"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Player 1's Turn</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Resources" name="" centerPoint3DX="438.5" centerPoint3DY="23.95">
+                  <matrix>
+                    <Matrix tx="438.5" ty="23.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="59.3" width="25.4" height="27.9" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="396.5" ty="10"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>12</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Territory" name="" centerPoint3DX="360.5" centerPoint3DY="23.95">
+                  <matrix>
+                    <Matrix tx="360.5" ty="23.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="65.6" width="12.8" height="27.9" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="318.5" ty="10"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>7</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Count" name="" centerPoint3DX="282.5" centerPoint3DY="23.95">
+                  <matrix>
+                    <Matrix tx="282.5" ty="23.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="59.3" width="25.4" height="27.9" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="245.5" ty="10"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>25</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="web 2.0" color="#FF800A" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="500" objectHeight="50" x="-40" y="-30" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="30"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#0066CC"/>
+                  </fill>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="500" objectHeight="25" x="-40" y="-30" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="30"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF" alpha="0.247058823529412"/>
+                  </fill>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="box" color="#4FFF4F" locked="true" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="500" objectHeight="50" x="-40" y="-30" selected="true" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="30"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#009933" alpha="0.2"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,0 +1,95 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Game Play Areas/Card Area" itemID="54035584-000001ff" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Card Area">
+      <layers>
+        <DOMLayer name="cards" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Harvester" name="" centerPoint3DX="70" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="10" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Portal" name="" centerPoint3DX="160" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="100" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Scientists" name="" centerPoint3DX="250" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="190" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Engineers" name="" centerPoint3DX="340" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="280" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Assault Team" name="" centerPoint3DX="430" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="370" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="background" color="#FF800A" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="500" objectHeight="200" x="-40" y="-30" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="30"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#0066CC"/>
+                  </fill>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="box" color="#4FFF4F" locked="true" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="500" objectHeight="200" x="-40" y="-30" selected="true" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="30"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#009933" alpha="0.2"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

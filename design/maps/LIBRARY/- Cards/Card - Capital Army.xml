@@ -1,0 +1,246 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Cards/Card - Capital Army" itemID="54035584-000001ef" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Card - Capital Army">
+      <layers>
+        <DOMLayer name="card border" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Cards/- Card Assets/Card Border" name="" centerPoint3DX="60" centerPoint3DY="90">
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S4" name="" centerPoint3DX="24.25" centerPoint3DY="117.75">
+                  <matrix>
+                    <Matrix tx="24.25" ty="117.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="mask" color="#4FFF4F" locked="true" autoNamed="false" layerType="mask">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Cards/- Card Assets/Card Box" name="shadow" selected="true" blendMode="darken" centerPoint3DX="60" centerPoint3DY="90">
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="card name" color="#808080" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="116" height="39.1" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="2" ty="61"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>CAPITAL&#xD;ARMY</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="16" bitmapSize="320" face="TrebuchetMS"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="top action" color="#FF4FFF" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="48.65" height="16.25" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="9" ty="7"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>DEPLOY</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" size="14" bitmapSize="280" face="TrebuchetMS"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="bottom action" color="#4FFFFF" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText width="116" height="34.5" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="2" ty="136"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>UNIT :&#xD;STRENGTH 5</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="14" bitmapSize="280" face="TrebuchetMS"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="circles" color="#4F80FF" parentLayerIndex="1" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="102.5" objectHeight="102.5" x="44.95" y="71.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="1.01463317871094" d="1.01463317871094" tx="-37.6" ty="-45"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF" alpha="0.498039215686275"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal" caps="none" weight="2" joints="miter">
+                      <fill>
+                        <SolidColor alpha="0.6"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMOvalObject>
+                <DOMOvalObject objectWidth="102.5" objectHeight="102.5" x="44.95" y="71.95" selected="true" endAngle="0">
+                  <matrix>
+                    <Matrix a="0.81951904296875" d="0.81951904296875" tx="-18.85" ty="-20.7"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF" alpha="0.2"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal" caps="none" weight="2" joints="miter">
+                      <fill>
+                        <SolidColor alpha="0.0862745098039216"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="divider" color="#FF4F4F" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" caps="none" weight="5" joints="miter">
+                            <fill>
+                              <SolidColor/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="!40 1960|400 1600!400 1600|2000 1600!2000 1600|2360 1240"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="cost" color="#FF800A" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Scraps/Cost Tab Background" name="" centerPoint3DX="99.6" centerPoint3DY="21">
+                  <matrix>
+                    <Matrix tx="116.5" ty="4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="-16.9" y="17"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText width="24.5" height="23.25" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="88" ty="6"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>24</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="20" bitmapSize="400" face="TrebuchetMS"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="card box" color="#4FFF4F" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Cards/- Card Assets/Card Top Box" name="" centerPoint3DX="60" centerPoint3DY="90">
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-111"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="drop shadow" color="#9933CC" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Cards/- Card Assets/Card Box" name="" centerPoint3DX="60" centerPoint3DY="90">
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter brightness="60" saturation="73" hue="-17"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="drop shadow" color="#FF800A" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Cards/- Card Assets/Card Box Drop Shadow" name="shadow" selected="true" blendMode="darken" centerPoint3DX="60" centerPoint3DY="90">
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

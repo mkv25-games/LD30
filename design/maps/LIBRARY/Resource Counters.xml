@@ -1,0 +1,71 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Resource Counters" itemID="53fa9463-00002968" sourceLibraryItemHRef="Symbol 1" lastModified="1408930929" lastUniqueIdentifier="5">
+  <timeline>
+    <DOMTimeline name="Resource Counters">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Resources 1" name="" selected="true" centerPoint3DX="-81.75" centerPoint3DY="-0.05">
+                  <matrix>
+                    <Matrix tx="-81.75" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Resources 3" name="" selected="true" centerPoint3DX="-41.75" centerPoint3DY="-0.05">
+                  <matrix>
+                    <Matrix tx="-41.75" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Resources 5" name="" selected="true" centerPoint3DX="-1.75" centerPoint3DY="-0.05">
+                  <matrix>
+                    <Matrix tx="-1.75" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Resources 3" name="" selected="true" centerPoint3DX="38.25" centerPoint3DY="-0.05">
+                  <matrix>
+                    <Matrix tx="38.25" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Resources 1" name="" selected="true" centerPoint3DX="78.25" centerPoint3DY="-0.05">
+                  <matrix>
+                    <Matrix tx="78.25" ty="-0.05"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

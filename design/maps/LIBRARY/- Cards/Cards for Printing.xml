@@ -1,0 +1,718 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Cards/Cards for Printing" itemID="54035584-000001fc" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Cards for Printing">
+      <layers>
+        <DOMLayer name="cards" color="#4FFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Engineers" name="" centerPoint3DX="350" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="290" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Scientists" name="" centerPoint3DX="210" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="150" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Scientists" name="" centerPoint3DX="70" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="10" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Engineers" name="" centerPoint3DX="490" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="430" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Assault Team" name="" centerPoint3DX="630" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="570" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Portal" name="" centerPoint3DX="70" centerPoint3DY="300">
+                  <matrix>
+                    <Matrix tx="10" ty="210"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Portal" name="" centerPoint3DX="210" centerPoint3DY="300">
+                  <matrix>
+                    <Matrix tx="150" ty="210"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Harvester" name="" centerPoint3DX="350" centerPoint3DY="300">
+                  <matrix>
+                    <Matrix tx="290" ty="210"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Harvester" name="" centerPoint3DX="490" centerPoint3DY="300">
+                  <matrix>
+                    <Matrix tx="430" ty="210"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Excavater" name="" centerPoint3DX="70" centerPoint3DY="500">
+                  <matrix>
+                    <Matrix tx="10" ty="410"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Excavater" name="" centerPoint3DX="210" centerPoint3DY="500">
+                  <matrix>
+                    <Matrix tx="150" ty="410"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Plasma Furnace" name="" centerPoint3DX="350" centerPoint3DY="500">
+                  <matrix>
+                    <Matrix tx="290" ty="410"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Plasma Furnace" name="" centerPoint3DX="490" centerPoint3DY="500">
+                  <matrix>
+                    <Matrix tx="430" ty="410"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Harvester" name="" centerPoint3DX="770" centerPoint3DY="300">
+                  <matrix>
+                    <Matrix tx="710" ty="210"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Standard Base" name="" centerPoint3DX="770" centerPoint3DY="500">
+                  <matrix>
+                    <Matrix tx="710" ty="410"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Assault Team" name="" centerPoint3DX="770" centerPoint3DY="100">
+                  <matrix>
+                    <Matrix tx="710" ty="10"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Harvester" name="" centerPoint3DX="630" centerPoint3DY="300">
+                  <matrix>
+                    <Matrix tx="570" ty="210"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Standard Base" name="" centerPoint3DX="630" centerPoint3DY="500">
+                  <matrix>
+                    <Matrix tx="570" ty="410"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Outpost" name="" centerPoint3DX="350" centerPoint3DY="700">
+                  <matrix>
+                    <Matrix tx="290" ty="610"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Advanced Base" name="" centerPoint3DX="210" centerPoint3DY="700">
+                  <matrix>
+                    <Matrix tx="150" ty="610"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Advanced Base" name="" centerPoint3DX="70" centerPoint3DY="700">
+                  <matrix>
+                    <Matrix tx="10" ty="610"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Outpost" name="" centerPoint3DX="490" centerPoint3DY="700">
+                  <matrix>
+                    <Matrix tx="430" ty="610"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Metroplex" name="" centerPoint3DX="630" centerPoint3DY="700">
+                  <matrix>
+                    <Matrix tx="570" ty="610"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Armoured Core" name="" centerPoint3DX="70" centerPoint3DY="900">
+                  <matrix>
+                    <Matrix tx="10" ty="810"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Armoured Core" name="" centerPoint3DX="210" centerPoint3DY="900">
+                  <matrix>
+                    <Matrix tx="150" ty="810"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Titan Force" name="" centerPoint3DX="350" centerPoint3DY="900">
+                  <matrix>
+                    <Matrix tx="290" ty="810"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Titan Force" name="" centerPoint3DX="490" centerPoint3DY="900">
+                  <matrix>
+                    <Matrix tx="430" ty="810"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Capital Army" name="" centerPoint3DX="770" centerPoint3DY="900">
+                  <matrix>
+                    <Matrix tx="710" ty="810"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Metroplex" name="" centerPoint3DX="770" centerPoint3DY="700">
+                  <matrix>
+                    <Matrix tx="710" ty="610"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Capital Army" name="" centerPoint3DX="630" centerPoint3DY="900">
+                  <matrix>
+                    <Matrix tx="570" ty="810"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="grid" color="#9933CC" current="true" isSelected="true" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="1"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="141"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="281"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="421"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="561"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="701"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="1" ty="200"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="141" ty="200"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="281" ty="200"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="421" ty="200"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="561" ty="200"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="701" ty="200"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="1" ty="400"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="141" ty="400"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="281" ty="400"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="421" ty="400"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMShape isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal">
+                        <fill>
+                          <SolidColor color="#333333"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!14000 12000|11200 12000!11200 12000|11200 8000!11200 8000|14000 8000!14000 8000|14000 12000"/>
+                  </edges>
+                </DOMShape>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="701" ty="400"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="1" ty="600"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="141" ty="600"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="281" ty="600"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="421" ty="600"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="561" ty="600"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="701" ty="600"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="1" ty="800"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="141" ty="800"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="281" ty="800"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="421" ty="800"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="561" ty="800"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="140" objectHeight="200" x="-1" y="0" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="701" ty="800"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

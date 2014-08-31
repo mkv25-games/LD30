@@ -1,0 +1,31 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Scraps/Action Button" itemID="53f8f35e-00000afc" sourceLibraryItemHRef="Symbol 1" lastModified="1408824202">
+  <timeline>
+    <DOMTimeline name="Action Button">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="240" objectHeight="60" x="170" y="175" lockFlag="true" topLeftRadius="20" topRightRadius="20" bottomLeftRadius="20" bottomRightRadius="20">
+                  <matrix>
+                    <Matrix tx="-290" ty="-205"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor alpha="0.0901960784313725"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal" weight="6">
+                      <fill>
+                        <SolidColor color="#0066CC" alpha="0.8"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

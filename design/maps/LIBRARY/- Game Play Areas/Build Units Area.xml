@@ -1,0 +1,138 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Game Play Areas/Build Units Area" itemID="54035584-000001fe" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Build Units Area">
+      <layers>
+        <DOMLayer name="cards" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText left="42.3" width="396" height="30.2" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-20.3" ty="27"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Construct a unit:</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" size="26" bitmapSize="520" face="TrebuchetMS" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Armoured Core" name="" centerPoint3DX="193.6" centerPoint3DY="148">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="145.6" ty="76"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Assault Team" name="" centerPoint3DX="80.4" centerPoint3DY="148">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="32.4" ty="76"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Titan Force" name="" centerPoint3DX="307.6" centerPoint3DY="148">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="259.6" ty="76"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Capital Army" name="" centerPoint3DX="423.6" centerPoint3DY="148">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="375.6" ty="76"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Advanced Base" name="" centerPoint3DX="193.6" centerPoint3DY="362">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="145.6" ty="290"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Standard Base" name="" centerPoint3DX="80.4" centerPoint3DY="362">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="32.4" ty="290"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Outpost" name="" centerPoint3DX="307.6" centerPoint3DY="362">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="259.6" ty="290"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Cards/Card - Metroplex" name="" centerPoint3DX="423.6" centerPoint3DY="362">
+                  <matrix>
+                    <Matrix a="0.79998779296875" d="0.79998779296875" tx="375.6" ty="290"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="60" y="90"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="42.3" width="396" height="30.2" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-20.3" ty="242"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Construct a base:</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" size="26" bitmapSize="520" face="TrebuchetMS" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="starfield" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance name="" referenceID="" libraryItemName="- Bitmaps/starfield-small.png"/>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="box" color="#4FFF4F" locked="true" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="500" objectHeight="500" x="-40" y="-30" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="30"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#009933" alpha="0.2"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal">
+                      <fill>
+                        <SolidColor/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

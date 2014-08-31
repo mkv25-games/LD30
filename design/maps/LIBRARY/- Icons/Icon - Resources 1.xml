@@ -1,0 +1,44 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon - Resources 1" itemID="53fa84a7-000019f6" sourceLibraryItemHRef="Symbol 1" lastModified="1408926909">
+  <timeline>
+    <DOMTimeline name="Icon - Resources 1">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="31" objectHeight="31" x="-284" y="23" endAngle="0">
+                  <matrix>
+                    <Matrix a="0.806472778320313" d="0.806472778320313" tx="216.55" ty="-31.05"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FF9900"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal" caps="none" weight="3" joints="miter">
+                      <fill>
+                        <SolidColor color="#333333"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMOvalObject>
+                <DOMStaticText left="68" width="8" height="17.45" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-72.4" ty="-8.85"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>1</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="15" bitmapSize="300" face="TrebuchetMS" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

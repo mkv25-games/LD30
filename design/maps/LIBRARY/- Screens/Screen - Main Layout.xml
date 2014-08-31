@@ -1,0 +1,53 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Main Layout" itemID="53f915c0-0000163f" sourceLibraryItemHRef="- Screens/Screen - Gameplay copy" lastModified="1408848406" lastUniqueIdentifier="8">
+  <timeline>
+    <DOMTimeline name="Screen - Main Layout">
+      <layers>
+        <DOMLayer name="sections" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="500" objectHeight="50" x="-40" y="-30" selected="true" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="30"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#0066CC"/>
+                  </fill>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="500" objectHeight="25" x="-40" y="-30" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="30"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF" alpha="0.247058823529412"/>
+                  </fill>
+                </DOMRectangleObject>
+                <DOMBitmapInstance name="" referenceID="" libraryItemName="- Bitmaps/starfield-small.png">
+                  <matrix>
+                    <Matrix ty="50"/>
+                  </matrix>
+                </DOMBitmapInstance>
+                <DOMRectangleObject objectWidth="500" objectHeight="200" x="-40" y="-30" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="40" ty="580"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#0066CC"/>
+                  </fill>
+                </DOMRectangleObject>
+                <DOMSymbolInstance libraryItemName="- Game Play Areas/Action Area" name="" centerPoint3DX="250" centerPoint3DY="775">
+                  <matrix>
+                    <Matrix ty="750"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="250" y="25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

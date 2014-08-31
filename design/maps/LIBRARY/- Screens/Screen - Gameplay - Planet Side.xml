@@ -1,0 +1,58 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Gameplay - Planet Side" itemID="54035584-00000236" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Screen - Gameplay - Planet Side">
+      <layers>
+        <DOMLayer name="sections" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Game Play Areas/Status Bar" name="" centerPoint3DX="250" centerPoint3DY="25">
+                  <transformationPoint>
+                    <Point x="250" y="25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Game Play Areas/Map Area for Planet" name="" selected="true" centerPoint3DX="250" centerPoint3DY="300">
+                  <matrix>
+                    <Matrix ty="50"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="250" y="250"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Game Play Areas/Card Area" name="" centerPoint3DX="250" centerPoint3DY="650">
+                  <matrix>
+                    <Matrix ty="550"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="250" y="100"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Game Play Areas/Action Area" name="" centerPoint3DX="250" centerPoint3DY="775">
+                  <matrix>
+                    <Matrix ty="750"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="250" y="25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="-39.25" width="222.5" height="27.9" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="178" ty="759.05"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Select a card to play</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

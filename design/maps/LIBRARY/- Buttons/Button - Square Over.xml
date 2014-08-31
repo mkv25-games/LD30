@@ -1,0 +1,32 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Buttons/Button - Square Over" itemID="54035584-000001e5" lastModified="1409504644">
+  <timeline>
+    <DOMTimeline name="Button - Square Over">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Scraps/Square Button" name="" centerPoint3DX="40" centerPoint3DY="40">
+                  <matrix>
+                    <Matrix tx="40" ty="40"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="0.3"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMRectangleObject objectWidth="80" objectHeight="80" x="0" y="0" lockFlag="true" topLeftRadius="24" topRightRadius="24" bottomLeftRadius="24" bottomRightRadius="24">
+                  <fill>
+                    <SolidColor color="#660000" alpha="0.0470588235294118"/>
+                  </fill>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
