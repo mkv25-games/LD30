@@ -9,22 +9,28 @@ class MovementModel
 		// check for the real location
 		location = location.map.getHexTile(location.q, location.r);
 		
-		var neighbouringHexes:StringMap<HexTile> = new StringMap<HexTile>();
-		neighbouringHexes.set(location.key(), location);
+		var movementMap:StringMap<HexTile> = new StringMap<HexTile>();
+		movementMap.set(location.key(), location);
 		
 		// iterate over neighbours, adding more neighbours
 		for (i in 0...distance)
 		{
-			for (hex in neighbouringHexes)
+			for (hex in movementMap)
 			{
 				if (hex != null)
 				{
-					addValidNeighboursFor(hex, unit, neighbouringHexes);
+					addValidNeighboursFor(hex, unit, movementMap);
 				}
 			}
 		}
 		
-		return neighbouringHexes;
+		// Remove the original tile if it has been added back
+		if (movementMap.exists(location.key()))
+		{
+			movementMap.remove(location.key());
+		}
+		
+		return movementMap;
 	}
 	
 	public static function addValidNeighboursFor(location:HexTile, unit:MapUnit, map:StringMap<HexTile>):Void
@@ -79,8 +85,6 @@ class MovementModel
 		// TODO: Rule: players can move units between bases connected by portals
 		
 		// Validate each neighbour
-		var validHexes:Array<HexTile> = new Array<HexTile>();
-		
 		for (hex in neighbouringHexes)
 		{
 			if (unit.type.base && hex.containsBase())

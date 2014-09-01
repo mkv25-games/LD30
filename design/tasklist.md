@@ -6,7 +6,6 @@ Incomplete features
 + Linking bases via portals
 + Movement via portals
 + Ability to select individual unit from tile for movement
-+ Game should focus back to player on turn change
 + Units can only be activated once a turn for movement
 + Sensible map layouts for low-player games
 - Movement should highlight combat tiles
@@ -14,7 +13,6 @@ Incomplete features
 
 Bugs
 ----
-- Unit can be moved back into its own tile
 - Missing second line of text for Game Over screen
 
 Improvements
