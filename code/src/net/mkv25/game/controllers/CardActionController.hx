@@ -5,6 +5,7 @@ import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.ui.ConstructionMenuUI;
 import net.mkv25.game.ui.InGameMenuUI;
+import net.mkv25.game.ui.PortalsUI;
 import net.mkv25.game.ui.ResearchMenuUI;
 
 class CardActionController
@@ -12,6 +13,7 @@ class CardActionController
 	var optionMenu:InGameMenuUI;
 	var researchMenu:ResearchMenuUI;
 	var constructionMenu:ConstructionMenuUI;
+	
 	var activeCard:PlayableCard;
 	var specialActions:Dynamic;
 
@@ -137,6 +139,7 @@ class CardActionController
 		// TODO: Count the number of bases
 		// Warn if there are too few bases to connect
 		// Ask player to select two bases
+		EventBus.playerWantsTo_connectBasesWithPortals.dispatch(card);
 	}
 	
 	function playerWantsToGatherResources(card:PlayableCard):Void

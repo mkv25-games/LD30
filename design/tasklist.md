@@ -35,6 +35,7 @@ Improvements
 + Replay feature to see last turn
 + Add number of worlds to player stats bar
 + Add a screen to review all player stats
++ Add planet owner marker, with conflict marker for multipler owners
 
 Free Version Release Work
 -------------------------
@@ -45,6 +46,7 @@ Free Version Release Work
 + Google play store submission
 + Apple store submission
 + Rewrite the Ludum Dare blurb
+- Remove TODOs from code base
 
 Commercial Version Release Work
 -------------------------
@@ -57,6 +59,7 @@ Commercial Version Release Work
 + Scores + leaderboard
 + IOS / Android notifications
 + Create a tablet sized version
+- Remove TODOs from code base
 
 Wish list
 ---------

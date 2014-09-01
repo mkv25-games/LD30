@@ -5,6 +5,7 @@ import net.mkv25.base.core.CoreModel;
 import net.mkv25.base.core.Screen;
 import net.mkv25.base.core.ScreenController;
 import net.mkv25.base.ui.DebugUI;
+import net.mkv25.game.controllers.ConnectPortalsController;
 import net.mkv25.game.controllers.DeployUnitController;
 import net.mkv25.game.controllers.GameFlowController;
 import net.mkv25.game.controllers.CardActionController;
@@ -18,6 +19,7 @@ import net.mkv25.game.screens.MainScreen;
 import net.mkv25.game.ui.DeploymentUI;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.MovementUI;
+import net.mkv25.game.ui.PortalsUI;
 
 class Index
 {
@@ -32,6 +34,7 @@ class Index
 	public static var cardActionController:CardActionController;
 	public static var deployUnitController:DeployUnitController;
 	public static var moveUnitController:MoveUnitController;
+	public static var connectPortalsController:ConnectPortalsController;
 	public static var mapFocusController:MapFocusController;
 	
 	// providers
@@ -45,6 +48,7 @@ class Index
 	public static var mapHud:MapUI;
 	public static var deploymentHud:DeploymentUI;
 	public static var movementHud:MovementUI;
+	public static var portalsHud:PortalsUI;
 	
 	// debug
 	public static var debug:DebugUI;
@@ -68,6 +72,7 @@ class Index
 		cardActionController = new CardActionController();
 		deployUnitController = new DeployUnitController();
 		moveUnitController = new MoveUnitController();
+		connectPortalsController = new ConnectPortalsController();
 		mapFocusController = new MapFocusController();
 		
 		// providers
@@ -81,6 +86,7 @@ class Index
 		mapHud = new MapUI();
 		deploymentHud = new DeploymentUI();
 		movementHud = new MovementUI();
+		portalsHud = new PortalsUI();
 		
 		// debug
 		// debug = new DebugUI(screenController);
@@ -92,6 +98,7 @@ class Index
 		cardActionController.setup(screenController);
 		deployUnitController.setup(mapHud, deploymentHud);
 		moveUnitController.setup(mapHud, movementHud);
+		connectPortalsController.setup(mapHud, portalsHud);
 		mapFocusController.setup(mapHud);
 		
 		// start

@@ -34,6 +34,11 @@ class EventBus
 	public static var playerWantsTo_deployAUnit = new Signal();
 	public static var playerWantsTo_buyACard = new Signal();
 	
+	// portal events
+	public static var playerWantsTo_connectBasesWithPortals = new Signal();
+	public static var playerWantsTo_connectBaseAtSelectedLocation = new Signal();
+	public static var playerWantsTo_openThePortal = new Signal();
+	
 	// combat events
 	public static var combat_allUnitsDestroyedAtLocation = new Signal();
 	public static var combat_playerHasWonCombatAtLocation = new Signal();

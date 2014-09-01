@@ -42,4 +42,16 @@ class MapUnit implements IMapThing extends CoreModel
 		movedThisTurn = false;
 	}
 	
+	public function isConnectedTo(unit:MapUnit):Bool
+	{
+		if (unit == null)
+		{
+			return false;
+		}
+		
+		// TODO: Manage connections
+		
+		return false;
+	}
+	
 }

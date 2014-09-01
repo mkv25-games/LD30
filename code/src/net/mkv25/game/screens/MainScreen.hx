@@ -16,6 +16,7 @@ import net.mkv25.game.ui.InGameMenuUI;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.MovementUI;
 import net.mkv25.game.ui.PlayerHandUI;
+import net.mkv25.game.ui.PortalsUI;
 import net.mkv25.game.ui.StatusBarUI;
 import openfl.Assets;
 
@@ -24,6 +25,7 @@ class MainScreen extends Screen
 	var map:MapUI;
 	var deployment:DeploymentUI;
 	var movement:MovementUI;
+	var portals:PortalsUI;
 	
 	var statusBar:StatusBarUI;
 	var playerHand:PlayerHandUI;
@@ -58,6 +60,10 @@ class MainScreen extends Screen
 		movement.move(0, 50);
 		movement.hide();
 		
+		portals = Index.portalsHud;
+		portals.move(0, 50);
+		portals.hide();
+		
 		statusBar = new StatusBarUI();
 		playerHand = new PlayerHandUI();
 		playerHand.move(0, 550);
@@ -67,6 +73,7 @@ class MainScreen extends Screen
 		artwork.addChild(map.artwork);
 		artwork.addChild(deployment.artwork);
 		artwork.addChild(movement.artwork);
+		artwork.addChild(portals.artwork);
 		artwork.addChild(statusBar.artwork);
 		artwork.addChild(playerHand.artwork);
 		artwork.addChild(adviceText.artwork);
