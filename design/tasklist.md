@@ -5,8 +5,8 @@ Incomplete features
 -------------------
 + Linking bases via portals
 + Movement via portals
-+ Ability to select individual unit from tile for movement
 + Units can only be activated once a turn for movement
++ Ability to select individual unit from tile for movement
 + Sensible map layouts for low-player games
 - Movement should highlight combat tiles
 
