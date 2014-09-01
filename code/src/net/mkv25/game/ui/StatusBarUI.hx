@@ -63,7 +63,7 @@ class StatusBarUI extends BaseUI
 		
 		counterResourcesText.setText(Std.string(player.resources));
 		counterTerritoryText.setText(Std.string(player.territory));
-		counterUnitsText.setText(Std.string(player.unitCount + player.baseCount));
+		counterUnitsText.setText(Std.string(player.unitCount() + player.baseCount()));
 	}
 	
 	function onResourcesChanged(player:PlayerModel):Void
@@ -78,7 +78,7 @@ class StatusBarUI extends BaseUI
 	
 	function onUnitCountChange(player:PlayerModel):Void
 	{
-		counterUnitsText.setText(Std.string(player.unitCount));
+		counterUnitsText.setText(Std.string(player.unitCount()));
 	}
 	
 }

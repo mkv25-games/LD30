@@ -48,7 +48,7 @@ class GameFlowController
 		Index.screenController.showScreen(Index.mainScreen);
 		Index.activeGame.startNextPlayersTurn();
 		
-		Index.mapHud.setupMap(Index.activeGame.space);
+		// Index.mapHud.setupMap(Index.activeGame.space);
 	}
 	
 	function handle_restartGame(?model)
@@ -102,12 +102,12 @@ class GameFlowController
 		// find players which have failed basic game conditions
 		for (player in players)
 		{
-			if (flagAllYourBaseAreBelongToUsEnabled && player.baseCount == 0)
+			if (flagAllYourBaseAreBelongToUsEnabled && player.baseCount() == 0)
 			{
 				// ALL YOUR BASE ARE BELONG TO US - (medium) capture all bases belonging to your enemies.
 				playersToRemoveFromGame.push(player);
 			}
-			else if (player.baseCount == 0 && player.unitCount == 0)
+			else if (player.unitCount() == 0 && player.baseCount() == 0)
 			{
 				// WAR, WAR NEVER CHANGES, WAR NEVER ENDS - (long) destroy all units and bases belonging to your enemies.
 				// It's impossible to influence other players without units in the game

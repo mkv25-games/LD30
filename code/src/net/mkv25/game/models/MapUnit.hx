@@ -13,6 +13,8 @@ class MapUnit implements IMapThing extends CoreModel
 	public var foughtThisTurn:Bool;
 	public var movedThisTurn:Bool;
 	
+	public var lastKnownLocation:HexTile;
+	
 	public function new() 
 	{
 		super();

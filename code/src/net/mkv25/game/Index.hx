@@ -8,6 +8,7 @@ import net.mkv25.base.ui.DebugUI;
 import net.mkv25.game.controllers.DeployUnitController;
 import net.mkv25.game.controllers.GameFlowController;
 import net.mkv25.game.controllers.CardActionController;
+import net.mkv25.game.controllers.MapFocusController;
 import net.mkv25.game.controllers.MoveUnitController;
 import net.mkv25.game.models.ActiveGame;
 import net.mkv25.game.models.MapModel;
@@ -31,6 +32,7 @@ class Index
 	public static var cardActionController:CardActionController;
 	public static var deployUnitController:DeployUnitController;
 	public static var moveUnitController:MoveUnitController;
+	public static var mapFocusController:MapFocusController;
 	
 	// providers
 	public static var cardProvider:CardProvider;
@@ -66,6 +68,7 @@ class Index
 		cardActionController = new CardActionController();
 		deployUnitController = new DeployUnitController();
 		moveUnitController = new MoveUnitController();
+		mapFocusController = new MapFocusController();
 		
 		// providers
 		cardProvider = new CardProvider();
@@ -89,6 +92,7 @@ class Index
 		cardActionController.setup(screenController);
 		deployUnitController.setup(mapHud, deploymentHud);
 		moveUnitController.setup(mapHud, movementHud);
+		mapFocusController.setup(mapHud);
 		
 		// start
 		Index.screenController.showScreen(Index.introScreen);

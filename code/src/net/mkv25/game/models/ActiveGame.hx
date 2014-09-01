@@ -96,7 +96,7 @@ class ActiveGame extends CoreModel
 		}
 	}
 	
-	public function startNextPlayersTurn():PlayerModel
+	public function startNextPlayersTurn():Void
 	{
 		if (players.length == 0) {
 			throw "No players to select from.";
@@ -118,8 +118,6 @@ class ActiveGame extends CoreModel
 		activePlayer.playerHand.drawHand();
 		
 		EventBus.activePlayerChanged.dispatch(activePlayer);
-			
-		return activePlayer;
 	}
 	
 	public function updatePlayerStats():Void
@@ -127,8 +125,8 @@ class ActiveGame extends CoreModel
 		// reset values
 		for (player in players)
 		{
-			player.unitCount = 0;
-			player.baseCount = 0;
+			player.units.removeAll();
+			player.bases.removeAll();
 			player.territory = 0;
 		}
 		
@@ -153,15 +151,16 @@ class ActiveGame extends CoreModel
 				if (Std.is(thing, MapUnit))
 				{
 					var unit:MapUnit = cast thing;
+					unit.lastKnownLocation = hex;
 					if (unit.type.base)
 					{
 						// count bases separately
-						unit.owner.baseCount++;
+						unit.owner.bases.addUnit(unit);
 					}
 					else
 					{
 						// units, not including bases
-						unit.owner.unitCount++;
+						unit.owner.units.addUnit(unit);
 					}
 				}
 			}

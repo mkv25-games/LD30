@@ -9,9 +9,10 @@ class PlayerModel extends CoreModel
 	
 	public var resources:Int;
 	public var territory:Int;
-	public var unitCount:Int;
-	public var baseCount:Int;
 
+	public var units:UnitList;
+	public var bases:UnitList;
+	
 	public function new(playerNumberZeroBased:Int) 
 	{
 		super();
@@ -21,13 +22,24 @@ class PlayerModel extends CoreModel
 		
 		resources = 6;
 		territory = 0;
-		unitCount = 0;
-		baseCount = 0;
+		
+		units = new UnitList();
+		bases = new UnitList();
 	}
 	
 	public function name():String
 	{
 		return "Player " + (playerNumberZeroBased + 1);
+	}
+	
+	public function unitCount():Int
+	{
+		return units.length();
+	}
+	
+	public function baseCount():Int
+	{
+		return bases.length();
 	}
 	
 }

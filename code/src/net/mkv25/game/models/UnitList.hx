@@ -31,6 +31,19 @@ class UnitList
 		}
 	}
 	
+	public function removeUnit(unit:MapUnit):Bool
+	{
+		return this.units.remove(unit);
+	}
+	
+	public function removeAll():Void
+	{
+		while (this.units.length > 0)
+		{
+			this.units.pop();
+		}
+	}
+	
 	public function getLowestStrengthUnit(?owner:PlayerModel):Null<MapUnit>
 	{
 		if (units.length > 0)
