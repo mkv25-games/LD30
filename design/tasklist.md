@@ -12,7 +12,6 @@ Incomplete features
 
 Bugs
 ----
-- Missing second line of text for Game Over screen
 
 Improvements
 ------------
