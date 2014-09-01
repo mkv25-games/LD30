@@ -75,20 +75,9 @@ class MoveUnitController
 	
 	function selectUnitForPlayerFrom(hex:HexTile, player:PlayerModel):Null<MapUnit>
 	{
-		var contents = hex.listContents();
-		for (thing in contents)
-		{
-			if (Std.is(thing, MapUnit))
-			{
-				var unit:MapUnit = cast thing;
-				if (unit.owner == player)
-				{
-					return unit;
-				}
-			}
-		}
+		var units = hex.listUnits();
 		
-		return null;
+		return units.getHighestStrengthUnit(player);
 	}
 	
 	function cancelMovement(?model)

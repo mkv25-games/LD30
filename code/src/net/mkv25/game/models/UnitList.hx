@@ -31,24 +31,42 @@ class UnitList
 		}
 	}
 	
-	public function getLowestStrengthUnit():Null<MapUnit>
+	public function getLowestStrengthUnit(?owner:PlayerModel):Null<MapUnit>
 	{
 		if (units.length > 0)
 		{
 			units.sort(sortByUnitStrength);
-			return units[0];
+			
+			for (unit in units)
+			{
+				if (unit.owner == owner)
+				{
+					return unit;
+				}
+			}
 		}
 		
 		return null;
 	}
 	
-	public function getHighestStrengthUnit():Null<MapUnit>
+	public function getHighestStrengthUnit(?owner:PlayerModel):Null<MapUnit>
 	{
 		if (units.length > 0)
 		{
 			units.sort(sortByUnitStrength);
 			units.reverse();
-			return units[0];
+			
+			for (unit in units)
+			{
+				if (owner != null && unit.owner == owner)
+				{
+					return unit;
+				}
+				else
+				{
+					return unit;
+				}
+			}
 		}
 		
 		return null;

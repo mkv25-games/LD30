@@ -74,6 +74,23 @@ class HexTile
 		return contents;
 	}
 	
+	public function listUnits():UnitList
+	{
+		var list:UnitList = new UnitList();
+		var contents = listContents();
+		
+		for (thing in contents)
+		{
+			if (Std.is(thing, MapUnit))
+			{
+				var unit:MapUnit = cast thing;
+				list.addUnit(unit);
+			}
+		}
+		
+		return list;
+	}
+	
 	inline function checkContents() {
 		if (contents == null) {
 			this.contents = new Array<IMapThing>();

@@ -323,16 +323,20 @@ class MapUI extends BaseUI
 		var x = (hexImage.width * hex_x) - (hexImage.width / 2);
 		var y = (hexImage.height * hex_y) - (hexImage.height / 2);
 			
+		// draw some things
 		for (thing in things)
 		{
-			// make an image for the thing
-			var bitmap = bitmapRecycler.get();
-			bitmap.bitmapData = thing.getIcon();
-			safeAddAt(thingsLayer, bitmap, thing.getDepth());
-			
-			// center thing on hex
-			bitmap.x = x + (hexImage.width / 2) - (bitmap.width / 2);
-			bitmap.y = y + (hexImage.height / 2) - (bitmap.height / 2);
+			if (Std.is(thing, MapModel))
+			{
+				// make an image for the thing
+				var bitmap = bitmapRecycler.get();
+				bitmap.bitmapData = thing.getIcon();
+				safeAddAt(thingsLayer, bitmap, thing.getDepth());
+				
+				// center thing on hex
+				bitmap.x = x + (hexImage.width / 2) - (bitmap.width / 2);
+				bitmap.y = y + (hexImage.height / 2) - (bitmap.height / 2);
+			}
 			
 			// record owner
 			if (Std.is(thing, MapUnit))
@@ -341,6 +345,21 @@ class MapUI extends BaseUI
 				commonOwner = unit.owner;
 				unitCount++;
 			}
+		}
+		
+		// draw highest strength unit
+		var units = hex.listUnits();
+		var unit = units.getHighestStrengthUnit();
+		if (unit != null)
+		{
+			// make an image for the unit
+			var bitmap = bitmapRecycler.get();
+			bitmap.bitmapData = unit.getIcon();
+			safeAddAt(thingsLayer, bitmap, unit.getDepth());
+			
+			// center thing on hex
+			bitmap.x = x + (hexImage.width / 2) - (bitmap.width / 2);
+			bitmap.y = y + (hexImage.height / 2) - (bitmap.height / 2);
 		}
 		
 		// draw indicator

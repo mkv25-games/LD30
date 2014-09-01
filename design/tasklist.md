@@ -15,7 +15,8 @@ Incomplete features
 Bugs
 ----
 - Unit can be moved back into its own tile
-- Android bug when placing advanced base next to standard base on enemy world
+- ? Android bug when placing advanced base next to standard base on enemy world
+- Missing second line of text for Game Over screen
 
 Improvements
 ------------
