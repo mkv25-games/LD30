@@ -198,7 +198,7 @@ class MapUI extends BaseUI
 		}
 		
 		var tile:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
-		if (tile.containsWorld())
+		if (tile != null && tile.containsWorld())
 		{
 			worldViewButton.enable();
 		}

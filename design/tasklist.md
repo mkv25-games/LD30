@@ -15,11 +15,11 @@ Incomplete features
 Bugs
 ----
 - Unit can be moved back into its own tile
-- ? Android bug when placing advanced base next to standard base on enemy world
 - Missing second line of text for Game Over screen
 
 Improvements
 ------------
++ Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Combat report
 + Icon language of cards should match on screen icons
 + Plain instead of blue tinted icons for units on cards
