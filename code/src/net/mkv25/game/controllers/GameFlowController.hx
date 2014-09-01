@@ -10,7 +10,11 @@ import net.mkv25.game.ui.GameOverUI;
 
 class GameFlowController
 {
-	public static inline var END_OF_TURN_DELAY:Float = 2.5;
+	public static var WINNING_CONDITION_NUMBER_OF_WORLDS:Int = 3;
+	
+	public static var END_OF_TURN_DELAY:Float = 2.5;
+	
+	static inline var NL:String = "\n";
 
 	var screenController:ScreenController;
 	var gameOverMenu:GameOverUI;
@@ -65,15 +69,17 @@ class GameFlowController
 	{
 		EventBus.displayNewStatusMessage.dispatch("End of player's turn");
 		
-		Index.activeGame.updatePlayerStats();
+		var activeGame:ActiveGame = Index.activeGame;
+		
+		activeGame.updatePlayerStats();
 		
 		// Using end game conditions
 		removePlayersFromGame();
 		
 		// Check endgame conditions
-		if (Index.activeGame.players.length < 2)
+		if (activeGame.players.length < 2)
 		{
-			var winner:PlayerModel = Index.activeGame.players[0];
+			var winner:PlayerModel = activeGame.players[0];
 			
 			// There can only be one
 			if (flagAllYourBaseAreBelongToUsEnabled)
@@ -85,11 +91,62 @@ class GameFlowController
 				endGame_conditionWarWarNeverChangesWarNeverEnds(winner);
 			}
 		}
+		else if (activeGame.activePlayer == activeGame.lastPlayerInRound)
+		{
+			if (flagMasterOfExpansionEnabled)
+			{
+				var winner:PlayerModel = attemptToFindMasterOfExpansion(activeGame.players);
+				if (winner != null)
+				{
+					endGame_conditionMasterOfExpansion(winner);
+				}
+				else
+				{
+					delayedStart_nextPlayersTurn();
+				}
+			}
+		}
+		else
+		{
+			// TODO: Show end of turn message, and introduce next player
+			delayedStart_nextPlayersTurn();
+		}
+	}
+	
+	function attemptToFindMasterOfExpansion(players:Array<PlayerModel>):PlayerModel
+	{
+		var master:PlayerModel = null;
+		var maxTerritory:Int = 0;
 		
-		// TODO: Count up number of worlds to check Master of Expansion winning condition
+		for (player in players)
+		{
+			maxTerritory = cast Math.max(player.territory, maxTerritory);
+		}
 		
-		// TODO: Show end of turn message, and introduce next player
-		Actuate.timer(END_OF_TURN_DELAY).onComplete(function() {
+		var contender:Bool = false;
+		for (player in players)
+		{
+			if (player.worlds.length() >= GameFlowController.WINNING_CONDITION_NUMBER_OF_WORLDS && player.territory == maxTerritory)
+			{
+				if (master == null)
+				{
+					// player qualifies as a master
+					master = player;
+				}
+				else
+				{
+					// a contender exists
+					return null;
+				}
+			}
+		}
+		
+		return master;
+	}
+	
+	function delayedStart_nextPlayersTurn():Void
+	{
+		Actuate.timer(GameFlowController.END_OF_TURN_DELAY).onComplete(function() {
 			Index.activeGame.startNextPlayersTurn();
 		});
 	}
@@ -120,13 +177,17 @@ class GameFlowController
 		{
 			players.remove(player);
 		}
+		
+		// redefine the last player
+		Index.activeGame.defineLastPlayerInRound();
 	}
 	
 	function endGame_conditionMasterOfExpansion(player:PlayerModel) 
 	{
 		gameOverMenu.setup(
 			"Victory for " + player.name(),
-			"Master of Expansion",
+			"Master of Expansion" + NL
+			+ "Most territory on three worlds",
 			Index.activeGame);
 			
 		gameOverMenu.show();
@@ -136,7 +197,8 @@ class GameFlowController
 	{
 		gameOverMenu.setup(
 			"Victory for " + player.name(),
-			"All your base are belong to us",
+			"All your base are belong to us" + NL
+			+ "Captured all enemy bases",
 			Index.activeGame);
 			
 		gameOverMenu.show();
@@ -146,7 +208,8 @@ class GameFlowController
 	{
 		gameOverMenu.setup(
 			"Victory for " + player.name(),
-			"War, War Never Changes, War Never Ends",
+			"War, War Never Changes, War Never Ends" + NL
+			+ "Destroyed all enemy units",
 			Index.activeGame);
 			
 		gameOverMenu.show();

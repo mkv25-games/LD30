@@ -13,6 +13,7 @@ class ActiveGame extends CoreModel
 {
 	public var players:Array<PlayerModel>;
 	public var activePlayer:PlayerModel;
+	public var lastPlayerInRound:PlayerModel;
 	
 	public var space:MapModel;
 	public var worlds:Array<MapModel>;
@@ -89,11 +90,23 @@ class ActiveGame extends CoreModel
 	
 	function createPlayers(numberOfPlayers:Int):Void
 	{
+		if (numberOfPlayers < 2)
+		{
+			throw "Cannot create game with less than two players";
+		}
+		
 		players = new Array<PlayerModel>();
 		for (i in 0...numberOfPlayers)
 		{
 			createNewPlayer(i);
 		}
+		
+		defineLastPlayerInRound();
+	}
+	
+	public function defineLastPlayerInRound():Void
+	{
+		lastPlayerInRound = (players.length > 0) ? players[players.length - 1] : null;
 	}
 	
 	public function startNextPlayersTurn():Void
@@ -166,9 +179,16 @@ class ActiveGame extends CoreModel
 			}
 			
 			// count uncontested territory
-			if (hex.territoryOwner != null && !hex.contested)
+			if (hex.territoryOwner != null && !hex.contested && hex.map.isWorld())
 			{
-				hex.territoryOwner.territory++;
+				var owner:PlayerModel = hex.territoryOwner;
+				
+				// count as colonised world
+				if (!owner.worlds.contains(hex.map))
+				{
+					owner.worlds.addWorld(hex.map);
+				}
+				owner.territory++;
 			}
 		}
 	}

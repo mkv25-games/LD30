@@ -9,7 +9,6 @@ Incomplete features
 + Units can only be activated once a turn for movement
 + Sensible map layouts for low-player games
 - Movement should highlight combat tiles
-- Master of Expansion end game condition
 
 Bugs
 ----
@@ -35,6 +34,8 @@ Improvements
 + Animations for game actions
 + Animate resources being gathered
 + Replay feature to see last turn
++ Add number of worlds to player stats bar
++ Add a screen to review all player stats
 
 Free Version Release Work
 -------------------------

@@ -1,5 +1,6 @@
 package net.mkv25.game.models;
 
+import haxe.ds.StringMap;
 import net.mkv25.base.core.CoreModel;
 
 class PlayerModel extends CoreModel
@@ -12,6 +13,7 @@ class PlayerModel extends CoreModel
 
 	public var units:UnitList;
 	public var bases:UnitList;
+	public var worlds:WorldList;
 	
 	public function new(playerNumberZeroBased:Int) 
 	{
@@ -25,6 +27,7 @@ class PlayerModel extends CoreModel
 		
 		units = new UnitList();
 		bases = new UnitList();
+		worlds = new WorldList();
 	}
 	
 	public function name():String
