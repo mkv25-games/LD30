@@ -147,6 +147,24 @@ class HexTile
 		return false;
 	}
 	
+	public function getBase():Null<MapUnit>
+	{
+		checkContents();
+		
+		for (thing in contents)
+		{
+			if (Std.is(thing, MapUnit))
+			{
+				var unit:MapUnit = cast thing;
+				if (unit.type.base)
+				{
+					return unit;
+				}
+			}
+		}
+		return null;
+	}
+	
 	public function containsUnit(?player:PlayerModel):Bool
 	{
 		checkContents();

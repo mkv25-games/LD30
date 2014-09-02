@@ -68,7 +68,7 @@ class MainScreen extends Screen
 		playerHand = new PlayerHandUI();
 		playerHand.move(0, 550);
 		
-		adviceText = cast TextUI.makeFor("Welcome to the game", 0x000000).fontSize(28).size(Screen.WIDTH, 40).move(0, Screen.HEIGHT - 45);
+		adviceText = cast TextUI.makeFor("Welcome to the game", 0x000000).fontSize(24).size(Screen.WIDTH, 40).move(0, Screen.HEIGHT - 42);
 		
 		artwork.addChild(map.artwork);
 		artwork.addChild(deployment.artwork);
@@ -96,7 +96,9 @@ class MainScreen extends Screen
 	
 	function handleDisplayNewStatus(message:String)
 	{
-		adviceText.setText(message);
+		message = (message == null) ? "" : message;
+		
+		adviceText.setText(message.toUpperCase());
 	}
 	
 	override public function show():Void 

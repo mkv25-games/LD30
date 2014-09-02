@@ -8,6 +8,7 @@ Incomplete features
 + Units can only be activated once a turn for movement
 + Ability to select individual unit from tile for movement
 + Sensible map layouts for low-player games
++ Break connection between bases if captured
 - Movement should highlight combat tiles
 
 Bugs

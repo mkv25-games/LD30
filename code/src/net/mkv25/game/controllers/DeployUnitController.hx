@@ -105,6 +105,11 @@ class DeployUnitController
 			this.markedLocation = marker;
 		}
 		
+		if (activeUnitCard == null)
+		{
+			return;
+		}
+		
 		if (checkIfPlayerCanDeployUnitToLocation(Index.activeGame.activePlayer, activeUnitCard, markedLocation))
 		{
 			deployment.deployButton.enable();

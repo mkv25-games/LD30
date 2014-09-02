@@ -20,14 +20,14 @@ class ConnectPortalsController
 	private var activeUnitCard:PlayableCard;
 	private var markedLocation:HexTile;
 	
-	private var base1:MapUnit;
-	private var base2:MapUnit;
+	private var baseStart:MapUnit;
+	private var baseEnd:MapUnit;
 	
 	public function new()
 	{
 		EventBus.playerWantsTo_connectBasesWithPortals.add(suggestPortalConnectionOptionsToPlayer);
 		EventBus.playerWantsTo_connectBaseAtSelectedLocation.add(attemptToConnectPortalAtSelectedLocation);
-		EventBus.playerWantsTo_openThePortal.add(attemptToConnectPortalAtSelectedLocation);
+		EventBus.playerWantsTo_openThePortal.add(openThePortal);
 		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelConnection);
 		EventBus.cardSelectedFromHandByPlayer.add(cancelConnection);
@@ -51,6 +51,8 @@ class ConnectPortalsController
 	
 	function attemptToConnectPortalAtSelectedLocation(?model):Void
 	{
+		var baseSelected:Bool = false;
+		
 		// TODO:
 		// Checklist:
 		// + validate active card is a unit
@@ -60,18 +62,68 @@ class ConnectPortalsController
 		// + connect bases if second base is recorded
 		// + disable connections
 		
-		if (activeUnitCard == null || activeUnitCard.deployable == false)
+		if (activeUnitCard != PlayableCardType.PORTAL)
 		{
 			return;
 		}
+		
+		if (markedLocation == null)
+		{
+			return;
+		}
+		
+		var location:HexTile = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
+		if (location == null)
+		{
+			return;
+		}
+		
+		var baseAtLocation:MapUnit = location.getBase();
+		if (baseAtLocation == null)
+		{
+			return;
+		}
+		
+		if (baseStart == null)
+		{
+			baseStart = baseAtLocation;
+			baseSelected = true;
+		}
+		else if (baseEnd == null
+			&& baseStart != baseEnd
+			&& !baseStart.isConnectedTo(baseAtLocation)
+			&& !baseAtLocation.isConnectedTo(baseStart))
+		{
+			baseEnd = baseAtLocation;
+		}
+		
+		checkConnectionAvailability();
+		
+		if (baseSelected)
+		{
+			EventBus.displayNewStatusMessage.dispatch("Base selected for connection");
+		}
+	}
+	
+	function openThePortal(?model):Void
+	{
+		// TODO:
+		// + register connection between baseStart and baseEnd
+		// + register connection between baseEnd and baseStart
+		// + redraw map, with connections
+		// + enable movement through connected bases
+		
+		cancelConnection();
+		
+		EventBus.displayNewStatusMessage.dispatch("Portal opened");
 	}
 	
 	function cancelConnection(?model)
 	{
 		this.activeUnitCard = null;
 		
-		base1 = null;
-		base2 = null;
+		baseStart = null;
+		baseEnd = null;
 		
 		disableConnections();
 	}
@@ -97,6 +149,11 @@ class ConnectPortalsController
 			this.markedLocation = marker;
 		}
 		
+		if (activeUnitCard == null)
+		{
+			return;
+		}
+		
 		checkConnectionAvailability();
 	}
 	
@@ -112,10 +169,22 @@ class ConnectPortalsController
 		
 		// checks to activate the first portal button
 		var location:HexTile = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
+		var containsPlayerBase:Bool = location.containsBase(Index.activeGame.activePlayer);
+		var baseAtLocation = location.getBase();
+			
+		if (!containsPlayerBase)
+		{
+			EventBus.displayNewStatusMessage.dispatch("No base at location");
+		}
+		else if (baseStart == baseAtLocation)
+		{
+			EventBus.displayNewStatusMessage.dispatch("Base selected for connection");
+		}
 		
-		if (base1 == null && location.containsBase(Index.activeGame.activePlayer))
+		if (baseStart == null && location != null && containsPlayerBase)
 		{
 			portals.portal1Button.enable();
+			EventBus.displayNewStatusMessage.dispatch("Valid base, select?");
 		}
 		else
 		{
@@ -123,12 +192,12 @@ class ConnectPortalsController
 		}
 		
 		// checks to activate the second portal location
-		if (base1 != null
-			&& base2 == null
-			&& location.containsBase(Index.activeGame.activePlayer)
-			&& base1 != base2)
+		if (baseStart != null
+			&& baseEnd == null
+			&& containsPlayerBase
+			&& baseStart != baseAtLocation)
 		{
-			if (!base1.isConnectedTo(base2) && !base2.isConnectedTo(base1))
+			if (baseStart.isConnectedTo(baseAtLocation) || baseAtLocation.isConnectedTo(baseStart))
 			{
 				EventBus.displayNewStatusMessage.dispatch("Selected bases are already connected");
 				portals.portal2Button.disable();
@@ -136,6 +205,7 @@ class ConnectPortalsController
 			else
 			{
 				portals.portal2Button.enable();
+				EventBus.displayNewStatusMessage.dispatch("Valid base, select?");
 			}
 		}
 		else
@@ -144,13 +214,14 @@ class ConnectPortalsController
 		}
 		
 		// checks to activate the confirmation button
-		if (base1 != null
-			&& base2 != null
-			&& base1 != base2
-			&& !base1.isConnectedTo(base2)
-			&& !base2.isConnectedTo(base1))
+		if (baseStart != null
+			&& baseEnd != null
+			&& baseStart != baseEnd
+			&& !baseStart.isConnectedTo(baseEnd)
+			&& !baseEnd.isConnectedTo(baseStart))
 		{
 			portals.confirmButton.enable();
+			EventBus.displayNewStatusMessage.dispatch("Valid connection, confirm?");
 		}
 		else
 		{
