@@ -15,6 +15,8 @@ import net.mkv25.game.provider.CardProvider;
 class ResearchMenuUI extends BaseUI
 {
 	private static inline var SIZE:Int = 500;
+	private static inline var TOP_OFFSET:Int = 50;
+	
 	var backgroundCover:Sprite;
 	var backgroundTint:Sprite;
 	var titleText:TextUI;
@@ -41,9 +43,10 @@ class ResearchMenuUI extends BaseUI
 		createBackgroundCover();
 		createBackgroundTint();
 		
-		titleText = cast TextUI.makeFor("develop a technology".toUpperCase(), 0xFFFFFF).fontSize(32).size(ResearchMenuUI.SIZE, 40).move(0, 70);
+		titleText = cast TextUI.makeFor("develop a technology".toUpperCase(), 0xFFFFFF).fontSize(26).size(ResearchMenuUI.SIZE, 40).move(0, 70);
 		
 		createCards();
+		positionCards();
 		
 		cancelButton = new IconButtonUI();
 		cancelButton.setup("img/icon-back.png", cancelAction);
@@ -136,11 +139,11 @@ class ResearchMenuUI extends BaseUI
 		
 		var g:Graphics = backgroundTint.graphics;
 		g.beginFill(0x000000, 0.4);
-		g.drawRect(0, 0, Screen.WIDTH, Screen.HEIGHT);
+		g.drawRect(0, 0, Screen.WIDTH, Screen.HEIGHT - ResearchMenuUI.TOP_OFFSET);
 		g.endFill();
 		
 		backgroundTint.x = 0;
-		backgroundTint.y = 50;
+		backgroundTint.y = ResearchMenuUI.TOP_OFFSET;
 		artwork.addChild(backgroundTint);
 	}
 	

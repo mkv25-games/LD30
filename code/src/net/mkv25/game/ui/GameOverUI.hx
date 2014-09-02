@@ -13,6 +13,7 @@ import net.mkv25.game.models.ActiveGame;
 class GameOverUI extends BaseUI
 {
 	private static inline var SIZE:Int = 500;
+	private static inline var TOP_OFFSET:Int = 50;
 	
 	var backgroundCover:Sprite;
 	var backgroundTint:Sprite;
@@ -79,11 +80,11 @@ class GameOverUI extends BaseUI
 		
 		var g:Graphics = backgroundTint.graphics;
 		g.beginFill(0x000000, 0.4);
-		g.drawRect(0, 0, Screen.WIDTH, Screen.HEIGHT);
+		g.drawRect(0, 0, Screen.WIDTH, Screen.HEIGHT - GameOverUI.TOP_OFFSET);
 		g.endFill();
 		
 		backgroundTint.x = 0;
-		backgroundTint.y = 50;
+		backgroundTint.y = GameOverUI.TOP_OFFSET;
 		artwork.addChild(backgroundTint);
 	}
 	

@@ -138,6 +138,8 @@ class ScreenController
 			screenHistory.push(currentScreen);
 		
 		currentScreen = screen;
+		
+		updateScreenSize();
 	}
 	
 	public function showNextScreen():Void

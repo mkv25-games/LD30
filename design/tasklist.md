@@ -13,13 +13,13 @@ Incomplete features
 
 Bugs
 ----
-+ Android crash after deploying two units on the same tile and clicking the number
 - Android screen resizing and rotation
 - Android start button redrawing
 - Windows version fails to start because sound assets are WAVs and not MP3s
 
 Improvements
 ------------
++ Change language on Engineer's construction screen to prevent confusion over building unints
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Combat report
 + Icon language of cards should match on screen icons
