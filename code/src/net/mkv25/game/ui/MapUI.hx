@@ -45,6 +45,7 @@ class MapUI extends BaseUI
 	var movementFocusDistance:Int;
 	
 	var mapImage:Bitmap;
+	
 	var viewLayer:Sprite;
 	var hexLayer:Sprite;
 	var movementLayer:Sprite;
@@ -76,7 +77,10 @@ class MapUI extends BaseUI
 		movementFocusDistance = 0;
 		
 		mapImage = new Bitmap();
+		
 		viewLayer = new Sprite();
+		viewLayer.mouseChildren = false;
+		
 		hexLayer = new Sprite();
 		movementLayer = new Sprite();
 		thingsLayer = new Sprite();
@@ -103,8 +107,8 @@ class MapUI extends BaseUI
 		
 		mapImage.bitmapData = model.getBackground();
 		
-		viewLayer.addEventListener(MouseEvent.MOUSE_MOVE, moveHexCursor, false, 0, true);
-		viewLayer.addEventListener(MouseEvent.MOUSE_DOWN, markSelectedHex, false, 0, true);
+		viewLayer.addEventListener(MouseEvent.MOUSE_MOVE, moveHexCursor);
+		viewLayer.addEventListener(MouseEvent.MOUSE_DOWN, markSelectedHex);
 		
 		(markedHex.map == currentModel) ? markedImage.show() : markedImage.hide();
 		
@@ -131,7 +135,13 @@ class MapUI extends BaseUI
 		redraw();
 	}
 	
-	function hexUnderMouse(mouseEvent:MouseEvent):HexTile {
+	function hexUnderMouse(mouseEvent:MouseEvent):HexTile
+	{
+		if (mouseEvent.target != viewLayer)
+		{
+			return null;
+		}
+		
 		var hex_x = mouseEvent.localX / hexImage.width;
 		var hex_y = mouseEvent.localY /  hexImage.height;
 		
@@ -144,6 +154,11 @@ class MapUI extends BaseUI
 	
 	function moveHexCursor(mouseEvent:MouseEvent):Void
 	{
+		if (mouseEvent.target != viewLayer)
+		{
+			return;
+		}
+		
 		var tile:HexTile = hexUnderMouse(mouseEvent);
 		if (tile != null)
 		{

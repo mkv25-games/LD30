@@ -16,6 +16,7 @@ Bugs
 + Android crash after deploying two units on the same tile and clicking the number
 - Android screen resizing and rotation
 - Android start button redrawing
+- Windows version fails to start because sound assets are WAVs and not MP3s
 
 Improvements
 ------------
