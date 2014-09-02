@@ -138,9 +138,10 @@ class ActiveGame extends CoreModel
 		// reset values
 		for (player in players)
 		{
+			player.territory = 0;
 			player.units.removeAll();
 			player.bases.removeAll();
-			player.territory = 0;
+			player.worlds.removeAll();
 		}
 		
 		// begin the count
