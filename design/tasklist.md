@@ -13,7 +13,6 @@ Incomplete features
 
 Bugs
 ----
-- Android / Windows start button redrawing
 
 Improvements
 ------------

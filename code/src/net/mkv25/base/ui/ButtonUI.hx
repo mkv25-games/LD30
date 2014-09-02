@@ -8,6 +8,7 @@ import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.text.TextField;
 import flash.text.TextFormatAlign;
+import openfl.events.Event;
 
 class ButtonUI extends BaseUI 
 {
@@ -35,6 +36,8 @@ class ButtonUI extends BaseUI
 		artwork.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
 		artwork.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
 		artwork.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
+		
+		artwork.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
 	}
 	
 	public function setup(label:String, action:Dynamic->Void, assetPrefix:String=DEFAULT_ASSET_PREFIX):Void
@@ -45,8 +48,7 @@ class ButtonUI extends BaseUI
 		artwork.addChild(bitmap);
 		artwork.addChild(textField);
 		
-		textField.text = label;		
-		updateLabelSize();
+		textField.text = label;
 		
 		upState();
 	}
@@ -65,7 +67,8 @@ class ButtonUI extends BaseUI
 		center(textField);
 	}
 	
-	function activate():Void {
+	function activate():Void
+	{
 		if (waitingOnActivation)
 			return;
 			
@@ -76,7 +79,8 @@ class ButtonUI extends BaseUI
 		Actuate.timer(0.1).onComplete(onActivationComplete);
 	}
 	
-	function onActivationComplete():Void {
+	function onActivationComplete():Void
+	{
 		action(this);
 		waitingOnActivation = false;
 	}
@@ -109,6 +113,11 @@ class ButtonUI extends BaseUI
 		bitmap.bitmapData = Assets.getBitmapData(assetPrefix + "_down.png");
 		center(bitmap);
 		updateLabelSize();
+	}
+	
+	function onAddedToStage(e)
+	{
+		upState();
 	}
 	
 	function onMouseOver(e)
