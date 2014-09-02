@@ -1,22 +1,23 @@
 Things to do
 ============
 
+Bugs
+----
+
 Incomplete features
 -------------------
 + Linking bases via portals
 + Movement via portals
 + Units can only be activated once a turn for movement
 + Ability to select individual unit from tile for movement
-+ Sensible map layouts for low-player games
 + Break connection between bases if captured
 - Movement should highlight combat tiles
-
-Bugs
-----
 
 Improvements
 ------------
 + Change language on Engineer's construction screen to prevent confusion over building unints
++ Player selection screen, number of players
++ Sensible map layouts for low-player games
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Combat report
 + Icon language of cards should match on screen icons
@@ -24,7 +25,6 @@ Improvements
 + Add discard count and deck count to interface
 + Switch discard and cancel buttons over
 + Standardise discard icon with interface
-+ Player selection screen, number of players
 + Saving of game state
 + Exit button to end game
 + AI Players
