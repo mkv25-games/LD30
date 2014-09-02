@@ -13,6 +13,7 @@ import net.mkv25.base.core.Recycler;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.base.ui.IconButtonUI;
+import net.mkv25.game.audio.SoundEffects;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.HexTile;
 import net.mkv25.game.models.IMapThing;
@@ -435,8 +436,7 @@ class MapUI extends BaseUI
 	
 	function switchToSpaceMap(?model)
 	{
-		var bloopSfx = Assets.getSound("sounds/bloop.wav");
-		bloopSfx.play();
+		SoundEffects.playBloop();
 		
 		setupMap(Index.activeGame.space);
 	}
@@ -446,8 +446,7 @@ class MapUI extends BaseUI
 		var location:HexTile = markedHex.map.getHexTile(markedHex.q, markedHex.r);
 		if (location.containsWorld())
 		{
-			var bloopSfx = Assets.getSound("sounds/bloop.wav");
-			bloopSfx.play();
+			SoundEffects.playBloop();
 			
 			var world:MapModel = MovementModel.getWorldFrom(location);
 			

@@ -8,6 +8,7 @@ import net.mkv25.base.ui.BubbleCircleUI;
 import net.mkv25.base.ui.ButtonUI;
 import net.mkv25.base.ui.IconButtonUI;
 import net.mkv25.base.ui.TextUI;
+import net.mkv25.game.audio.SoundEffects;
 import net.mkv25.game.event.EventBus;
 import openfl.Assets;
 
@@ -54,8 +55,7 @@ class IntroScreen extends Screen
 	
 	function onBeginAction(?model:ButtonUI)
 	{
-		var bloopSfx = Assets.getSound("sounds/bloop.wav");
-		bloopSfx.play();
+		SoundEffects.playBloop();
 		
 		EventBus.startNewGame.dispatch(this);
 	}

@@ -13,9 +13,7 @@ Incomplete features
 
 Bugs
 ----
-- Android screen resizing and rotation
 - Android start button redrawing
-- Windows version fails to start because sound assets are WAVs and not MP3s
 
 Improvements
 ------------
