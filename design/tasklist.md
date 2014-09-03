@@ -15,7 +15,6 @@ Incomplete features
 
 Improvements based on Player feedback
 -------------------------------------
-+ Change deploy action to provide advice and deploy immediately into selected tile
 + Change move action to provide advice on selected unit, and provide two options to either switch view into space, stay on planet
 
 Improvements

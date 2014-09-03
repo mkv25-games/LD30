@@ -42,6 +42,9 @@ class DeployUnitController
 		
 		enableDeployment();
 		EventBus.displayNewStatusMessage.dispatch("Choose a location to deploy to");
+		
+		// attempt deployment immediately
+		attemptToPlaceUnitAtSelectedLocation();
 	}
 	
 	function attemptToPlaceUnitAtSelectedLocation(?model):Void
@@ -79,8 +82,6 @@ class DeployUnitController
 	
 	function cancelDeployment(?model)
 	{
-		this.activeUnitCard = null;
-		
 		disableDeployment();
 	}
 	
@@ -94,6 +95,8 @@ class DeployUnitController
 	
 	function disableDeployment()
 	{
+		this.activeUnitCard = null;
+		
 		deployment.disable();
 		deployment.hide();
 	}
@@ -132,12 +135,14 @@ class DeployUnitController
 		if (location.containsBase() && unitType.base)
 		{
 			// Rule: bases cannot exist in the same hex
+			EventBus.displayNewStatusMessage.dispatch("Bases cannot exist in the same hex");
 			return false;
 		}
 		
 		if(location.containsBase(player) && !unitType.base)
 		{
 			// Rule: non-base units can be deployed in same hex as a base
+			EventBus.displayNewStatusMessage.dispatch("Confirm deployment");
 			return true;
 		}
 		
@@ -150,9 +155,20 @@ class DeployUnitController
 				if (hex.containsBase(player))
 				{
 					// Rule: units can only be deployed in player owned territory
+					EventBus.displayNewStatusMessage.dispatch("Confirm deployment");
 					return true;
 				}
 			}
+		}
+		
+		// Provide advice to the user
+		if (location.territoryOwner == null)
+		{
+			EventBus.displayNewStatusMessage.dispatch("Cannot deploy outside your territory");
+		}
+		else if (location.territoryOwner != Index.activeGame.activePlayer)
+		{
+			EventBus.displayNewStatusMessage.dispatch("Cannot deploy in enemy territory");
 		}
 		
 		return false;
