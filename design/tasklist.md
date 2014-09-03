@@ -6,6 +6,7 @@ Bugs
 
 Improvements based on Player feedback
 -------------------------------------
++ Add planet owner marker
 
 Incomplete features
 -------------------
@@ -39,7 +40,7 @@ Improvements
 + Replay feature to see last turn
 + Add number of worlds to player stats bar
 + Add a screen to review all player stats
-+ Add planet owner marker, with conflict marker for multipler owners
++ Add conflict marker to planets with multipler owners
 
 Free Version Release Work
 -------------------------
