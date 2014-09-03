@@ -13,6 +13,13 @@ Incomplete features
 + Break connection between bases if captured
 - Movement should highlight combat tiles
 
+Improvements based on Player feedback
+---------------
++ Add discard count and deck count to interface
++ Change deploy action to provide advice and deploy immediately into selected tile
++ Change move action to provide advice on selected unit, and provide two options to either switch view into space, stay on planet
++ Move advice status bar closer to player action, perhaps as a fading overlay on the map
+
 Improvements
 ------------
 + Change language on Engineer's construction screen to prevent confusion over building unints
@@ -22,7 +29,6 @@ Improvements
 + Combat report
 + Icon language of cards should match on screen icons
 + Plain instead of blue tinted icons for units on cards
-+ Add discard count and deck count to interface
 + Switch discard and cancel buttons over
 + Standardise discard icon with interface
 + Saving of game state
