@@ -17,9 +17,9 @@ class UnitCountIndicatorUI extends BaseUI
 		super();
 		
 		bitmap = new BitmapUI();
-		text = cast TextUI.makeFor("0", 0xFFFFFF).fontSize(15).align(TextFormatAlign.CENTER).size(30, 22);
+		text = cast TextUI.makeFor("0", 0xFFFFFF).fontSize(14).align(TextFormatAlign.CENTER).size(30, 22);
 		
-		center(text.artwork);
+		center(text.artwork, 0, 1);
 		
 		artwork.addChild(bitmap.artwork);
 		artwork.addChild(text.artwork);

@@ -15,6 +15,9 @@ class MapModel extends CoreModel implements IMapThing
 	private var mapDepth:Int;
 	private var spaceHex:HexTile;
 	
+	public var contested:Bool;
+	public var owner:Null<PlayerModel>;
+	
 	public function new() 
 	{
 		super();
@@ -24,6 +27,9 @@ class MapModel extends CoreModel implements IMapThing
 		background = null;
 		mapIcon = null;
 		mapDepth = 0;
+		
+		contested = false;
+		owner = null;
 	}
 	
 	public function setup(id:String, background:BitmapData, mapIcon:BitmapData):Void
@@ -70,7 +76,7 @@ class MapModel extends CoreModel implements IMapThing
 		return hexes.get(key);
 	}
 	
-	public function indexTiles():Void
+	public function indexHexes():Void
 	{
 		for (hex in hexes)
 		{
@@ -81,6 +87,8 @@ class MapModel extends CoreModel implements IMapThing
 	public function recalculateTerritory():Void
 	{
 		// reset all tiles
+		this.owner = null;
+		this.contested = false;
 		for (hex in hexes)
 		{
 			hex.resetOwnership();
@@ -90,6 +98,15 @@ class MapModel extends CoreModel implements IMapThing
 		for (hex in hexes)
 		{
 			hex.updateTerritory();
+			if (hex.contested)
+			{
+				owner = null;
+				this.contested = true;
+			}
+			else if (!contested && hex.territoryOwner != null)
+			{
+				owner = hex.territoryOwner;
+			}
 		}
 	}
 	

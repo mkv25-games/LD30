@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon Strip - Bases and Units" itemID="54035584-0000022a" lastModified="1409506240">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon Strip - Bases and Units" itemID="54035584-0000022a" lastModified="1409781710">
   <timeline>
     <DOMTimeline name="Icon Strip - Bases and Units">
       <layers>
@@ -23,6 +23,14 @@
                   </matrix>
                   <transformationPoint>
                     <Point x="163.55" y="19.75"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Planet Owner Marker" name="" centerPoint3DX="380" centerPoint3DY="21">
+                  <matrix>
+                    <Matrix tx="380" ty="21"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
                   </transformationPoint>
                 </DOMSymbolInstance>
               </elements>

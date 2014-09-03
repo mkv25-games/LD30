@@ -111,6 +111,7 @@
           <Include href="- Screens/Screen - Gameplay - Space.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Main Layout.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Research Technology.xml" loadImmediate="false"/>
+          <Include href="Planet Owner Marker.xml" loadImmediate="false"/>
           <Include href="Resource Counters.xml" loadImmediate="false"/>
      </symbols>
      <timelines>

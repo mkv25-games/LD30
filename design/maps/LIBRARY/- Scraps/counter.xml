@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Scraps/counter" itemID="53f8fa32-00001211" sourceLibraryItemHRef="Symbol 1" lastModified="1408826108">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Scraps/counter" itemID="53f8fa32-00001211" sourceLibraryItemHRef="Symbol 1" lastModified="1409786095">
   <timeline>
     <DOMTimeline name="counter">
       <layers>
@@ -9,7 +9,32 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="box" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="sheen" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.081787109375" d="0.029296875" tx="0.5" ty="-23"/>
+                        </matrix>
+                        <GradientEntry color="#FFFFFF" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="1" edges="!160 -170|-159 -170!-159 -170[-229 -170 -279 -120!-279 -120[-329 -70 -329 0!-329 0|-329 1!-329 1[-329 71 -279 121!-279 121[-229 171 -159 171!-159 171|160 171!160 171[230 171 280 121!280 121[330 71 330 1!330 1|330 0!330 0[330 -70 280 -120
+!280 -120[230 -170 160 -170"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="box" color="#4FFF4F" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -20,7 +45,8 @@
                     </FillStyle>
                   </fills>
                   <edges>
-                    <Edge fillStyle0="1" edges="!160 -170|-159 -170!-159 -170[-229 -170 -279 -120!-279 -120[-329 -70 -329 0!-329 0|-329 1!-329 1[-329 71 -279 121!-279 121[-229 171 -159 171!-159 171|160 171!160 171[230 171 280 121!280 121[330 71 330 1!330 1|330 0!330 0[330 -70 280 -120
+                    <Edge fillStyle0="1" edges="
+!160 -170|-159 -170!-159 -170[-229 -170 -279 -120!-279 -120[-329 -70 -329 0!-329 0|-329 1!-329 1[-329 71 -279 121!-279 121[-229 171 -159 171!-159 171|160 171!160 171[230 171 280 121!280 121[330 71 330 1!330 1|330 0!330 0[330 -70 280 -120
 !280 -120[230 -170 160 -170"/>
                   </edges>
                 </DOMShape>

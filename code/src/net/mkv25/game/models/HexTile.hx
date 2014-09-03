@@ -16,10 +16,10 @@ class HexTile
 	public var r:Int;
 	
 	public var map:MapModel;
-	public var territoryOwner:PlayerModel;
+	public var territoryOwner:Null<PlayerModel>;
 	public var contested:Bool;
 	
-	public var bitmap:Bitmap;
+	public var bitmap:Null<Bitmap>;
 	private var contents:Array<IMapThing>;
 
 	public function new() 
@@ -91,14 +91,21 @@ class HexTile
 		return list;
 	}
 	
-	inline function checkContents() {
-		if (contents == null) {
+	inline function checkContents()
+	{
+		if (contents == null)
+		{
 			this.contents = new Array<IMapThing>();
 		}
 	}
 	
 	public function updateTerritory():Void
 	{
+		if (contents == null)
+		{
+			return;
+		}
+		
 		// check for base, set territory
 		for (thing in contents)
 		{

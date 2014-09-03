@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon - Territory" itemID="53f8bbb5-000002ec" sourceLibraryItemHRef="Symbol 1" lastModified="1408810057" lastUniqueIdentifier="1">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon - Territory" itemID="53f8bbb5-000002ec" sourceLibraryItemHRef="Symbol 1" lastModified="1409786170" lastUniqueIdentifier="1">
   <timeline>
     <DOMTimeline name="Icon - Territory">
       <layers>
@@ -16,13 +16,13 @@
                     <StrokeStyle index="1">
                       <SolidStroke scaleMode="normal" weight="3" joints="miter">
                         <fill>
-                          <SolidColor/>
+                          <SolidColor color="#990000"/>
                         </fill>
                       </SolidStroke>
                     </StrokeStyle>
                   </strokes>
                   <edges>
-                    <Edge fillStyle1="1" strokeStyle="1" edges="!150 -260|300 0!300 0|150 260!150 260|-150 260!-150 260|-300 0!-300 0|-150 -260!-150 -260|150 -260"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!150 260|-150 260!-150 260|-300 0!-300 0|-150 -260!-150 -260|150 -260!150 -260|300 0!300 0|150 260"/>
                   </edges>
                 </DOMShape>
               </elements>

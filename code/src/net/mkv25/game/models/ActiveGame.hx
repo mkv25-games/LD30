@@ -47,7 +47,7 @@ class ActiveGame extends CoreModel
 		space = new MapModel();
 		space.setup("s0", Assets.getBitmapData("img/starfield-small.png"), null);
 		space.hexes = MapModel.createCircle(5);
-		space.indexTiles();
+		space.indexHexes();
 		
 		worlds = new Array<MapModel>();
 		
@@ -79,7 +79,7 @@ class ActiveGame extends CoreModel
 		var world:MapModel = new MapModel();
 		world.setup("w" + id, Assets.getBitmapData(backgroundAsset), IconProvider.WORLD_ICONS[id]);
 		world.hexes = MapModel.createRectangle(13, 9);
-		world.indexTiles();
+		world.indexHexes();
 		
 		var hex:HexTile = space.getHexTile(q, r);
 		hex.add(world);
@@ -135,7 +135,7 @@ class ActiveGame extends CoreModel
 	
 	public function updatePlayerStats():Void
 	{
-		// reset values
+		// reset player values
 		for (player in players)
 		{
 			player.territory = 0;
@@ -155,13 +155,17 @@ class ActiveGame extends CoreModel
 		EventBus.activePlayerUpdated.dispatch(activePlayer);
 	}
 	
+	// scan the entire map and create additional indexes and counters based on contents
 	function updatePlayerStatsFor(map:MapModel):Void
 	{
+		map.recalculateTerritory();
+		
 		for (hex in map.hexes)
 		{
 			var things = hex.listContents();
 			for (thing in things)
 			{
+				// count units and bases
 				if (Std.is(thing, MapUnit))
 				{
 					var unit:MapUnit = cast thing;

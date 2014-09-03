@@ -3,6 +3,7 @@ Things to do
 
 Bugs
 ----
+- Mobile - highlighted mouseover hex can often get out of sync with marked hex
 
 Improvements based on Player feedback
 -------------------------------------
@@ -41,6 +42,10 @@ Improvements
 + Add number of worlds to player stats bar
 + Add a screen to review all player stats
 + Add conflict marker to planets with multipler owners
+
++ Turn action log - documenting each player action and event in the game
++ Turn replay feature - show each action that occurred on the last turn
++ Game replay feature - show each turn that occured in a game, navigate backwards and forwards
 
 Free Version Release Work
 -------------------------

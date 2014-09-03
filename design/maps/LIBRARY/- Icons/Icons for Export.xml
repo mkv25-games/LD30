@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icons for Export" itemID="54035584-0000022b" lastModified="1409504644">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icons for Export" itemID="54035584-0000022b" lastModified="1409786187">
   <timeline>
     <DOMTimeline name="Icons for Export">
       <layers>
@@ -69,6 +69,9 @@
                   <transformationPoint>
                     <Point/>
                   </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
                 </DOMSymbolInstance>
                 <DOMSymbolInstance libraryItemName="- Icons/Icon - Territory" name="" centerPoint3DX="60" centerPoint3DY="20">
                   <matrix>
@@ -77,6 +80,9 @@
                   <transformationPoint>
                     <Point/>
                   </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
                 </DOMSymbolInstance>
                 <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Count" name="" centerPoint3DX="140.15" centerPoint3DY="20">
                   <matrix>
@@ -85,6 +91,9 @@
                   <transformationPoint>
                     <Point x="0.2"/>
                   </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
                 </DOMSymbolInstance>
                 <DOMSymbolInstance libraryItemName="- Icons/Icon Strip - Bases and Units" name="" centerPoint3DX="93.4" centerPoint3DY="94.6">
                   <matrix>

@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Choose Action - Deploy" itemID="54035584-00000234" lastModified="1409519234">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Choose Action - Deploy" itemID="54035584-00000234" lastModified="1409611585">
   <timeline>
     <DOMTimeline name="Screen - Choose Action - Deploy">
       <layers>
@@ -163,7 +163,7 @@
                     <DOMTextRun>
                       <characters>PLAYERS: 2&#xD;ROUNDS: 5&#xD;TURNS: 10&#xD;UNITS DESTROYED: 16&#xD;UNITS CREATED: 45&#xD;BASES CAPTURED: 4&#xD;TERRITORY OWNED: 52</characters>
                       <textAttrs>
-                        <DOMTextAttrs alignment="center" aliasText="false" size="20" face="TrebuchetMS" fillColor="#999999"/>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="20" bitmapSize="400" face="TrebuchetMS" fillColor="#252525"/>
                       </textAttrs>
                     </DOMTextRun>
                   </textRuns>

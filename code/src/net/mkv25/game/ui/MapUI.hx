@@ -346,8 +346,11 @@ class MapUI extends BaseUI
 		// draw some things
 		for (thing in things)
 		{
+			// draw planets on space map
 			if (Std.is(thing, MapModel))
 			{
+				var map:MapModel = cast thing;
+				
 				// make an image for the thing
 				var bitmap = bitmapRecycler.get();
 				bitmap.bitmapData = thing.getIcon();
@@ -356,6 +359,18 @@ class MapUI extends BaseUI
 				// center thing on hex
 				bitmap.x = x + (hexImage.width / 2) - (bitmap.width / 2);
 				bitmap.y = y + (hexImage.height / 2) - (bitmap.height / 2);
+				
+				// draw planet owner marker
+				if (map.owner != null)
+				{
+					var marker = bitmapRecycler.get();
+					marker.bitmapData = IconProvider.getPlayerIconFor(map.owner, 9);
+					safeAddAt(unitLayer, marker, 1);
+					
+					// place marker at top left of hex
+					marker.x = x + (hexImage.width * 0.25) - (marker.width / 2);
+					marker.y = y + (hexImage.height * 0.0) - (marker.height / 2);
+				}
 			}
 			
 			// record owner
@@ -392,7 +407,7 @@ class MapUI extends BaseUI
 			// place indicator on top corner of hex
 			indicator.move(
 				x + (hexImage.width * 0.75),
-				y
+				y + 1
 			);
 		}
 	}
