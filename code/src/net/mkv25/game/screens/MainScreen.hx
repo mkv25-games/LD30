@@ -68,7 +68,8 @@ class MainScreen extends Screen
 		playerHand = new PlayerHandUI();
 		playerHand.move(0, 550);
 		
-		adviceText = cast TextUI.makeFor("Welcome to the game", 0x000000).fontSize(24).size(Screen.WIDTH, 40).move(0, Screen.HEIGHT - 42);
+		adviceText = cast TextUI.makeFor("Welcome to the game", 0xFFFFFF).fontSize(24).size(Screen.WIDTH, 40).move(0, 480);
+		adviceText.artwork.mouseEnabled = adviceText.artwork.mouseChildren = false; 
 		
 		artwork.addChild(map.artwork);
 		artwork.addChild(deployment.artwork);

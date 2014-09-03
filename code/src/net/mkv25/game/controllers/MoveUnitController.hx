@@ -113,8 +113,8 @@ class MoveUnitController
 			return;
 		}
 		
-		updateMovementSelection();
 		updateMovementConfirmation();
+		updateMovementSelection();
 	}
 	
 	function updateMovementSelection():Void
@@ -127,6 +127,18 @@ class MoveUnitController
 			{
 				// Rule: players can only move their own units
 				movement.moveButton.enable();
+				
+				// report to player about selection
+				var unit:MapUnit = selectUnitForPlayerFrom(location, Index.activeGame.activePlayer);
+				if (selectedUnit != null)
+				{
+					EventBus.displayNewStatusMessage.dispatch("Change selection: " + unit.type.name);
+				}
+				else
+				{
+					EventBus.displayNewStatusMessage.dispatch("Confirm selection: " + unit.type.name);
+				}
+				
 				return;
 			}
 		}
@@ -149,7 +161,15 @@ class MoveUnitController
 		}
 		
 		movement.confirmButton.disable();
-		EventBus.displayNewStatusMessage.dispatch("Cannot move unit to that location");
+		
+		if (selectedUnit == null)
+		{
+			EventBus.displayNewStatusMessage.dispatch("No unit here");
+		}
+		else
+		{
+			EventBus.displayNewStatusMessage.dispatch("Too far from unit");
+		}
 	}
 	
 	function attemptToMoveUnitToSelectedLocation(?model):Void
