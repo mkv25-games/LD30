@@ -48,9 +48,10 @@ class MapUI extends BaseUI
 	var mapImage:Bitmap;
 	
 	var viewLayer:Sprite;
+	var planetLayer:Sprite;
 	var hexLayer:Sprite;
 	var movementLayer:Sprite;
-	var thingsLayer:Sprite;
+	var unitLayer:Sprite;
 	
 	var spaceViewButton:IconButtonUI;
 	var worldViewButton:IconButtonUI;
@@ -82,9 +83,10 @@ class MapUI extends BaseUI
 		viewLayer = new Sprite();
 		viewLayer.mouseChildren = false;
 		
+		planetLayer = new Sprite();
 		hexLayer = new Sprite();
 		movementLayer = new Sprite();
-		thingsLayer = new Sprite();
+		unitLayer = new Sprite();
 		
 		spaceViewButton = new IconButtonUI();
 		spaceViewButton.setup("img/icon-starmap.png", switchToSpaceMap);
@@ -253,9 +255,10 @@ class MapUI extends BaseUI
 		// reset the order of the layers
 		artwork.addChild(mapImage);
 		artwork.addChild(viewLayer);
+		viewLayer.addChild(planetLayer);
 		viewLayer.addChild(hexLayer);
 		viewLayer.addChild(movementLayer);
-		viewLayer.addChild(thingsLayer);
+		viewLayer.addChild(unitLayer);
 		viewLayer.addChild(markedImage.artwork);
 		viewLayer.addChild(highlightImage.artwork);
 		artwork.addChild(spaceViewButton.artwork);
@@ -348,7 +351,7 @@ class MapUI extends BaseUI
 				// make an image for the thing
 				var bitmap = bitmapRecycler.get();
 				bitmap.bitmapData = thing.getIcon();
-				safeAddAt(thingsLayer, bitmap, thing.getDepth());
+				safeAddAt(planetLayer, bitmap, thing.getDepth());
 				
 				// center thing on hex
 				bitmap.x = x + (hexImage.width / 2) - (bitmap.width / 2);
@@ -372,7 +375,7 @@ class MapUI extends BaseUI
 			// make an image for the unit
 			var bitmap = bitmapRecycler.get();
 			bitmap.bitmapData = unit.getIcon();
-			safeAddAt(thingsLayer, bitmap, unit.getDepth());
+			safeAddAt(unitLayer, bitmap, unit.getDepth());
 			
 			// center thing on hex
 			bitmap.x = x + (hexImage.width / 2) - (bitmap.width / 2);
@@ -384,7 +387,7 @@ class MapUI extends BaseUI
 		{
 			var indicator = indicatorRecycler.get();
 			indicator.setup(commonOwner, unitCount + "");
-			safeAddAt(thingsLayer, indicator.artwork, 20);
+			safeAddAt(unitLayer, indicator.artwork, 20);
 			
 			// place indicator on top corner of hex
 			indicator.move(

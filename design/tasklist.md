@@ -6,7 +6,6 @@ Bugs
 
 Improvements based on Player feedback
 -------------------------------------
-+ Highlighted movement in space should be more obvious relative to planet
 
 Incomplete features
 -------------------
