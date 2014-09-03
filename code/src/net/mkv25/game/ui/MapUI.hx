@@ -177,6 +177,10 @@ class MapUI extends BaseUI
 		{
 			highlightImage.hide();
 		}
+		
+		#if mobile
+			markSelectedHex(mouseEvent);
+		#end
 	}
 	
 	function markSelectedHex(mouseEvent:MouseEvent):Void

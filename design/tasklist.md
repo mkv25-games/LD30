@@ -3,7 +3,6 @@ Things to do
 
 Bugs
 ----
-- Mobile - highlighted mouseover hex can often get out of sync with marked hex
 
 Improvements based on Player feedback
 -------------------------------------
