@@ -1,12 +1,11 @@
 package net.mkv25.base.core;
 
+import net.mkv25.base.ui.BaseUI;
 import openfl.display.DisplayObject;
 import openfl.display.Sprite;
 
 class Recycler<T>
 {
-	var displayObjectFieldName:String = "artwork";
-	
 	var type:Class<T>;
 	
 	var inUse:Array<T>;
@@ -47,11 +46,13 @@ class Recycler<T>
 				var artwork:DisplayObject = cast instance;
 				recycler.addChild(artwork);
 			}
-			else if (Reflect.hasField(instance, displayObjectFieldName))
+			else if (Std.is(instance, BaseUI))
 			{
-				if (Std.is(Reflect.getProperty(instance, displayObjectFieldName), DisplayObject))
+				var base:BaseUI = cast instance;
+				var artwork:DisplayObject = base.artwork;
+				
+				if (artwork != null)
 				{
-					var artwork:DisplayObject = cast Reflect.getProperty(instance, displayObjectFieldName);
 					recycler.addChild(artwork);
 				}
 			}

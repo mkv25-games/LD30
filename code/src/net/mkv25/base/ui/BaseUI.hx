@@ -55,7 +55,6 @@ class BaseUI
 		image.y = - Math.round(image.height / 2) + offsetY;
 	}
 	
-	
 	public function enable()
 	{
 		enabled = true;

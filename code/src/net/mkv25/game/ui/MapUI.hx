@@ -224,7 +224,8 @@ class MapUI extends BaseUI
 		}
 	}
 	
-	function redraw() {
+	function redraw()
+	{
 		var graphics:Graphics = artwork.graphics;
 		graphics.clear();
 		
