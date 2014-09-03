@@ -14,11 +14,9 @@ Incomplete features
 - Movement should highlight combat tiles
 
 Improvements based on Player feedback
----------------
-+ Add discard count and deck count to interface
+-------------------------------------
 + Change deploy action to provide advice and deploy immediately into selected tile
 + Change move action to provide advice on selected unit, and provide two options to either switch view into space, stay on planet
-+ Move advice status bar closer to player action, perhaps as a fading overlay on the map
 
 Improvements
 ------------

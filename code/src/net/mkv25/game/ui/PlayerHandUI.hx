@@ -2,12 +2,15 @@ package net.mkv25.game.ui;
 
 import flash.display.Sprite;
 import motion.Actuate;
+import net.mkv25.base.core.Screen;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
+import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.models.PlayerHand;
 import net.mkv25.game.provider.CardPictureProvider;
+import openfl.text.TextFormatAlign;
 
 class PlayerHandUI extends BaseUI
 {
@@ -15,6 +18,9 @@ class PlayerHandUI extends BaseUI
 	
 	var cards:Array<CardHolderUI>;
 	var recycler:Sprite;
+	
+	var discardCountText:TextUI;
+	var deckCountText:TextUI;
 	
 	public function new() 
 	{
@@ -35,10 +41,16 @@ class PlayerHandUI extends BaseUI
 			cards.push(card);
 		}
 		
+		discardCountText = cast TextUI.makeFor("X : DISCARDS", 0x111111).fontSize(24).align(TextFormatAlign.LEFT).size(200, 40).move(10, 250 - 42);
+		deckCountText = cast TextUI.makeFor("DECK : X", 0x111111).fontSize(24).align(TextFormatAlign.RIGHT).size(200, 40).move(Screen.WIDTH - 210, 250 - 42);
+		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(deselectTheActiveCard);
 		EventBus.addNewCardToActivePlayersDiscardPile.add(addNewCardToDiscardPile);
 		EventBus.removeCardFromActivePlayersHand.add(removeCardFromHand);
 		EventBus.trashCardFromActivePlayersHand.add(trashCardFromHand);
+		
+		artwork.addChild(discardCountText.artwork);
+		artwork.addChild(deckCountText.artwork);
 	}
 	
 	override public function disable() 
@@ -88,11 +100,24 @@ class PlayerHandUI extends BaseUI
 			card.deselect();
 		}
 		
+		updateHandCounts();
+		
 		// renable after a delay for animations
 		var totalAnimationTime = 0.5 + (cards.length * 0.15) + 1.0;
 		Actuate.timer(totalAnimationTime).onComplete(enable);
 		
 		return this;
+	}
+	
+	function updateHandCounts():Void
+	{
+		if (model == null)
+		{
+			return;
+		}
+		
+		discardCountText.setText(model.getDiscards().length + " : DISCARDS");
+		deckCountText.setText("DRAW DECK : " + model.getDeck().length);
 	}
 	
 	function onCardHolderSelected(selectedCard:CardHolderUI):Void
@@ -129,6 +154,8 @@ class PlayerHandUI extends BaseUI
 	function addNewCardToDiscardPile(card:PlayableCard):Void
 	{
 		model.addCardToDiscards(card);
+		
+		updateHandCounts();
 	}
 	
 	function removeCardFromHand(selectedCard:PlayableCard):Void
@@ -147,6 +174,8 @@ class PlayerHandUI extends BaseUI
 		{
 			EventBus.playerHasRanOutCards.dispatch(this);
 		}
+		
+		updateHandCounts();
 	}
 	
 	function trashCardFromHand(selectedCard:PlayableCard):Void
@@ -165,5 +194,7 @@ class PlayerHandUI extends BaseUI
 		{
 			EventBus.playerHasRanOutCards.dispatch(this);
 		}
+		
+		updateHandCounts();
 	}
 }
