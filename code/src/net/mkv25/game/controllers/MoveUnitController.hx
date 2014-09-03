@@ -25,7 +25,7 @@ class MoveUnitController
 	public function new()
 	{
 		EventBus.playerWantsTo_moveAUnit.add(suggestUnitMovementOptionsToPlayer);
-		EventBus.playerWantsTo_moveUnitAtSelectedLocation.add(suggestMovementOptionsForSelectedUnit);
+		EventBus.playerWantsTo_moveUnitAtSelectedLocation.add(attemptToSelectUnitAndSuggestMovementOptions);
 		EventBus.playerWantsTo_confirmTheSelectedMovementAction.add(attemptToMoveUnitToSelectedLocation);
 		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelMovement);
@@ -48,10 +48,10 @@ class MoveUnitController
 		
 		updateMovementAvailability(markedLocation);
 		
-		EventBus.displayNewStatusMessage.dispatch("Choose a unit or base to move");
+		attemptToSelectUnitAndSuggestMovementOptions();
 	}
 	
-	function suggestMovementOptionsForSelectedUnit(?model):Void
+	function attemptToSelectUnitAndSuggestMovementOptions(?model):Void
 	{
 		// highlight valid, adjacent movement tiles
 		if (markedLocation == null)
@@ -69,7 +69,7 @@ class MoveUnitController
 		}
 		else
 		{
-			throw "Selected location does not contain a valid unit for the active player.";
+			EventBus.displayNewStatusMessage.dispatch("Choose a unit or base to move");
 		}
 	}
 	
@@ -155,7 +155,7 @@ class MoveUnitController
 			if (MovementModel.mapContainsLocation(destinations, markedLocation))
 			{
 				movement.confirmButton.enable();
-				EventBus.displayNewStatusMessage.dispatch("Valid movement location");
+				EventBus.displayNewStatusMessage.dispatch("Confirm movement");
 				return;
 			}
 		}
@@ -166,9 +166,9 @@ class MoveUnitController
 		{
 			EventBus.displayNewStatusMessage.dispatch("No unit here");
 		}
-		else
+		else if(activeMovementCard != null)
 		{
-			EventBus.displayNewStatusMessage.dispatch("Too far from unit");
+			EventBus.displayNewStatusMessage.dispatch("Cannot move more than " + activeMovementCard.movement + " distance");
 		}
 	}
 	

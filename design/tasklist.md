@@ -4,6 +4,10 @@ Things to do
 Bugs
 ----
 
+Improvements based on Player feedback
+-------------------------------------
++ Highlighted movement in space should be more obvious relative to planet
+
 Incomplete features
 -------------------
 + Linking bases via portals
@@ -12,10 +16,6 @@ Incomplete features
 + Ability to select individual unit from tile for movement
 + Break connection between bases if captured
 - Movement should highlight combat tiles
-
-Improvements based on Player feedback
--------------------------------------
-+ Change move action to provide advice on selected unit, and provide two options to either switch view into space, stay on planet
 
 Improvements
 ------------
