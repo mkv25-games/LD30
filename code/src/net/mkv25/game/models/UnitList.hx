@@ -52,7 +52,14 @@ class UnitList
 			
 			for (unit in units)
 			{
-				if (unit.owner == owner)
+				if (owner != null)
+				{
+					if (unit.owner == owner)
+					{
+						return unit;
+					}
+				}
+				else
 				{
 					return unit;
 				}
@@ -71,9 +78,12 @@ class UnitList
 			
 			for (unit in units)
 			{
-				if (owner != null && unit.owner == owner)
+				if (owner != null)
 				{
-					return unit;
+					if (unit.owner == owner)
+					{
+						return unit;
+					}
 				}
 				else
 				{

@@ -7,7 +7,6 @@ Bugs
 
 Improvements based on Player feedback
 -------------------------------------
-+ Add planet owner marker
 
 Incomplete features
 -------------------

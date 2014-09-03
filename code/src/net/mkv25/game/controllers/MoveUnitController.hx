@@ -97,6 +97,9 @@ class MoveUnitController
 	
 	function disableMovement()
 	{
+		this.activeMovementCard = null;
+		this.selectedUnit = null;
+		
 		movement.disable();
 		movement.hide();
 		
