@@ -74,8 +74,22 @@ class MapUnit implements IMapThing extends CoreModel
 		}
 	}
 	
-	public function removeAllConnections(base:MapUnit):Void
+	public function breakConnection(base:MapUnit):Bool
 	{
+		if (base == null || connections == null)
+		{
+			return false;
+		}
+		
+		return connections.removeUnit(base);
+	}
+	
+	public function breakAllConnections():Void
+	{
+		for (connection in connections.list())
+		{
+			connection.breakConnection(this);
+		}
 		connections = null;
 	}
 	

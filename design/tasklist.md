@@ -18,6 +18,7 @@ Incomplete features
 
 Improvements
 ------------
++ Balance card values, cost vs movement
 + In-game player guide, getting started
 + Change language on Engineer's construction screen to prevent confusion over building unints
 + Player selection screen, number of players

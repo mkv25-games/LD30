@@ -65,6 +65,11 @@ class CombatModel
 							// Rule: Ownership of a base will change if a higher strength enemy exists on the tile at the end of a turn's combat.
 							combatLog.baseCaptured(firstUnit, secondUnit);
 							UnitProvider.changeOwner(secondUnit, firstUnit.owner);
+							// Rule: When a base is captured, all portal connections at that base are closed
+							if (secondUnit.hasConnections())
+							{
+								secondUnit.breakAllConnections();
+							}
 							EventBus.combat_baseCapturedAtLocation.dispatch(location);
 						}
 						else

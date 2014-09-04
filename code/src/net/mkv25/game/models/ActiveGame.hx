@@ -70,10 +70,7 @@ class ActiveGame extends CoreModel
 			var world = worlds[player.playerNumberZeroBased];
 			
 			var startingBase = UnitProvider.getUnit(player, PlayableCardType.STANDARD_BASE);
-			world.getHexTile(1, 0).add(startingBase);
-			
-			var secondBase = UnitProvider.getUnit(player, PlayableCardType.METROPLEX);
-			world.getHexTile(-1, 0).add(secondBase);
+			world.getHexTile(0, 0).add(startingBase);
 		}
 	}
 	
