@@ -458,10 +458,38 @@ class MapUI extends BaseUI
 				graphics.lineTo(p2.x, p2.y);
 				
 			}
-			else
+			else if(start.map == Index.activeGame.space)
+			{
+				// draw line to planet in space view
+				
+				// work out p1 and p2
+				p1.x = (hexImage.width * start.x());
+				p1.y = (hexImage.height * start.y());
+				
+				p2.x = (hexImage.width * end.map.getSpaceHex().x());
+				p2.y = (hexImage.height * end.map.getSpaceHex().y());
+				
+				// draw line to target
+				graphics.lineStyle(6, 0xFFFFFF, 0.3);
+				graphics.moveTo(p1.x, p1.y);
+				graphics.lineTo(p2.x, p2.y);
+				
+			}
+			else if (start.map.isWorld())
 			{
 				// draw line to dot?
-				// draw line to space hex?
+				
+				// work out p1 and p2
+				p1.x = (hexImage.width * start.x());
+				p1.y = (hexImage.height * start.y());
+				
+				p2.x = (hexImage.width * start.x());
+				p2.y = (hexImage.height * start.y()) - (hexImage.height / 2);
+				
+				// draw line to target
+				graphics.lineStyle(6, 0xFFFFFF, 0.3);
+				graphics.moveTo(p1.x, p1.y);
+				graphics.lineTo(p2.x, p2.y);
 			}
 		}
 	}

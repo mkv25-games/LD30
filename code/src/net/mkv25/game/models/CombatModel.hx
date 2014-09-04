@@ -10,6 +10,8 @@ class CombatModel
 		fromLocation.remove(unit);
 		targetLocation.add(unit);
 		
+		unit.lastKnownLocation = targetLocation;
+		
 		if (CombatModel.enemiesExistIn(targetLocation))
 		{
 			var log:CombatLogModel = CombatModel.processCombatFor(targetLocation);

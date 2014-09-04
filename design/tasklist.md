@@ -10,8 +10,6 @@ Improvements based on Player feedback
 
 Incomplete features
 -------------------
-+ Linking bases via portals
-+ Movement via portals
 + Units can only be activated once a turn for movement
 + Ability to select individual unit from tile for movement
 + Break connection between bases if captured
@@ -44,6 +42,8 @@ Improvements
 + Add number of worlds to player stats bar
 + Add a screen to review all player stats
 + Add conflict marker to planets with multipler owners
+- Add portal symbol to end of portal line links
+- Show base symbol as part of connection interface
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn

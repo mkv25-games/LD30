@@ -250,7 +250,26 @@ class HexTile
 			}
 		}
 		
+		addNeighboursConnectedByPortals(neighbours);
+		
 		return neighbours;
+	}
+	
+	function addNeighboursConnectedByPortals(neighbours:Array<HexTile>):Void
+	{
+		var unit:Null<MapUnit> = getBase();
+		if (unit != null && unit.hasConnections())
+		{
+			for (connection in unit.listConnections().list())
+			{
+				var neighbouringLocation = connection.lastKnownLocation;
+				var hex = neighbouringLocation.map.getHexTile(neighbouringLocation.q, neighbouringLocation.r);
+				if (hex != null)
+				{
+					neighbours.push(hex);
+				}
+			}
+		}
 	}
 	
 	/**
