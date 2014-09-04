@@ -14,10 +14,12 @@ Incomplete features
 + Units can only be activated once a turn for movement
 + Ability to select individual unit from tile for movement
 + Break connection between bases if captured
+- Reduce number of steps to link bases via portals
 - Movement should highlight combat tiles
 
 Improvements
 ------------
++ In-game player guide, getting started
 + Change language on Engineer's construction screen to prevent confusion over building unints
 + Player selection screen, number of players
 + Sensible map layouts for low-player games
@@ -34,6 +36,7 @@ Improvements
 + Sexier graphics for planets
 + Sexier graphics for player interface
 + Sexier graphics for cards
++ Sexy animated graphics for linking bases
 + Animations for game actions
 + Animate resources being gathered
 + Replay feature to see last turn
