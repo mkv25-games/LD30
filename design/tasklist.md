@@ -6,6 +6,7 @@ Bugs
 
 Improvements based on Player feedback
 -------------------------------------
++ No clear end goal
 
 Incomplete features
 -------------------

@@ -17,7 +17,7 @@ class ConnectPortalsController
 	private var map:MapUI;
 	private var portals:PortalsUI;
 	
-	private var activeUnitCard:PlayableCard;
+	private var activePortalCard:PlayableCard;
 	private var markedLocation:HexTile;
 	
 	private var baseStart:MapUnit;
@@ -43,10 +43,12 @@ class ConnectPortalsController
 	
 	function suggestPortalConnectionOptionsToPlayer(card:PlayableCard):Void
 	{
-		this.activeUnitCard = card;
+		this.activePortalCard = card;
 		
 		enableConnections();
 		EventBus.displayNewStatusMessage.dispatch("Choose two bases to connect");
+		
+		attemptToConnectPortalAtSelectedLocation();
 	}
 	
 	function attemptToConnectPortalAtSelectedLocation(?model):Void
@@ -62,7 +64,7 @@ class ConnectPortalsController
 		// + connect bases if second base is recorded
 		// + disable connections
 		
-		if (activeUnitCard != PlayableCardType.PORTAL)
+		if (activePortalCard != PlayableCardType.PORTAL)
 		{
 			return;
 		}
@@ -113,6 +115,16 @@ class ConnectPortalsController
 		// + redraw map, with connections
 		// + enable movement through connected bases
 		
+		if (baseStart == null || baseEnd == null || activePortalCard == null)
+		{
+			return;
+		}
+		
+		baseStart.connectTo(baseEnd);
+		baseEnd.connectTo(baseStart);
+		
+		EventBus.mapRequiresRedraw.dispatch(this);
+		EventBus.removeCardFromActivePlayersHand.dispatch(activePortalCard);
 		cancelConnection();
 		
 		EventBus.displayNewStatusMessage.dispatch("Portal opened");
@@ -120,7 +132,7 @@ class ConnectPortalsController
 	
 	function cancelConnection(?model)
 	{
-		this.activeUnitCard = null;
+		this.activePortalCard = null;
 		
 		baseStart = null;
 		baseEnd = null;
@@ -149,7 +161,7 @@ class ConnectPortalsController
 			this.markedLocation = marker;
 		}
 		
-		if (activeUnitCard == null)
+		if (activePortalCard == null)
 		{
 			return;
 		}

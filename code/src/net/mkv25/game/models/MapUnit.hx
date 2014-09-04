@@ -13,7 +13,9 @@ class MapUnit implements IMapThing extends CoreModel
 	public var foughtThisTurn:Bool;
 	public var movedThisTurn:Bool;
 	
-	public var lastKnownLocation:HexTile;
+	public var lastKnownLocation:Null<HexTile>;
+	
+	private var connections:Null<UnitList>;
 	
 	public function new() 
 	{
@@ -42,16 +44,51 @@ class MapUnit implements IMapThing extends CoreModel
 		movedThisTurn = false;
 	}
 	
+	public function hasConnections():Bool
+	{
+		return (connections != null && connections.length() > 0);
+	}
+	
 	public function isConnectedTo(unit:MapUnit):Bool
 	{
-		if (unit == null)
+		if (unit == null || connections == null)
 		{
 			return false;
 		}
 		
-		// TODO: Manage connections
-		
-		return false;
+		return (connections.contains(unit));
 	}
 	
+	public function connectTo(base:MapUnit):Void
+	{
+		checkConnections();
+		
+		connections.addUnit(base);
+	}
+	
+	public function disconnectFrom(base:MapUnit):Void
+	{
+		if (connections != null)
+		{
+			connections.removeUnit(base);
+		}
+	}
+	
+	public function removeAllConnections(base:MapUnit):Void
+	{
+		connections = null;
+	}
+	
+	public function listConnections():Null<UnitList>
+	{
+		return connections;
+	}
+	
+	inline function checkConnections():Void
+	{
+		if (this.connections == null)
+		{
+			this.connections = new UnitList();
+		}
+	}
 }

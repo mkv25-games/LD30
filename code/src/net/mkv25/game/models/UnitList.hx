@@ -44,6 +44,16 @@ class UnitList
 		}
 	}
 	
+	public function contains(unit:MapUnit):Bool
+	{
+		if (unit == null)
+		{
+			return false;
+		}
+		
+		return (Lambda.indexOf(this.units, unit) != -1);
+	}
+	
 	public function getLowestStrengthUnit(?owner:PlayerModel):Null<MapUnit>
 	{
 		if (units.length > 0)

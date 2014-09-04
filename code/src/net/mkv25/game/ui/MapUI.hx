@@ -22,9 +22,11 @@ import net.mkv25.game.models.MapUnit;
 import net.mkv25.game.models.MovementModel;
 import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.models.PlayerModel;
+import net.mkv25.game.models.UnitList;
 import net.mkv25.game.provider.HexProvider;
 import net.mkv25.game.provider.IconProvider;
 import openfl.Assets;
+import openfl.geom.Point;
 
 class MapUI extends BaseUI
 {
@@ -51,6 +53,7 @@ class MapUI extends BaseUI
 	var planetLayer:Sprite;
 	var hexLayer:Sprite;
 	var movementLayer:Sprite;
+	var lineLayer:Sprite;
 	var unitLayer:Sprite;
 	
 	var spaceViewButton:IconButtonUI;
@@ -86,6 +89,7 @@ class MapUI extends BaseUI
 		planetLayer = new Sprite();
 		hexLayer = new Sprite();
 		movementLayer = new Sprite();
+		lineLayer = new Sprite();
 		unitLayer = new Sprite();
 		
 		spaceViewButton = new IconButtonUI();
@@ -232,8 +236,8 @@ class MapUI extends BaseUI
 	
 	function redraw()
 	{
-		var graphics:Graphics = artwork.graphics;
-		graphics.clear();
+		// reset all vector lines
+		lineLayer.graphics.clear();
 		
 		// recycle all graphics in use
 		bitmapRecycler.recycleAll();
@@ -262,6 +266,7 @@ class MapUI extends BaseUI
 		viewLayer.addChild(planetLayer);
 		viewLayer.addChild(hexLayer);
 		viewLayer.addChild(movementLayer);
+		viewLayer.addChild(lineLayer);
 		viewLayer.addChild(unitLayer);
 		viewLayer.addChild(markedImage.artwork);
 		viewLayer.addChild(highlightImage.artwork);
@@ -383,6 +388,8 @@ class MapUI extends BaseUI
 				var unit:MapUnit = cast thing;
 				commonOwner = unit.owner;
 				unitCount++;
+				
+				drawConnectionsFor(unit);
 			}
 		}
 		
@@ -413,6 +420,49 @@ class MapUI extends BaseUI
 				x + (hexImage.width * 0.75),
 				y + 1
 			);
+		}
+	}
+	
+	var p1:Point = new Point();
+	var p2:Point = new Point();
+	function drawConnectionsFor(unit:MapUnit):Void
+	{
+		if (!unit.hasConnections())
+		{
+			return;
+		}
+		
+		var graphics:Graphics = lineLayer.graphics;
+		
+		var connections:Array<MapUnit> = unit.listConnections().list();
+		for (connection in connections)
+		{
+			var start:HexTile = unit.lastKnownLocation;
+			var end:HexTile = connection.lastKnownLocation;
+			if (start == null || end == null)
+			{
+				// do nothing
+			}
+			else if (end.map == currentModel)
+			{
+				// work out p1 and p2
+				p1.x = (hexImage.width * start.x());
+				p1.y = (hexImage.height * start.y());
+				
+				p2.x = (hexImage.width * end.x());
+				p2.y = (hexImage.height * end.y());
+				
+				// draw line to target
+				graphics.lineStyle(6, 0xFFFFFF, 0.3);
+				graphics.moveTo(p1.x, p1.y);
+				graphics.lineTo(p2.x, p2.y);
+				
+			}
+			else
+			{
+				// draw line to dot?
+				// draw line to space hex?
+			}
 		}
 	}
 	
