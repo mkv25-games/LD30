@@ -3,6 +3,7 @@ Things to do
 
 Bugs
 ----
+- Map doesn't immediately clear down indicators or map lines after ending and restarting a game
 
 Improvements based on Player feedback
 -------------------------------------
