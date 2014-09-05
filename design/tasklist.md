@@ -4,6 +4,7 @@ Things to do
 Bugs
 ----
 - Map doesn't immediately clear down indicators or map lines after ending and restarting a game
+- Moving through a portal from space to a planet incorrectly lets the player place anywhere on the planet
 
 Improvements based on Player feedback
 -------------------------------------
