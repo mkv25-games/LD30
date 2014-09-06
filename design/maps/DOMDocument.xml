@@ -1,7 +1,7 @@
 <DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" backgroundColor="#999999" width="500" height="800" currentTimeline="1" xflVersion="2.0" creatorInfo="Adobe Flash Professional CS5" platform="Windows" versionInfo="Saved by Adobe Flash Windows 11.0 build 489" majorVersion="11" buildNumber="489" viewAngle3D="50.6510299754819" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false">
      <folders>
-          <DOMFolderItem name="- Bitmaps" itemID="53f8e0e2-0000034c"/>
-          <DOMFolderItem name="- Buttons" itemID="53f90b68-000014ed"/>
+          <DOMFolderItem name="- Bitmaps" itemID="53f8e0e2-0000034c" isExpanded="true"/>
+          <DOMFolderItem name="- Buttons" itemID="53f90b68-000014ed" isExpanded="true"/>
           <DOMFolderItem name="- Cards" itemID="53f8e0cc-00000342"/>
           <DOMFolderItem name="- Cards/- Card Assets" itemID="53f8e0df-00000347" isExpanded="true"/>
           <DOMFolderItem name="- Game Play Areas" itemID="53f8af53-000001f6"/>
@@ -12,7 +12,7 @@
      </folders>
      <media>
           <DOMBitmapItem name="- Bitmaps/planet01.png" itemID="53fa8f95-000027cb" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet01.png" sourceLastImported="1408891436" externalFileCRC32="145299161" externalFileSize="4989" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet01.png" bitmapDataHRef="M 2 1408929685.dat" frameLeft="-115200" frameTop="-115200" frameRight="-115200" frameBottom="-115200"/>
-          <DOMBitmapItem name="- Bitmaps/planet02.png" itemID="53fa8fc4-000027ed" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet02.png" sourceLastImported="1408891464" externalFileCRC32="2152926178" externalFileSize="4940" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet02.png" bitmapDataHRef="M 3 1408929732.dat" frameLeft="-115200" frameTop="-115200" frameRight="-115200" frameBottom="-115200"/>
+          <DOMBitmapItem name="- Bitmaps/planet02.png" itemID="53fa8fc4-000027ed" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet02.png" sourceLastImported="1408891464" externalFileCRC32="2152926178" externalFileSize="4940" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet02.png" bitmapDataHRef="M 3 1408929732.dat" frameRight="10000" frameBottom="10000"/>
           <DOMBitmapItem name="- Bitmaps/planet03.png" itemID="53fa902b-00002866" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet03.png" sourceLastImported="1408891484" externalFileCRC32="1861700591" externalFileSize="4892" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet03.png" bitmapDataHRef="M 5 1408929835.dat" frameLeft="-115200" frameTop="-115200" frameRight="-115200" frameBottom="-115200"/>
           <DOMBitmapItem name="- Bitmaps/planet04.png" itemID="53fa902b-0000286a" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet04.png" sourceLastImported="1408891500" externalFileCRC32="1838713532" externalFileSize="4989" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet04.png" bitmapDataHRef="M 6 1408929835.dat" frameLeft="-115200" frameTop="-115200" frameRight="-115200" frameBottom="-115200"/>
           <DOMBitmapItem name="- Bitmaps/planet05.png" itemID="53fa902b-0000286e" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet05.png" sourceLastImported="1408891511" externalFileCRC32="3493012340" externalFileSize="5089" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet05.png" bitmapDataHRef="M 7 1408929835.dat" frameLeft="-115200" frameTop="-115200" frameRight="-115200" frameBottom="-115200"/>
@@ -26,6 +26,7 @@
           <Include href="- Buttons/Button - Option Up.xml" loadImmediate="false"/>
           <Include href="- Buttons/Button - Square Down.xml" loadImmediate="false"/>
           <Include href="- Buttons/Button - Square Over.xml" loadImmediate="false"/>
+          <Include href="- Buttons/Button - Square Selected.xml" loadImmediate="false"/>
           <Include href="- Buttons/Button - Square Up.xml" loadImmediate="false"/>
           <Include href="- Buttons/Buttons for Export.xml" loadImmediate="false"/>
           <Include href="- Cards/- Card Assets/Card Border.xml" loadImmediate="false"/>
@@ -94,6 +95,9 @@
           <Include href="- Icons/Icon - Unit Tile - S2.xml" loadImmediate="false"/>
           <Include href="- Icons/Icon - Unit Tile - S3.xml" loadImmediate="false"/>
           <Include href="- Icons/Icon - Unit Tile - S4.xml" loadImmediate="false"/>
+          <Include href="- Icons/Icon - Unit Tile - S5.xml" loadImmediate="false"/>
+          <Include href="- Icons/Icon - Unit Tile - S5 Petal.xml" loadImmediate="false"/>
+          <Include href="- Icons/Icon - Unit Tile - S6.xml" loadImmediate="false"/>
           <Include href="- Icons/Icon Strip - Bases and Units.xml" loadImmediate="false"/>
           <Include href="- Icons/Icons for Export.xml" loadImmediate="false"/>
           <Include href="- Icons/Unit Strip - Bases and Units.xml" loadImmediate="false"/>
@@ -106,7 +110,7 @@
           <Include href="- Screens/Screen - Build Units.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Choose Action - Deploy.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Choose Action - Move or Special.xml" loadImmediate="false"/>
-          <Include href="- Screens/Screen - Game Over.xml" loadImmediate="false"/>
+          <Include href="- Screens/Screen - Game Intro.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Gameplay - Planet Side.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Gameplay - Space.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Main Layout.xml" loadImmediate="false"/>
@@ -121,7 +125,7 @@
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="- Screens/Screen - Main Layout" name="" centerPoint3DX="250" centerPoint3DY="400">
+                                        <DOMSymbolInstance libraryItemName="- Screens/Screen - Gameplay - Space" name="" selected="true" centerPoint3DX="250" centerPoint3DY="400">
                                              <transformationPoint>
                                                   <Point x="250" y="400"/>
                                              </transformationPoint>
@@ -419,6 +423,8 @@
                     <SolidSwatchItem color="#C4C217" hue="40" saturation="189" brightness="103"/>
                     <SolidSwatchItem alpha="0.498039215686275"/>
                     <SolidSwatchItem color="#FFFFFF" alpha="0.694117647058824" brightness="240"/>
+                    <SolidSwatchItem alpha="0.8"/>
+                    <SolidSwatchItem color="#81A5CD" hue="141" saturation="104" brightness="157"/>
                </swatches>
           </swatchList>
      </swatchLists>
@@ -470,8 +476,8 @@
           </swatchList>
      </extendedSwatchLists>
      <persistentData>
-          <PD n="ikTreeCount" t="i" v="2"/>
           <PD n="ikBoneCount" t="i" v="2"/>
+          <PD n="ikTreeCount" t="i" v="2"/>
           <PD n="ikNodeCount" t="i" v="2"/>
      </persistentData>
      <PrinterSettings/>

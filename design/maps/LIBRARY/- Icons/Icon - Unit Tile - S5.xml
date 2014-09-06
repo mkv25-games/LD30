@@ -1,0 +1,53 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon - Unit Tile - S5" itemID="540b799f-0000049d" sourceLibraryItemHRef="Symbol 1" lastModified="1410038261" lastUniqueIdentifier="5">
+  <timeline>
+    <DOMTimeline name="Icon - Unit Tile - S5">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S5 Petal" name="" centerPoint3DX="0.15" centerPoint3DY="-1.95">
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S5 Petal" name="" centerPoint3DX="1.95" centerPoint3DY="-0.35">
+                  <matrix>
+                    <Matrix a="0.309036254882813" b="0.951080322265625" c="-0.951080322265625" d="0.309036254882813"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S5 Petal" name="" centerPoint3DX="-1.8" centerPoint3DY="-0.75">
+                  <matrix>
+                    <Matrix a="0.30902099609375" b="-0.9510498046875" c="0.9510498046875" d="0.30902099609375"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S5 Petal" name="" centerPoint3DX="1.05" centerPoint3DY="1.7">
+                  <matrix>
+                    <Matrix a="-0.80902099609375" b="0.587783813476563" c="-0.587783813476563" d="-0.80902099609375"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S5 Petal" name="" centerPoint3DX="-1.25" centerPoint3DY="1.5">
+                  <matrix>
+                    <Matrix a="-0.80902099609375" b="-0.587783813476563" c="0.587783813476563" d="-0.80902099609375"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
