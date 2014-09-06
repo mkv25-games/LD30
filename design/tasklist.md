@@ -3,12 +3,10 @@ Things to do
 
 Bugs
 ----
-- Map doesn't immediately clear down indicators or map lines after ending and restarting a game
-- Moving through a portal from space to a planet incorrectly lets the player place anywhere on the planet
 
 Improvements based on Player feedback
 -------------------------------------
-+ No clear end goal
++ No goal for player at start of game
 
 Incomplete features
 -------------------
@@ -20,6 +18,7 @@ Incomplete features
 
 Improvements
 ------------
++ Add unit inset to show currently selected unit, and unit strength
 + Balance card values, cost vs movement
 + In-game player guide, getting started
 + Change language on Engineer's construction screen to prevent confusion over building unints

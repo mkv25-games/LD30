@@ -33,7 +33,7 @@ class MovementModel
 		return movementMap;
 	}
 	
-	public static function addValidNeighboursFor(location:HexTile, unit:MapUnit, map:StringMap<HexTile>):Void
+	public static function addValidNeighboursFor(location:HexTile, unit:MapUnit, hexes:StringMap<HexTile>):Void
 	{
 		// Rule: units cannot move through contested hexes
 		if (CombatModel.containsEnemyCombatants(unit.owner, location))
@@ -47,9 +47,9 @@ class MovementModel
 		// populate map with neighbouring hexes, avoiding to add duplicates
 		for (hex in neighbouringHexes)
 		{
-			if (!map.exists(hex.key()))
+			if (!hexes.exists(hex.key()))
 			{
-				map.set(hex.key(), hex);
+				hexes.set(hex.key(), hex);
 			}
 		}
 		
@@ -64,9 +64,9 @@ class MovementModel
 				{
 					for (hex in world.hexes)
 					{
-						if (!map.exists(hex.key()))
+						if (!hexes.exists(hex.key()))
 						{
-							map.set(hex.key(), hex);
+							hexes.set(hex.key(), hex);
 						}
 					}
 				}
@@ -76,9 +76,9 @@ class MovementModel
 		{
 			// Rule: players can move from any tile on a planet into space above the planet
 			var hex = location.map.getSpaceHex();
-			if (!map.exists(hex.key()))
+			if (!hexes.exists(hex.key()))
 			{
-				map.set(hex.key(), hex);
+				hexes.set(hex.key(), hex);
 			}
 		}
 		
@@ -90,7 +90,7 @@ class MovementModel
 			if (unit.type.base && hex.containsBase())
 			{
 				// Rule: players cannot move a base unit into a tile with another base unit
-				map.remove(hex.key());
+				hexes.remove(hex.key());
 			}
 		}
 	}
