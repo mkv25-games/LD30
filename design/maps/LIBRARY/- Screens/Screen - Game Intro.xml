@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Intro" itemID="540b7789-000002a6" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1410039918" lastUniqueIdentifier="31">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Intro" itemID="540b7789-000002a6" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1410041033" lastUniqueIdentifier="31">
   <timeline>
     <DOMTimeline name="Screen - Game Intro">
       <layers>
@@ -352,7 +352,7 @@
                     </BitmapFill>
                   </fill>
                 </DOMRectangleObject>
-                <DOMRectangleObject objectWidth="500" objectHeight="500" x="0" y="50" lockFlag="true">
+                <DOMRectangleObject objectWidth="500" objectHeight="500" x="0" y="50" selected="true" lockFlag="true">
                   <fill>
                     <SolidColor alpha="0.8"/>
                   </fill>
