@@ -125,7 +125,9 @@ class ActiveGame extends CoreModel
 			activePlayer = players[index];
 		}
 		
-		updatePlayerStats();
+		updateAllMapAndPlayerIndexes();
+		
+		resetAllUnitFlags();
 		
 		// draw a new hand for the player
 		activePlayer.playerHand.drawHand();
@@ -133,7 +135,8 @@ class ActiveGame extends CoreModel
 		EventBus.activePlayerChanged.dispatch(activePlayer);
 	}
 	
-	public function updatePlayerStats():Void
+	// this needs to happen after each combat, and at the end of a players turn
+	public function updateAllMapAndPlayerIndexes():Void
 	{
 		// reset player values
 		for (player in players)
@@ -145,10 +148,10 @@ class ActiveGame extends CoreModel
 		}
 		
 		// begin the count
-		updatePlayerStatsFor(space);
+		updateIndexesForMap(space);
 		for (world in worlds)
 		{
-			updatePlayerStatsFor(world);
+			updateIndexesForMap(world);
 		}
 		
 		// dispatch update
@@ -156,7 +159,7 @@ class ActiveGame extends CoreModel
 	}
 	
 	// scan the entire map and create additional indexes and counters based on contents
-	function updatePlayerStatsFor(map:MapModel):Void
+	function updateIndexesForMap(map:MapModel):Void
 	{
 		map.recalculateTerritory();
 		
@@ -165,11 +168,15 @@ class ActiveGame extends CoreModel
 			var things = hex.listContents();
 			for (thing in things)
 			{
-				// count units and bases
+				// find all units and bases
 				if (Std.is(thing, MapUnit))
 				{
 					var unit:MapUnit = cast thing;
+					
+					// update location
 					unit.lastKnownLocation = hex;
+					
+					// count all units and bases
 					if (unit.type.base)
 					{
 						// count bases separately
@@ -194,6 +201,38 @@ class ActiveGame extends CoreModel
 					owner.worlds.addWorld(hex.map);
 				}
 				owner.territory++;
+			}
+		}
+	}
+	
+	// this needs to happen at the start of a player's turn to allow them to move units
+	public function resetAllUnitFlags():Void
+	{
+		// reset the flags
+		resetUnitFlagFor(space);
+		for (world in worlds)
+		{
+			resetUnitFlagFor(world);
+		}
+	}
+	
+	// scan the entire map for units and reset their movement and combat flags
+	public function resetUnitFlagFor(map:MapModel):Void
+	{
+		map.recalculateTerritory();
+		
+		for (hex in map.hexes)
+		{
+			var things = hex.listContents();
+			for (thing in things)
+			{
+				// find all units and bases
+				if (Std.is(thing, MapUnit))
+				{
+					var unit:MapUnit = cast thing;
+					
+					unit.resetFlags();
+				}
 			}
 		}
 	}

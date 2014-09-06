@@ -7,15 +7,32 @@ class CombatModel
 {
 	public static function moveUnit(unit:MapUnit, fromLocation:HexTile, targetLocation:HexTile):Void
 	{
+		// prevent unit from moving if already moved
+		if (unit.movedThisTurn)
+		{
+			return;
+		}
+		
+		// move the unit
 		fromLocation.remove(unit);
+		// >>> unit in null space <<<
 		targetLocation.add(unit);
+		// unit arrived safely at destination
+		
+		// track movement state to prevent unit moving again this turn
+		unit.movedThisTurn = true;
 		
 		unit.lastKnownLocation = targetLocation;
 		
 		if (CombatModel.enemiesExistIn(targetLocation))
 		{
+			unit.engagedInCombatThisTurn = true;
 			var log:CombatLogModel = CombatModel.processCombatFor(targetLocation);
 			log.printReport();
+		}
+		else
+		{
+			EventBus.displayNewStatusMessage.dispatch(unit.type.name + " moved to new location");
 		}
 		
 		fromLocation.map.recalculateTerritory();
@@ -23,7 +40,7 @@ class CombatModel
 		
 		EventBus.mapRequiresRedraw.dispatch(targetLocation.map);
 		
-		Index.activeGame.updatePlayerStats();
+		Index.activeGame.updateAllMapAndPlayerIndexes();
 	}
 	
 	public static function processCombatFor(location:HexTile):CombatLogModel

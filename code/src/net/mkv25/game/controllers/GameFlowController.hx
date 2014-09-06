@@ -39,7 +39,7 @@ class GameFlowController
 		EventBus.startNewGame.add(handle_startNewGame);
 		EventBus.restartGame.add(handle_restartGame);
 		
-		EventBus.activePlayerChanged.add(handle_activePlayerChanged);
+		EventBus.activePlayerChanged.add(handle_startOfPlayersTurn);
 		EventBus.playerHasRanOutCards.add(handle_endOfPlayersTurn);
 	}
 	
@@ -51,8 +51,6 @@ class GameFlowController
 		
 		Index.screenController.showScreen(Index.mainScreen);
 		Index.activeGame.startNextPlayersTurn();
-		
-		// Index.mapHud.setupMap(Index.activeGame.space);
 	}
 	
 	function handle_restartGame(?model)
@@ -60,7 +58,7 @@ class GameFlowController
 		Index.screenController.showScreen(Index.introScreen);
 	}
 	
-	function handle_activePlayerChanged(?model)
+	function handle_startOfPlayersTurn(?model)
 	{
 		EventBus.displayNewStatusMessage.dispatch("Choose a card to play");
 	}
@@ -71,7 +69,8 @@ class GameFlowController
 		
 		var activeGame:ActiveGame = Index.activeGame;
 		
-		activeGame.updatePlayerStats();
+		// Canvas the entire map 
+		activeGame.updateAllMapAndPlayerIndexes();
 		
 		// Using end game conditions
 		removePlayersFromGame();

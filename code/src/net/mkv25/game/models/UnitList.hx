@@ -54,11 +54,12 @@ class UnitList
 		return (Lambda.indexOf(this.units, unit) != -1);
 	}
 	
-	public function getLowestStrengthUnit(?owner:PlayerModel):Null<MapUnit>
+	public function getHighestStrengthUnit(?owner:PlayerModel):Null<MapUnit>
 	{
 		if (units.length > 0)
 		{
 			units.sort(sortByUnitStrength);
+			units.reverse();
 			
 			for (unit in units)
 			{
@@ -79,23 +80,32 @@ class UnitList
 		return null;
 	}
 	
-	public function getHighestStrengthUnit(?owner:PlayerModel):Null<MapUnit>
+	public function getCandidateForMovement(owner:PlayerModel):Null<MapUnit>
 	{
 		if (units.length > 0)
 		{
+			// order by strongest unit first
 			units.sort(sortByUnitStrength);
 			units.reverse();
 			
+			// on the first pass, skip units that have already moved or have been in combat
 			for (unit in units)
 			{
-				if (owner != null)
+				if (unit.movedThisTurn || unit.engagedInCombatThisTurn)
 				{
-					if (unit.owner == owner)
-					{
-						return unit;
-					}
+					continue;
 				}
-				else
+				
+				if (unit.owner == owner)
+				{
+					return unit;
+				}
+			}
+			
+			// on the second pass, consider player owned units that have already moved or been in combat
+			for (unit in units)
+			{
+				if (unit.owner == owner)
 				{
 					return unit;
 				}

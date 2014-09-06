@@ -10,16 +10,27 @@ class MapUnit implements IMapThing extends CoreModel
 	public var type:PlayableCard;
 	public var owner:PlayerModel;
 
-	public var foughtThisTurn:Bool;
+	public var engagedInCombatThisTurn:Bool;
 	public var movedThisTurn:Bool;
 	
-	public var lastKnownLocation:Null<HexTile>;
+	public var lastKnownLocation:HexTile;
 	
-	private var connections:Null<UnitList>;
+	private var connections:UnitList;
 	
 	public function new() 
 	{
 		super();
+		
+		icon = null;
+		type = null;
+		owner = null;
+		
+		engagedInCombatThisTurn = false;
+		movedThisTurn = false;
+		
+		lastKnownLocation = null;
+		
+		connections = null;
 	}
 	
 	public function setup(owner:PlayerModel, type:PlayableCard):Void
@@ -40,7 +51,7 @@ class MapUnit implements IMapThing extends CoreModel
 	
 	public function resetFlags():Void
 	{
-		foughtThisTurn = false;
+		engagedInCombatThisTurn = false;
 		movedThisTurn = false;
 	}
 	

@@ -72,11 +72,15 @@ class DeployUnitController
 			
 			EventBus.displayNewStatusMessage.dispatch(unit.type.name + " deployed");
 			
+			// Rule: When a 
 			EventBus.trashCardFromActivePlayersHand.dispatch(activeUnitCard);
 			
 			disableDeployment();
 			
 			CombatModel.moveUnit(unit, location, location);
+			
+			// Rule: Units that have just been deployed can be moved on the same turn
+			unit.resetFlags();
 		}
 	}
 	

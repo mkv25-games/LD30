@@ -10,7 +10,7 @@ import openfl.text.TextFormatAlign;
 class MovementUI extends BaseUI
 {
 	public var cancelButton:IconButtonUI;
-	public var moveButton:IconButtonUI;
+	public var selectUnitButton:IconButtonUI;
 	public var confirmButton:IconButtonUI;
 	
 	public function new() 
@@ -26,16 +26,16 @@ class MovementUI extends BaseUI
 		cancelButton.setup("img/icon-cancel.png", cancelButtonSelected);
 		cancelButton.move(MapUI.MAP_WIDTH - 160, 40);
 		
-		moveButton = new IconButtonUI();
-		moveButton.setup("img/icon-move.png", moveButtonSelected);
-		moveButton.move(MapUI.MAP_WIDTH - 100, 40);
+		selectUnitButton = new IconButtonUI();
+		selectUnitButton.setup("img/icon-move.png", moveButtonSelected);
+		selectUnitButton.move(MapUI.MAP_WIDTH - 100, 40);
 		
 		confirmButton = new IconButtonUI();
 		confirmButton.setup("img/icon-confirm.png", confirmButtonSelected);
 		confirmButton.move(MapUI.MAP_WIDTH - 40, 40);
 		
 		artwork.addChild(cancelButton.artwork);
-		artwork.addChild(moveButton.artwork);
+		artwork.addChild(selectUnitButton.artwork);
 		artwork.addChild(confirmButton.artwork);
 	}
 	

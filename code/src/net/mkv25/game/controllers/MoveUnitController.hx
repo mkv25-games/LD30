@@ -63,9 +63,22 @@ class MoveUnitController
 		selectedUnit = selectUnitForPlayerFrom(selectedLocation, Index.activeGame.activePlayer);
 		if (selectedUnit != null) 
 		{
-			map.enableMovementOverlayFor(selectedLocation, selectedUnit, activeMovementCard.movement);
-			updateMovementConfirmation();
-			EventBus.displayNewStatusMessage.dispatch("Select a tile to move to");
+			if (selectedUnit.engagedInCombatThisTurn)
+			{
+				EventBus.displayNewStatusMessage.dispatch("Unit engaged in combat this turn");
+				selectedUnit = null;
+			}
+			else if (selectedUnit.movedThisTurn)
+			{
+				EventBus.displayNewStatusMessage.dispatch("Unit has already moved this turn");
+				selectedUnit = null;
+			}
+			else
+			{
+				map.enableMovementOverlayFor(selectedLocation, selectedUnit, activeMovementCard.movement);
+				updateMovementConfirmationButton();
+				EventBus.displayNewStatusMessage.dispatch("Select a tile to move to");
+			}
 		}
 		else
 		{
@@ -77,7 +90,7 @@ class MoveUnitController
 	{
 		var units = hex.listUnits();
 		
-		return units.getHighestStrengthUnit(player);
+		return units.getCandidateForMovement(player);
 	}
 	
 	function cancelMovement(?model)
@@ -111,16 +124,16 @@ class MoveUnitController
 		this.markedLocation = marker;
 		if (activeMovementCard == null)
 		{
-			movement.moveButton.disable();
+			movement.selectUnitButton.disable();
 			movement.confirmButton.disable();
 			return;
 		}
 		
-		updateMovementConfirmation();
-		updateMovementSelection();
+		updateMovementConfirmationButton();
+		updateUnitSelectionButton();
 	}
 	
-	function updateMovementSelection():Void
+	function updateUnitSelectionButton():Void
 	{
 		// check that a player owned base exists in a neighbouring tile
 		if (markedLocation != null)
@@ -129,7 +142,7 @@ class MoveUnitController
 			if (location.containsUnit(Index.activeGame.activePlayer))
 			{
 				// Rule: players can only move their own units
-				movement.moveButton.enable();
+				movement.selectUnitButton.enable();
 				
 				// report to player about selection
 				var unit:MapUnit = selectUnitForPlayerFrom(location, Index.activeGame.activePlayer);
@@ -146,11 +159,16 @@ class MoveUnitController
 			}
 		}
 		
-		movement.moveButton.disable();
+		movement.selectUnitButton.disable();
 	}
 	
-	function updateMovementConfirmation():Void
+	function updateMovementConfirmationButton():Void
 	{
+		if (activeMovementCard == null)
+		{
+			return;
+		}
+		
 		// check that marked location is a valid movement tile
 		if (markedLocation != null && selectedLocation != null && selectedUnit != null)
 		{
@@ -169,9 +187,9 @@ class MoveUnitController
 		{
 			EventBus.displayNewStatusMessage.dispatch("No unit here");
 		}
-		else if(activeMovementCard != null)
+		else
 		{
-			EventBus.displayNewStatusMessage.dispatch("Cannot move more than " + activeMovementCard.movement + " distance");
+			EventBus.displayNewStatusMessage.dispatch("Cannot move to this location");
 		}
 	}
 	
@@ -180,7 +198,14 @@ class MoveUnitController
 		// check that all the correct data is present at this point
 		if (activeMovementCard == null || selectedLocation == null || selectedUnit == null || markedLocation == null)
 		{
-			movement.moveButton.disable();
+			movement.selectUnitButton.disable();
+			movement.confirmButton.disable();
+			return;
+		}
+		
+		// check that unit can be moved
+		if (selectedUnit.movedThisTurn || selectedUnit.engagedInCombatThisTurn)
+		{
 			movement.confirmButton.disable();
 			return;
 		}
