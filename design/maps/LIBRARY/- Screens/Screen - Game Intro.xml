@@ -1,21 +1,11 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Intro" itemID="540b7789-000002a6" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1410041033" lastUniqueIdentifier="31">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Intro" itemID="540b7789-000002a6" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1410045191" lastUniqueIdentifier="36">
   <timeline>
     <DOMTimeline name="Screen - Game Intro">
       <layers>
-        <DOMLayer name="buttons" color="#9933CC" locked="true" autoNamed="false">
+        <DOMLayer name="buttons" color="#9933CC" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMShape>
-                  <fills>
-                    <FillStyle index="1">
-                      <SolidColor color="#81A5CD" alpha="0.0901960784313725"/>
-                    </FillStyle>
-                  </fills>
-                  <edges>
-                    <Edge fillStyle1="1" edges="!9990 6000|10000 9218!10000 9218|9080 10047!9080 10047|705 10047!705 10047|5 9347!5 9347|5 5970!5 5970|0 5965!0 5965|865 5100!865 5100|9101 5100!9101 5100|9990 6000"/>
-                  </edges>
-                </DOMShape>
                 <DOMSymbolInstance libraryItemName="- Scraps/Action Button" name="" centerPoint3DX="250" centerPoint3DY="700">
                   <matrix>
                     <Matrix tx="250" ty="700"/>
@@ -45,9 +35,9 @@
                     <Point x="40" y="40"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S1" name="" centerPoint3DX="150.2" centerPoint3DY="343.45">
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S1" name="" centerPoint3DX="150.15" centerPoint3DY="344.4">
                   <matrix>
-                    <Matrix a="1.5" d="1.5" tx="150" ty="346.35"/>
+                    <Matrix a="1.00001525878906" d="1.00001525878906" tx="150" ty="346.35"/>
                   </matrix>
                   <transformationPoint>
                     <Point/>
@@ -103,7 +93,7 @@
                     <DOMTextRun>
                       <characters>FIRST PLAYER TO COLONISE THREE&#xD;WORLDS AND HAVE THE MOST TERRITORY</characters>
                       <textAttrs>
-                        <DOMTextAttrs alignment="center" aliasText="false" alpha="0.8" size="24" bitmapSize="480" face="TrebuchetMS" fillColor="#999999"/>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS" fillColor="#999999"/>
                       </textAttrs>
                     </DOMTextRun>
                   </textRuns>
@@ -116,9 +106,17 @@
                     <Point x="40" y="40"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DX="149.5" centerPoint3DY="113.45">
+                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Selected" name="" centerPoint3DX="149.5" centerPoint3DY="114.3">
                   <matrix>
-                    <Matrix a="1.5" d="1.5" tx="149.3" ty="116.35"/>
+                    <Matrix tx="109.5" ty="74.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="40" y="40"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DX="149.5" centerPoint3DY="113.1">
+                  <matrix>
+                    <Matrix tx="149.4" ty="115"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="0.15" y="-2.7"/>
@@ -132,9 +130,9 @@
                     <Point x="40" y="40"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S2" name="" centerPoint3DX="249.5" centerPoint3DY="110.45">
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S2" name="" centerPoint3DX="249.5" centerPoint3DY="110.1">
                   <matrix>
-                    <Matrix a="1.5" d="1.5" tx="249.3" ty="113.35"/>
+                    <Matrix tx="249.35" ty="112"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="0.1" y="-2.7"/>
@@ -152,9 +150,9 @@
                     <Point x="40" y="40"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S3" name="" centerPoint3DX="349.5" centerPoint3DY="113.45">
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S3" name="" centerPoint3DX="349.5" centerPoint3DY="113.1">
                   <matrix>
-                    <Matrix a="1.5" d="1.5" tx="349.3" ty="116.35"/>
+                    <Matrix tx="349.35" ty="115"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="0.2" y="-2.7"/>
@@ -185,9 +183,9 @@
                     <Point x="40" y="40"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S4" name="" centerPoint3DX="149.5" centerPoint3DY="203.45">
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S4" name="" centerPoint3DX="149.5" centerPoint3DY="203.1">
                   <matrix>
-                    <Matrix a="1.5" d="1.5" tx="149.3" ty="206.35"/>
+                    <Matrix tx="149.4" ty="205"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="0.15" y="-2.7"/>
@@ -212,9 +210,9 @@
                     <Point x="40" y="40"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S6" name="" centerPoint3DX="349.7" centerPoint3DY="201.4">
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S6" name="" centerPoint3DX="349.65" centerPoint3DY="202.35">
                   <matrix>
-                    <Matrix a="1.5" d="1.5" tx="349.5" ty="204.3"/>
+                    <Matrix a="1.00001525878906" d="1.00001525878906" tx="349.5" ty="204.3"/>
                   </matrix>
                   <transformationPoint>
                     <Point/>
@@ -224,9 +222,9 @@
                     <DropShadowFilter angle="90" distance="2" strength="0.25"/>
                   </filters>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S5" name="" centerPoint3DX="249.7" centerPoint3DY="202.9">
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S5" name="" centerPoint3DX="249.6" centerPoint3DY="203.85">
                   <matrix>
-                    <Matrix a="1.5" d="1.5" tx="249.5" ty="205.8"/>
+                    <Matrix tx="249.5" ty="205.8"/>
                   </matrix>
                   <transformationPoint>
                     <Point/>
@@ -236,9 +234,17 @@
                     <DropShadowFilter angle="90" distance="2" strength="0.25"/>
                   </filters>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S2" name="" centerPoint3DX="250.2" centerPoint3DY="343.45">
+                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Selected" name="" centerPoint3DX="250" centerPoint3DY="346.35">
                   <matrix>
-                    <Matrix a="1.5" d="1.5" tx="250" ty="346.35"/>
+                    <Matrix tx="210" ty="306.35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="40" y="40"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S2" name="" centerPoint3DX="250.15" centerPoint3DY="344.4">
+                  <matrix>
+                    <Matrix a="1.00001525878906" d="1.00001525878906" tx="250" ty="346.35"/>
                   </matrix>
                   <transformationPoint>
                     <Point/>
@@ -248,9 +254,9 @@
                     <DropShadowFilter angle="90" distance="2" strength="0.25"/>
                   </filters>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S3" name="" centerPoint3DX="350.2" centerPoint3DY="343.45">
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S3" name="" centerPoint3DX="350.1" centerPoint3DY="344.4">
                   <matrix>
-                    <Matrix a="1.5" d="1.5" tx="350" ty="346.35"/>
+                    <Matrix a="1.00001525878906" d="1.00001525878906" tx="350" ty="346.35"/>
                   </matrix>
                   <transformationPoint>
                     <Point/>
@@ -281,45 +287,81 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
-                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Selected" name="" centerPoint3DX="149.5" centerPoint3DY="114.3">
-                  <matrix>
-                    <Matrix tx="109.5" ty="74.3"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point x="40" y="40"/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Selected" name="" centerPoint3DX="250" centerPoint3DY="346.35">
-                  <matrix>
-                    <Matrix tx="210" ty="306.35"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point x="40" y="40"/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
               </elements>
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="sections" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="circles" color="#FF4FFF" locked="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMRectangleObject objectWidth="500" objectHeight="50" x="-40" y="-30" lockFlag="true">
+                <DOMGroup>
                   <matrix>
-                    <Matrix tx="40" ty="30"/>
+                    <Matrix ty="2"/>
                   </matrix>
-                  <fill>
-                    <SolidColor color="#009933" alpha="0.2"/>
-                  </fill>
-                  <stroke>
-                    <SolidStroke scaleMode="normal">
-                      <fill>
-                        <SolidColor/>
-                      </fill>
-                    </SolidStroke>
-                  </stroke>
-                </DOMRectangleObject>
+                  <members>
+                    <DOMSymbolInstance libraryItemName="Targetting Circle" name="" centerPoint3DX="250" centerPoint3DY="259.8">
+                      <matrix>
+                        <Matrix tx="250" ty="259.8"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="Targetting Circle" name="" centerPoint3DX="250" centerPoint3DY="259.8">
+                      <matrix>
+                        <Matrix a="1.47782897949219" d="1.47782897949219" tx="250" ty="259.8"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                      <color>
+                        <Color alphaMultiplier="0.5"/>
+                      </color>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="Targetting Circle" name="" centerPoint3DX="250" centerPoint3DY="259.8">
+                      <matrix>
+                        <Matrix a="1.97042846679688" d="1.97042846679688" tx="250" ty="259.8"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                      <color>
+                        <Color alphaMultiplier="0.5"/>
+                      </color>
+                    </DOMSymbolInstance>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="block" color="#FF800A" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#81A5CD" alpha="0.0862745098039216"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle1="1" edges="!9710 5780|9710 9438!9710 9438|9080 10087!9080 10087|705 10087!705 10087|245 9507!245 9507|245 5760!245 5760|865 5140!865 5140|9101 5140!9101 5140|9710 5780"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="sections" color="#4FFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
                 <DOMRectangleObject objectWidth="500" objectHeight="50" x="-40" y="-30" lockFlag="true">
                   <matrix>
                     <Matrix tx="40" ty="30"/>
@@ -352,11 +394,16 @@
                     </BitmapFill>
                   </fill>
                 </DOMRectangleObject>
-                <DOMRectangleObject objectWidth="500" objectHeight="500" x="0" y="50" selected="true" lockFlag="true">
-                  <fill>
-                    <SolidColor alpha="0.8"/>
-                  </fill>
-                </DOMRectangleObject>
+                <DOMShape isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor alpha="0.8"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!10000 0|10000 16000!10000 16000|0 16000!0 16000|0 0!0 0|10000 0"/>
+                  </edges>
+                </DOMShape>
               </elements>
             </DOMFrame>
           </frames>

@@ -7,6 +7,7 @@ import flash.display.Sprite;
 import flash.display.Stage;
 import flash.events.Event;
 import motion.Actuate;
+import net.mkv25.base.ui.TintUI;
 
 class ScreenController 
 {
@@ -15,6 +16,7 @@ class ScreenController
 	
 	var stage:Stage;
 	
+	var backgroundTint:Sprite;
 	var zoomContainer:Sprite;
 	var screenLayer:Sprite;
 	
@@ -40,6 +42,9 @@ class ScreenController
 		while (screens.length > 0)
 			screens.pop();
 		
+		backgroundTint = TintUI.createTint(0x555555, 1.0, Screen.WIDTH, Screen.HEIGHT);
+		zoomContainer.addChild(backgroundTint);
+			
 		zoomContainer.addChild(screenLayer);
 		stage.addChild(zoomContainer);
 		

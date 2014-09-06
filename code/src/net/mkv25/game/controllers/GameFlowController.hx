@@ -7,6 +7,8 @@ import net.mkv25.game.models.ActiveGame;
 import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.models.PlayerModel;
 import net.mkv25.game.ui.GameOverUI;
+import net.mkv25.ld30.dbvos.WinningConditionsRow;
+import net.mkv25.ld30.enums.WinningConditionsEnum;
 
 class GameFlowController
 {
@@ -183,32 +185,27 @@ class GameFlowController
 	
 	function endGame_conditionMasterOfExpansion(player:PlayerModel) 
 	{
-		gameOverMenu.setup(
-			"Victory for " + player.name(),
-			"Master of Expansion" + NL
-			+ "Most territory on three worlds",
-			Index.activeGame);
-			
-		gameOverMenu.show();
+		showWinningCondition(player, WinningConditionsEnum.SHORT_GAME);
 	}
 	
 	function endGame_conditionAllYourBaseAreBelongToUs(player:PlayerModel) 
 	{
-		gameOverMenu.setup(
-			"Victory for " + player.name(),
-			"All your base are belong to us" + NL
-			+ "Captured all enemy bases",
-			Index.activeGame);
-			
-		gameOverMenu.show();
+		showWinningCondition(player, WinningConditionsEnum.MEDIUM_GAME);
 	}
 	
 	function endGame_conditionWarWarNeverChangesWarNeverEnds(player:PlayerModel) 
 	{
+		showWinningCondition(player, WinningConditionsEnum.LONG_GAME);
+	}
+	
+	function showWinningCondition(player:PlayerModel, winningConditionType:Int):Void
+	{
+		var condition = Index.dbvos.WINNING_CONDITIONS.getRowCast(winningConditionType);
+		
 		gameOverMenu.setup(
 			"Victory for " + player.name(),
-			"War, War Never Changes, War Never Ends" + NL
-			+ "Destroyed all enemy units",
+			condition.title + NL
+			+ condition.shortDescription,
 			Index.activeGame);
 			
 		gameOverMenu.show();

@@ -26,7 +26,7 @@ class IntroScreen extends Screen
 		setBackground("img/title-screen.png");
 		
 		button = new ButtonUI();
-		button.setup("NEW GAME", onBeginAction);
+		button.setup("NEW GAME", onNewGameAction);
 		button.move(horizontalCenter, verticalCenter + 100);
 		
 		artwork.addChild(button.artwork);
@@ -53,10 +53,10 @@ class IntroScreen extends Screen
 		}
 	}
 	
-	function onBeginAction(?model:ButtonUI)
+	function onNewGameAction(?model:ButtonUI)
 	{
 		SoundEffects.playBloop();
 		
-		EventBus.startNewGame.dispatch(this);
+		Index.screenController.showScreen(Index.gameSetupScreen);
 	}
 }

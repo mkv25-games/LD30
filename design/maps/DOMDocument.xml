@@ -118,6 +118,7 @@
           <Include href="- Screens/Screen - Research Technology.xml" loadImmediate="false"/>
           <Include href="Planet Owner Marker.xml" loadImmediate="false"/>
           <Include href="Resource Counters.xml" loadImmediate="false"/>
+          <Include href="Targetting Circle.xml" loadImmediate="false"/>
      </symbols>
      <timelines>
           <DOMTimeline name="Scene 1">
@@ -126,7 +127,7 @@
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="- Screens/Screen - Gameplay - Space" name="" selected="true" centerPoint3DX="250" centerPoint3DY="400">
+                                        <DOMSymbolInstance libraryItemName="- Screens/Screen - Gameplay - Space" name="" centerPoint3DX="250" centerPoint3DY="400">
                                              <transformationPoint>
                                                   <Point x="250" y="400"/>
                                              </transformationPoint>

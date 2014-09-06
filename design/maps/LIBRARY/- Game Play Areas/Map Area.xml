@@ -1,8 +1,8 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Game Play Areas/Map Area" itemID="54035584-00000201" lastModified="1409506234">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Game Play Areas/Map Area" itemID="54035584-00000201" lastModified="1410043699">
   <timeline>
     <DOMTimeline name="Map Area">
       <layers>
-        <DOMLayer name="bubbles" color="#4F80FF" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="bubbles" color="#4F80FF" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -1108,15 +1108,11 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="starfield" color="#FF4FFF" autoNamed="false">
+        <DOMLayer name="starfield" color="#FF4FFF" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMBitmapInstance name="" referenceID="" libraryItemName="- Bitmaps/starfield-small.png">
-                  <matrix>
-                    <Matrix tx="-0.5"/>
-                  </matrix>
-                </DOMBitmapInstance>
+                <DOMBitmapInstance name="" referenceID="" libraryItemName="- Bitmaps/starfield-small.png"/>
               </elements>
             </DOMFrame>
           </frames>

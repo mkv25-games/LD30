@@ -1,0 +1,41 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Targetting Circle" itemID="540b8d47-0000067a" sourceLibraryItemHRef="Symbol 1" lastModified="1410043364">
+  <timeline>
+    <DOMTimeline name="Targetting Circle">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <RadialGradient>
+                        <matrix>
+                          <Matrix a="0.12469482421875" d="0.12469482421875"/>
+                        </matrix>
+                        <GradientEntry alpha="0.0470588235294118" ratio="0"/>
+                        <GradientEntry color="#FFFFFF" alpha="0.0980392156862745" ratio="1"/>
+                      </RadialGradient>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="2">
+                        <fill>
+                          <SolidColor color="#FFFFFF" alpha="0.0470588235294118"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!1435 -1436[2030 -841 2030 0!2030 0[2030 841 1435 1435!1435 1435[841 2030 0 2030!0 2030[-841 2030 -1436 1435!-1436 1435[-2030 841 -2030 0!-2030 0[-2030 -841 -1436 -1436!-1436 -1436[-841 -2030 0 -2030!0 -2030[841 -2030 1435 -1436"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

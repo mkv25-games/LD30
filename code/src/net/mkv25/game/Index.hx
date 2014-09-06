@@ -14,18 +14,21 @@ import net.mkv25.game.controllers.MoveUnitController;
 import net.mkv25.game.models.ActiveGame;
 import net.mkv25.game.models.MapModel;
 import net.mkv25.game.provider.CardProvider;
+import net.mkv25.game.screens.GameSetupScreen;
 import net.mkv25.game.screens.IntroScreen;
 import net.mkv25.game.screens.MainScreen;
 import net.mkv25.game.ui.DeploymentUI;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.MovementUI;
 import net.mkv25.game.ui.PortalsUI;
+import net.mkv25.ld30.dbvos.DBVOsModel;
 
 class Index
 {
 	private static var failsafe:Bool = false;
 	
 	// models
+	public static var dbvos:DBVOsModel;
 	public static var activeGame:ActiveGame;
 	
 	// controllers
@@ -43,6 +46,7 @@ class Index
 	// screens
 	public static var introScreen:Screen;
 	public static var mainScreen:Screen;
+	public static var gameSetupScreen:Screen;
 	
 	// core ui elements
 	public static var mapHud:MapUI;
@@ -64,6 +68,7 @@ class Index
 		failsafe = true;
 		
 		// models
+		dbvos = new DBVOsModel();
 		activeGame = null;
 		
 		// controllers
@@ -81,6 +86,7 @@ class Index
 		// screens
 		introScreen = new IntroScreen();
 		mainScreen = new MainScreen();
+		gameSetupScreen = new GameSetupScreen();
 		
 		// core ui elements
 		mapHud = new MapUI();
