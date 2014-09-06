@@ -59,6 +59,7 @@ class MoveUnitController
 			return;
 		}
 		
+		var previousSelectedUnit:MapUnit = selectedUnit;
 		selectedLocation = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
 		selectedUnit = selectUnitForPlayerFrom(selectedLocation, Index.activeGame.activePlayer);
 		if (selectedUnit != null) 
@@ -77,7 +78,20 @@ class MoveUnitController
 			{
 				map.enableMovementOverlayFor(selectedLocation, selectedUnit, activeMovementCard.movement);
 				updateMovementConfirmationButton();
-				EventBus.displayNewStatusMessage.dispatch("Select a tile to move to");
+				
+				if (previousSelectedUnit == null)
+				{
+					EventBus.displayNewStatusMessage.dispatch("Select a location to move to");
+				}
+				else if (previousSelectedUnit == selectedUnit)
+				{
+					EventBus.displayNewStatusMessage.dispatch(selectedUnit.type.name + " selected again");
+				}
+				else
+				{
+					EventBus.displayNewStatusMessage.dispatch(selectedUnit.type.name + " selected");
+				}
+				
 			}
 		}
 		else
@@ -90,7 +104,7 @@ class MoveUnitController
 	{
 		var units = hex.listUnits();
 		
-		return units.getCandidateForMovement(player);
+		return units.getCandidateForMovement(player, selectedUnit);
 	}
 	
 	function cancelMovement(?model)

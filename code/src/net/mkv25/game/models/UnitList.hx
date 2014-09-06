@@ -79,22 +79,32 @@ class UnitList
 		return null;
 	}
 	
-	public function getCandidateForMovement(owner:PlayerModel):Null<MapUnit>
+	public function getCandidateForMovement(requiredOwner:PlayerModel, butPreferablyNot:MapUnit):Null<MapUnit>
 	{
 		if (units.length > 0)
 		{
+			// if set, offset from the starting unit, i.e. skip that unit until last
+			var offset:Int = (butPreferablyNot == null) ? 0 : Lambda.indexOf(units, butPreferablyNot);
+			if (offset == -1)
+			{
+				offset = 0;
+			}
+			
 			// order by strongest unit first
 			units.sort(sortStrongestUnitsFirst);
 			
 			// on the first pass, skip units that have already moved or have been in combat
-			for (unit in units)
+			for (position in 0...units.length)
 			{
+				var index:Int = position + offset;
+				var unit:MapUnit = units[index % units.length];
+				
 				if (unit.movedThisTurn || unit.engagedInCombatThisTurn)
 				{
 					continue;
 				}
 				
-				if (unit.owner == owner)
+				if (unit.owner == requiredOwner)
 				{
 					return unit;
 				}
@@ -103,7 +113,7 @@ class UnitList
 			// on the second pass, consider player owned units that have already moved or been in combat
 			for (unit in units)
 			{
-				if (unit.owner == owner)
+				if (unit.owner == requiredOwner)
 				{
 					return unit;
 				}

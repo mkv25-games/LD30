@@ -44,6 +44,7 @@ Improvements
 + Add conflict marker to planets with multipler owners
 - Add portal symbol to end of portal line links
 - Show base symbol as part of connection interface
+- Draw better icon for change/select unit action
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn

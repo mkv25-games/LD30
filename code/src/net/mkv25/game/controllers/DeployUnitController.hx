@@ -70,8 +70,6 @@ class DeployUnitController
 			var unit:MapUnit = UnitProvider.getUnit(player, activeUnitCard);
 			location.add(unit);
 			
-			EventBus.displayNewStatusMessage.dispatch(unit.type.name + " deployed");
-			
 			// Rule: When a 
 			EventBus.trashCardFromActivePlayersHand.dispatch(activeUnitCard);
 			
@@ -81,6 +79,8 @@ class DeployUnitController
 			
 			// Rule: Units that have just been deployed can be moved on the same turn
 			unit.resetFlags();
+			
+			EventBus.displayNewStatusMessage.dispatch(unit.type.name + " deployed");
 		}
 	}
 	
