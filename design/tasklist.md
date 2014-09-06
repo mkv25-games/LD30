@@ -44,6 +44,7 @@ Improvements
 - Add portal symbol to end of portal line links
 - Show base symbol as part of connection interface
 - Draw better icon for change/select unit action
+- Show connections between portals that are both on planets when in space
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn

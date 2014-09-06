@@ -137,6 +137,8 @@ class ConnectPortalsController
 		baseStart = null;
 		baseEnd = null;
 		
+		portals.reset();
+		
 		disableConnections();
 	}
 	
@@ -173,9 +175,7 @@ class ConnectPortalsController
 	{
 		if (markedLocation == null)
 		{
-			portals.portal1Button.disable();
-			portals.portal2Button.disable();
-			portals.confirmButton.disable();
+			portals.reset();
 			return;
 		}
 		
@@ -239,5 +239,8 @@ class ConnectPortalsController
 		{
 			portals.confirmButton.disable();
 		}
+		
+		// update icons
+		portals.update(baseStart, baseEnd);
 	}
 }
