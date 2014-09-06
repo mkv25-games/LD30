@@ -58,8 +58,7 @@ class UnitList
 	{
 		if (units.length > 0)
 		{
-			units.sort(sortByUnitStrength);
-			units.reverse();
+			units.sort(sortStrongestUnitsFirst);
 			
 			for (unit in units)
 			{
@@ -85,8 +84,7 @@ class UnitList
 		if (units.length > 0)
 		{
 			// order by strongest unit first
-			units.sort(sortByUnitStrength);
-			units.reverse();
+			units.sort(sortStrongestUnitsFirst);
 			
 			// on the first pass, skip units that have already moved or have been in combat
 			for (unit in units)
@@ -115,26 +113,26 @@ class UnitList
 		return null;
 	}
 	
-	function sortByUnitStrength(a:MapUnit, b:MapUnit):Int
+	function sortStrongestUnitsFirst(a:MapUnit, b:MapUnit):Int
 	{
 		// sort by strength, but sort units before bases
 		if (a.type.strength < b.type.strength)
 		{
-			return -1;
+			return 1;
 		}
 		else if (a.type.strength > b.type.strength)
 		{
-			return 1;
+			return -1;
 		}
 		else
 		{
 			if (a.type.base && !b.type.base)
 			{
-				return -1;
+				return 1;
 			}
 			else if (!a.type.base && b.type.base)
 			{
-				return 1;
+				return -1;
 			}
 			else
 			{

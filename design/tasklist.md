@@ -10,7 +10,6 @@ Improvements based on Player feedback
 
 Incomplete features
 -------------------
-+ Units can only be activated once a turn for movement
 + Ability to select individual unit from tile for movement
 + Break connection between bases if captured
 - Reduce number of steps to link bases via portals
