@@ -26,7 +26,7 @@ class IntroScreen extends Screen
 		setBackground("img/title-screen.png");
 		
 		button = new ButtonUI();
-		button.setup("START", onBeginAction);
+		button.setup("NEW GAME", onBeginAction);
 		button.move(horizontalCenter, verticalCenter + 100);
 		
 		artwork.addChild(button.artwork);

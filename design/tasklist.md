@@ -59,6 +59,7 @@ Free Version Release Work
 + Apple store submission
 + Rewrite the Ludum Dare blurb
 - Remove TODOs from code base
++ Add HD graphics and artwork switching to support tablets
 
 Commercial Version Release Work
 -------------------------
