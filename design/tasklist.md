@@ -10,7 +10,6 @@ Improvements based on Player feedback
 
 Incomplete features
 -------------------
-+ Ability to select individual unit from tile for movement
 - Reduce number of steps to link bases via portals
 - Movement should highlight combat tiles
 
