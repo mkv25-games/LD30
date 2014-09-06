@@ -10,7 +10,6 @@ Improvements based on Player feedback
 
 Incomplete features
 -------------------
-- Reduce number of steps to link bases via portals
 - Movement should highlight combat tiles
 
 Improvements
@@ -42,7 +41,6 @@ Improvements
 + Add a screen to review all player stats
 + Add conflict marker to planets with multipler owners
 - Add portal symbol to end of portal line links
-- Show base symbol as part of connection interface
 - Draw better icon for change/select unit action
 - Show connections between portals that are both on planets when in space
 
