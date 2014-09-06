@@ -10,7 +10,6 @@ Improvements based on Player feedback
 
 Incomplete features
 -------------------
-- Movement should highlight combat tiles
 
 Improvements
 ------------
@@ -43,6 +42,8 @@ Improvements
 - Add portal symbol to end of portal line links
 - Draw better icon for change/select unit action
 - Show connections between portals that are both on planets when in space
+- Animate status message when message changes
+- Basic combat report in status message
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn

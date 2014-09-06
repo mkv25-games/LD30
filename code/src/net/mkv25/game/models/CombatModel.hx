@@ -172,6 +172,7 @@ class CombatModel
 	public static function enemiesExistIn(location:HexTile):Bool
 	{
 		var owner:PlayerModel = null;
+		location = (location.map == null) ? location : location.map.getHexTile(location.q, location.r);
 		
 		var contents = location.listContents();
 		for (thing in contents)

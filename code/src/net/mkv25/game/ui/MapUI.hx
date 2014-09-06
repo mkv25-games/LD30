@@ -15,6 +15,7 @@ import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.base.ui.IconButtonUI;
 import net.mkv25.game.audio.SoundEffects;
 import net.mkv25.game.event.EventBus;
+import net.mkv25.game.models.CombatModel;
 import net.mkv25.game.models.HexTile;
 import net.mkv25.game.models.IMapThing;
 import net.mkv25.game.models.MapModel;
@@ -290,7 +291,8 @@ class MapUI extends BaseUI
 		{
 			if (hex.map == currentModel)
 			{
-				drawHex(hex, null, movementLayer, HexProvider.MOVEMENT_HEX);
+				var image:BitmapData = (CombatModel.containsEnemyCombatants(Index.activeGame.activePlayer, hex)) ? HexProvider.CONTESTED_HEX : HexProvider.MOVEMENT_HEX;
+				drawHex(hex, null, movementLayer, image);
 			}
 		}
 			
