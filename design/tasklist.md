@@ -3,6 +3,7 @@ Things to do
 
 Bugs
 ----
++ Destroyed a strength 2 base with a strength 2 unit, and it didn't remove the portal
 
 Improvements based on Player feedback
 -------------------------------------

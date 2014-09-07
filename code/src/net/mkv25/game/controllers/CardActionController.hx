@@ -45,10 +45,12 @@ class CardActionController
 	function checkTypeOfCardSelectedByPlayer(?model)
 	{
 		var card:PlayableCard;
-		if (Std.is(model, PlayableCard)) {
+		if (Std.is(model, PlayableCard))
+		{
 			card = cast model;
 		}
-		else {
+		else
+		{
 			throw "Selected thing was not a playable card.";
 		}
 		
@@ -57,8 +59,7 @@ class CardActionController
 			EventBus.askPlayer_whereTheyWantToDeployTheirUnitCard.dispatch(card);
 			return;
 		}
-		
-		if (card.movement > 0)
+		else
 		{
 			EventBus.askPlayer_howTheyWantToPlayTheirActionCard.dispatch(card);
 			return;
@@ -94,7 +95,7 @@ class CardActionController
 		
 		EventBus.displayNewStatusMessage.dispatch("Pick an option");
 		optionMenu.setCardName(card.name);
-		optionMenu.setOption1("move a unit".toUpperCase(), EventBus.playerWantsTo_moveAUnit.dispatch, card);
+		optionMenu.setOption1("move a unit".toUpperCase(), (card.movement > 0) ? EventBus.playerWantsTo_moveAUnit.dispatch : null, card);
 		optionMenu.setOption2(card.action.toUpperCase(), EventBus.playerWantsTo_performASpecialAction.dispatch, card);
 		
 		optionMenu.show();

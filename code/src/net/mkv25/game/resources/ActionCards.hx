@@ -22,7 +22,7 @@ class ActionCards
 			pictureTile: 2
 		},
 		"Harvester": {
-			cost: 5,
+			cost: 4,
 			movement: 1,
 			action: "gather resources",
 			resources: 2,

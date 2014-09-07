@@ -2,7 +2,7 @@
   <timeline>
     <DOMTimeline name="Cards for Export">
       <layers>
-        <DOMLayer name="corners" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="corners" color="#FF800A" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -26,7 +26,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="cards" color="#4FFF4F" autoNamed="false">
+        <DOMLayer name="cards" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>

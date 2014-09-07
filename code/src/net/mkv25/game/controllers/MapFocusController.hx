@@ -41,10 +41,17 @@ class MapFocusController
 			unit = player.units.getHighestStrengthUnit();
 		}
 		
-		map = unit.lastKnownLocation.map;
-		map = (map == null) ? Index.activeGame.space : map;
-		
-		this.mapHud.setupMap(map);
+		if (unit == null)
+		{
+			this.mapHud.setupMap(Index.activeGame.space);
+		}
+		else
+		{
+			map = unit.lastKnownLocation.map;
+			map = (map == null) ? Index.activeGame.space : map;
+			
+			this.mapHud.setupMap(map);
+		}
 	}
 	
 }

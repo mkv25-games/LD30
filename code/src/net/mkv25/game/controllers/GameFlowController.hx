@@ -86,7 +86,13 @@ class GameFlowController
 		removePlayersFromGame();
 		
 		// Check for endgame conditions
-		if (activeGame.players.length < 2)
+		if (activeGame.players.length == 0)
+		{
+			activeGame.activePlayer = null;
+			endgame_conditionHeatDeathOfTheUniverse();
+			return;
+		}
+		else if (activeGame.players.length < 2)
 		{
 			var winner:PlayerModel = activeGame.players[0];
 			
@@ -188,6 +194,11 @@ class GameFlowController
 		Index.activeGame.defineLastPlayerInRound();
 	}
 	
+	function endgame_conditionHeatDeathOfTheUniverse()
+	{
+		showGameOverCondition();
+	}
+	
 	function endGame_conditionMasterOfExpansion(player:PlayerModel) 
 	{
 		showWinningCondition(player, WinningConditionsEnum.SHORT_GAME);
@@ -211,6 +222,17 @@ class GameFlowController
 			"Victory for " + player.name(),
 			condition.title + NL
 			+ condition.shortDescription,
+			Index.activeGame);
+			
+		gameOverMenu.show();
+	}
+	
+	function showGameOverCondition():Void
+	{
+		gameOverMenu.setup(
+			"All players destroyed",
+			"No survivors. The universe" + NL
+			+ "is infinite, quiet, and cold.",
 			Index.activeGame);
 			
 		gameOverMenu.show();
