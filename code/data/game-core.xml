@@ -29,21 +29,21 @@
         <name>Short Game</name>
         <title>Master of Expansion</title>
         <shortDescription>Most territory on three worlds</shortDescription>
-        <fullDescription>Captured three planets, and had the most territory at the end of a round.</fullDescription>
+        <fullDescription>Capture three planets, and have the most territory at the end of a round.</fullDescription>
       </Row>
       <Row>
         <id>3</id>
         <name>Medium Game</name>
         <title>All your base are belong to us</title>
         <shortDescription>Captured all enemy bases</shortDescription>
-        <fullDescription>Captured all bases of all your enemies at the end of a round.</fullDescription>
+        <fullDescription>Capture all bases of all your enemies at the end of a round.</fullDescription>
       </Row>
       <Row>
         <id>4</id>
         <name>Long Game</name>
         <title>War, War Never Changes, War Never Ends</title>
         <shortDescription>Destroyed all enemy units</shortDescription>
-        <fullDescription>Destroyed or captured every single last enemy unit and base.</fullDescription>
+        <fullDescription>Destroy or capture every single last enemy unit and base.</fullDescription>
       </Row>
     </Table>
   </Tables>
