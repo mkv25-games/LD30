@@ -10,6 +10,8 @@ Improvements based on Player feedback
 
 Incomplete features
 -------------------
++ Set game length and describe winning conditions
++ Player selection screen, number of players
 
 Improvements
 ------------
@@ -17,7 +19,6 @@ Improvements
 + Balance card values, cost vs movement
 + In-game player guide, getting started
 + Change language on Engineer's construction screen to prevent confusion over building unints
-+ Player selection screen, number of players
 + Sensible map layouts for low-player games
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Combat report

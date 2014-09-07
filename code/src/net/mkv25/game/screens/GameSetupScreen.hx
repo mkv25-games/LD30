@@ -13,6 +13,7 @@ import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayerHand;
 import net.mkv25.game.models.PlayerModel;
 import net.mkv25.game.ui.DeploymentUI;
+import net.mkv25.game.ui.GameLengthSelectionUI;
 import net.mkv25.game.ui.InGameMenuUI;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.MovementUI;
@@ -25,10 +26,7 @@ import openfl.Assets;
 
 class GameSetupScreen extends Screen
 {
-	var gameLengthText:TextUI;
-	var gameModeText:TextUI;
-	var winningConditionText:TextUI;
-	
+	var gameLengthSelection:GameLengthSelectionUI;
 	var startButton:ButtonUI;
 	
 	public function new() 
@@ -40,17 +38,14 @@ class GameSetupScreen extends Screen
 	{
 		setBackground("img/setup-screen.png");
 		
-		gameLengthText = cast TextUI.makeFor("Game Mode".toUpperCase(), 0xFFFFFF).fontSize(28).size(Screen.WIDTH, 40).move(0, 260);
-		gameModeText = cast TextUI.makeFor("Winning Condition".toUpperCase(), 0xFFFFFF).fontSize(28).size(Screen.WIDTH, 40).move(0, 390);
-		winningConditionText = cast TextUI.makeFor("Detailed explanation\nof rules".toUpperCase(), 0x999999).fontSize(24).size(Screen.WIDTH, 70).move(0, 430);
+		gameLengthSelection = new GameLengthSelectionUI();
+		gameLengthSelection.move(0, 250);
 		
 		startButton = new ButtonUI();
 		startButton.setup("START GAME", onStartAction);
 		startButton.move(horizontalCenter, 600);
 		
-		artwork.addChild(gameLengthText.artwork);
-		artwork.addChild(gameModeText.artwork);
-		artwork.addChild(winningConditionText.artwork);
+		artwork.addChild(gameLengthSelection.artwork);
 		artwork.addChild(startButton.artwork);
 	}
 	
@@ -59,9 +54,7 @@ class GameSetupScreen extends Screen
 		super.show();
 		
 		var winningCondition = Index.dbvos.WINNING_CONDITIONS.getRowCast(WinningConditionsEnum.SHORT_GAME);
-		
-		gameModeText.setText(winningCondition.title.toUpperCase());
-		winningConditionText.setText(winningCondition.fullDescription.toUpperCase());
+		gameLengthSelection.update(winningCondition);
 	}
 	
 	override public function handleKeyAction(event:KeyboardEvent):Void
