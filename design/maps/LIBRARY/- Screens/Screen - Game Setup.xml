@@ -1,6 +1,6 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Intro" itemID="540b7789-000002a6" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1410098086" lastUniqueIdentifier="36">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Setup" itemID="540c7620-000006ab" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1410102816" lastUniqueIdentifier="36">
   <timeline>
-    <DOMTimeline name="Screen - Game Intro">
+    <DOMTimeline name="Screen - Game Setup">
       <layers>
         <DOMLayer name="buttons" color="#9933CC" current="true" isSelected="true" autoNamed="false">
           <frames>

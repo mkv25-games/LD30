@@ -22,6 +22,7 @@ class GameFlowController
 	var gameOverMenu:GameOverUI;
 	
 	var winningCondition:WinningConditionsRow;
+	var numberOfPlayers:Int;
 	
 	public function new() 
 	{
@@ -35,6 +36,7 @@ class GameFlowController
 		createMenus();
 		
 		EventBus.winningConditionChanged.add(handle_winningConditionChanged);
+		EventBus.playerCountChanged.add(handle_playerCountChanged);
 		
 		EventBus.startNewGame.add(handle_startNewGame);
 		EventBus.restartGame.add(handle_restartGame);
@@ -48,11 +50,14 @@ class GameFlowController
 		this.winningCondition = winningCondition;
 	}
 	
+	function handle_playerCountChanged(numberOfPlayers:Int):Void
+	{
+		this.numberOfPlayers = numberOfPlayers;
+	}
+	
 	function handle_startNewGame(?model)
 	{
-		var number_of_players = 2;
-		
-		Index.activeGame = new ActiveGame(number_of_players);
+		Index.activeGame = new ActiveGame(numberOfPlayers);
 		
 		Index.screenController.showScreen(Index.mainScreen);
 		Index.activeGame.startNextPlayersTurn();

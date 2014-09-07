@@ -6,12 +6,11 @@ Bugs
 
 Improvements based on Player feedback
 -------------------------------------
-+ No goal for player at start of game
+
 
 Incomplete features
 -------------------
-+ Set game length and describe winning conditions
-+ Player selection screen, number of players
+
 
 Improvements
 ------------

@@ -17,6 +17,7 @@ import net.mkv25.game.ui.GameLengthSelectionUI;
 import net.mkv25.game.ui.InGameMenuUI;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.MovementUI;
+import net.mkv25.game.ui.PlayerCountSelectionUI;
 import net.mkv25.game.ui.PlayerHandUI;
 import net.mkv25.game.ui.PortalsUI;
 import net.mkv25.game.ui.StatusBarUI;
@@ -26,6 +27,7 @@ import openfl.Assets;
 
 class GameSetupScreen extends Screen
 {
+	var playerCountSelection:PlayerCountSelectionUI;
 	var gameLengthSelection:GameLengthSelectionUI;
 	var startButton:ButtonUI;
 	
@@ -38,13 +40,17 @@ class GameSetupScreen extends Screen
 	{
 		setBackground("img/setup-screen.png");
 		
+		playerCountSelection = new PlayerCountSelectionUI();
+		playerCountSelection.move(0, 0);
+		
 		gameLengthSelection = new GameLengthSelectionUI();
-		gameLengthSelection.move(0, 250);
+		gameLengthSelection.move(0, 255);
 		
 		startButton = new ButtonUI();
 		startButton.setup("START GAME", onStartAction);
 		startButton.move(horizontalCenter, 600);
 		
+		artwork.addChild(playerCountSelection.artwork);
 		artwork.addChild(gameLengthSelection.artwork);
 		artwork.addChild(startButton.artwork);
 	}
@@ -53,8 +59,11 @@ class GameSetupScreen extends Screen
 	{
 		super.show();
 		
-		var winningCondition = Index.dbvos.WINNING_CONDITIONS.getRowCast(WinningConditionsEnum.SHORT_GAME);
-		gameLengthSelection.update(winningCondition);
+		var defaultNumberOfPlayers:Int = 2;
+		playerCountSelection.update(defaultNumberOfPlayers);
+		
+		var defaultWinningCondition = Index.dbvos.WINNING_CONDITIONS.getRowCast(WinningConditionsEnum.SHORT_GAME);
+		gameLengthSelection.update(defaultWinningCondition);
 	}
 	
 	override public function handleKeyAction(event:KeyboardEvent):Void

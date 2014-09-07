@@ -111,7 +111,7 @@
           <Include href="- Screens/Screen - Build Units.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Choose Action - Deploy.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Choose Action - Move or Special.xml" loadImmediate="false"/>
-          <Include href="- Screens/Screen - Game Intro.xml" loadImmediate="false"/>
+          <Include href="- Screens/Screen - Game Setup.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Gameplay - Planet Side.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Gameplay - Space.xml" loadImmediate="false"/>
           <Include href="- Screens/Screen - Main Layout.xml" loadImmediate="false"/>

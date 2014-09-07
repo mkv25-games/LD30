@@ -18,6 +18,13 @@ class IconProvider
 	public static var ICON_SHORT_GAME:BitmapData;
 	public static var ICON_MEDIUM_GAME:BitmapData;
 	public static var ICON_LONG_GAME:BitmapData;
+	
+	public static var ICON_1_PLAYER:BitmapData;
+	public static var ICON_2_PLAYER:BitmapData;
+	public static var ICON_3_PLAYER:BitmapData;
+	public static var ICON_4_PLAYER:BitmapData;
+	public static var ICON_5_PLAYER:BitmapData;
+	public static var ICON_6_PLAYER:BitmapData;
 
 	public static var WORLD_ICONS:Array<BitmapData>;
 	
@@ -36,6 +43,13 @@ class IconProvider
 		ICON_SHORT_GAME = getIcon(21);
 		ICON_MEDIUM_GAME = getIcon(32);
 		ICON_LONG_GAME = getIcon(43);
+		
+		ICON_1_PLAYER = getIcon(4);
+		ICON_2_PLAYER = getIcon(5);
+		ICON_3_PLAYER = getIcon(6);
+		ICON_4_PLAYER = getIcon(7);
+		ICON_5_PLAYER = getIcon(8);
+		ICON_6_PLAYER = getIcon(9);
 		
 		WORLD_ICONS = new Array<BitmapData>();
 		WORLD_ICONS.push(getIcon(10));
