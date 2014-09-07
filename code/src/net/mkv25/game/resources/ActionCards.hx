@@ -16,7 +16,7 @@ class ActionCards
 			pictureTile: 1
 		},
 		"Portal": {
-			cost: 10,
+			cost: 8,
 			movement: 3,
 			action: "connect bases",
 			pictureTile: 2
