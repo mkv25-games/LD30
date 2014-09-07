@@ -43,6 +43,8 @@ Improvements
 - Show connections between portals that are both on planets when in space
 - Animate status message when message changes
 - Basic combat report in status message
+- Create interesting planets with varied hex tiles
+- Create a scrollable map to support larger games
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn
