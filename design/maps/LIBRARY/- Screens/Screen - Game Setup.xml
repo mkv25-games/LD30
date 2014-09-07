@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Setup" itemID="540c7620-000006ab" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1410102816" lastUniqueIdentifier="36">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Setup" itemID="540c7620-000006ab" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1410115661" lastUniqueIdentifier="36">
   <timeline>
     <DOMTimeline name="Screen - Game Setup">
       <layers>
@@ -292,7 +292,7 @@
                     <Matrix ty="2"/>
                   </matrix>
                   <members>
-                    <DOMSymbolInstance libraryItemName="Targetting Circle" name="" centerPoint3DX="250" centerPoint3DY="259.8">
+                    <DOMSymbolInstance libraryItemName="- Scraps/Targetting Circle" name="" centerPoint3DX="250" centerPoint3DY="259.8">
                       <matrix>
                         <Matrix tx="250" ty="259.8"/>
                       </matrix>
@@ -300,7 +300,7 @@
                         <Point/>
                       </transformationPoint>
                     </DOMSymbolInstance>
-                    <DOMSymbolInstance libraryItemName="Targetting Circle" name="" centerPoint3DX="250" centerPoint3DY="259.8">
+                    <DOMSymbolInstance libraryItemName="- Scraps/Targetting Circle" name="" centerPoint3DX="250" centerPoint3DY="259.8">
                       <matrix>
                         <Matrix a="1.47782897949219" d="1.47782897949219" tx="250" ty="259.8"/>
                       </matrix>
@@ -311,7 +311,7 @@
                         <Color alphaMultiplier="0.5"/>
                       </color>
                     </DOMSymbolInstance>
-                    <DOMSymbolInstance libraryItemName="Targetting Circle" name="" centerPoint3DX="250" centerPoint3DY="259.8">
+                    <DOMSymbolInstance libraryItemName="- Scraps/Targetting Circle" name="" centerPoint3DX="250" centerPoint3DY="259.8">
                       <matrix>
                         <Matrix a="1.97042846679688" d="1.97042846679688" tx="250" ty="259.8"/>
                       </matrix>

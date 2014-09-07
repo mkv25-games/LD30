@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Scraps/Cost Tab Background" itemID="53f8e5e7-00000422" sourceLibraryItemHRef="Symbol 1" lastModified="1408821014">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Scraps/Cost Tab Background" itemID="53f8e5e7-00000422" sourceLibraryItemHRef="Symbol 1" lastModified="1410120405" lastUniqueIdentifier="1">
   <timeline>
     <DOMTimeline name="Cost Tab Background">
       <layers>
@@ -6,32 +6,17 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMShape>
-                  <fills>
-                    <FillStyle index="1">
-                      <LinearGradient>
-                        <matrix>
-                          <Matrix a="-0.01104736328125" b="0.01104736328125" c="-0.0172882080078125" d="-0.0172882080078125" tx="-16.25" ty="15.35"/>
-                        </matrix>
-                        <GradientEntry color="#FFB600" ratio="0"/>
-                        <GradientEntry color="#D09400" ratio="1"/>
-                      </LinearGradient>
-                    </FillStyle>
-                  </fills>
-                  <strokes>
-                    <StrokeStyle index="1">
-                      <SolidStroke scaleMode="normal" weight="3" joints="miter">
-                        <fill>
-                          <SolidColor color="#232323"/>
-                        </fill>
-                      </SolidStroke>
-                    </StrokeStyle>
-                  </strokes>
-                  <edges>
-                    <Edge fillStyle1="1" edges="!-585 0|0 0!0 0|0 548"/>
-                    <Edge fillStyle1="1" strokeStyle="1" edges="!0 548|-585 548!-585 548|-585 0"/>
-                  </edges>
-                </DOMShape>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Resources" name="" centerPoint3DX="-15.5" centerPoint3DY="14.5">
+                  <matrix>
+                    <Matrix tx="-15.5" ty="14.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" distance="1" strength="0.2"/>
+                  </filters>
+                </DOMSymbolInstance>
               </elements>
             </DOMFrame>
           </frames>

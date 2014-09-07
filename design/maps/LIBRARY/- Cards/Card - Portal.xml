@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Cards/Card - Portal" itemID="54035584-000001f6" lastModified="1409504644">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Cards/Card - Portal" itemID="54035584-000001f6" lastModified="1410121772" lastUniqueIdentifier="6">
   <timeline>
     <DOMTimeline name="Card - Portal">
       <layers>
@@ -31,7 +31,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="card name" color="#808080" parentLayerIndex="1" autoNamed="false">
+        <DOMLayer name="card name" color="#808080" parentLayerIndex="1" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -52,23 +52,81 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
+        <DOMLayer name="portal line" color="#9933CC" parentLayerIndex="1" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" weight="6" joints="miter">
+                        <fill>
+                          <SolidColor color="#FFFFFF" alpha="0.8"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!1200 1035[#2DE.DA #4E2.A8 993 1477!993 1477|1200 1600!1200 1600[#6E8.07 #72A.2A 1200 2068"/>
+                  </edges>
+                </DOMShape>
+                <DOMSymbolInstance libraryItemName="- Icons/Portal Connect Icon 1" name="" centerPoint3DX="60" centerPoint3DY="51.75">
+                  <matrix>
+                    <Matrix tx="60" ty="51.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter blurX="2" blurY="2" distance="1"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Portal Connect Icon 2" name="" centerPoint3DX="60" centerPoint3DY="103.4">
+                  <matrix>
+                    <Matrix tx="60" ty="103.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter blurX="2" blurY="2" distance="1"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
         <DOMLayer name="top action" color="#FF4FFF" parentLayerIndex="1" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMStaticText width="46.85" height="16.25" autoExpand="true" isSelectable="false">
+                <DOMStaticText width="36" height="17.25" autoExpand="true" isSelectable="false">
                   <matrix>
-                    <Matrix tx="9" ty="7"/>
+                    <Matrix tx="24" ty="7"/>
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
-                      <characters>MOVE 2</characters>
+                      <characters>MOVE  3</characters>
                       <textAttrs>
-                        <DOMTextAttrs aliasText="false" size="14" bitmapSize="280" face="TrebuchetMS"/>
+                        <DOMTextAttrs aliasText="false" size="16" bitmapSize="320" face="BigNoodleTitling" fillColor="#FFFFFF"/>
                       </textAttrs>
                     </DOMTextRun>
                   </textRuns>
+                  <filters>
+                    <DropShadowFilter blurX="2" blurY="2" distance="1"/>
+                  </filters>
                 </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="14.5" centerPoint3DY="14.5">
+                  <matrix>
+                    <Matrix tx="14.5" ty="14.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter blurX="2" blurY="2" distance="1"/>
+                  </filters>
+                </DOMSymbolInstance>
               </elements>
             </DOMFrame>
           </frames>
@@ -77,18 +135,21 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMStaticText width="116" height="34.5" isSelectable="false">
+                <DOMStaticText width="116" height="38.6" isSelectable="false">
                   <matrix>
                     <Matrix tx="2" ty="136"/>
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
-                      <characters>CONNECT&#xD;BASES</characters>
+                      <characters>CONNECT BASES&#xD;TO TELEPORT UNITS</characters>
                       <textAttrs>
-                        <DOMTextAttrs alignment="center" aliasText="false" size="14" bitmapSize="280" face="TrebuchetMS"/>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="17" bitmapSize="340" face="BigNoodleTitling"/>
                       </textAttrs>
                     </DOMTextRun>
                   </textRuns>
+                  <filters>
+                    <DropShadowFilter blurX="2" blurY="2" color="#FFFFFF" distance="1" strength="0.5"/>
+                  </filters>
                 </DOMStaticText>
               </elements>
             </DOMFrame>
@@ -136,24 +197,14 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMGroup>
-                  <members>
-                    <DOMShape>
-                      <strokes>
-                        <StrokeStyle index="1">
-                          <SolidStroke scaleMode="normal" caps="none" weight="5" joints="miter">
-                            <fill>
-                              <SolidColor/>
-                            </fill>
-                          </SolidStroke>
-                        </StrokeStyle>
-                      </strokes>
-                      <edges>
-                        <Edge strokeStyle="1" edges="!40 1960|400 1600!400 1600|2000 1600!2000 1600|2360 1240"/>
-                      </edges>
-                    </DOMShape>
-                  </members>
-                </DOMGroup>
+                <DOMSymbolInstance libraryItemName="- Cards/- Card Assets/Card Divider" name="" centerPoint3DX="60" centerPoint3DY="80">
+                  <matrix>
+                    <Matrix tx="60" ty="80"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
               </elements>
             </DOMFrame>
           </frames>
@@ -170,15 +221,15 @@
                     <Point x="-16.9" y="17"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMStaticText width="24.5" height="23.25" isSelectable="false">
+                <DOMStaticText width="24.5" height="21.55" isSelectable="false">
                   <matrix>
-                    <Matrix tx="88" ty="6"/>
+                    <Matrix tx="88.6" ty="7.25"/>
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
                       <characters>8</characters>
                       <textAttrs>
-                        <DOMTextAttrs alignment="center" aliasText="false" size="20" bitmapSize="400" face="TrebuchetMS"/>
+                        <DOMTextAttrs alignment="center" aliasText="false" size="20" bitmapSize="400" face="BigNoodleTitling"/>
                       </textAttrs>
                     </DOMTextRun>
                   </textRuns>
@@ -187,7 +238,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="top box" color="#4FFF4F" parentLayerIndex="1" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="top box" color="#4FFF4F" parentLayerIndex="1" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>

@@ -32,25 +32,25 @@ class UnitCards
 			iconOffset: 4
 		},
 		"Assault Team": {
-			strength: 2,
+			strength: 1,
 			cost: 3,
 			pictureTile: 12,
 			iconOffset: 5
 		},
 		"Armoured Core": {
-			strength: 3,
+			strength: 2,
 			cost: 6,
 			pictureTile: 13,
 			iconOffset: 6
 		},
 		"Titan Force": {
-			strength: 4,
+			strength: 3,
 			cost: 12,
 			pictureTile: 14,
 			iconOffset: 7
 		},
 		"Capital Army": {
-			strength: 5,
+			strength: 4,
 			cost: 24,
 			pictureTile: 15,
 			iconOffset: 8

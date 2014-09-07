@@ -10,18 +10,16 @@ Improvements based on Player feedback
 
 Incomplete features
 -------------------
-
++ Change language on Engineer's construction screen to prevent confusion over building unints
 
 Improvements
 ------------
-+ Add unit inset to show currently selected unit, and unit strength
-+ Balance card values, cost vs movement
-+ In-game player guide, getting started
-+ Change language on Engineer's construction screen to prevent confusion over building unints
 + Sensible map layouts for low-player games
++ Add unit inset to show currently selected unit, and unit strength
++ In-game player guide, getting started
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Combat report
-+ Icon language of cards should match on screen icons
++ Explosion animation for combat
 + Plain instead of blue tinted icons for units on cards
 + Switch discard and cancel buttons over
 + Standardise discard icon with interface
@@ -33,7 +31,7 @@ Improvements
 + Sexier graphics for player interface
 + Sexier graphics for cards
 + Sexy animated graphics for linking bases
-+ Animations for game actions
++ Animations for game actions, for example movement
 + Animate resources being gathered
 + Replay feature to see last turn
 + Add number of worlds to player stats bar

@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon - Resources" itemID="53f8bb68-000002e1" sourceLibraryItemHRef="Symbol 1" lastModified="1409786151">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icon - Resources" itemID="53f8bb68-000002e1" sourceLibraryItemHRef="Symbol 1" lastModified="1410121181">
   <timeline>
     <DOMTimeline name="Icon - Resources">
       <layers>
@@ -6,21 +6,30 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMOvalObject objectWidth="31" objectHeight="31" x="-284" y="23" endAngle="0">
-                  <matrix>
-                    <Matrix a="0.806472778320313" d="0.806472778320313" tx="216.55" ty="-31.05"/>
-                  </matrix>
-                  <fill>
-                    <SolidColor color="#FF9900"/>
-                  </fill>
-                  <stroke>
-                    <SolidStroke scaleMode="normal" caps="none" weight="3" joints="miter">
-                      <fill>
-                        <SolidColor color="#7B5925"/>
-                      </fill>
-                    </SolidStroke>
-                  </stroke>
-                </DOMOvalObject>
+                <DOMShape isDrawingObject="true">
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FF9900"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#FFC400"/>
+                    </FillStyle>
+                  </fills>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" caps="none" weight="2" joints="miter">
+                        <fill>
+                          <SolidColor color="#996600"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge fillStyle1="2" strokeStyle="1" edges="!-201 148.5[-250 #53.E -250 0!-250 0[-250 -103 -176 -177!-176 -177[-103 -250 0 -250!0 -250[103 -250 177 -177!177 -177[#BC.3D #FFFF5A.65 197.5 -153.5"/>
+                    <Edge fillStyle1="1" strokeStyle="1" edges="!197.5 -153.5[250 -87.140625 250 0!250 0[250 103 177 177!177 177[103 250 0 250!0 250[-103 250 -176 177!-176 177[#FFFF42.42 #A3.42 -201 148.5"/>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="!-201 148.5|197.5 -153.5"/>
+                  </edges>
+                </DOMShape>
               </elements>
             </DOMFrame>
           </frames>

@@ -25,7 +25,7 @@
                     <Point x="163.55" y="19.75"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="Planet Owner Marker" name="" centerPoint3DX="380" centerPoint3DY="21">
+                <DOMSymbolInstance libraryItemName="- Icons/Planet Owner Marker" name="" centerPoint3DX="380" centerPoint3DY="21">
                   <matrix>
                     <Matrix tx="380" ty="21"/>
                   </matrix>

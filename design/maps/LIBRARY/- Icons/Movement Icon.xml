@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Movement Icon" itemID="540cbc5e-0000078e" sourceLibraryItemHRef="Symbol 1" lastModified="1410120798">
+  <timeline>
+    <DOMTimeline name="Movement Icon">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMBitmapInstance name="" referenceID="" selected="true" libraryItemName="- Bitmaps/icon-move.png">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="-9.75" ty="-9.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="19.5" y="19.5"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
