@@ -115,7 +115,10 @@ class MapUI extends BaseUI
 		
 		mapImage.bitmapData = model.getBackground();
 		
-		viewLayer.addEventListener(MouseEvent.MOUSE_MOVE, moveHexCursor);
+		#if !mobile
+			viewLayer.addEventListener(MouseEvent.MOUSE_MOVE, moveHexCursor);
+		#end
+		
 		viewLayer.addEventListener(MouseEvent.MOUSE_DOWN, markSelectedHex);
 		
 		(markedHex.map == currentModel) ? markedImage.show() : markedImage.hide();
