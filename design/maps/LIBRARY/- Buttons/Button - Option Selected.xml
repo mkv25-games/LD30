@@ -1,8 +1,8 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Buttons/Button - Option Selected" itemID="540b851c-0000066e" lastModified="1410041455">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Buttons/Button - Option Selected" itemID="540b851c-0000066e" lastModified="1410098152" lastUniqueIdentifier="1">
   <timeline>
     <DOMTimeline name="Button - Option Selected">
       <layers>
-        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+        <DOMLayer name="selected state" color="#4FFF4F" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -32,6 +32,19 @@
                     </SolidStroke>
                   </stroke>
                 </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="button" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Buttons/Button - Option Up" name="" centerPoint3DX="130" centerPoint3DY="40">
+                  <transformationPoint>
+                    <Point x="130" y="40"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
               </elements>
             </DOMFrame>
           </frames>

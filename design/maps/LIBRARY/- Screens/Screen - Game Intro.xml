@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Intro" itemID="540b7789-000002a6" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1410045191" lastUniqueIdentifier="36">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Game Intro" itemID="540b7789-000002a6" sourceLibraryItemHRef="- Screens/Screen - Choose Action - Deploy copy" lastModified="1410098086" lastUniqueIdentifier="36">
   <timeline>
     <DOMTimeline name="Screen - Game Intro">
       <layers>
@@ -98,14 +98,6 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
-                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Up" name="" centerPoint3DX="149.5" centerPoint3DY="114.3">
-                  <matrix>
-                    <Matrix tx="109.5" ty="74.3"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point x="40" y="40"/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
                 <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Selected" name="" centerPoint3DX="149.5" centerPoint3DY="114.3">
                   <matrix>
                     <Matrix tx="109.5" ty="74.3"/>

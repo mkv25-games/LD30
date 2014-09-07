@@ -27,7 +27,7 @@ class WinningConditionsTable implements IDBVOTable
 		var row0:WinningConditionsRow = cast index(new WinningConditionsRow(dbvos).init(0, "None", "", "", ""));
 		var row1:WinningConditionsRow = cast index(new WinningConditionsRow(dbvos).init(1, "Short Game", "Master of Expansion", "Most territory on three worlds", "Capture three planets, and have the most territory at the end of a round."));
 		var row3:WinningConditionsRow = cast index(new WinningConditionsRow(dbvos).init(3, "Medium Game", "All your base are belong to us", "Captured all enemy bases", "Capture all bases of all your enemies at the end of a round."));
-		var row4:WinningConditionsRow = cast index(new WinningConditionsRow(dbvos).init(4, "Long Game", "War, War Never Changes, War Never Ends", "Destroyed all enemy units", "Destroy or capture every single last enemy unit and base."));
+		var row4:WinningConditionsRow = cast index(new WinningConditionsRow(dbvos).init(4, "Long Game", "War, War Never Changes", "Destroyed all enemy units", "Destroy or capture every single last enemy unit and base."));
 			
 		return this;
 	}

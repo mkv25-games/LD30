@@ -21,15 +21,11 @@ class GameFlowController
 	var screenController:ScreenController;
 	var gameOverMenu:GameOverUI;
 	
-	var flagAllYourBaseAreBelongToUsEnabled:Bool;
-	var flagMasterOfExpansionEnabled:Bool;
-	var flagWarWarNeverChangesWarNeverEnds:Bool;
+	var winningCondition:WinningConditionsRow;
 	
 	public function new() 
 	{
-		flagAllYourBaseAreBelongToUsEnabled = true;
-		flagMasterOfExpansionEnabled = true;
-		flagWarWarNeverChangesWarNeverEnds = false;
+		winningCondition = null;
 	}
 	
 	public function setup(screenController:ScreenController)
@@ -38,11 +34,18 @@ class GameFlowController
 		
 		createMenus();
 		
+		EventBus.winningConditionChanged.add(handle_winningConditionChanged);
+		
 		EventBus.startNewGame.add(handle_startNewGame);
 		EventBus.restartGame.add(handle_restartGame);
 		
 		EventBus.activePlayerChanged.add(handle_startOfPlayersTurn);
 		EventBus.playerHasRanOutCards.add(handle_endOfPlayersTurn);
+	}
+	
+	function handle_winningConditionChanged(winningCondition:WinningConditionsRow):Void
+	{
+		this.winningCondition = winningCondition;
 	}
 	
 	function handle_startNewGame(?model)
@@ -77,41 +80,38 @@ class GameFlowController
 		// Using end game conditions
 		removePlayersFromGame();
 		
-		// Check endgame conditions
+		// Check for endgame conditions
 		if (activeGame.players.length < 2)
 		{
 			var winner:PlayerModel = activeGame.players[0];
 			
 			// There can only be one
-			if (flagAllYourBaseAreBelongToUsEnabled)
+			if (winningCondition.id == WinningConditionsEnum.MEDIUM_GAME)
 			{
 				endGame_conditionAllYourBaseAreBelongToUs(winner);
+				return;
 			}
 			else
 			{
 				endGame_conditionWarWarNeverChangesWarNeverEnds(winner);
+				return;
 			}
 		}
 		else if (activeGame.activePlayer == activeGame.lastPlayerInRound)
 		{
-			if (flagMasterOfExpansionEnabled)
+			if (winningCondition.id == WinningConditionsEnum.SHORT_GAME)
 			{
 				var winner:PlayerModel = attemptToFindMasterOfExpansion(activeGame.players);
 				if (winner != null)
 				{
 					endGame_conditionMasterOfExpansion(winner);
-				}
-				else
-				{
-					delayedStart_nextPlayersTurn();
+					return;
 				}
 			}
 		}
-		else
-		{
-			// TODO: Show end of turn message, and introduce next player
-			delayedStart_nextPlayersTurn();
-		}
+		
+		// TODO: Show end of turn message, and introduce next player
+		delayedStart_nextPlayersTurn();
 	}
 	
 	function attemptToFindMasterOfExpansion(players:Array<PlayerModel>):PlayerModel
@@ -160,7 +160,7 @@ class GameFlowController
 		// find players which have failed basic game conditions
 		for (player in players)
 		{
-			if (flagAllYourBaseAreBelongToUsEnabled && player.baseCount() == 0)
+			if (winningCondition.id == WinningConditionsEnum.MEDIUM_GAME && player.baseCount() == 0)
 			{
 				// ALL YOUR BASE ARE BELONG TO US - (medium) capture all bases belonging to your enemies.
 				playersToRemoveFromGame.push(player);

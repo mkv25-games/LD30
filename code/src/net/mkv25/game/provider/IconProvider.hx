@@ -14,6 +14,10 @@ class IconProvider
 	public static var ICON_STATUS_UNITS:BitmapData;
 	public static var ICON_STATUS_TERRITORY:BitmapData;
 	public static var ICON_STATUS_RESOURCES:BitmapData;
+	
+	public static var ICON_SHORT_GAME:BitmapData;
+	public static var ICON_MEDIUM_GAME:BitmapData;
+	public static var ICON_LONG_GAME:BitmapData;
 
 	public static var WORLD_ICONS:Array<BitmapData>;
 	
@@ -28,6 +32,10 @@ class IconProvider
 		ICON_STATUS_UNITS = getIcon(3);
 		ICON_STATUS_RESOURCES = getIcon(2);
 		ICON_STATUS_TERRITORY = getIcon(1);
+		
+		ICON_SHORT_GAME = getIcon(21);
+		ICON_MEDIUM_GAME = getIcon(32);
+		ICON_LONG_GAME = getIcon(43);
 		
 		WORLD_ICONS = new Array<BitmapData>();
 		WORLD_ICONS.push(getIcon(10));
