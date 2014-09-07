@@ -25,6 +25,7 @@ import openfl.Assets;
 
 class GameSetupScreen extends Screen
 {
+	var gameLengthText:TextUI;
 	var gameModeText:TextUI;
 	var winningConditionText:TextUI;
 	
@@ -39,16 +40,18 @@ class GameSetupScreen extends Screen
 	{
 		setBackground("img/setup-screen.png");
 		
-		gameModeText = cast TextUI.makeFor("Winning Condition".toUpperCase(), 0xFFFFFF).fontSize(28).size(Screen.WIDTH, 40).move(0, 100);
-		winningConditionText = cast TextUI.makeFor("Detailed explanation\nof rules".toUpperCase(), 0x999999).fontSize(24).size(Screen.WIDTH, 70).move(0, 150);
+		gameLengthText = cast TextUI.makeFor("Game Mode".toUpperCase(), 0xFFFFFF).fontSize(28).size(Screen.WIDTH, 40).move(0, 260);
+		gameModeText = cast TextUI.makeFor("Winning Condition".toUpperCase(), 0xFFFFFF).fontSize(28).size(Screen.WIDTH, 40).move(0, 390);
+		winningConditionText = cast TextUI.makeFor("Detailed explanation\nof rules".toUpperCase(), 0x999999).fontSize(24).size(Screen.WIDTH, 70).move(0, 430);
 		
 		startButton = new ButtonUI();
 		startButton.setup("START GAME", onStartAction);
-		startButton.move(horizontalCenter, verticalCenter + 100);
+		startButton.move(horizontalCenter, 600);
 		
-		artwork.addChild(startButton.artwork);
+		artwork.addChild(gameLengthText.artwork);
 		artwork.addChild(gameModeText.artwork);
 		artwork.addChild(winningConditionText.artwork);
+		artwork.addChild(startButton.artwork);
 	}
 	
 	override public function show():Void 
