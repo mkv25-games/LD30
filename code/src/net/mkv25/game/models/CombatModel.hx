@@ -82,6 +82,7 @@ class CombatModel
 							// Rule: Ownership of a base will change if a higher strength enemy exists on the tile at the end of a turn's combat.
 							combatLog.baseCaptured(firstUnit, secondUnit);
 							UnitProvider.changeOwner(secondUnit, firstUnit.owner);
+							
 							// Rule: When a base is captured, all portal connections at that base are closed
 							if (secondUnit.hasConnections())
 							{
@@ -93,6 +94,12 @@ class CombatModel
 						{
 							// Rule: Unequal strength fights result in the loss of the lower strenth unit, no damage is incurred on the higher strength unit, and it will fight again in the next wave.
 							location.remove(secondUnit);
+							
+							// Rule: When a base is destroyed, all portal connections at that base are closed
+							if (secondUnit.hasConnections())
+							{
+								secondUnit.breakAllConnections();
+							}
 							combatLog.unitDestroyed(firstUnit, secondUnit);
 							EventBus.combat_unitDestroyedAtLocation.dispatch(location);
 						}
