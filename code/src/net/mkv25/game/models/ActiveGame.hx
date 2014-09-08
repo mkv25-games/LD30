@@ -121,8 +121,8 @@ class ActiveGame extends CoreModel
 		}
 		else
 		{
-			var index = (activePlayer.playerNumberZeroBased + 1) % players.length;
-			activePlayer = players[index];
+			var index = Lambda.indexOf(players, activePlayer) + 1;
+			activePlayer = players[index % players.length];
 		}
 		
 		updateAllMapAndPlayerIndexes();
