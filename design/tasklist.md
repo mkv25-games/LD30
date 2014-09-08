@@ -9,13 +9,13 @@ Improvements based on Player feedback
 -------------------------------------
 
 
-Incomplete features
+In progress
 -------------------
-+ Change language on Engineer's construction screen to prevent confusion over building unints
++ Sensible map layouts for low-player games
+
 
 Improvements
 ------------
-+ Sensible map layouts for low-player games
 + Add unit inset to show currently selected unit, and unit strength
 + In-game player guide, getting started
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
