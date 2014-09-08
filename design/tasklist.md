@@ -3,7 +3,6 @@ Things to do
 
 Bugs
 ----
-+ Can't select 1 strength standard base when a 2 strength unit is in the same tile.
 + In a 6 player game, after eliminating Player 6, Player Green, and Player Purple, the turn flow was locked on Player 5 (yellow/orange)
 + Destroyed a strength 2 base with a strength 2 unit, and it didn't remove the portal
 

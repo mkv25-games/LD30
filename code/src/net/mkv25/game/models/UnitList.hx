@@ -84,7 +84,7 @@ class UnitList
 		if (units.length > 0)
 		{
 			// if set, offset from the starting unit, i.e. skip that unit until last
-			var offset:Int = (butPreferablyNot == null) ? 0 : Lambda.indexOf(units, butPreferablyNot) + 1;
+			var offset:Int = (butPreferablyNot == null) ? 0 : Lambda.indexOf(units, butPreferablyNot);
 			if (offset == -1)
 			{
 				offset = 0;
