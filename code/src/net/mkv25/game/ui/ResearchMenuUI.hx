@@ -43,7 +43,7 @@ class ResearchMenuUI extends BaseUI
 		createBackgroundCover();
 		createBackgroundTint();
 		
-		titleText = cast TextUI.makeFor("develop a technology".toUpperCase(), 0xFFFFFF).fontSize(26).size(ResearchMenuUI.SIZE, 40).move(0, 70);
+		titleText = cast TextUI.makeFor("buy technology for resources".toUpperCase(), 0xFFFFFF).fontSize(26).size(ResearchMenuUI.SIZE, 40).move(0, 70);
 		
 		createCards();
 		positionCards();

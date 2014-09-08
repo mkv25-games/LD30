@@ -43,7 +43,7 @@ class ConstructionMenuUI extends BaseUI
 		createBackgroundCover();
 		createBackgroundTint();
 		
-		titleText = cast TextUI.makeFor("construct a unit or base".toUpperCase(), 0xFFFFFF).fontSize(26).size(ConstructionMenuUI.SIZE, 40).move(0, 70);
+		titleText = cast TextUI.makeFor("buy units for resources".toUpperCase(), 0xFFFFFF).fontSize(26).size(ConstructionMenuUI.SIZE, 40).move(0, 70);
 		
 		createCards();
 		positionCards();

@@ -99,7 +99,7 @@ class UnitList
 				var index:Int = position + offset;
 				var unit:MapUnit = units[index % units.length];
 				
-				if (unit.movedThisTurn || unit.engagedInCombatThisTurn)
+				if (unit.movedThisTurn || unit.engagedInCombatThisTurn || unit == butPreferablyNot)
 				{
 					continue;
 				}
