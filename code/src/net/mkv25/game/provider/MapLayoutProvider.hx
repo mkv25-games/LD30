@@ -53,7 +53,15 @@ class MapLayoutProvider
 	
 	static private function createWorldsForTwoPlayers(game:ActiveGame):Void
 	{
-		createWorldsForSixPlayers(game);
+		MapLayoutProvider.createSpaceMap(game, 4);
+		
+		game.worlds = new Array<MapModel>();
+		
+		addWorld(game, -4,  2, 0, "img/planet01.png");
+		addWorld(game, 4, -2, 1, "img/planet02.png");
+		
+		addWorld(game, 0, -2, 5, "img/planet06.png");
+		addWorld(game, 0, 2, 4, "img/planet05.png");
 	}
 	
 	static private function createWorldsForThreePlayers(game:ActiveGame):Void

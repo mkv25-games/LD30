@@ -17,6 +17,7 @@ In progress
 
 Improvements
 ------------
++ Test game play with reduced number of starting cards, and two units predeployed on planet
 + Add unit inset to show currently selected unit, and unit strength
 + In-game player guide, getting started
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
