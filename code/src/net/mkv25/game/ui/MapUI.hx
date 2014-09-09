@@ -13,6 +13,7 @@ import net.mkv25.base.core.Recycler;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.base.ui.IconButtonUI;
+import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.audio.SoundEffects;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.CombatModel;
@@ -28,6 +29,7 @@ import net.mkv25.game.provider.HexProvider;
 import net.mkv25.game.provider.IconProvider;
 import openfl.Assets;
 import openfl.geom.Point;
+import openfl.text.TextFormatAlign;
 
 class MapUI extends BaseUI
 {
@@ -62,6 +64,8 @@ class MapUI extends BaseUI
 	
 	var bitmapRecycler:Recycler<Bitmap>;
 	var indicatorRecycler:Recycler<UnitCountIndicatorUI>;
+	
+	var hexInfoText:TextUI;
 	
 	public function new() 
 	{
@@ -105,6 +109,26 @@ class MapUI extends BaseUI
 		
 		bitmapRecycler = new Recycler<Bitmap>(Bitmap);
 		indicatorRecycler = new Recycler<UnitCountIndicatorUI>(UnitCountIndicatorUI);
+		
+		hexInfoText = cast TextUI.makeFor("0, 0", 0xFFFFFF).fontSize(16).align(TextFormatAlign.RIGHT).size(200, 40).move(MapUI.MAP_WIDTH - 205, 5);
+		hexInfoText.artwork.mouseEnabled = hexInfoText.artwork.mouseChildren = false; 
+		
+		#if !debug
+			hexInfoText.hide();
+		#end
+		
+		artwork.addChild(mapImage);
+		artwork.addChild(viewLayer);
+		viewLayer.addChild(planetLayer);
+		viewLayer.addChild(hexLayer);
+		viewLayer.addChild(movementLayer);
+		viewLayer.addChild(lineLayer);
+		viewLayer.addChild(unitLayer);
+		viewLayer.addChild(markedImage.artwork);
+		viewLayer.addChild(highlightImage.artwork);
+		artwork.addChild(spaceViewButton.artwork);
+		artwork.addChild(worldViewButton.artwork);
+		artwork.addChild(hexInfoText.artwork);
 		
 		EventBus.mapRequiresRedraw.add(handleMapRequiresRedraw);
 	}
@@ -208,12 +232,14 @@ class MapUI extends BaseUI
 			EventBus.mapMarkerPlacedOnMap.dispatch(markedHex);
 			
 			highlightImage.popIn();
+			hexInfoText.setText(tile.q + ", " + tile.r);
 		}
 		else
 		{
 			markedHex.r = -100;
 			markedHex.q = -100;
 			markedHex.map = Index.activeGame.space;
+			hexInfoText.setText("No hex");
 		}
 		
 		updateWorldViewButton();
@@ -263,19 +289,6 @@ class MapUI extends BaseUI
 		// position view layer
 		viewLayer.x = MAP_WIDTH / 2;
 		viewLayer.y = MAP_HEIGHT / 2;
-		
-		// reset the order of the layers
-		artwork.addChild(mapImage);
-		artwork.addChild(viewLayer);
-		viewLayer.addChild(planetLayer);
-		viewLayer.addChild(hexLayer);
-		viewLayer.addChild(movementLayer);
-		viewLayer.addChild(lineLayer);
-		viewLayer.addChild(unitLayer);
-		viewLayer.addChild(markedImage.artwork);
-		viewLayer.addChild(highlightImage.artwork);
-		artwork.addChild(spaceViewButton.artwork);
-		artwork.addChild(worldViewButton.artwork);
 		
 		updateButtons();
 		

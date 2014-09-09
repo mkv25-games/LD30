@@ -5,6 +5,7 @@ import net.mkv25.game.enums.PlayableCardType;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.provider.HexProvider;
 import net.mkv25.game.provider.IconProvider;
+import net.mkv25.game.provider.MapLayoutProvider;
 import net.mkv25.game.provider.UnitProvider;
 import net.mkv25.game.resources.UnitCards;
 import openfl.Assets;
@@ -25,7 +26,7 @@ class ActiveGame extends CoreModel
 		IconProvider.setup();
 		
 		validateNumberOfPlayers(numberOfPlayers);
-		createMaps(numberOfPlayers);
+		MapLayoutProvider.createWorldsFor(numberOfPlayers, this);
 		createPlayers(numberOfPlayers);
 		createStartingBases();
 	}
@@ -42,50 +43,19 @@ class ActiveGame extends CoreModel
 		}
 	}
 	
-	function createMaps(numberOfPlayers:Int):Void
-	{
-		space = new MapModel();
-		space.setup("s0", Assets.getBitmapData("img/starfield-small.png"), null);
-		space.hexes = MapModel.createCircle(5);
-		space.indexHexes();
-		
-		worlds = new Array<MapModel>();
-		
-		// player worlds, ideally variable based on number of players
-		addWorld(-4,  4, 0, "img/planet01.png");
-		addWorld( 4, -4, 1, "img/planet02.png");
-		addWorld(-4,  0, 2, "img/planet03.png");
-		addWorld( 4,  0, 3, "img/planet04.png");
-		addWorld( 0, -4, 5, "img/planet06.png");
-		addWorld( 0,  4, 6, "img/planet07.png");
-		
-		// central world, always present
-		addWorld(0, 0, 4, "img/planet05.png");
-	}
-	
 	function createStartingBases():Void
 	{
 		for (player in players)
 		{
 			var world = worlds[player.playerNumberZeroBased];
+			if (world == null)
+			{
+				throw "No world available for player " + (player.playerNumberZeroBased + 1) + " at world index " + player.playerNumberZeroBased + ".";
+			}
 			
 			var startingBase = UnitProvider.getUnit(player, PlayableCardType.STANDARD_BASE);
 			world.getHexTile(0, 0).add(startingBase);
 		}
-	}
-	
-	function addWorld(q:Int, r:Int, id:Int, backgroundAsset:String):Void
-	{
-		var world:MapModel = new MapModel();
-		world.setup("w" + id, Assets.getBitmapData(backgroundAsset), IconProvider.WORLD_ICONS[id]);
-		world.hexes = MapModel.createRectangle(13, 9);
-		world.indexHexes();
-		
-		var hex:HexTile = space.getHexTile(q, r);
-		hex.add(world);
-		world.setSpaceHex(hex);
-		
-		worlds.push(world);
 	}
 	
 	function createPlayers(numberOfPlayers:Int):Void

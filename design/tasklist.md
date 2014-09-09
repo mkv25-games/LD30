@@ -3,6 +3,7 @@ Things to do
 
 Bugs
 ----
++ Icons for number of players are misplaced, 4 and 3 are swithced.
 
 
 Improvements based on Player feedback
@@ -38,6 +39,7 @@ Improvements
 + Add number of worlds to player stats bar
 + Add a screen to review all player stats
 + Add conflict marker to planets with multipler owners
++ Add decent sound effects across the interface
 - Add portal symbol to end of portal line links
 - Draw better icon for change/select unit action
 - Show connections between portals that are both on planets when in space
