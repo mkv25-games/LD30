@@ -83,17 +83,27 @@ class MapLayoutProvider
 		
 		game.worlds = new Array<MapModel>();
 		
-		addWorld(game, -3,  -1, 0, "img/planet01.png");
-		addWorld(game,  3, -4, 1, "img/planet02.png");
-		addWorld(game, 3,  1, 2, "img/planet03.png");
-		addWorld(game, -3,  4, 3, "img/planet04.png");
+		addWorld(game, 0,  -4, 0, "img/planet01.png");
+		addWorld(game, 3, -3, 1, "img/planet02.png");
+		addWorld(game, 2,  1, 2, "img/planet03.png");
+		addWorld(game, -2, 3, 3, "img/planet04.png");
 		
 		addWorld(game, 0, 0, 4, "img/planet05.png");
 	}
 	
 	static private function createWorldsForFivePlayers(game:ActiveGame):Void
 	{
-		createWorldsForSixPlayers(game);
+		MapLayoutProvider.createSpaceMap(game, 6);
+		
+		game.worlds = new Array<MapModel>();
+		
+		addWorld(game, 0, -5, 0, "img/planet01.png");
+		addWorld(game, 3, 2, 1, "img/planet02.png");
+		addWorld(game, 5, -4, 2, "img/planet03.png");
+		addWorld(game, -5, 1, 5, "img/planet06.png");
+		addWorld(game, -3, 5, 3, "img/planet04.png");
+		
+		addWorld(game, 0, 0, 4, "img/planet05.png");
 	}
 	
 	static private function createWorldsForSixPlayers(game:ActiveGame):Void
