@@ -41,6 +41,10 @@ Improvements
 + Add a screen to review all player stats
 + Add conflict marker to planets with multipler owners
 + Add decent sound effects across the interface
++ Create sandbox mode for single player
++ Create beginners guide / tutorial
++ Create new animation that highlights space map, and zooms down to planet
++ Animate to show zoom down to planets, and zoom up to space
 - Add portal symbol to end of portal line links
 - Draw better icon for change/select unit action
 - Show connections between portals that are both on planets when in space
