@@ -10,6 +10,7 @@ import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.models.PlayerHand;
 import net.mkv25.game.provider.CardPictureProvider;
+import openfl.Assets;
 import openfl.text.TextFormatAlign;
 
 class PlayerHandUI extends BaseUI
@@ -21,6 +22,9 @@ class PlayerHandUI extends BaseUI
 	
 	var discardCountText:TextUI;
 	var deckCountText:TextUI;
+	
+	var discardIcon:BitmapUI;
+	var deckIcon:BitmapUI;
 	
 	public function new() 
 	{
@@ -41,8 +45,11 @@ class PlayerHandUI extends BaseUI
 			cards.push(card);
 		}
 		
-		discardCountText = cast TextUI.makeFor("X : DISCARDS", 0x111111).fontSize(24).align(TextFormatAlign.LEFT).size(200, 40).move(10, 250 - 42);
-		deckCountText = cast TextUI.makeFor("DECK : X", 0x111111).fontSize(24).align(TextFormatAlign.RIGHT).size(200, 40).move(Screen.WIDTH - 210, 250 - 42);
+		discardCountText = cast TextUI.makeFor("X : DISCARDS", 0x111111).fontSize(24).align(TextFormatAlign.LEFT).size(200, 40).move(45, 250 - 42);
+		deckCountText = cast TextUI.makeFor("DECK : X", 0x111111).fontSize(24).align(TextFormatAlign.RIGHT).size(200, 40).move(Screen.WIDTH - 200 - 45, 250 - 42);
+		
+		discardIcon = cast BitmapUI.makeFor(Assets.getBitmapData("img/icon-discard.png")).move(25, 250 - 25);
+		deckIcon = cast BitmapUI.makeFor(Assets.getBitmapData("img/icon-draw.png")).move(Screen.WIDTH - 25, 250 - 25);
 		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(deselectTheActiveCard);
 		EventBus.addNewCardToActivePlayersDiscardPile.add(addNewCardToDiscardPile);
@@ -51,6 +58,8 @@ class PlayerHandUI extends BaseUI
 		
 		artwork.addChild(discardCountText.artwork);
 		artwork.addChild(deckCountText.artwork);
+		artwork.addChild(discardIcon.artwork);
+		artwork.addChild(deckIcon.artwork);
 	}
 	
 	override public function disable() 
@@ -118,6 +127,9 @@ class PlayerHandUI extends BaseUI
 		
 		discardCountText.setText(model.getDiscards().length + " : DISCARDS");
 		deckCountText.setText("DRAW DECK : " + model.getDeck().length);
+		
+		(model.getDeck().length > 0) ? deckIcon.enable() : deckIcon.disable();
+		(model.getDiscards().length > 0) ? discardIcon.enable() : discardIcon.disable();
 	}
 	
 	function onCardHolderSelected(selectedCard:CardHolderUI):Void

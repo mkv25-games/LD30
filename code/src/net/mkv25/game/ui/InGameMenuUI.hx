@@ -53,13 +53,13 @@ class InGameMenuUI extends BaseUI
 		option2.setup("OPTION TWO", selectOption2);
 		option2.move(hs, hs + 50);
 		
-		cancelButton = new IconButtonUI();
-		cancelButton.setup("img/icon-back.png", cancelAction);
-		cancelButton.move(hs - 50, hs + 150);
-		
 		discardButton = new IconButtonUI();
 		discardButton.setup("img/icon-discard.png", discardAction);
-		discardButton.move(hs + 50, hs + 150);
+		discardButton.move(hs - 50, hs + 150);
+		
+		cancelButton = new IconButtonUI();
+		cancelButton.setup("img/icon-cancel.png", cancelAction);
+		cancelButton.move(hs + 50, hs + 150);
 		
 		artwork.addChild(option1.artwork);
 		artwork.addChild(option2.artwork);
