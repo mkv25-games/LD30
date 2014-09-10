@@ -12,6 +12,7 @@ Improvements based on Player feedback
 In progress
 -----------
 + Animate card being bought and entering the discard pile
++ Animate resources being spent by popping resources upwards out of the resource icon
 
 
 Improvements
