@@ -11,7 +11,6 @@ Improvements based on Player feedback
 
 In progress
 -----------
-+ Animate newly drawn cards coming from the draw pile
 + Animate resources being gathered
 
 
