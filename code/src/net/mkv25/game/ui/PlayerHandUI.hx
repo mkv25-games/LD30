@@ -2,6 +2,7 @@ package net.mkv25.game.ui;
 
 import flash.display.Sprite;
 import motion.Actuate;
+import net.mkv25.base.core.Recycler;
 import net.mkv25.base.core.Screen;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
@@ -17,8 +18,8 @@ class PlayerHandUI extends BaseUI
 {
 	private var model:PlayerHand;
 	
+	var cardRecycler:Recycler<CardHolderUI>;
 	var cards:Array<CardHolderUI>;
-	var recycler:Sprite;
 	
 	var discardCountText:TextUI;
 	var deckCountText:TextUI;
@@ -30,21 +31,14 @@ class PlayerHandUI extends BaseUI
 	{
 		super();
 		
+		cardRecycler = new Recycler<CardHolderUI>(CardHolderUI);
 		cards = new Array<CardHolderUI>();
-		recycler = new Sprite();
 		
 		init();
 	}
 	
 	public function init():Void
 	{
-		for (i in 0...PlayerHand.MAX_HAND_SIZE)
-		{
-			var card = new CardHolderUI();
-			card.selected.add(onCardHolderSelected);
-			cards.push(card);
-		}
-		
 		discardCountText = cast TextUI.makeFor("X : DISCARDS", 0x111111).fontSize(24).align(TextFormatAlign.LEFT).size(200, 40).move(45, 250 - 42);
 		deckCountText = cast TextUI.makeFor("DECK : X", 0x111111).fontSize(24).align(TextFormatAlign.RIGHT).size(200, 40).move(Screen.WIDTH - 200 - 45, 250 - 42);
 		
@@ -53,6 +47,7 @@ class PlayerHandUI extends BaseUI
 		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(deselectTheActiveCard);
 		EventBus.addNewCardToActivePlayersDiscardPile.add(addNewCardToDiscardPile);
+		EventBus.harvestResourcesCardFromActivePlayersHand.add(harvestResourceCardFromHand);
 		EventBus.removeCardFromActivePlayersHand.add(removeCardFromHand);
 		EventBus.trashCardFromActivePlayersHand.add(trashCardFromHand);
 		
@@ -75,14 +70,26 @@ class PlayerHandUI extends BaseUI
 		
 		// while animating
 		disable();
+		cardRecycler.recycleAll();
+		while (cards.length > 0)
+		{
+			cards.pop();
+		}
 		
 		updateHandCounts();
 		
 		// populate cards with data
 		var cardsInHand = playersHand.getHand();
-		for (i in 0...cards.length)
+		for (i in 0...PlayerHand.MAX_HAND_SIZE)
 		{
-			var cardHolder = cards[i];
+			var cardHolder = cardRecycler.get();
+			cards.push(cardHolder);
+			Actuate.stop(cardHolder.artwork);
+			artwork.addChild(cardHolder.artwork);
+			
+			cardHolder.selected.removeAll();
+			cardHolder.selected.add(onCardHolderSelected);
+			
 			if (i < playersHand.numberOfCardsInHand())
 			{
 				var card = cardsInHand[i];
@@ -100,7 +107,7 @@ class PlayerHandUI extends BaseUI
 			else
 			{
 				cardHolder.setup(null);
-				recycler.addChild(cardHolder.artwork);
+				cardHolder.selected.removeAll();
 			}
 		}
 		
@@ -175,7 +182,36 @@ class PlayerHandUI extends BaseUI
 	{
 		model.addCardToDiscards(card);
 		
+		var cardHolder:CardHolderUI = cardRecycler.get();
+		artwork.addChild(cardHolder.artwork);
+		
+		cardHolder.move(Screen.WIDTH / 2, - 200);
+		cardHolder.show();
+		cardHolder.scale = 1.0;
+		cardHolder.artwork.alpha = 1.0;
+		cardHolder.setupCard(card);
+		cardHolder.disable();
+		
+		cardHolder.move(artwork.mouseX, artwork.mouseY);
+		
+		cardHolder.popIn().onComplete(cardHolder.animateDiscard, [discardIcon.artwork.x, discardIcon.artwork.y]);
+		
 		updateHandCounts();
+	}
+	
+	function harvestResourceCardFromHand(selectedCard:PlayableCard):Void
+	{
+		for (card in cards)
+		{
+			if (card.isSelected())
+			{
+				if (card.assignedCard.resources > 0)
+				{
+					EventBus.spawnResourcesForCardHolder.dispatch(card);
+					return;
+				}
+			}
+		}
 	}
 	
 	function removeCardFromHand(selectedCard:PlayableCard):Void
@@ -188,11 +224,6 @@ class PlayerHandUI extends BaseUI
 			{
 				card.disable();
 				card.animateDiscard(discardIcon.artwork.x, discardIcon.artwork.y);
-				
-				if (card.assignedCard.resources > 0)
-				{
-					EventBus.spawnResourcesForCardHolder.dispatch(card);
-				}
 			}
 		}
 		

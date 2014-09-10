@@ -150,8 +150,7 @@ class CardActionController
 		{
 			var activePlayer = Index.activeGame.activePlayer;
 			
-			// Resource assignment is currently handled by ResourceHarvestingUI
-			/* activePlayer.resources += resources; */
+			EventBus.harvestResourcesCardFromActivePlayersHand.dispatch(activeCard);
 			
 			discardActiveCard();
 		}
