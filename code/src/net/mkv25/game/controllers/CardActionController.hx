@@ -3,6 +3,7 @@ package net.mkv25.game.controllers;
 import net.mkv25.base.core.ScreenController;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayableCard;
+import net.mkv25.game.models.ResourceTransactionModel;
 import net.mkv25.game.ui.ConstructionMenuUI;
 import net.mkv25.game.ui.InGameMenuUI;
 import net.mkv25.game.ui.PortalsUI;
@@ -150,7 +151,9 @@ class CardActionController
 		{
 			var activePlayer = Index.activeGame.activePlayer;
 			
-			EventBus.harvestResourcesCardFromActivePlayersHand.dispatch(activeCard);
+			activePlayer.resources = activePlayer.resources + card.resources;
+			
+			EventBus.playerResourcesAdded.dispatch(new ResourceTransactionModel(activePlayer, card.resources));
 			
 			discardActiveCard();
 		}
@@ -163,7 +166,7 @@ class CardActionController
 		{
 			activePlayer.resources = activePlayer.resources - card.cost;
 			
-			EventBus.activePlayerResourcesChanged.dispatch(activePlayer);
+			EventBus.playerResourcesRemoved.dispatch(new ResourceTransactionModel(activePlayer, - card.cost));
 			EventBus.addNewCardToActivePlayersDiscardPile.dispatch(card);
 			
 			discardActiveCard();

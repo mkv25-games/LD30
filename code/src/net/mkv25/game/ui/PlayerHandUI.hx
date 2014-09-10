@@ -49,7 +49,6 @@ class PlayerHandUI extends BaseUI
 		
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(deselectTheActiveCard);
 		EventBus.addNewCardToActivePlayersDiscardPile.add(addNewCardToDiscardPile);
-		EventBus.harvestResourcesCardFromActivePlayersHand.add(harvestResourceCardFromHand);
 		EventBus.removeCardFromActivePlayersHand.add(removeCardFromHand);
 		EventBus.trashCardFromActivePlayersHand.add(trashCardFromHand);
 		
@@ -199,21 +198,6 @@ class PlayerHandUI extends BaseUI
 		cardHolder.zoomIn().onComplete(cardHolder.animateDiscard, [discardIcon.artwork.x, discardIcon.artwork.y]);
 		
 		updateHandCounts();
-	}
-	
-	function harvestResourceCardFromHand(selectedCard:PlayableCard):Void
-	{
-		for (card in cards)
-		{
-			if (card.isSelected())
-			{
-				if (card.assignedCard.resources > 0)
-				{
-					EventBus.spawnResourcesForCardHolder.dispatch(card);
-					return;
-				}
-			}
-		}
 	}
 	
 	function removeCardFromHand(selectedCard:PlayableCard):Void

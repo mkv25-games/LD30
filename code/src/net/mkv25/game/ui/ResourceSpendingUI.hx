@@ -9,14 +9,13 @@ import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.ResourceTransactionModel;
 import net.mkv25.game.provider.IconProvider;
 
-class ResourceHarvestingUI extends BaseUI
+class ResourceSpendingUI extends BaseUI
 {
-	public var cashedInCounter:Signal;
+	public var cashedOutCounter:Signal;
 	
 	var resourceRecycler:Recycler<BitmapUI>;
 	
 	var resourceCounter:BaseUI;
-	var discardPile:BaseUI;
 
 	public function new() 
 	{
@@ -24,7 +23,7 @@ class ResourceHarvestingUI extends BaseUI
 		
 		IconProvider.setup();
 		
-		cashedInCounter = new Signal();
+		cashedOutCounter = new Signal();
 		
 		resourceRecycler = new Recycler<BitmapUI>(BitmapUI);
 	}
@@ -32,24 +31,20 @@ class ResourceHarvestingUI extends BaseUI
 	function checksForValidHud():Void
 	{
 		resourceCounter = Index.resourceCounterHud;
-		discardPile = Index.discardPileHud;
 		
 		if (resourceCounter == null)
 		{
 			throw "Need to setup Index.resourceCounterHud with a valid UI element before spawning resources.";
 		}
-		
-		if (resourceCounter == null)
-		{
-			throw "Need to setup Index.discardPileHud with a valid UI element before spawning resources.";
-		}
 	}
 	
-	public function collectResources(transaction:ResourceTransactionModel):Void
+	public function spendResources(transaction:ResourceTransactionModel):Void
 	{
 		checksForValidHud();
 		
-		var amount = cast transaction.resourceChange;
+		resourceRecycler.recycleAll();
+		
+		var amount = cast Math.abs(transaction.resourceChange);
 		for (i in 0...amount)
 		{
 			var icon = resourceRecycler.get();
@@ -60,29 +55,21 @@ class ResourceHarvestingUI extends BaseUI
 			icon.artwork.alpha = 0.0;
 			icon.setBitmapData(IconProvider.ICON_RESOURCE_COUNTER);
 			
-			var delayTime:Float = 0.8 + (i * 0.15);
+			var delayTime:Float = 0.0 + (i * 0.15);
 			var animationTime:Float = 0.5;
 			
-			Actuate.tween(icon.artwork, 0.2, { alpha: 1.0 } ).delay(delayTime);
-			var animation = icon.moveBetween(discardPile, resourceCounter, animationTime, delayTime);
-			if (animation != null)
-			{
-				animation.onComplete(cashInResourceCounter, [icon, transaction]);
-			}
-			else
-			{
-				cashInResourceCounter(icon, transaction);
-			}
+			Actuate.apply(icon.artwork, { alpha: 1.0 } ).delay(delayTime);
+			cashOutResourceCounter(icon, transaction, delayTime);
 		}
 	}
 	
-	function cashInResourceCounter(icon:BitmapUI, transaction:ResourceTransactionModel):Void
+	function cashOutResourceCounter(icon:BitmapUI, transaction:ResourceTransactionModel, delayTime:Float):Void
 	{
-		icon.zoomOut();
+		icon.move(resourceCounter.artwork.x, resourceCounter.artwork.y);
 		
-		cashedInCounter.dispatch(transaction);
-		
-		resourceRecycler.recycle(icon);
+		Actuate.tween(icon.artwork, 0.2, { alpha: 0.0, y: icon.artwork.y - 25 } )
+			.delay(delayTime)
+			.onComplete(cashedOutCounter.dispatch, [transaction]);
 	}
 	
 }

@@ -7,6 +7,7 @@ import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.base.ui.TextUI;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.PlayerModel;
+import net.mkv25.game.models.ResourceTransactionModel;
 import net.mkv25.game.provider.IconProvider;
 
 class StatusBarUI extends BaseUI
@@ -21,6 +22,10 @@ class StatusBarUI extends BaseUI
 	var iconTerritory:BitmapUI;
 	var iconResources:BitmapUI;
 
+	var resourceHarvester:ResourceHarvestingUI;
+	var resourceSpender:ResourceSpendingUI;
+	var currentTransaction:ResourceTransactionModel;
+	
 	public function new() 
 	{
 		super();
@@ -29,7 +34,9 @@ class StatusBarUI extends BaseUI
 	
 		EventBus.activePlayerUpdated.add(onActivePlayerChanged);
 		EventBus.activePlayerChanged.add(onActivePlayerChanged);
-		EventBus.activePlayerResourcesChanged.add(onResourcesChanged);
+		
+		EventBus.playerResourcesAdded.add(onResourcesAdded);
+		EventBus.playerResourcesRemoved.add(onResourcesRemoved);
 		
 		Index.resourceCounterHud = iconResources;
 	}
@@ -50,6 +57,9 @@ class StatusBarUI extends BaseUI
 		iconTerritory = cast BitmapUI.makeFor(IconProvider.ICON_STATUS_TERRITORY).move(rhs - 20 - (spacing * 1), 25); 
 		iconResources = cast BitmapUI.makeFor(IconProvider.ICON_STATUS_RESOURCES).move(rhs - 20 - (spacing * 2), 25); 
 		
+		resourceHarvester = new ResourceHarvestingUI();
+		resourceSpender = new ResourceSpendingUI();
+		
 		artwork.addChild(playerNameText.artwork);
 		artwork.addChild(counterUnitsText.artwork);
 		artwork.addChild(counterTerritoryText.artwork);
@@ -57,6 +67,31 @@ class StatusBarUI extends BaseUI
 		artwork.addChild(iconUnits.artwork);
 		artwork.addChild(iconTerritory.artwork);
 		artwork.addChild(iconResources.artwork);
+		artwork.addChild(resourceHarvester.artwork);
+		artwork.addChild(resourceSpender.artwork);
+		
+		resourceHarvester.cashedInCounter.add(onCounterCashedIn);
+		resourceSpender.cashedOutCounter.add(onCounterCashedOut);
+	}
+	
+	function onCounterCashedIn(transaction:ResourceTransactionModel):Void
+	{
+		if (currentTransaction == transaction)
+		{
+			currentTransaction.resourceChange--;
+			var displayAmount = currentTransaction.playerResources - currentTransaction.resourceChange;
+			counterResourcesText.setText(Std.string(displayAmount));
+		}
+	}
+	
+	function onCounterCashedOut(transaction:ResourceTransactionModel):Void
+	{
+		if (currentTransaction == transaction)
+		{
+			currentTransaction.resourceChange++;
+			var displayAmount = currentTransaction.playerResources - currentTransaction.resourceChange;
+			counterResourcesText.setText(Std.string(displayAmount));
+		}
 	}
 	
 	function onActivePlayerChanged(player:PlayerModel):Void
@@ -68,9 +103,24 @@ class StatusBarUI extends BaseUI
 		counterUnitsText.setText(Std.string(player.unitCount() + player.baseCount()));
 	}
 	
-	function onResourcesChanged(player:PlayerModel):Void
+	function onResourcesRemoved(transaction:ResourceTransactionModel):Void
 	{
-		counterResourcesText.setText(Std.string(player.resources));
+		this.currentTransaction = transaction;
+		
+		var displayAmount = transaction.playerResources - transaction.resourceChange;
+		counterResourcesText.setText(Std.string(displayAmount));
+		
+		resourceSpender.spendResources(transaction);
+	}
+	
+	function onResourcesAdded(transaction:ResourceTransactionModel):Void
+	{
+		this.currentTransaction = transaction;
+		
+		var displayAmount = transaction.playerResources - transaction.resourceChange;
+		counterResourcesText.setText(Std.string(displayAmount));
+		
+		resourceHarvester.collectResources(transaction);
 	}
 	
 	function onTerritoryChanged(player:PlayerModel):Void

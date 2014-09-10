@@ -31,30 +31,44 @@ class Recycler<T>
 		return instance;
 	}
 	
+	public function recycle(instance:T):Void
+	{
+		inUse.remove(instance);
+		
+		cleanup(instance);
+		
+		unused.push(instance);
+	}
+	
 	public function recycleAll():Void
 	{
 		while (inUse.length > 0)
 		{
 			var instance:T = inUse.pop();
 			
+			cleanup(instance);
+			
 			// return to pool of unused items
 			unused.push(instance);
+		}
+	}
+	
+	function cleanup(instance:T):Void
+	{
+		// move artwork off stage
+		if (Std.is(instance, DisplayObject))
+		{
+			var artwork:DisplayObject = cast instance;
+			recycler.addChild(artwork);
+		}
+		else if (Std.is(instance, BaseUI))
+		{
+			var base:BaseUI = cast instance;
+			var artwork:DisplayObject = base.artwork;
 			
-			// move artwork off stage
-			if (Std.is(instance, DisplayObject))
+			if (artwork != null)
 			{
-				var artwork:DisplayObject = cast instance;
 				recycler.addChild(artwork);
-			}
-			else if (Std.is(instance, BaseUI))
-			{
-				var base:BaseUI = cast instance;
-				var artwork:DisplayObject = base.artwork;
-				
-				if (artwork != null)
-				{
-					recycler.addChild(artwork);
-				}
 			}
 		}
 	}
