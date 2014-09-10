@@ -4,6 +4,7 @@ import flash.display.Stage;
 import net.mkv25.base.core.CoreModel;
 import net.mkv25.base.core.Screen;
 import net.mkv25.base.core.ScreenController;
+import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.DebugUI;
 import net.mkv25.game.controllers.ConnectPortalsController;
 import net.mkv25.game.controllers.DeployUnitController;
@@ -53,6 +54,7 @@ class Index
 	public static var deploymentHud:DeploymentUI;
 	public static var movementHud:MovementUI;
 	public static var portalsHud:PortalsUI;
+	public static var resourceCounterHud:BaseUI;
 	
 	// debug
 	public static var debug:DebugUI;

@@ -11,11 +11,12 @@ Improvements based on Player feedback
 
 In progress
 -----------
-+ Animate resources being gathered
++ Animate card being bought and entering the discard pile
 
 
 Improvements
 ------------
++ Animate spending of resources
 + Test game play with reduced number of starting cards, and two units predeployed on planet
 + Add unit inset to show currently selected unit, and unit strength
 + In-game player guide, getting started

@@ -30,6 +30,8 @@ class StatusBarUI extends BaseUI
 		EventBus.activePlayerUpdated.add(onActivePlayerChanged);
 		EventBus.activePlayerChanged.add(onActivePlayerChanged);
 		EventBus.activePlayerResourcesChanged.add(onResourcesChanged);
+		
+		Index.resourceCounterHud = iconResources;
 	}
 	
 	private function init():Void

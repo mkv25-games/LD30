@@ -146,11 +146,12 @@ class CardActionController
 	function playerWantsToGatherResources(card:PlayableCard):Void
 	{
 		var resources:Int = card.resources;
-		if (resources > 0) {
+		if (resources > 0)
+		{
 			var activePlayer = Index.activeGame.activePlayer;
-			activePlayer.resources += resources;
 			
-			EventBus.activePlayerResourcesChanged.dispatch(activePlayer);
+			// Resource assignment is currently handled by ResourceHarvestingUI
+			/* activePlayer.resources += resources; */
 			
 			discardActiveCard();
 		}
@@ -159,7 +160,8 @@ class CardActionController
 	function processCardPurchase(card:PlayableCard):Void
 	{
 		var activePlayer = Index.activeGame.activePlayer;
-		if (activePlayer.resources >= card.cost) {
+		if (activePlayer.resources >= card.cost)
+		{
 			activePlayer.resources = activePlayer.resources - card.cost;
 			
 			EventBus.activePlayerResourcesChanged.dispatch(activePlayer);

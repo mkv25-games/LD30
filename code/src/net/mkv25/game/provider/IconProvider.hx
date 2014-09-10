@@ -15,6 +15,8 @@ class IconProvider
 	public static var ICON_STATUS_TERRITORY:BitmapData;
 	public static var ICON_STATUS_RESOURCES:BitmapData;
 	
+	public static var ICON_RESOURCE_COUNTER:BitmapData;
+	
 	public static var ICON_SHORT_GAME:BitmapData;
 	public static var ICON_MEDIUM_GAME:BitmapData;
 	public static var ICON_LONG_GAME:BitmapData;
@@ -39,6 +41,8 @@ class IconProvider
 		ICON_STATUS_UNITS = getIcon(3);
 		ICON_STATUS_RESOURCES = getIcon(2);
 		ICON_STATUS_TERRITORY = getIcon(1);
+		
+		ICON_RESOURCE_COUNTER = ICON_STATUS_RESOURCES;
 		
 		ICON_SHORT_GAME = getIcon(21);
 		ICON_MEDIUM_GAME = getIcon(32);

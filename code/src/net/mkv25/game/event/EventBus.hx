@@ -24,6 +24,8 @@ class EventBus
 	public static var addNewCardToActivePlayersDiscardPile = new Signal();
 	public static var activePlayerResourcesChanged = new Signal();
 	public static var playerHasRanOutCards = new Signal();
+	public static var spawnResourcesForCardHolder = new Signal();
+	public static var increaseResourceCountByOne = new Signal();
 	
 	// actions while figuring out what the player wants to do
 	public static var askPlayer_howTheyWantToPlayTheirActionCard = new Signal();

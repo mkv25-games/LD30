@@ -184,9 +184,15 @@ class PlayerHandUI extends BaseUI
 		
 		for (card in cards)
 		{
-			if (card.isSelected()) {
+			if (card.isSelected())
+			{
 				card.disable();
 				card.animateDiscard(discardIcon.artwork.x, discardIcon.artwork.y);
+				
+				if (card.assignedCard.resources > 0)
+				{
+					EventBus.spawnResourcesForCardHolder.dispatch(card);
+				}
 			}
 		}
 		
