@@ -7,10 +7,12 @@ Bugs
 
 Improvements based on Player feedback
 -------------------------------------
-+ Animate discarded card moving to the discard pile
+
 
 In progress
--------------------
+-----------
++ Animate newly drawn cards coming from the draw pile
++ Animate resources being gathered
 
 
 Improvements
@@ -19,7 +21,6 @@ Improvements
 + Add unit inset to show currently selected unit, and unit strength
 + In-game player guide, getting started
 + Combat report
-+ Animate resources being gathered
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Explosion animation for combat
 + Saving of game state
@@ -47,7 +48,6 @@ Improvements
 - Basic combat report in status message
 - Create interesting planets with varied hex tiles
 - Create a scrollable map to support larger games
-- Animate newly drawn cards coming from the draw pile
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn
