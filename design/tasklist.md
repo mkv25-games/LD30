@@ -11,6 +11,8 @@ Improvements based on Player feedback
 
 In progress
 -------------------
++ Switch discard and cancel buttons over
++ Standardise discard icon with interface
 
 
 Improvements
@@ -22,8 +24,6 @@ Improvements
 + Animate resources being gathered
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Explosion animation for combat
-+ Switch discard and cancel buttons over
-+ Standardise discard icon with interface
 + Saving of game state
 + Exit button to end game
 + AI Players
