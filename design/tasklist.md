@@ -3,7 +3,6 @@ Things to do
 
 Bugs
 ----
-+ Icons for number of players are misplaced, 4 and 3 are swithced.
 
 
 Improvements based on Player feedback
@@ -12,7 +11,6 @@ Improvements based on Player feedback
 
 In progress
 -------------------
-+ Sensible map layouts for low-player games
 
 
 Improvements
@@ -20,10 +18,10 @@ Improvements
 + Test game play with reduced number of starting cards, and two units predeployed on planet
 + Add unit inset to show currently selected unit, and unit strength
 + In-game player guide, getting started
-+ Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Combat report
++ Animate resources being gathered
++ Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Explosion animation for combat
-+ Plain instead of blue tinted icons for units on cards
 + Switch discard and cancel buttons over
 + Standardise discard icon with interface
 + Saving of game state
@@ -35,7 +33,6 @@ Improvements
 + Sexier graphics for cards
 + Sexy animated graphics for linking bases
 + Animations for game actions, for example movement
-+ Animate resources being gathered
 + Replay feature to see last turn
 + Add number of worlds to player stats bar
 + Add a screen to review all player stats
