@@ -7,12 +7,10 @@ Bugs
 
 Improvements based on Player feedback
 -------------------------------------
-
++ Animate discarded card moving to the discard pile
 
 In progress
 -------------------
-+ Switch discard and cancel buttons over
-+ Standardise discard icon with interface
 
 
 Improvements
@@ -49,6 +47,7 @@ Improvements
 - Basic combat report in status message
 - Create interesting planets with varied hex tiles
 - Create a scrollable map to support larger games
+- Animate newly drawn cards coming from the draw pile
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn

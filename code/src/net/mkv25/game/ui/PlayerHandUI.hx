@@ -178,7 +178,7 @@ class PlayerHandUI extends BaseUI
 		{
 			if (card.isSelected()) {
 				card.disable();
-				card.popOut();
+				card.animateDiscard(discardIcon.artwork.x, discardIcon.artwork.y);
 			}
 		}
 		
@@ -198,7 +198,7 @@ class PlayerHandUI extends BaseUI
 		{
 			if (card.isSelected()) {
 				card.disable();
-				card.popOut();
+				card.animateDiscard(card.artwork.x, card.artwork.y - card.artwork.height);
 			}
 		}
 		

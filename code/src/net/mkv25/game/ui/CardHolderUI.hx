@@ -1,7 +1,11 @@
 package net.mkv25.game.ui;
 
+import motion.actuators.GenericActuator.IGenericActuator;
 import flash.display.Graphics;
 import flash.events.MouseEvent;
+import motion.Actuate;
+import motion.easing.Elastic;
+import motion.easing.Quad;
 import net.mkv25.base.core.Signal;
 import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.game.event.EventBus;
@@ -127,6 +131,15 @@ class CardHolderUI extends BitmapUI
 	function onMouseUp(e)
 	{
 		overState();
+	}
+	
+	public function animateDiscard(discardX:Float, discardY:Float):IGenericActuator
+	{
+		Actuate.apply(artwork, { alpha: 1.0, scaleX: 1.0, scaleY: 1.0 } );
+		return Actuate.tween(artwork, 0.6, { x: discardX, y: discardY } ).ease(Quad.easeOut).onComplete(function()
+		{
+			return Actuate.tween(artwork, 0.6, { alpha: 0.0, scaleX: 0.5, scaleY: 0.5 } );
+		});
 	}
 	
 }
