@@ -142,4 +142,10 @@ class CardHolderUI extends BitmapUI
 		});
 	}
 	
+	public function animateDrawFromDeck(deckX:Float, deckY:Float, targetX:Float, targetY:Float):IGenericActuator
+	{
+		Actuate.apply(artwork, { alpha: 0.0, scaleX: 0.5, scaleY: 0.5, x: deckX, y: deckY } );
+		return Actuate.tween(artwork, 0.6, { x: targetX, y: targetY, alpha: 1.0, scaleX: 1.0, scaleY: 1.0 } ).ease(Quad.easeOut);
+	}
+	
 }

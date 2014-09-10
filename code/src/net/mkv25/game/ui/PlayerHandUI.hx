@@ -76,6 +76,8 @@ class PlayerHandUI extends BaseUI
 		// while animating
 		disable();
 		
+		updateHandCounts();
+		
 		// populate cards with data
 		var cardsInHand = playersHand.getHand();
 		for (i in 0...cards.length)
@@ -93,7 +95,7 @@ class PlayerHandUI extends BaseUI
 				cardHolder.artwork.y = CardPictureProvider.PICTURE_HEIGHT / 2;
 				
 				cardHolder.hide();
-				Actuate.timer(0.5 + i * 0.15).onComplete(cardHolder.zoomIn);
+				Actuate.timer(0.5 + i * 0.25).onComplete(moveCardFromDeckToHand, [cardHolder, (i + 1)]);
 			}
 			else
 			{
@@ -109,13 +111,19 @@ class PlayerHandUI extends BaseUI
 			card.deselect();
 		}
 		
-		updateHandCounts();
-		
 		// renable after a delay for animations
-		var totalAnimationTime = 0.5 + (cards.length * 0.15) + 1.0;
+		var totalAnimationTime = 0.5 + (cards.length * 0.25) + 0.5;
 		Actuate.timer(totalAnimationTime).onComplete(enable);
 		
 		return this;
+	}
+	
+	function moveCardFromDeckToHand(cardHolder:CardHolderUI, cardNumber:Int):Void
+	{
+		cardHolder.animateDrawFromDeck(deckIcon.artwork.x, deckIcon.artwork.y, cardHolder.artwork.x, cardHolder.artwork.y);
+		
+		var cardCountInAnimation:Int = (model.getDeck().length + model.getHand().length - cardNumber);
+		deckCountText.setText("DRAW DECK : " + cardCountInAnimation);
 	}
 	
 	function updateHandCounts():Void
