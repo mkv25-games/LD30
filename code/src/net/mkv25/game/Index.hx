@@ -55,6 +55,7 @@ class Index
 	public static var movementHud:MovementUI;
 	public static var portalsHud:PortalsUI;
 	public static var resourceCounterHud:BaseUI;
+	public static var discardPileHud:BaseUI;
 	
 	// debug
 	public static var debug:DebugUI;

@@ -35,6 +35,8 @@ class PlayerHandUI extends BaseUI
 		cards = new Array<CardHolderUI>();
 		
 		init();
+		
+		Index.discardPileHud = discardIcon;
 	}
 	
 	public function init():Void
@@ -194,7 +196,7 @@ class PlayerHandUI extends BaseUI
 		
 		cardHolder.move(artwork.mouseX, artwork.mouseY);
 		
-		cardHolder.popIn().onComplete(cardHolder.animateDiscard, [discardIcon.artwork.x, discardIcon.artwork.y]);
+		cardHolder.zoomIn().onComplete(cardHolder.animateDiscard, [discardIcon.artwork.x, discardIcon.artwork.y]);
 		
 		updateHandCounts();
 	}
@@ -241,7 +243,8 @@ class PlayerHandUI extends BaseUI
 		
 		for (card in cards)
 		{
-			if (card.isSelected()) {
+			if (card.isSelected())
+			{
 				card.disable();
 				card.animateDiscard(card.artwork.x, card.artwork.y - card.artwork.height);
 			}

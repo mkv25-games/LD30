@@ -31,6 +31,16 @@ class BaseUI
 		return this;
 	}
 	
+	public function moveToMouse():BaseUI
+	{
+		if (artwork.parent != null)
+		{
+			move(artwork.parent.mouseX, artwork.parent.mouseY);
+		}
+		
+		return this;
+	}
+	
 	function movePolar(angle:Float, radius:Float):BaseUI
 	{
 		var theta = angle / 180 * Math.PI;

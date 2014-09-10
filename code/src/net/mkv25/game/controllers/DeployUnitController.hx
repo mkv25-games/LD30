@@ -70,7 +70,6 @@ class DeployUnitController
 			var unit:MapUnit = UnitProvider.getUnit(player, activeUnitCard);
 			location.add(unit);
 			
-			// Rule: When a 
 			EventBus.trashCardFromActivePlayersHand.dispatch(activeUnitCard);
 			
 			disableDeployment();

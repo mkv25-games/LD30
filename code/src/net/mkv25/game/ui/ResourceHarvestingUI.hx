@@ -1,5 +1,6 @@
 package net.mkv25.game.ui;
 
+import motion.Actuate;
 import net.mkv25.base.core.Recycler;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
@@ -9,7 +10,9 @@ import net.mkv25.game.provider.IconProvider;
 class ResourceHarvestingUI extends BaseUI
 {
 	var resourceRecycler:Recycler<BitmapUI>;
+	
 	var resourceCounter:BaseUI;
+	var discardPile:BaseUI;
 
 	public function new() 
 	{
@@ -30,10 +33,16 @@ class ResourceHarvestingUI extends BaseUI
 	function checksForValidCard(card:CardHolderUI):Void
 	{
 		resourceCounter = Index.resourceCounterHud;
+		discardPile = Index.discardPileHud;
 		
 		if (resourceCounter == null)
 		{
-			throw "Need to call setup Index.resourceCounterHud with a valid UI element before spawning resources.";
+			throw "Need to setup Index.resourceCounterHud with a valid UI element before spawning resources.";
+		}
+		
+		if (resourceCounter == null)
+		{
+			throw "Need to setup Index.discardPileHud with a valid UI element before spawning resources.";
 		}
 		
 		if (card == null)
@@ -67,13 +76,14 @@ class ResourceHarvestingUI extends BaseUI
 			
 			icon.show();
 			icon.scale = 1.0;
-			icon.artwork.alpha = 1.0;
+			icon.artwork.alpha = 0.0;
 			icon.setBitmapData(IconProvider.ICON_RESOURCE_COUNTER);
 			
-			var delayTime:Float = (i * 0.15);
+			var delayTime:Float = 0.8 + (i * 0.15);
 			var animationTime:Float = 0.5;
 			
-			var animation = icon.moveBetween(card, resourceCounter, animationTime, delayTime);
+			Actuate.tween(icon.artwork, 0.2, { alpha: 1.0 } ).delay(delayTime);
+			var animation = icon.moveBetween(discardPile, resourceCounter, animationTime, delayTime);
 			if (animation != null)
 			{
 				animation.onComplete(cashInResourceCounter, [icon]);

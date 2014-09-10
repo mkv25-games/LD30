@@ -11,7 +11,6 @@ Improvements based on Player feedback
 
 In progress
 -----------
-- Animate deployed card to cursor position
 - Animate gathered resources from cursor position
 + Animate resources being spent by popping resources upwards out of the resource icon
 
