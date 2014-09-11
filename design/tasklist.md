@@ -7,19 +7,18 @@ Bugs
 
 Improvements based on Player feedback
 -------------------------------------
++ Add unit inset to show currently selected unit, and unit strength
++ Combat report
 
 
 In progress
 -----------
++ Test game play with reduced number of starting cards, and two units predeployed on planet
 
 
 Improvements
 ------------
-+ Animate spending of resources
-+ Test game play with reduced number of starting cards, and two units predeployed on planet
-+ Add unit inset to show currently selected unit, and unit strength
 + In-game player guide, getting started
-+ Combat report
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Explosion animation for combat
 + Saving of game state
