@@ -22,6 +22,7 @@ import net.mkv25.game.ui.PlayerHandUI;
 import net.mkv25.game.ui.PortalsUI;
 import net.mkv25.game.ui.StatusBarUI;
 import net.mkv25.ld30.dbvos.WinningConditionsRow;
+import net.mkv25.ld30.enums.GameVariantEnum;
 import net.mkv25.ld30.enums.WinningConditionsEnum;
 import openfl.Assets;
 
@@ -64,6 +65,9 @@ class GameSetupScreen extends Screen
 		
 		var defaultWinningCondition = Index.dbvos.WINNING_CONDITIONS.getRowCast(WinningConditionsEnum.SHORT_GAME);
 		gameLengthSelection.update(defaultWinningCondition);
+		
+		var defaultGameVariant = Index.dbvos.GAME_VARIANT.getRowCast(GameVariantEnum.SMALL_HAND);
+		EventBus.gameVariantChanged.dispatch(defaultGameVariant);
 	}
 	
 	override public function handleKeyAction(event:KeyboardEvent):Void

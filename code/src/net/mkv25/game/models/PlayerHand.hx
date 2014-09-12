@@ -19,8 +19,6 @@ class PlayerHand extends CoreModel
 		hand = new Array<PlayableCard>();
 		deck = new Array<PlayableCard>();
 		discards = new Array<PlayableCard>();
-		
-		populateStartingDeck();
 	}
 	
 	public function getHand():Array<PlayableCard>
@@ -43,33 +41,12 @@ class PlayerHand extends CoreModel
 		return hand.length;
 	}
 	
-	public function populateStartingDeck():PlayerHand
+	public function populateStartingDeck(startingCards:Array<PlayableCard>):PlayerHand
 	{
-		// normal starting cards, 3x harvester, 1x portal, 2x scientists, 2x engineers, 2x assault teams
-		//*
-		discards.push(PlayableCardType.HARVESTER);
-		discards.push(PlayableCardType.HARVESTER);
-		discards.push(PlayableCardType.HARVESTER);
-		
-		discards.push(PlayableCardType.PORTAL);
-		
-		discards.push(PlayableCardType.SCIENTISTS);
-		discards.push(PlayableCardType.SCIENTISTS);
-		
-		discards.push(PlayableCardType.ENGINEERS);
-		discards.push(PlayableCardType.ENGINEERS);
-		
-		discards.push(PlayableCardType.ASSAULT_TEAM);
-		discards.push(PlayableCardType.ASSAULT_TEAM);
-		//*/
-		
-		/*
-		// start with level 4 bases only
-		discards.push(PlayableCardType.PORTAL);
-		for (i in 0...9) {
-			discards.push(PlayableCardType.METROPLEX);
+		for (card in startingCards)
+		{
+			discards.push(card);
 		}
-		//*/
 		
 		drawHand();
 		

@@ -14,8 +14,9 @@ class EventBus
 	public static var displayNewStatusMessage = new Signal();
 	
 	// game setup events
-	public static var winningConditionChanged = new Signal();
 	public static var playerCountChanged = new Signal();
+	public static var winningConditionChanged = new Signal();
+	public static var gameVariantChanged = new Signal();
 	
 	// card actions
 	public static var cardSelectedFromHandByPlayer = new Signal();

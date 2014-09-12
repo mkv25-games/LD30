@@ -46,5 +46,36 @@
         <fullDescription>Destroy or capture every single last enemy unit and base.</fullDescription>
       </Row>
     </Table>
+    <Table>
+      <Schema>
+        <Name>Game Variant</Name>
+        <Field>
+          <Name>units</Name>
+          <Type>string</Type>
+        </Field>
+        <Field>
+          <Name>cards</Name>
+          <Type>string</Type>
+        </Field>
+      </Schema>
+      <Row>
+        <id>0</id>
+        <name>None</name>
+        <units>No units</units>
+        <cards>No cards</cards>
+      </Row>
+      <Row>
+        <id>1</id>
+        <name>Classic</name>
+        <units>1 standard base</units>
+        <cards>3 harvester, 2 assault team, 2 engineer, 2 scientist, 1 portal</cards>
+      </Row>
+      <Row>
+        <id>3</id>
+        <name>Small Hand</name>
+        <units>1 standard base, 2 assault teams</units>
+        <cards>3 harvester, 1 engineer, 1 scientist</cards>
+      </Row>
+    </Table>
   </Tables>
 </Data>

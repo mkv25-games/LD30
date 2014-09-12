@@ -7,6 +7,7 @@ import net.mkv25.game.models.ActiveGame;
 import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.models.PlayerModel;
 import net.mkv25.game.ui.GameOverUI;
+import net.mkv25.ld30.dbvos.GameVariantRow;
 import net.mkv25.ld30.dbvos.WinningConditionsRow;
 import net.mkv25.ld30.enums.WinningConditionsEnum;
 
@@ -21,12 +22,15 @@ class GameFlowController
 	var screenController:ScreenController;
 	var gameOverMenu:GameOverUI;
 	
-	var winningCondition:WinningConditionsRow;
 	var numberOfPlayers:Int;
+	var winningCondition:WinningConditionsRow;
+	var gameVariant:GameVariantRow;
 	
 	public function new() 
 	{
+		numberOfPlayers = 0;
 		winningCondition = null;
+		gameVariant = null;
 	}
 	
 	public function setup(screenController:ScreenController)
@@ -35,8 +39,9 @@ class GameFlowController
 		
 		createMenus();
 		
-		EventBus.winningConditionChanged.add(handle_winningConditionChanged);
 		EventBus.playerCountChanged.add(handle_playerCountChanged);
+		EventBus.winningConditionChanged.add(handle_winningConditionChanged);
+		EventBus.gameVariantChanged.add(handle_gameVariantChanged);
 		
 		EventBus.startNewGame.add(handle_startNewGame);
 		EventBus.restartGame.add(handle_restartGame);
@@ -45,20 +50,27 @@ class GameFlowController
 		EventBus.playerHasRanOutCards.add(handle_endOfPlayersTurn);
 	}
 	
-	function handle_winningConditionChanged(winningCondition:WinningConditionsRow):Void
-	{
-		this.winningCondition = winningCondition;
-	}
-	
 	function handle_playerCountChanged(numberOfPlayers:Int):Void
 	{
 		this.numberOfPlayers = numberOfPlayers;
 	}
 	
+	function handle_winningConditionChanged(winningCondition:WinningConditionsRow):Void
+	{
+		this.winningCondition = winningCondition;
+	}
+	
+	function handle_gameVariantChanged(gameVariant:GameVariantRow):Void
+	{
+		this.gameVariant = gameVariant;
+	}
+	
 	function handle_startNewGame(?model)
 	{
-		Index.activeGame = new ActiveGame(numberOfPlayers);
+		var game:ActiveGame = new ActiveGame(numberOfPlayers);
+		game.startGameInMode(gameVariant);
 		
+		Index.activeGame = game;
 		Index.screenController.showScreen(Index.mainScreen);
 		Index.activeGame.startNextPlayersTurn();
 	}

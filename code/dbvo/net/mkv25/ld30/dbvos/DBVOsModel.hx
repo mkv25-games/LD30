@@ -15,6 +15,7 @@ class DBVOsModel implements IDBVOsModel
 
 	// code generated list of all tables
 	public var WINNING_CONDITIONS:WinningConditionsTable;
+	public var GAME_VARIANT:GameVariantTable;
 	
 	public function new()
 	{
@@ -30,6 +31,7 @@ class DBVOsModel implements IDBVOsModel
 
 		// code generated list of all tables
 		WINNING_CONDITIONS = cast index(new WinningConditionsTable(dbvos).init());
+		GAME_VARIANT = cast index(new GameVariantTable(dbvos).init());
 			
 		_loaded = true;
 	}

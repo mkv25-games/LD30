@@ -3,11 +3,17 @@ package net.mkv25.game.models;
 import net.mkv25.base.core.CoreModel;
 import net.mkv25.game.enums.PlayableCardType;
 import net.mkv25.game.event.EventBus;
+import net.mkv25.game.models.startVariants.ClassicStartVariant;
+import net.mkv25.game.models.startVariants.IStartVariant;
+import net.mkv25.game.models.startVariants.SmallHandStartVariant;
+import net.mkv25.game.models.startVariants.SmallHandStartVariant;
 import net.mkv25.game.provider.HexProvider;
 import net.mkv25.game.provider.IconProvider;
 import net.mkv25.game.provider.MapLayoutProvider;
 import net.mkv25.game.provider.UnitProvider;
 import net.mkv25.game.resources.UnitCards;
+import net.mkv25.ld30.dbvos.GameVariantRow;
+import net.mkv25.ld30.enums.GameVariantEnum;
 import openfl.Assets;
 
 class ActiveGame extends CoreModel
@@ -28,7 +34,6 @@ class ActiveGame extends CoreModel
 		validateNumberOfPlayers(numberOfPlayers);
 		MapLayoutProvider.createWorldsFor(numberOfPlayers, this);
 		createPlayers(numberOfPlayers);
-		createStartingBases();
 	}
 	
 	function validateNumberOfPlayers(numberOfPlayers:Int):Void
@@ -43,7 +48,7 @@ class ActiveGame extends CoreModel
 		}
 	}
 	
-	function createStartingBases():Void
+	function setupPlayerStartingConditions(startVariant:IStartVariant):Void
 	{
 		for (player in players)
 		{
@@ -52,10 +57,35 @@ class ActiveGame extends CoreModel
 			{
 				throw "No world available for player " + (player.playerNumberZeroBased + 1) + " at world index " + player.playerNumberZeroBased + ".";
 			}
-			
-			var startingBase = UnitProvider.getUnit(player, PlayableCardType.STANDARD_BASE);
-			world.getHexTile(0, 0).add(startingBase);
+		
+			player.playerHand.populateStartingDeck(startVariant.startingCards());
+			startVariant.startingUnitPlacement(player, world);
+			player.resources = startVariant.startingResources();
 		}
+	}
+	
+	public function startGameInMode(mode:GameVariantRow):Void
+	{
+		if (mode == null)
+		{
+			throw "Cannot initialise game start with a null mode.";
+		}
+		
+		var startVariant:IStartVariant;
+		if (mode.id == GameVariantEnum.CLASSIC)
+		{
+			startVariant = new ClassicStartVariant();
+		}
+		else if (mode.id == GameVariantEnum.SMALL_HAND)
+		{
+			startVariant = new SmallHandStartVariant();
+		}
+		else
+		{
+			throw "Unrecognised game start mode, name: " + mode.name + ", id: " + mode.id + ".";
+		}
+		
+		setupPlayerStartingConditions(startVariant);
 	}
 	
 	function createPlayers(numberOfPlayers:Int):Void
