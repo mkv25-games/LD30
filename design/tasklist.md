@@ -8,12 +8,12 @@ Bugs
 Improvements based on Player feedback
 -------------------------------------
 + Add unit inset to show currently selected unit, and unit strength
-+ Combat report
++ Combat report summary
 
 
 In progress
 -----------
-+ Test game play with reduced number of starting cards, and two units predeployed on planet
+
 
 
 Improvements
@@ -39,6 +39,8 @@ Improvements
 + Create beginners guide / tutorial
 + Create new animation that highlights space map, and zooms down to planet
 + Animate to show zoom down to planets, and zoom up to space
+- Full combat report
+- Upload combat report to web server for review
 - Add portal symbol to end of portal line links
 - Draw better icon for change/select unit action
 - Show connections between portals that are both on planets when in space
@@ -46,6 +48,8 @@ Improvements
 - Basic combat report in status message
 - Create interesting planets with varied hex tiles
 - Create a scrollable map to support larger games
+- Consider reducing Harvester resource amount to 1 from 2
+- Consider resource gathering pay back, currently 50% yield, consider 33% yield
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn
