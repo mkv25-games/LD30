@@ -3,13 +3,29 @@ Things to do
 
 Bugs
 ----
-
++ Horrendous lag spike when selecting a tile for movement, especially bad when portals are available
++ Capturing a or destroying a base doesn't always 
++ Eliminating a player from a 6 player game reverted the player order back to Player 1
 
 Improvements based on Player feedback
 -------------------------------------
 + Add unit inset to show currently selected unit, and unit strength
 + Combat report summary
++ Not clear how to select and move a unit
++ A way to name individual players - pass and play between six people made it hard to track
 
+Suggestions based on Player feedback
+------------------------------------
+- Split attack strength and health into separate fields
+- Add terrain to planets to provide defense
+- Add space ports to planets to restrict movement from space to the ground
+- Add strategic points on planets that gain players additional resources
+- Add asteroids in space that gain players additional resources
+- Add colony ship to create bases on other planets
+- Add cards to upgrade bases
+- Add cards that allow cards to be trashed from the hand
+- Add cards that allow free production / deployment of certain units
+- Create a zoomable / moveable map
 
 In progress
 -----------
