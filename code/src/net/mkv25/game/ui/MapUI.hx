@@ -8,6 +8,7 @@ import flash.display.Graphics;
 import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.geom.Matrix;
+import haxe.Timer;
 import net.mkv25.base.core.Image.ImageRegion;
 import net.mkv25.base.core.Recycler;
 import net.mkv25.base.ui.BaseUI;
@@ -229,7 +230,10 @@ class MapUI extends BaseUI
 			markedImage.show();
 			markedImage.zoomIn();
 			
-			EventBus.mapMarkerPlacedOnMap.dispatch(markedHex);
+			trace("Marked selected hex: ");
+			Timer.measure(function() {
+				EventBus.mapMarkerPlacedOnMap.dispatch(markedHex);
+			});
 			
 			highlightImage.popIn();
 			hexInfoText.setText(tile.q + ", " + tile.r);
@@ -512,29 +516,6 @@ class MapUI extends BaseUI
 		}
 	}
 	
-	/// Public methods ///
-	
-	public function enableMovementOverlayFor(location:HexTile, unit:MapUnit, distance:Int):Void
-	{
-		// copy location details
-		this.movementFocusHex = new HexTile();
-		this.movementFocusHex.q = location.q;
-		this.movementFocusHex.r = location.r;
-		this.movementFocusHex.map = location.map;
-		
-		this.movementFocusUnit = unit;
-		this.movementFocusDistance = distance;
-		
-		redraw();
-	}
-	
-	public function disableMovementOverlay():Void
-	{
-		this.movementFocusHex = null;		
-		
-		movementLayer.visible = false;
-	}
-	
 	function safeAddAt(container:DisplayObjectContainer, item:DisplayObject, depth:Int):Void
 	{
 		var depth:Int = cast Math.min(depth, container.numChildren);
@@ -571,6 +552,29 @@ class MapUI extends BaseUI
 			
 			setupMap(world);
 		}
+	}
+	
+	/// Public methods ///
+	
+	public function enableMovementOverlayFor(location:HexTile, unit:MapUnit, distance:Int):Void
+	{
+		// copy location details
+		this.movementFocusHex = new HexTile();
+		this.movementFocusHex.q = location.q;
+		this.movementFocusHex.r = location.r;
+		this.movementFocusHex.map = location.map;
+		
+		this.movementFocusUnit = unit;
+		this.movementFocusDistance = distance;
+		
+		redraw();
+	}
+	
+	public function disableMovementOverlay():Void
+	{
+		this.movementFocusHex = null;		
+		
+		movementLayer.visible = false;
 	}
 	
 }

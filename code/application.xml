@@ -20,10 +20,26 @@
 	<haxelib name="actuate" />
 	
 	<!-- assets -->
-	<icon path="assets/openfl.svg" />
 	<assets path="assets/img" rename="img" />
 	<assets path="assets/fonts" rename="fonts" />
 	<assets path="assets/sounds" rename="sounds" />
+	
+	<!-- icons for windows -->
+	<icon path="assets/icons/windows_icon_16x.png" size="16" if="cpp" />
+	<icon path="assets/icons/windows_icon_32x.png" size="32" if="cpp" />
+	<icon path="assets/icons/windows_icon_48x.png" size="48" if="cpp" />
+	<icon path="assets/icons/windows_icon_64x.png" size="64" if="cpp" />
+	
+	<!-- icons for mac osx -->
+	<icon path="assets/icons/macosx_icon_128x.png" size="128" if="cpp" />
+	<icon path="assets/icons/macosx_icon_256x.png" size="256" if="cpp" />
+	<icon path="assets/icons/macosx_icon_512x.png" size="512" if="cpp" />
+	
+	<!-- icons for android -->
+	<icon path="assets/icons/android_icon_36x.png" size="36" if="android" />
+	<icon path="assets/icons/android_icon_72x.png" size="72" if="android" />
+	<icon path="assets/icons/android_icon_96x.png" size="96" if="android" />
+	<icon path="assets/icons/android_icon_144x.png" size="144" if="android" />
 	
 	<!-- optimize output
 	<haxeflag name="-dce full" /> -->

@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Cards/Card - Capital Army" itemID="54035584-000001ef" lastModified="1410121548" lastUniqueIdentifier="4">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Cards/Card - Capital Army" itemID="54035584-000001ef" lastModified="1410985043" lastUniqueIdentifier="4">
   <timeline>
     <DOMTimeline name="Card - Capital Army">
       <layers>
@@ -15,7 +15,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="icon" color="#9933CC" autoNamed="false">
+        <DOMLayer name="icon" color="#9933CC" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -107,7 +107,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="bottom action" color="#4FFFFF" parentLayerIndex="2" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="bottom action" color="#4FFFFF" parentLayerIndex="2" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -131,7 +131,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="circles" color="#4F80FF" parentLayerIndex="2" locked="true" autoNamed="false">
+        <DOMLayer name="circles" color="#4F80FF" parentLayerIndex="2" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -150,7 +150,7 @@
                     </SolidStroke>
                   </stroke>
                 </DOMOvalObject>
-                <DOMOvalObject objectWidth="102.5" objectHeight="102.5" x="44.95" y="71.95" selected="true" endAngle="0">
+                <DOMOvalObject objectWidth="102.5" objectHeight="102.5" x="44.95" y="71.95" endAngle="0">
                   <matrix>
                     <Matrix a="0.81951904296875" d="0.81951904296875" tx="-18.85" ty="-20.7"/>
                   </matrix>
