@@ -1,0 +1,33 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- App Icon/Icon Sheen" itemID="5419ef1b-0000042c" sourceLibraryItemHRef="Symbol 1" lastModified="1410986020">
+  <timeline>
+    <DOMTimeline name="Icon Sheen">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="102.5" objectHeight="102.5" x="44.95" y="71.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="4.29997253417969" d="4.29997253417969" tx="-413.65" ty="-529.75"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="96.15" y="123.25"/>
+                  </transformationPoint>
+                  <fill>
+                    <LinearGradient>
+                      <matrix>
+                        <Matrix a="0" b="-0.06256103515625" c="0.06256103515625" d="0" tx="96.2" ty="123.2"/>
+                      </matrix>
+                      <GradientEntry color="#3F3F3F" ratio="0"/>
+                      <GradientEntry color="#FFFFFF" ratio="1"/>
+                    </LinearGradient>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

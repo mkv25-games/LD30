@@ -1,0 +1,55 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- App Icon/Icon Hex Border" itemID="5419ed88-00000423" sourceLibraryItemHRef="Symbol 1" lastModified="1410987332">
+  <timeline>
+    <DOMTimeline name="Icon Hex Border">
+      <layers>
+        <DOMLayer name="stars" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <BitmapFill bitmapPath="- Bitmaps/starfield-small.png" bitmapIsClipped="false">
+                        <matrix>
+                          <Matrix a="20" d="20" tx="-250" ty="-250"/>
+                        </matrix>
+                      </BitmapFill>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!4720 -1624|3782 1!3782 1|4720 1626!4720 1626|3770 3271!3770 3271|1888 3271!1888 3271|950 4895!950 4895|-950 4895!-950 4895|-1888 3271!-1888 3271|-3770 3271!-3770 3271|-4720 1626!-4720 1626|-3781 1!-3781 1|-4720 -1624!-4720 -1624|-3770
+ -3269!-3770 -3269|-1889 -3269!-1889 -3269|-950 -4895!-950 -4895|950 -4895!950 -4895|1889 -3269!1889 -3269|3770 -3269!3770 -3269|4720 -1624"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="border" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" caps="none" weight="14" joints="miter">
+                        <fill>
+                          <SolidColor color="#FFFFFF" alpha="0.8"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="
+!4720 -1624|3782 1!3782 1|4720 1626!4720 1626|3770 3271!3770 3271|1888 3271!1888 3271|950 4895!950 4895|-950 4895!-950 4895|-1888 3271!-1888 3271|-3770 3271!-3770 3271|-4720 1626!-4720 1626|-3781 1!-3781 1|-4720 -1624!-4720 -1624|-3770
+ -3269!-3770 -3269|-1889 -3269!-1889 -3269|-950 -4895!-950 -4895|950 -4895!950 -4895|1889 -3269!1889 -3269|3770 -3269!3770 -3269|4720 -1624"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

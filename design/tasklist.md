@@ -73,7 +73,6 @@ Improvements
 
 Free Version Release Work
 -------------------------
-+ Icon for mobile build
 + Certificate and signing for Android build
 + Fix bugs unique to mobile
 + IOS build
