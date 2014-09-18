@@ -74,6 +74,9 @@ class CombatModel
 						location.remove(firstUnit);
 						location.remove(secondUnit);
 						combatLog.mutualDestruction(firstUnit, secondUnit);
+						
+						firstUnit.breakAllConnections();
+						secondUnit.breakAllConnections();
 					}
 					else if (secondUnit.type.strength < firstUnit.type.strength)
 					{

@@ -4,7 +4,6 @@ Things to do
 Bugs
 ----
 + Horrendous lag spike when selecting a tile for movement, especially bad when portals are available
-+ Capturing a or destroying a base doesn't always 
 + Eliminating a player from a 6 player game reverted the player order back to Player 1
 
 Improvements based on Player feedback
@@ -66,6 +65,7 @@ Improvements
 - Create a scrollable map to support larger games
 - Consider reducing Harvester resource amount to 1 from 2
 - Consider resource gathering pay back, currently 50% yield, consider 33% yield
+- Add alternative image for unsupported flash player plugin on web preview
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn
