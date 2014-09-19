@@ -11,6 +11,7 @@ import flash.geom.Matrix;
 import haxe.Timer;
 import net.mkv25.base.core.Image.ImageRegion;
 import net.mkv25.base.core.Recycler;
+import net.mkv25.base.core.TimeProfile;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.base.ui.IconButtonUI;
@@ -168,11 +169,15 @@ class MapUI extends BaseUI
 	
 	function handleMapRequiresRedraw(?model):Void
 	{
+		TimeProfile.logEvent("MapUI:handleMapRequiresRedraw");
+		
 		redraw();
 	}
 	
 	function hexUnderMouse(mouseEvent:MouseEvent):HexTile
 	{
+		TimeProfile.logEvent("MapUI:hexUnderMouse");
+		
 		if (mouseEvent.target != viewLayer)
 		{
 			return null;
@@ -218,6 +223,8 @@ class MapUI extends BaseUI
 	
 	function markSelectedHex(mouseEvent:MouseEvent):Void
 	{
+		TimeProfile.logEvent("MapUI:markSelectedHex");
+		
 		var tile:HexTile = hexUnderMouse(mouseEvent);
 		if (tile != null)
 		{
@@ -270,6 +277,8 @@ class MapUI extends BaseUI
 	
 	function redraw()
 	{
+		TimeProfile.logEvent("MapUI:redraw");
+		
 		// reset all vector lines
 		lineLayer.graphics.clear();
 		
@@ -301,6 +310,8 @@ class MapUI extends BaseUI
 	
 	function highlightValidMovementFor(location:HexTile, unit:MapUnit, distance:Int)
 	{
+		TimeProfile.logEvent("MapUI:highlightValidMovementFor");
+		
 		if (location.map == null || unit == null)
 		{
 			return;
@@ -323,6 +334,8 @@ class MapUI extends BaseUI
 	
 	inline function drawHex(hex:HexTile, ?container:DisplayObject, ?layer:Sprite, ?image:BitmapData):Void
 	{
+		TimeProfile.logEvent("MapUI:drawHex");
+		
 		var hex_x = hex.x();
 		var hex_y = hex.y();
 		var x = (hexImage.width * hex_x);
@@ -364,6 +377,8 @@ class MapUI extends BaseUI
 	
 	function drawThingsInHex(hex:HexTile):Void
 	{
+		TimeProfile.logEvent("MapUI:drawThingsInHex");
+		
 		var things = hex.listContents();
 		var commonOwner:PlayerModel = null;
 		var unitCount:Int = 0;
@@ -449,6 +464,8 @@ class MapUI extends BaseUI
 	var p2:Point = new Point();
 	function drawConnectionsFor(unit:MapUnit):Void
 	{
+		TimeProfile.logEvent("MapUI:drawConnectionsFor");
+		
 		if (!unit.hasConnections())
 		{
 			return;

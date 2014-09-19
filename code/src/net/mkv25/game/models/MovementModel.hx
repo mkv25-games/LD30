@@ -1,11 +1,14 @@
 package net.mkv25.game.models;
 
 import haxe.ds.StringMap;
+import net.mkv25.base.core.TimeProfile;
 
 class MovementModel
 {
 	public static function getValidMovementDestinationsFor(location:HexTile, unit:MapUnit, distance:Int):StringMap<HexTile>
 	{
+		TimeProfile.logEvent("MovementModel:getValidMovement*");
+			
 		// check for the real location
 		location = location.map.getHexTile(location.q, location.r);
 		
@@ -35,6 +38,8 @@ class MovementModel
 	
 	public static function addValidNeighboursFor(location:HexTile, unit:MapUnit, hexes:StringMap<HexTile>):Void
 	{
+		TimeProfile.logEvent("MovementModel:addValidNeighboursFor");
+		
 		// Rule: units cannot move through contested hexes
 		if (CombatModel.containsEnemyCombatants(unit.owner, location))
 		{

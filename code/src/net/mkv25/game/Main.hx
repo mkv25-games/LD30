@@ -3,6 +3,7 @@ package net.mkv25.game;
 import flash.display.Sprite;
 import flash.events.Event;
 import flash.Lib;
+import net.mkv25.base.ui.TimeProfileUI;
 import net.mkv25.game.event.EventBus;
 
 // PROTIP: Don't be afraid to use Index.someModel any where your game code
@@ -23,6 +24,13 @@ class Main extends Sprite
 
 		// set up the index
 		Index.setup(stage);
+		
+		// set up debug profiling
+		#if debug
+		var profiling = new TimeProfileUI();
+		stage.addChild(profiling.artwork);
+		profiling.start();
+		#end
 	}
 
 	/* SETUP */

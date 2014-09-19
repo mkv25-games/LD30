@@ -7,6 +7,7 @@ import motion.actuators.GenericActuator.IGenericActuator;
 import motion.easing.Elastic;
 import motion.easing.Quad;
 import net.mkv25.game.Index;
+import openfl.display.DisplayObjectContainer;
 import openfl.geom.Point;
 
 class BaseUI 
@@ -57,6 +58,13 @@ class BaseUI
 	{
 		artwork.width = width;
 		artwork.height = height;
+		
+		return this;
+	}
+	
+	public function addTo(container:DisplayObjectContainer):BaseUI
+	{
+		container.addChild(this.artwork);
 		
 		return this;
 	}

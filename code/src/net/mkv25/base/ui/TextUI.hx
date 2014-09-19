@@ -50,6 +50,26 @@ class TextUI extends BaseUI
 		return this;
 	}
 	
+	public function alignLeft():TextUI
+	{
+		return align(TextFormatAlign.LEFT);
+	}
+	
+	public function alignRight():TextUI
+	{
+		return align(TextFormatAlign.RIGHT);
+	}
+	
+	public function alignCenter():TextUI
+	{
+		return align(TextFormatAlign.CENTER);
+	}
+	
+	public function alignJustify():TextUI
+	{
+		return align(TextFormatAlign.JUSTIFY);
+	}
+	
 	public function fontSize(size:Float):TextUI
 	{
 		var format = text.defaultTextFormat;
