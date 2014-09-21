@@ -1,18 +1,20 @@
 package net.mkv25;
 
 import hxpect.core.TestRunner;
+import hxpect.core.SpecRunner;
 
-import net.mkv25.tests.UnitListTests;
+import net.mkv25.tests.*;
+import net.mkv25.specs.*;
 
 class Main 
 {
 	static function main() 
 	{
-		var testRunner = new TestRunner();
-		testRunner.registerTestClass(UnitListTests);
-		testRunner.run();
+		var specRunner = new SpecRunner();
+		specRunner.registerSpecClass(UnitListSpecs);
+		specRunner.run();
 		
-		var successful = (testRunner.failiures() == 0);
+		var successful = specRunner.successful();
 		
 		#if (flash || html5)
 			var result = (successful) ? "Success" : "Failed";
