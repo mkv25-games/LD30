@@ -3,9 +3,8 @@ Things to do
 
 Bugs
 ----
-+ Horrendous lag spike when selecting a tile for movement, especially bad when portals are available
 + Eliminating a player from a 6 player game reverted the player order back to Player 1
-- Profiling screen visible
+
 
 Improvements based on Player feedback
 -------------------------------------
