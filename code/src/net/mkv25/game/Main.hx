@@ -26,11 +26,13 @@ class Main extends Sprite
 		Index.setup(stage);
 		
 		// set up debug profiling
+		/*
 		#if debug
 		var profiling = new TimeProfileUI();
 		stage.addChild(profiling.artwork);
 		profiling.start();
 		#end
+		*/
 	}
 
 	/* SETUP */
