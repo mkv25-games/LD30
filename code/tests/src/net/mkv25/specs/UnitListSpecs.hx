@@ -33,13 +33,5 @@ class UnitListSpecs extends BaseSpec
 				expect(unitList.contains(mapUnit)).to.be(true);
 			});
 		});
-		
-		describe("A passing test", function()
-		{
-			it("should pass", function()
-			{
-				expect(true).to.be(true);
-			});
-		});
 	}
 }
