@@ -34,11 +34,11 @@ class UnitListSpecs extends BaseSpec
 			});
 		});
 		
-		describe("A failing test", function()
+		describe("A passing test", function()
 		{
-			it("should fail", function()
+			it("should pass", function()
 			{
-				expect(false).to.be(true);
+				expect(true).to.be(true);
 			});
 		});
 	}
