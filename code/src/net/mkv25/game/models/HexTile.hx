@@ -4,22 +4,41 @@ import net.mkv25.game.event.EventBus;
 
 class HexTile
 {
+	/* The ratio of width to height of a hex plotted in x, y coordinate space */
 	public static var TQW:Float = 0.75; // three quarter width
-	public static var HH:Float = Math.sqrt(3) / 4; // half height, based on a width of 1
 	
+	/* Half-height of a hexagon, based on a width of 1 */
+	public static var HH:Float = Math.sqrt(3) / 4;
+	
+	/**
+	 * Short hand lookup for neighbouring hexes, in axial space.
+	 */
 	public static var NEIGHBOURS = [
 	   [ 1, 0], [ 1, -1], [0, -1],
 	   [-1, 0], [-1,  1], [0,  1]
 	];
 	
+	/* The hex coordinates in axial space.
+	 * Read more at http://www.redblobgames.com/grids/hexagons/ */
 	public var q:Int;
 	public var r:Int;
 	
+	/* The map this hex belongs to */
 	public var map:MapModel;
+	
+	/* The current known owner of this hex */
 	public var territoryOwner:Null<PlayerModel>;
+	
+	/* Is ownership of this hex contested */
 	public var contested:Bool;
 	
+	/* A* Pathfinding optimisation */
+	public var searchId:Float;
+	
+	/* The display object associated with this hex tile */
 	public var bitmap:Null<Bitmap>;
+	
+	/* The list of things at this location */
 	private var contents:Array<IMapThing>;
 
 	public function new() 
@@ -218,7 +237,6 @@ class HexTile
 		{
 			return;
 		}
-		
 		if (this.territoryOwner == null)
 		{
 			this.territoryOwner = player;

@@ -5,10 +5,14 @@ import net.mkv25.base.core.TimeProfile;
 
 class MovementModel
 {
+	private static var searchCount:Float = 0;
+	
 	public static function getValidMovementDestinationsFor(location:HexTile, unit:MapUnit, distance:Int):StringMap<HexTile>
 	{
 		TimeProfile.logEvent("MovementModel:getValidMovement*");
-			
+		
+		MovementModel.searchCount++;
+		
 		// check for the real location
 		location = location.map.getHexTile(location.q, location.r);
 		
@@ -40,6 +44,8 @@ class MovementModel
 	{
 		TimeProfile.logEvent("MovementModel:addValidNeighboursFor");
 		
+		var searchId = searchCount;
+		
 		// Rule: units cannot move through contested hexes
 		if (CombatModel.containsEnemyCombatants(unit.owner, location))
 		{
@@ -52,9 +58,15 @@ class MovementModel
 		// populate map with neighbouring hexes, avoiding to add duplicates
 		for (hex in neighbouringHexes)
 		{
+			if (hex.searchId == searchId)
+			{
+				continue;
+			}
+			
 			if (!hexes.exists(hex.key()))
 			{
 				hexes.set(hex.key(), hex);
+				hex.searchId = searchId;
 			}
 		}
 		
@@ -69,9 +81,15 @@ class MovementModel
 				{
 					for (hex in world.hexes)
 					{
+						if (hex.searchId == searchId)
+						{
+							continue;
+						}
+						
 						if (!hexes.exists(hex.key()))
 						{
 							hexes.set(hex.key(), hex);
+							hex.searchId = searchId;
 						}
 					}
 				}
@@ -81,9 +99,10 @@ class MovementModel
 		{
 			// Rule: players can move from any tile on a planet into space above the planet
 			var hex = location.map.getSpaceHex();
-			if (!hexes.exists(hex.key()))
+			if (hex.searchId != searchId && !hexes.exists(hex.key()))
 			{
 				hexes.set(hex.key(), hex);
+				hex.searchId = searchId;
 			}
 		}
 		
