@@ -66,6 +66,8 @@ Improvements
 - Consider reducing Harvester resource amount to 1 from 2
 - Consider resource gathering pay back, currently 50% yield, consider 33% yield
 - Add alternative image for unsupported flash player plugin on web preview
+- Slight lag spike when selecting a tile after movement options have already been displayed
+- View map after end of game, without any further player interaction
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn
