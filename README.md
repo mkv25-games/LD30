@@ -11,4 +11,19 @@ Envisaged as a board game, with cards, a space map, worlds, and unit counters. T
 
 Ludum Dare submission: http://www.ludumdare.com/compo/ludum-dare-30/?action=preview&uid=10967
 
-![Connect the worlds, rule the universe - Title Screen](http://mkv25.net/ludum/ld30/preview/screenshots/screenshot_01_title_screen.png)
+Screenshots
+-----------
+
+### Movement
+
+<img src="./photos/portals-two-distance-movement.png" alt="Connect the worlds, rule the universe - Portals Two Distance Movement" />
+
+### Research
+
+<img src="./website/screenshots/screenshot_04_research-technology.png" alt="Connect the worlds, rule the universe - Research Technology" />
+
+Early Design
+------------
+
+<img src="./photos/ideas-on-paper.jpg" alt="Connect the worlds, rule the universe - Early Designs" />
+
