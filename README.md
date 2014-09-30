@@ -11,6 +11,13 @@ Envisaged as a board game, with cards, a space map, worlds, and unit counters. T
 
 Ludum Dare submission: http://www.ludumdare.com/compo/ludum-dare-30/?action=preview&uid=10967
 
+Screenshots
+-----------
+
+### Movement
+
 <img src="./website/screenshots/screenshot_03_movement-into-space.png" alt="Connect the worlds, rule the universe - Movement" />
+
+### Research
 
 <img src="./website/screenshots/screenshot_04_research-technology.png" alt="Connect the worlds, rule the universe - Research Technology" />
