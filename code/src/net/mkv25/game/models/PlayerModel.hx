@@ -5,7 +5,8 @@ import net.mkv25.base.core.CoreModel;
 
 class PlayerModel extends CoreModel
 {
-	public var playerNumberZeroBased:Int;
+	public var playerNumberZeroBased(default, null):Int;
+	
 	public var playerHand:PlayerHand;
 	
 	public var resources:Int;
@@ -20,7 +21,8 @@ class PlayerModel extends CoreModel
 		super();
 		
 		this.playerNumberZeroBased = playerNumberZeroBased;
-		this.playerHand = new PlayerHand();
+		
+		playerHand = new PlayerHand();
 		
 		resources = 6;
 		territory = 0;
@@ -44,5 +46,4 @@ class PlayerModel extends CoreModel
 	{
 		return bases.length();
 	}
-	
 }

@@ -98,15 +98,15 @@ class GameFlowController
 		removePlayersFromGame();
 		
 		// Check for endgame conditions
-		if (activeGame.players.length == 0)
+		var activePlayersCount = activeGame.activePlayerCount();
+		if (activePlayersCount == 0)
 		{
-			activeGame.activePlayer = null;
 			endgame_conditionHeatDeathOfTheUniverse();
 			return;
 		}
-		else if (activeGame.players.length < 2)
+		else if (activePlayersCount < 2)
 		{
-			var winner:PlayerModel = activeGame.players[0];
+			var winner:PlayerModel = activeGame.activePlayer;
 			
 			// There can only be one
 			if (winningCondition.id == WinningConditionsEnum.MEDIUM_GAME)
@@ -120,11 +120,11 @@ class GameFlowController
 				return;
 			}
 		}
-		else if (activeGame.activePlayer == activeGame.lastPlayerInRound)
+		else if (activeGame.activePlayer == activeGame.finalPlayerInRound)
 		{
 			if (winningCondition.id == WinningConditionsEnum.SHORT_GAME)
 			{
-				var winner:PlayerModel = attemptToFindMasterOfExpansion(activeGame.players);
+				var winner:PlayerModel = attemptToFindMasterOfExpansion(activeGame.playerIndex);
 				if (winner != null)
 				{
 					endGame_conditionMasterOfExpansion(winner);
@@ -177,8 +177,7 @@ class GameFlowController
 	
 	function removePlayersFromGame():Void
 	{
-		var players = Index.activeGame.players;
-		var playersToRemoveFromGame:Array<PlayerModel> = new Array<PlayerModel>();
+		var players = Index.activeGame.playerIndex;
 		
 		// find players which have failed basic game conditions
 		for (player in players)
@@ -186,24 +185,15 @@ class GameFlowController
 			if (winningCondition.id == WinningConditionsEnum.MEDIUM_GAME && player.baseCount() == 0)
 			{
 				// ALL YOUR BASE ARE BELONG TO US - (medium) capture all bases belonging to your enemies.
-				playersToRemoveFromGame.push(player);
+				Index.activeGame.removePlayerFromGame(player);
 			}
 			else if (player.unitCount() == 0 && player.baseCount() == 0)
 			{
 				// WAR, WAR NEVER CHANGES, WAR NEVER ENDS - (long) destroy all units and bases belonging to your enemies.
 				// It's impossible to influence other players without units in the game
-				playersToRemoveFromGame.push(player);
+				Index.activeGame.removePlayerFromGame(player);
 			}
 		}
-		
-		// remove those players
-		for (player in playersToRemoveFromGame)
-		{
-			players.remove(player);
-		}
-		
-		// redefine the last player
-		Index.activeGame.defineLastPlayerInRound();
 	}
 	
 	function endgame_conditionHeatDeathOfTheUniverse()

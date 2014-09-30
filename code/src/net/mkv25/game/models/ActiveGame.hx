@@ -18,9 +18,12 @@ import openfl.Assets;
 
 class ActiveGame extends CoreModel
 {
-	public var players:Array<PlayerModel>;
-	public var activePlayer:PlayerModel;
-	public var lastPlayerInRound:PlayerModel;
+	public var playerIndex(default, null):Array<PlayerModel>;
+	
+	private var activePlayers(default, null):TurnModel<PlayerModel>;
+	
+	public var activePlayer(get, null):PlayerModel;
+	public var finalPlayerInRound(get, null):PlayerModel;
 	
 	public var space:MapModel;
 	public var worlds:Array<MapModel>;
@@ -38,7 +41,8 @@ class ActiveGame extends CoreModel
 	
 	function validateNumberOfPlayers(numberOfPlayers:Int):Void
 	{
-		if (numberOfPlayers < 1) {
+		if (numberOfPlayers < 1)
+		{
 			throw "Cannot play the game with less then one player.";
 		}
 		
@@ -50,7 +54,7 @@ class ActiveGame extends CoreModel
 	
 	function setupPlayerStartingConditions(startVariant:IStartVariant):Void
 	{
-		for (player in players)
+		for (player in playerIndex)
 		{
 			var world = worlds[player.playerNumberZeroBased];
 			if (world == null)
@@ -95,35 +99,28 @@ class ActiveGame extends CoreModel
 			throw "Cannot create game with less than two players";
 		}
 		
-		players = new Array<PlayerModel>();
+		playerIndex = new Array<PlayerModel>();
+		activePlayers = new TurnModel<PlayerModel>();
+		
 		for (i in 0...numberOfPlayers)
 		{
 			createNewPlayer(i);
 		}
-		
-		defineLastPlayerInRound();
-	}
-	
-	public function defineLastPlayerInRound():Void
-	{
-		lastPlayerInRound = (players.length > 0) ? players[players.length - 1] : null;
 	}
 	
 	public function startNextPlayersTurn():Void
 	{
-		if (players.length == 0) {
+		if (playerIndex.length == 0)
+		{
 			throw "No players to select from.";
 		}
 		
-		if (activePlayer == null)
+		if (activePlayers.size() == 0 || activePlayers.activePlayer == null)
 		{
-			activePlayer = players[0];
+			throw "No active players remaining in game";
 		}
-		else
-		{
-			var index = Lambda.indexOf(players, activePlayer) + 1;
-			activePlayer = players[index % players.length];
-		}
+		
+		activePlayers.chooseNextPlayer();
 		
 		updateAllMapAndPlayerIndexes();
 		
@@ -139,7 +136,7 @@ class ActiveGame extends CoreModel
 	public function updateAllMapAndPlayerIndexes():Void
 	{
 		// reset player values
-		for (player in players)
+		for (player in playerIndex)
 		{
 			player.territory = 0;
 			player.units.removeAll();
@@ -237,13 +234,32 @@ class ActiveGame extends CoreModel
 		}
 	}
 	
-	function createNewPlayer(number:Int):PlayerModel
+	function createNewPlayer(number:Int):Void
 	{
 		var player = new PlayerModel(number);
 		
-		players.push(player);
-		
-		return player;
+		playerIndex.push(player);
+		activePlayers.add(player);
+	}
+	
+	function get_activePlayer():Null<PlayerModel>
+	{
+		return activePlayers.activePlayer;
+	}
+	
+	function get_finalPlayerInRound():Null<PlayerModel>
+	{
+		return activePlayers.finalPlayer;
+	}
+	
+	public function removePlayerFromGame(player:PlayerModel):Void
+	{
+		activePlayers.remove(player);
+	}
+	
+	public function activePlayerCount():Int
+	{
+		return activePlayers.size();
 	}
 	
 }

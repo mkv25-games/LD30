@@ -18,6 +18,7 @@
 	<source path="dbvo" />
 	<haxelib name="openfl" />
 	<haxelib name="actuate" />
+	<haxelib name="hxpect" />
 	
 	<!-- assets -->
 	<assets path="assets/img" rename="img" />
