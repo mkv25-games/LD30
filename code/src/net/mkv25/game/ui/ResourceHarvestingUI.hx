@@ -78,11 +78,9 @@ class ResourceHarvestingUI extends BaseUI
 	
 	function cashInResourceCounter(icon:BitmapUI, transaction:ResourceTransactionModel):Void
 	{
-		icon.zoomOut();
-		
 		cashedInCounter.dispatch(transaction);
 		
-		resourceRecycler.recycle(icon);
+		icon.zoomOut().onComplete(resourceRecycler.recycle, [icon]);
 	}
 	
 }

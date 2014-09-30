@@ -42,8 +42,6 @@ class ResourceSpendingUI extends BaseUI
 	{
 		checksForValidHud();
 		
-		resourceRecycler.recycleAll();
-		
 		var amount = cast Math.abs(transaction.resourceChange);
 		for (i in 0...amount)
 		{
@@ -69,7 +67,14 @@ class ResourceSpendingUI extends BaseUI
 		
 		Actuate.tween(icon.artwork, 0.2, { alpha: 0.0, y: icon.artwork.y - 25 } )
 			.delay(delayTime)
-			.onComplete(cashedOutCounter.dispatch, [transaction]);
+			.onComplete(onAnimationComplete, [icon, transaction]);
+	}
+	
+	function onAnimationComplete(icon:BitmapUI, transaction:ResourceTransactionModel):Void
+	{
+		cashedOutCounter.dispatch(transaction);
+		
+		resourceRecycler.recycle(icon);
 	}
 	
 }
