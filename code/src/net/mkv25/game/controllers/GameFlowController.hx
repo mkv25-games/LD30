@@ -72,7 +72,7 @@ class GameFlowController
 		
 		Index.activeGame = game;
 		Index.screenController.showScreen(Index.mainScreen);
-		Index.activeGame.startNextPlayersTurn();
+		Index.activeGame.startFirstPlayerTurn();
 	}
 	
 	function handle_restartGame(?model)

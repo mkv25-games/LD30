@@ -108,7 +108,23 @@ class ActiveGame extends CoreModel
 		}
 	}
 	
+	public function startFirstPlayerTurn():Void
+	{
+		checkForValidPlayers();
+		
+		updateGameForActivePlayer();
+	}
+	
 	public function startNextPlayersTurn():Void
+	{
+		checkForValidPlayers();
+		
+		activePlayers.chooseNextPlayer();
+		
+		updateGameForActivePlayer();
+	}
+	
+	function checkForValidPlayers():Void
 	{
 		if (playerIndex.length == 0)
 		{
@@ -119,9 +135,10 @@ class ActiveGame extends CoreModel
 		{
 			throw "No active players remaining in game";
 		}
-		
-		activePlayers.chooseNextPlayer();
-		
+	}
+	
+	function updateGameForActivePlayer():Void
+	{
 		updateAllMapAndPlayerIndexes();
 		
 		resetAllUnitFlags();

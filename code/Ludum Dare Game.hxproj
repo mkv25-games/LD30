@@ -50,7 +50,7 @@
     <hidden path="obj" />
   </hiddenPaths>
   <!-- Executed before build -->
-  <preBuildCommand>haxelib run hxpect src tests/src -cp dbvo</preBuildCommand>
+  <preBuildCommand>haxelib run hxpect src tests/src -regen</preBuildCommand>
   <!-- Executed after build -->
   <postBuildCommand alwaysRun="False" />
   <!-- Other project options -->

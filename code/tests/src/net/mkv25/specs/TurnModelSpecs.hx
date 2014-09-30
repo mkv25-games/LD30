@@ -1,7 +1,6 @@
 package net.mkv25.specs;
 
 import hxpect.core.BaseSpec;
-import net.mkv25.game.models.ActiveGame;
 import net.mkv25.game.models.TurnModel;
 
 import net.mkv25.specs.TurnModelSpecs.TestPlayer;

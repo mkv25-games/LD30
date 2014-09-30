@@ -3,8 +3,7 @@ Things to do
 
 Bugs
 ----
-+ Eliminating a player from a 6 player game reverted the player order back to Player 1
-
++ Number of resources count jumps around when harvesting a new card before the last animation has completed
 
 Improvements based on Player feedback
 -------------------------------------

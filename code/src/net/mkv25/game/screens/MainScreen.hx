@@ -108,12 +108,6 @@ class MainScreen extends Screen
 		super.show();
 		
 		Index.activeGame.space.changed.dispatch(Index.activeGame.space);
-		
-		if (Index.activeGame.activePlayer != null) 
-		{
-			setBackgroundToMatchPlayer(Index.activeGame.activePlayer);
-			playerHand.display(Index.activeGame.activePlayer.playerHand);
-		}
 	}
 	
 	override public function handleKeyAction(event:KeyboardEvent):Void
