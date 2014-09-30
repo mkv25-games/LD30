@@ -16,8 +16,14 @@ Screenshots
 
 ### Movement
 
-<img src="./website/screenshots/screenshot_03_movement-into-space.png" alt="Connect the worlds, rule the universe - Movement" />
+<img src="./photos/portals-two-distance-movement.png" alt="Connect the worlds, rule the universe - Portals Two Distance Movement" />
 
 ### Research
 
 <img src="./website/screenshots/screenshot_04_research-technology.png" alt="Connect the worlds, rule the universe - Research Technology" />
+
+Early Design
+------------
+
+<img src="./photos/ideas-on-paper.jpg" alt="Connect the worlds, rule the universe - Early Designs" />
+
