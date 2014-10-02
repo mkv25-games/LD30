@@ -32,6 +32,20 @@ class CardHolderUI extends BitmapUI
 		artwork.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 	}
 	
+	override public function enable() 
+	{
+		super.enable();
+		
+		artwork.alpha = 1.0;
+	}
+	
+	override public function disable() 
+	{
+		super.disable();
+		
+		artwork.alpha = 0.4;
+	}
+	
 	public function setupCard(card:PlayableCard):CardHolderUI
 	{
 		this.assignedCard = card;

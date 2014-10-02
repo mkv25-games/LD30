@@ -3,11 +3,10 @@ Things to do
 
 Bugs
 ----
-+ Number of resources count jumps around when harvesting a new card before the last animation has completed
+
 
 Improvements based on Player feedback
 -------------------------------------
-+ Add unit inset to show currently selected unit, and unit strength
 + Combat report summary
 + Not clear how to select and move a unit
 + A way to name individual players - pass and play between six people made it hard to track
@@ -27,14 +26,14 @@ Suggestions based on Player feedback
 
 In progress
 -----------
-
++ Add unit inset to show currently selected unit, and unit strength
 
 
 Improvements
 ------------
++ Explosion animation for combat
 + In-game player guide, getting started
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
-+ Explosion animation for combat
 + Saving of game state
 + Exit button to end game
 + AI Players
@@ -67,6 +66,7 @@ Improvements
 - Add alternative image for unsupported flash player plugin on web preview
 - Slight lag spike when selecting a tile after movement options have already been displayed
 - View map after end of game, without any further player interaction
+- Pre-combat report about battle allowing the player to confirm or postpone the battle
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn

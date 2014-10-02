@@ -8,6 +8,7 @@ import flash.display.Graphics;
 import flash.display.Sprite;
 import flash.events.MouseEvent;
 import flash.geom.Matrix;
+import haxe.ds.StringMap;
 import haxe.Timer;
 import net.mkv25.base.core.Image.ImageRegion;
 import net.mkv25.base.core.Recycler;
@@ -48,9 +49,8 @@ class MapUI extends BaseUI
 	var markedHex:HexTile;
 	var markedImage:BitmapUI;
 	
-	var movementFocusHex:HexTile;
+	var movementFocusHexes:StringMap<HexTile>;
 	var movementFocusUnit:MapUnit;
-	var movementFocusDistance:Int;
 	
 	var mapImage:Bitmap;
 	
@@ -84,9 +84,8 @@ class MapUI extends BaseUI
 		markedImage = new BitmapUI();
 		markedImage.artwork.mouseEnabled = markedImage.artwork.mouseChildren = false;
 		
-		movementFocusHex = null;
+		movementFocusHexes = null;
 		movementFocusUnit = null;
-		movementFocusDistance = 0;
 		
 		mapImage = new Bitmap();
 		
@@ -294,9 +293,9 @@ class MapUI extends BaseUI
 		}
 		
 		// check if movement options should be rendered
-		if (movementFocusHex != null && movementFocusUnit != null && movementFocusDistance > 0)
+		if (movementFocusHexes != null && movementFocusUnit != null)
 		{
-			highlightValidMovementFor(movementFocusHex, movementFocusUnit, movementFocusDistance);
+			highlightValidMovementFor(movementFocusHexes, movementFocusUnit);
 		}
 		
 		// position view layer
@@ -308,16 +307,15 @@ class MapUI extends BaseUI
 		EventBus.mapViewChanged.dispatch(this);
 	}
 	
-	function highlightValidMovementFor(location:HexTile, unit:MapUnit, distance:Int)
+	function highlightValidMovementFor(hexes:StringMap<HexTile>, unit:MapUnit)
 	{
 		TimeProfile.logEvent("MapUI:highlightValidMovementFor");
 		
-		if (location.map == null || unit == null)
+		if (hexes == null || unit == null)
 		{
 			return;
 		}
 		
-		var hexes = MovementModel.getValidMovementDestinationsFor(location, unit, distance);
 		for (hex in hexes)
 		{
 			if (hex.map == currentModel)
@@ -573,23 +571,18 @@ class MapUI extends BaseUI
 	
 	/// Public methods ///
 	
-	public function enableMovementOverlayFor(location:HexTile, unit:MapUnit, distance:Int):Void
+	public function enableMovementOverlayFor(hexes:StringMap<HexTile>, unit:MapUnit):Void
 	{
-		// copy location details
-		this.movementFocusHex = new HexTile();
-		this.movementFocusHex.q = location.q;
-		this.movementFocusHex.r = location.r;
-		this.movementFocusHex.map = location.map;
-		
 		this.movementFocusUnit = unit;
-		this.movementFocusDistance = distance;
+		this.movementFocusHexes = hexes;
 		
 		redraw();
 	}
 	
 	public function disableMovementOverlay():Void
 	{
-		this.movementFocusHex = null;		
+		this.movementFocusHexes = null;
+		this.movementFocusUnit = null;
 		
 		movementLayer.visible = false;
 	}

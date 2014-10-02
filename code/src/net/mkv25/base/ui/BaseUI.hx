@@ -80,7 +80,6 @@ class BaseUI
 		enabled = true;
 		artwork.mouseEnabled = true;
 		artwork.mouseChildren = true;
-		artwork.alpha = 1.0;
 	}
 	
 	public function disable()
@@ -88,7 +87,6 @@ class BaseUI
 		enabled = false;
 		artwork.mouseEnabled = false;
 		artwork.mouseChildren = false;
-		artwork.alpha = 0.4;
 	}
 	
 	public function show()

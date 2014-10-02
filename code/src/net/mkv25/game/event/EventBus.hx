@@ -60,10 +60,6 @@ class EventBus
 	public static var mapRequiresRedraw = new Signal();
 	public static var mapViewChanged = new Signal();
 	public static var mapMarkerPlacedOnMap = new Signal();
-	
-	public function new() 
-	{
-		
-	}
+	public static var unitSelectionChanged = new Signal();
 	
 }

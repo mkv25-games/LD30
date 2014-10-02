@@ -1,5 +1,6 @@
 package net.mkv25.game.controllers;
 
+import haxe.ds.StringMap;
 import net.mkv25.game.event.EventBus;
 import net.mkv25.game.models.CombatModel;
 import net.mkv25.game.models.HexTile;
@@ -7,6 +8,7 @@ import net.mkv25.game.models.MapUnit;
 import net.mkv25.game.models.MovementModel;
 import net.mkv25.game.models.PlayableCard;
 import net.mkv25.game.models.PlayerModel;
+import net.mkv25.game.models.SelectedUnitModel;
 import net.mkv25.game.provider.UnitProvider;
 import net.mkv25.game.ui.DeploymentUI;
 import net.mkv25.game.ui.MapUI;
@@ -17,10 +19,13 @@ class MoveUnitController
 	private var map:MapUI;
 	private var movement:MovementUI;
 	
+	private var selectedUnit:SelectedUnitModel;
+	
 	private var activeMovementCard:PlayableCard;
 	private var markedLocation:HexTile;
 	private var selectedLocation:HexTile;
-	private var selectedUnit:MapUnit;
+	
+	private var movementDestinations:StringMap<HexTile>;
 	
 	public function new()
 	{
@@ -38,6 +43,8 @@ class MoveUnitController
 	{
 		this.map = map;
 		this.movement = movement;
+		
+		this.selectedUnit = new SelectedUnitModel();
 	}
 	
 	function suggestUnitMovementOptionsToPlayer(card:PlayableCard):Void
@@ -59,39 +66,45 @@ class MoveUnitController
 			return;
 		}
 		
-		var previousSelectedUnit:MapUnit = selectedUnit;
+		var previousSelectedUnit:MapUnit = selectedUnit.value;
 		selectedLocation = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
-		selectedUnit = selectUnitForPlayerFrom(selectedLocation, Index.activeGame.activePlayer);
-		if (selectedUnit != null) 
+		var unit:MapUnit = selectUnitForPlayerFrom(selectedLocation, Index.activeGame.activePlayer);
+		
+		if (unit != null) 
 		{
-			if (selectedUnit.engagedInCombatThisTurn)
+			if (unit.engagedInCombatThisTurn)
 			{
 				EventBus.displayNewStatusMessage.dispatch("Unit engaged in combat this turn");
-				selectedUnit = null;
+				selectedUnit.value = null;
+				map.disableMovementOverlay();
 			}
-			else if (selectedUnit.movedThisTurn)
+			else if (unit.movedThisTurn)
 			{
 				EventBus.displayNewStatusMessage.dispatch("Unit has already moved this turn");
-				selectedUnit = null;
+				selectedUnit.value = null;
+				map.disableMovementOverlay();
 			}
 			else
 			{
-				map.enableMovementOverlayFor(selectedLocation, selectedUnit, activeMovementCard.movement);
-				updateMovementConfirmationButton();
+				selectedUnit.value = unit;
+				
+				movementDestinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit.value, activeMovementCard.movement);
+				map.enableMovementOverlayFor(movementDestinations, unit);
 				
 				if (previousSelectedUnit == null)
 				{
 					EventBus.displayNewStatusMessage.dispatch("Select a location to move to");
 				}
-				else if (previousSelectedUnit == selectedUnit)
+				else if (previousSelectedUnit == unit)
 				{
-					EventBus.displayNewStatusMessage.dispatch(selectedUnit.type.name + " selected again");
+					EventBus.displayNewStatusMessage.dispatch(unit.type.name + " selected again");
 				}
 				else
 				{
-					EventBus.displayNewStatusMessage.dispatch(selectedUnit.type.name + " selected");
+					EventBus.displayNewStatusMessage.dispatch(unit.type.name + " selected");
 				}
 				
+				updateMovementConfirmationButton();
 			}
 		}
 		else
@@ -104,14 +117,14 @@ class MoveUnitController
 	{
 		var units = hex.listUnits();
 		
-		return units.getCandidateForMovement(player, selectedUnit);
+		return units.getCandidateForMovement(player, selectedUnit.value);
 	}
 	
 	function cancelMovement(?model)
 	{
 		this.activeMovementCard = null;
 		this.selectedLocation = null;
-		this.selectedUnit = null;
+		this.selectedUnit.value = null;
 		
 		disableMovement();
 	}
@@ -125,7 +138,7 @@ class MoveUnitController
 	function disableMovement()
 	{
 		this.activeMovementCard = null;
-		this.selectedUnit = null;
+		this.selectedUnit.value = null;
 		
 		movement.disable();
 		movement.hide();
@@ -184,10 +197,9 @@ class MoveUnitController
 		}
 		
 		// check that marked location is a valid movement tile
-		if (markedLocation != null && selectedLocation != null && selectedUnit != null)
+		if (markedLocation != null && selectedLocation != null && selectedUnit.value != null)
 		{
-			var destinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit, activeMovementCard.movement);
-			if (MovementModel.mapContainsLocation(destinations, markedLocation))
+			if (MovementModel.mapContainsLocation(movementDestinations, markedLocation))
 			{
 				movement.confirmButton.enable();
 				EventBus.displayNewStatusMessage.dispatch("Confirm movement");
@@ -197,7 +209,7 @@ class MoveUnitController
 		
 		movement.confirmButton.disable();
 		
-		if (selectedUnit == null)
+		if (selectedUnit.value == null)
 		{
 			EventBus.displayNewStatusMessage.dispatch("No unit here");
 		}
@@ -218,14 +230,14 @@ class MoveUnitController
 		}
 		
 		// check that unit can be moved
-		if (selectedUnit.movedThisTurn || selectedUnit.engagedInCombatThisTurn)
+		if (selectedUnit.value.movedThisTurn || selectedUnit.value.engagedInCombatThisTurn)
 		{
 			movement.confirmButton.disable();
 			return;
 		}
 		
 		// get list of valid locations
-		var destinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit, activeMovementCard.movement);
+		var destinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit.value, activeMovementCard.movement);
 		for (destination in destinations)
 		{
 			// validate that marked location is in the list of valid destination
@@ -234,7 +246,7 @@ class MoveUnitController
 				var targetLocation = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
 				
 				EventBus.removeCardFromActivePlayersHand.dispatch(activeMovementCard);
-				CombatModel.moveUnit(selectedUnit, selectedLocation, targetLocation);
+				CombatModel.moveUnit(selectedUnit.value, selectedLocation, targetLocation);
 				cancelMovement();
 				return;
 			}

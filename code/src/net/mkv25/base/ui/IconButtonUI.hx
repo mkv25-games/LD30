@@ -40,6 +40,20 @@ class IconButtonUI extends BaseUI
 		artwork.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
 	}
 	
+	override public function enable() 
+	{
+		super.enable();
+		
+		artwork.alpha = 1.0;
+	}
+	
+	override public function disable() 
+	{
+		super.disable();
+		
+		artwork.alpha = 0.4;
+	}
+	
 	public function setup(iconPath:String, action:Dynamic->Void, imagePrefix:String=DEFAULT_ASSET_PREFIX):Void
 	{
 		this.iconPath = iconPath;
