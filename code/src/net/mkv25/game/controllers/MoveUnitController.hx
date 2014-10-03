@@ -72,22 +72,20 @@ class MoveUnitController
 		
 		if (unit != null) 
 		{
+			selectedUnit.value = unit;
+			
 			if (unit.engagedInCombatThisTurn)
 			{
 				EventBus.displayNewStatusMessage.dispatch("Unit engaged in combat this turn");
-				selectedUnit.value = null;
 				map.disableMovementOverlay();
 			}
 			else if (unit.movedThisTurn)
 			{
 				EventBus.displayNewStatusMessage.dispatch("Unit has already moved this turn");
-				selectedUnit.value = null;
 				map.disableMovementOverlay();
 			}
 			else
-			{
-				selectedUnit.value = unit;
-				
+			{	
 				movementDestinations = MovementModel.getValidMovementDestinationsFor(selectedLocation, selectedUnit.value, activeMovementCard.movement);
 				map.enableMovementOverlayFor(movementDestinations, unit);
 				
@@ -115,16 +113,21 @@ class MoveUnitController
 	
 	function selectUnitForPlayerFrom(hex:HexTile, player:PlayerModel):Null<MapUnit>
 	{
-		var units = hex.listUnits();
+		if (hex.containsUnit(player))
+		{
+			var units = hex.listUnits();
 		
-		return units.getCandidateForMovement(player, selectedUnit.value);
+			return units.getCandidateForMovement(player, selectedUnit.value);
+		}
+		
+		return null;
 	}
 	
 	function cancelMovement(?model)
 	{
-		this.activeMovementCard = null;
-		this.selectedLocation = null;
-		this.selectedUnit.value = null;
+		activeMovementCard = null;
+		selectedLocation = null;
+		selectedUnit.value = null;
 		
 		disableMovement();
 	}
@@ -137,8 +140,8 @@ class MoveUnitController
 	
 	function disableMovement()
 	{
-		this.activeMovementCard = null;
-		this.selectedUnit.value = null;
+		activeMovementCard = null;
+		selectedUnit.value = null;
 		
 		movement.disable();
 		movement.hide();
@@ -156,8 +159,18 @@ class MoveUnitController
 			return;
 		}
 		
-		updateMovementConfirmationButton();
 		updateUnitSelectionButton();
+		
+		if (selectedUnit.value == null)
+		{
+			EventBus.displayNewStatusMessage.dispatch("No unit here");
+		}
+		else
+		{
+			EventBus.displayNewStatusMessage.dispatch("Cannot move to this location");
+		}
+		
+		updateMovementConfirmationButton();
 	}
 	
 	function updateUnitSelectionButton():Void
@@ -166,14 +179,15 @@ class MoveUnitController
 		if (markedLocation != null)
 		{
 			var location:HexTile = markedLocation.map.getHexTile(markedLocation.q, markedLocation.r);
-			if (location.containsUnit(Index.activeGame.activePlayer))
+			var unit:MapUnit = selectUnitForPlayerFrom(location, Index.activeGame.activePlayer);
+			
+			if (unit != null)
 			{
 				// Rule: players can only move their own units
 				movement.selectUnitButton.enable();
 				
 				// report to player about selection
-				var unit:MapUnit = selectUnitForPlayerFrom(location, Index.activeGame.activePlayer);
-				if (selectedUnit != null)
+				if (selectedUnit.value != null)
 				{
 					EventBus.displayNewStatusMessage.dispatch("Change selection: " + unit.type.name);
 				}
@@ -181,9 +195,9 @@ class MoveUnitController
 				{
 					EventBus.displayNewStatusMessage.dispatch("Confirm selection: " + unit.type.name);
 				}
-				
-				return;
 			}
+				
+			return;
 		}
 		
 		movement.selectUnitButton.disable();
@@ -208,15 +222,6 @@ class MoveUnitController
 		}
 		
 		movement.confirmButton.disable();
-		
-		if (selectedUnit.value == null)
-		{
-			EventBus.displayNewStatusMessage.dispatch("No unit here");
-		}
-		else
-		{
-			EventBus.displayNewStatusMessage.dispatch("Cannot move to this location");
-		}
 	}
 	
 	function attemptToMoveUnitToSelectedLocation(?model):Void
