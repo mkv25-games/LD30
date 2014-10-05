@@ -26,10 +26,10 @@ Suggestions based on Player feedback
 
 In progress
 -----------
++ In-game player guide, getting started
 
 Improvements
 ------------
-+ In-game player guide, getting started
 + Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Saving of game state
 + Exit button to end game
