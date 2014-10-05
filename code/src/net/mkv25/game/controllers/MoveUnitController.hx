@@ -116,8 +116,15 @@ class MoveUnitController
 		if (hex.containsUnit(player))
 		{
 			var units = hex.listUnits();
-		
-			return units.getCandidateForMovement(player, selectedUnit.value);
+			
+			if (selectedUnit.value == null)
+			{
+				return units.getHighestStrengthUnit(player);
+			}
+			else
+			{
+				return units.getCandidateForMovement(player, selectedUnit.value);
+			}
 		}
 		
 		return null;
