@@ -1,0 +1,143 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Explosion/Explosion Animation" itemID="543145bc-00000254" sourceLibraryItemHRef="Symbol 1" lastModified="1412516436">
+  <timeline>
+    <DOMTimeline name="Explosion Animation" currentFrame="16">
+      <layers>
+        <DOMLayer name="explosion 5" color="#808080" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="5" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Explosion/Single Explosion" name="" symbolType="graphic" centerPoint3DX="64" centerPoint3DY="64" loop="play once">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="64" ty="64"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="16" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="explosion 4" color="#4FFFFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="4" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="4" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Explosion/Single Explosion" name="" symbolType="graphic" centerPoint3DX="53.5" centerPoint3DY="105.4" loop="play once">
+                  <matrix>
+                    <Matrix a="0.349990844726563" d="0.349990844726563" tx="53.5" ty="105.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="15" duration="2" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="explosion 3" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="3" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Explosion/Single Explosion" name="" symbolType="graphic" centerPoint3DX="107.5" centerPoint3DY="70.9" loop="play once">
+                  <matrix>
+                    <Matrix a="0.29998779296875" d="0.29998779296875" tx="107.5" ty="70.9"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="14" duration="3" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="explosion 2" color="#FF800A" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+            <DOMFrame index="1" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Explosion/Single Explosion" name="" symbolType="graphic" centerPoint3DX="35" centerPoint3DY="35" loop="play once">
+                  <matrix>
+                    <Matrix a="0.5" d="0.5" tx="35" ty="35"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="12" duration="5" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="explosion 1" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" duration="11" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Explosion/Single Explosion" name="" symbolType="graphic" centerPoint3DX="64" centerPoint3DY="64" loop="play once">
+                  <matrix>
+                    <Matrix a="0.649993896484375" d="0.649993896484375" tx="64" ty="64"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="11" duration="6" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="corners" color="#4FFF4F" locked="true" outline="true" current="true" isSelected="true" useOutlineView="true" autoNamed="false" visible="false">
+          <frames>
+            <DOMFrame index="0" duration="17" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMRectangleObject objectWidth="5" objectHeight="5" x="-276.95" y="112" selected="true" lockFlag="true">
+                      <matrix>
+                        <Matrix tx="276.95" ty="-112"/>
+                      </matrix>
+                      <fill>
+                        <SolidColor alpha="0.00784313725490196"/>
+                      </fill>
+                    </DOMRectangleObject>
+                    <DOMRectangleObject objectWidth="5" objectHeight="5" x="-276.95" y="112" selected="true" lockFlag="true">
+                      <matrix>
+                        <Matrix tx="399.95" ty="11"/>
+                      </matrix>
+                      <fill>
+                        <SolidColor alpha="0.00784313725490196"/>
+                      </fill>
+                    </DOMRectangleObject>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

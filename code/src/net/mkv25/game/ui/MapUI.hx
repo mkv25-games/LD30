@@ -13,6 +13,7 @@ import haxe.Timer;
 import net.mkv25.base.core.Image.ImageRegion;
 import net.mkv25.base.core.Recycler;
 import net.mkv25.base.core.TimeProfile;
+import net.mkv25.base.ui.AnimationUI;
 import net.mkv25.base.ui.BaseUI;
 import net.mkv25.base.ui.BitmapUI;
 import net.mkv25.base.ui.IconButtonUI;
@@ -60,6 +61,7 @@ class MapUI extends BaseUI
 	var movementLayer:Sprite;
 	var lineLayer:Sprite;
 	var unitLayer:Sprite;
+	var explosion:ExplosionAnimationUI;
 	
 	var spaceViewButton:IconButtonUI;
 	var worldViewButton:IconButtonUI;
@@ -98,6 +100,9 @@ class MapUI extends BaseUI
 		lineLayer = new Sprite();
 		unitLayer = new Sprite();
 		
+		explosion = new ExplosionAnimationUI();
+		explosion.complete.add(function(?model) { explosion.hide(); } );
+		
 		spaceViewButton = new IconButtonUI();
 		spaceViewButton.setup("img/icon-starmap.png", switchToSpaceMap);
 		spaceViewButton.move(40, 40);
@@ -127,11 +132,13 @@ class MapUI extends BaseUI
 		viewLayer.addChild(unitLayer);
 		viewLayer.addChild(markedImage.artwork);
 		viewLayer.addChild(highlightImage.artwork);
+		viewLayer.addChild(explosion.artwork);
 		artwork.addChild(spaceViewButton.artwork);
 		artwork.addChild(worldViewButton.artwork);
 		artwork.addChild(hexInfoText.artwork);
 		
 		EventBus.mapRequiresRedraw.add(handleMapRequiresRedraw);
+		EventBus.combat_occuredAtLocation.add(displayExplosionAtHex);
 	}
 	
 	public function setupMap(model:MapModel)
@@ -253,6 +260,27 @@ class MapUI extends BaseUI
 		}
 		
 		updateWorldViewButton();
+	}
+	
+	function displayExplosionAtHex(hex:HexTile):Void
+	{
+		explosion.drawFirst();
+		
+		var hex_x = hex.x();
+		var hex_y = hex.y();
+		var x = (hexImage.width * hex_x);
+		var y = (hexImage.height * hex_y);
+		
+		displayExplosionAt(x, y);
+	}
+	
+	function displayExplosionAt(x:Float, y:Float):Void
+	{
+		explosion.artwork.x = x - (explosion.artwork.width / 2);
+		explosion.artwork.y = y - (explosion.artwork.height / 2);
+		
+		explosion.show();
+		explosion.playOnce();
 	}
 	
 	function updateWorldViewButton():Void

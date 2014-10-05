@@ -1,0 +1,141 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Explosion/Explosion for Export" itemID="543149f0-000002bb" sourceLibraryItemHRef="Symbol 1" lastModified="1412519429" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Explosion for Export">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" loop="single frame">
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="1" loop="single frame">
+                  <matrix>
+                    <Matrix tx="128"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="2" loop="single frame">
+                  <matrix>
+                    <Matrix tx="256"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="4" loop="single frame">
+                  <matrix>
+                    <Matrix ty="128"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="3" loop="single frame">
+                  <matrix>
+                    <Matrix tx="384"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="5" loop="single frame">
+                  <matrix>
+                    <Matrix tx="128" ty="128"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="6" loop="single frame">
+                  <matrix>
+                    <Matrix tx="256" ty="128"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="7" loop="single frame">
+                  <matrix>
+                    <Matrix tx="384" ty="128"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="9" loop="single frame">
+                  <matrix>
+                    <Matrix tx="128" ty="256"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="8" loop="single frame">
+                  <matrix>
+                    <Matrix ty="256"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="10" loop="single frame">
+                  <matrix>
+                    <Matrix tx="256" ty="256"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="11" loop="single frame">
+                  <matrix>
+                    <Matrix tx="384" ty="256"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="12" loop="single frame">
+                  <matrix>
+                    <Matrix ty="384"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="14" loop="single frame">
+                  <matrix>
+                    <Matrix tx="256" ty="384"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="13" loop="single frame">
+                  <matrix>
+                    <Matrix tx="128" ty="384"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Explosion/Explosion Animation" name="" symbolType="graphic" firstFrame="15" loop="single frame">
+                  <matrix>
+                    <Matrix tx="384" ty="384"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="64" y="64"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

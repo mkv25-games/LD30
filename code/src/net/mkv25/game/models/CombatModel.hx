@@ -131,6 +131,8 @@ class CombatModel
 			EventBus.combat_playerHasWonCombatAtLocation.dispatch(location);
 		}
 		
+		EventBus.combat_occuredAtLocation.dispatch(location);
+		
 		return combatLog;
 	}
 	

@@ -1,183 +1,146 @@
-<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" backgroundColor="#CCCCCC" width="500" height="800" currentTimeline="1" xflVersion="2.0" creatorInfo="Adobe Flash Professional CS5" platform="Windows" versionInfo="Saved by Adobe Flash Windows 11.0 build 489" majorVersion="11" buildNumber="489" viewAngle3D="50.6510299754819" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false">
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" backgroundColor="#222222" width="128" height="128" currentTimeline="1" xflVersion="2.0" creatorInfo="Adobe Flash Professional CS5" platform="Windows" versionInfo="Saved by Adobe Flash Windows 11.0 build 489" majorVersion="11" buildNumber="489" viewAngle3D="13.8154556895029" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false">
      <folders>
-          <DOMFolderItem name="- App Icon" itemID="5419f10d-00000432" isExpanded="true"/>
-          <DOMFolderItem name="- Bitmaps" itemID="53f8e0e2-0000034c"/>
-          <DOMFolderItem name="- Buttons" itemID="53f90b68-000014ed"/>
-          <DOMFolderItem name="- Cards" itemID="53f8e0cc-00000342"/>
-          <DOMFolderItem name="- Cards/- Card Assets" itemID="53f8e0df-00000347"/>
-          <DOMFolderItem name="- Game Play Areas" itemID="53f8af53-000001f6"/>
-          <DOMFolderItem name="- Hexes" itemID="53f8b390-00000276"/>
-          <DOMFolderItem name="- Icons" itemID="53f8bceb-0000030a"/>
-          <DOMFolderItem name="- Scraps" itemID="53fa8e2d-0000275d"/>
-          <DOMFolderItem name="- Screens" itemID="53f8b396-0000027a"/>
+          <DOMFolderItem name="- Explosion" itemID="54314a58-000002c1" isExpanded="true"/>
      </folders>
-     <media>
-          <DOMBitmapItem name="- Bitmaps/icon-deploy.png" itemID="540cbfc1-0000083b" sourceExternalFilepath=".\LIBRARY\- Bitmaps\icon-deploy.png" sourceLastImported="1410121664" externalFileSize="328" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-deploy.png" bitmapDataHRef="M 10 1410121448.dat" frameRight="780" frameBottom="780"/>
-          <DOMBitmapItem name="- Bitmaps/icon-move.png" itemID="540cbc5e-0000078f" sourceExternalFilepath=".\LIBRARY\icon-move.png" sourceLastImported="1409366096" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-move.png" bitmapDataHRef="M 9 1410120741.dat" frameRight="780" frameBottom="780"/>
-          <DOMBitmapItem name="- Bitmaps/icon-portal-1.png" itemID="540cbfc0-00000839" sourceExternalFilepath=".\LIBRARY\- Bitmaps\icon-portal-1.png" sourceLastImported="1409614071" externalFileSize="1103" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-portal-1.png" bitmapDataHRef="M 11 1410121593.dat" frameRight="780" frameBottom="780"/>
-          <DOMBitmapItem name="- Bitmaps/icon-portal-2.png" itemID="540cbfc0-0000083a" sourceExternalFilepath=".\LIBRARY\- Bitmaps\icon-portal-2.png" sourceLastImported="1409612057" externalFileSize="1111" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-portal-2.png" bitmapDataHRef="M 12 1410121616.dat" frameRight="780" frameBottom="780"/>
-          <DOMBitmapItem name="- Bitmaps/planet01.png" itemID="53fa8f95-000027cb" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet01.png" sourceLastImported="1408891436" externalFileCRC32="145299161" externalFileSize="4989" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet01.png" bitmapDataHRef="M 2 1408929685.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/planet02.png" itemID="53fa8fc4-000027ed" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet02.png" sourceLastImported="1408891464" externalFileCRC32="2152926178" externalFileSize="4940" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet02.png" bitmapDataHRef="M 3 1408929732.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/planet03.png" itemID="53fa902b-00002866" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet03.png" sourceLastImported="1408891484" externalFileCRC32="1861700591" externalFileSize="4892" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet03.png" bitmapDataHRef="M 5 1408929835.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/planet04.png" itemID="53fa902b-0000286a" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet04.png" sourceLastImported="1408891500" externalFileCRC32="1838713532" externalFileSize="4989" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet04.png" bitmapDataHRef="M 6 1408929835.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/planet05.png" itemID="53fa902b-0000286e" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet05.png" sourceLastImported="1408891511" externalFileCRC32="3493012340" externalFileSize="5089" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet05.png" bitmapDataHRef="M 7 1408929835.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/planet06.png" itemID="53fa902c-00002872" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet06.png" sourceLastImported="1408891524" externalFileCRC32="2939469081" externalFileSize="5051" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet06.png" bitmapDataHRef="M 8 1408929836.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/planet07.png" itemID="53fa902b-00002862" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet07.png" sourceLastImported="1408891540" externalFileCRC32="1496552249" externalFileSize="4945" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet07.png" bitmapDataHRef="M 4 1408929835.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/starfield-small.png" itemID="53f8bf3b-00000332" sourceExternalFilepath=".\LIBRARY\- Bitmaps\starfield-small.png" sourceLastImported="1408810784" externalFileSize="4557" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\starfield-small.png" bitmapDataHRef="M 1 1408810811.dat" frameRight="10000" frameBottom="10000"/>
-     </media>
      <symbols>
-          <Include href="- App Icon/App Icon for Export.xml" loadImmediate="false"/>
-          <Include href="- App Icon/Icon Circles.xml" loadImmediate="false"/>
-          <Include href="- App Icon/Icon Hex Border.xml" loadImmediate="false"/>
-          <Include href="- App Icon/Icon Sheen.xml" loadImmediate="false"/>
-          <Include href="- Buttons/Button - Option Down.xml" loadImmediate="false"/>
-          <Include href="- Buttons/Button - Option Over.xml" loadImmediate="false"/>
-          <Include href="- Buttons/Button - Option Selected.xml" loadImmediate="false"/>
-          <Include href="- Buttons/Button - Option Up.xml" loadImmediate="false"/>
-          <Include href="- Buttons/Button - Square Down.xml" loadImmediate="false"/>
-          <Include href="- Buttons/Button - Square Over.xml" loadImmediate="false"/>
-          <Include href="- Buttons/Button - Square Selected.xml" loadImmediate="false"/>
-          <Include href="- Buttons/Button - Square Up.xml" loadImmediate="false"/>
-          <Include href="- Buttons/Buttons for Export.xml" loadImmediate="false"/>
-          <Include href="- Cards/- Card Assets/Card Border.xml" loadImmediate="false"/>
-          <Include href="- Cards/- Card Assets/Card Box.xml" loadImmediate="false"/>
-          <Include href="- Cards/- Card Assets/Card Box Drop Shadow.xml" loadImmediate="false"/>
-          <Include href="- Cards/- Card Assets/Card Divider.xml" loadImmediate="false"/>
-          <Include href="- Cards/- Card Assets/Card Top Box.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Advanced Base.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Armoured Core.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Assault Team.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Capital Army.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Engineers.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Excavater.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Harvester.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Metroplex.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Outpost.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Plasma Furnace.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Portal.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Scientists.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Standard Base.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Template.xml" loadImmediate="false"/>
-          <Include href="- Cards/Card - Titan Force.xml" loadImmediate="false"/>
-          <Include href="- Cards/Cards for Export.xml" loadImmediate="false"/>
-          <Include href="- Cards/Cards for Printing.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Action Area.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Build Units Area.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Card Area.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Develop Technology Area.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Map Area.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Map Area for Planet.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Planet Map 01.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Planet Map 02.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Planet Map 03.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Planet Map 04.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Planet Map 05.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Planet Map 06.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Planet Map 07.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Space Map for Export.xml" loadImmediate="false"/>
-          <Include href="- Game Play Areas/Status Bar.xml" loadImmediate="false"/>
-          <Include href="- Hexes/Hexagon.xml" loadImmediate="false"/>
-          <Include href="- Hexes/Hexagon Contested.xml" loadImmediate="false"/>
-          <Include href="- Hexes/Hexagon Highlight.xml" loadImmediate="false"/>
-          <Include href="- Hexes/Hexagon Marker Hollow.xml" loadImmediate="false"/>
-          <Include href="- Hexes/Hexagon Movement Highlight.xml" loadImmediate="false"/>
-          <Include href="- Hexes/Hexagon Territory.xml" loadImmediate="false"/>
-          <Include href="- Hexes/Spherical Hex Grid.xml" loadImmediate="false"/>
-          <Include href="- Icons/Counters for Export.xml" loadImmediate="false"/>
-          <Include href="- Icons/Deployment Icon.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Base Tile.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Base Tile - S1.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Base Tile - S2.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Base Tile - S3.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Base Tile - S4.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Planet - Black Orange.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Planet - Blue Green.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Planet - Cyan Yellow.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Planet - Green Orange.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Planet - Grey Black.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Planet - Purple Pink.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Planet - White Red.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Resources.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Resources 1.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Resources 3.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Resources 5.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Territory.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Unit Count.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Unit Tile - S1.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Unit Tile - S2.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Unit Tile - S3.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Unit Tile - S4.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Unit Tile - S5.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Unit Tile - S5 Petal.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon - Unit Tile - S6.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icon Strip - Bases and Units.xml" loadImmediate="false"/>
-          <Include href="- Icons/Icons for Export.xml" loadImmediate="false"/>
-          <Include href="- Icons/Movement Icon.xml" loadImmediate="false"/>
-          <Include href="- Icons/Planet Owner Marker.xml" loadImmediate="false"/>
-          <Include href="- Icons/Portal Connect Icon 1.xml" loadImmediate="false"/>
-          <Include href="- Icons/Portal Connect Icon 2.xml" loadImmediate="false"/>
-          <Include href="- Icons/Unit Strip - Bases and Units.xml" loadImmediate="false"/>
-          <Include href="- Scraps/Action Button.xml" loadImmediate="false"/>
-          <Include href="- Scraps/Cost Tab Background.xml" loadImmediate="false"/>
-          <Include href="- Scraps/counter.xml" loadImmediate="false"/>
-          <Include href="- Scraps/Hexagons for Export.xml" loadImmediate="false"/>
-          <Include href="- Scraps/Resource Counters.xml" loadImmediate="false"/>
-          <Include href="- Scraps/Resources for Export.xml" loadImmediate="false"/>
-          <Include href="- Scraps/Square Button.xml" loadImmediate="false"/>
-          <Include href="- Scraps/Targetting Circle.xml" loadImmediate="false"/>
-          <Include href="- Screens/Screen - Build Units.xml" loadImmediate="false"/>
-          <Include href="- Screens/Screen - Choose Action - Deploy.xml" loadImmediate="false"/>
-          <Include href="- Screens/Screen - Choose Action - Move or Special.xml" loadImmediate="false"/>
-          <Include href="- Screens/Screen - Game Setup.xml" loadImmediate="false"/>
-          <Include href="- Screens/Screen - Gameplay - Planet Side.xml" loadImmediate="false"/>
-          <Include href="- Screens/Screen - Gameplay - Space.xml" loadImmediate="false"/>
-          <Include href="- Screens/Screen - Main Layout.xml" loadImmediate="false"/>
-          <Include href="- Screens/Screen - Research Technology.xml" loadImmediate="false"/>
+          <Include href="- Explosion/Explosion Animation.xml" loadImmediate="false"/>
+          <Include href="- Explosion/Explosion for Export.xml" loadImmediate="false"/>
+          <Include href="- Explosion/Single Explosion.xml" loadImmediate="false"/>
      </symbols>
      <timelines>
-          <DOMTimeline name="Scene 1">
+          <DOMTimeline name="Scene 1" currentFrame="16">
                <layers>
-                    <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+                    <DOMLayer name="explosion 5" color="#4FFF4F" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="5" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                              <DOMFrame index="5" duration="11" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="- Explosion/Single Explosion" name="" symbolType="graphic" centerPoint3DX="62" centerPoint3DY="62.05" loop="play once">
+                                             <matrix>
+                                                  <Matrix a="0.5" d="0.5" tx="62" ty="62.05"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="16" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="explosion 4" color="#9933CC" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="4" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                              <DOMFrame index="4" duration="11" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="- Explosion/Single Explosion" name="" symbolType="graphic" centerPoint3DX="51.5" centerPoint3DY="103.45" loop="play once">
+                                             <matrix>
+                                                  <Matrix a="0.349990844726563" d="0.349990844726563" tx="51.5" ty="103.45"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="15" duration="2" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="explosion 3" color="#FF800A" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="3" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                              <DOMFrame index="3" duration="11" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="- Explosion/Single Explosion" name="" symbolType="graphic" centerPoint3DX="105.5" centerPoint3DY="68.95" loop="play once">
+                                             <matrix>
+                                                  <Matrix a="0.29998779296875" d="0.29998779296875" tx="105.5" ty="68.95"/>
+                                             </matrix>
+                                             <transformationPoint>
+                                                  <Point/>
+                                             </transformationPoint>
+                                        </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="14" duration="3" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="explosion 2" color="#FF4FFF" autoNamed="false">
                          <frames>
                               <DOMFrame index="0" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                              <DOMFrame index="1" duration="11" keyMode="9728">
                                    <elements>
-                                        <DOMSymbolInstance libraryItemName="- Screens/Screen - Gameplay - Space" name="" centerPoint3DX="250" centerPoint3DY="400">
-                                             <transformationPoint>
-                                                  <Point x="250" y="400"/>
-                                             </transformationPoint>
-                                        </DOMSymbolInstance>
-                                        <DOMSymbolInstance libraryItemName="- Scraps/Hexagons for Export" name="" centerPoint3DX="543.45" centerPoint3DY="21.65">
+                                        <DOMSymbolInstance libraryItemName="- Explosion/Single Explosion" name="" symbolType="graphic" centerPoint3DX="33" centerPoint3DY="33.05" loop="play once">
                                              <matrix>
-                                                  <Matrix tx="518.45"/>
-                                             </matrix>
-                                             <transformationPoint>
-                                                  <Point x="25" y="21.65"/>
-                                             </transformationPoint>
-                                        </DOMSymbolInstance>
-                                        <DOMSymbolInstance libraryItemName="- Game Play Areas/Planet Map 07" name="" centerPoint3DX="793.95" centerPoint3DY="339.45">
-                                             <matrix>
-                                                  <Matrix tx="543.95" ty="89.45"/>
-                                             </matrix>
-                                             <transformationPoint>
-                                                  <Point x="250" y="250"/>
-                                             </transformationPoint>
-                                        </DOMSymbolInstance>
-                                        <DOMSymbolInstance libraryItemName="- Scraps/Resource Counters" name="" centerPoint3DX="664.2" centerPoint3DY="696.7">
-                                             <matrix>
-                                                  <Matrix tx="664.2" ty="696.7"/>
+                                                  <Matrix a="0.5" d="0.5" tx="33" ty="33.05"/>
                                              </matrix>
                                              <transformationPoint>
                                                   <Point/>
                                              </transformationPoint>
                                         </DOMSymbolInstance>
-                                        <DOMSymbolInstance libraryItemName="- App Icon/App Icon for Export" name="" centerPoint3DX="646.5" centerPoint3DY="784.9">
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="12" duration="5" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="explosion 1" color="#4FFFFF" current="true" isSelected="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="11" keyMode="9728">
+                                   <elements>
+                                        <DOMSymbolInstance libraryItemName="- Explosion/Single Explosion" name="" symbolType="graphic" centerPoint3DX="62" centerPoint3DY="62.05" loop="play once">
                                              <matrix>
-                                                  <Matrix tx="646.5" ty="784.9"/>
+                                                  <Matrix a="0.649993896484375" d="0.649993896484375" tx="62" ty="62.05"/>
                                              </matrix>
                                              <transformationPoint>
                                                   <Point/>
                                              </transformationPoint>
                                         </DOMSymbolInstance>
+                                   </elements>
+                              </DOMFrame>
+                              <DOMFrame index="11" duration="6" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+                    <DOMLayer name="corners" color="#808080" locked="true" autoNamed="false">
+                         <frames>
+                              <DOMFrame index="0" duration="17" keyMode="9728">
+                                   <elements>
+                                        <DOMGroup>
+                                             <members>
+                                                  <DOMRectangleObject objectWidth="5" objectHeight="5" x="-276.95" y="112" selected="true" lockFlag="true">
+                                                       <matrix>
+                                                            <Matrix tx="551.95" ty="88"/>
+                                                       </matrix>
+                                                       <fill>
+                                                            <SolidColor alpha="0.00784313725490196"/>
+                                                       </fill>
+                                                  </DOMRectangleObject>
+                                                  <DOMRectangleObject objectWidth="5" objectHeight="5" x="-276.95" y="112" selected="true" lockFlag="true">
+                                                       <matrix>
+                                                            <Matrix tx="674.95" ty="211"/>
+                                                       </matrix>
+                                                       <fill>
+                                                            <SolidColor alpha="0.00784313725490196"/>
+                                                       </fill>
+                                                  </DOMRectangleObject>
+                                             </members>
+                                        </DOMGroup>
                                    </elements>
                               </DOMFrame>
                          </frames>
@@ -440,20 +403,6 @@
                     <SolidSwatchItem color="#FF99FF" hue="200" saturation="239" brightness="192"/>
                     <SolidSwatchItem color="#FFCCFF" hue="200" saturation="239" brightness="216"/>
                     <SolidSwatchItem color="#FFFFFF" brightness="240"/>
-                    <SolidSwatchItem color="#9FC5EC" hue="141" saturation="160" brightness="186"/>
-                    <SolidSwatchItem color="#FFFFFF" alpha="0.247058823529412" brightness="240"/>
-                    <SolidSwatchItem color="#FFB600" hue="29" saturation="239" brightness="120"/>
-                    <SolidSwatchItem color="#51879F" hue="133" saturation="79" brightness="113"/>
-                    <SolidSwatchItem color="#C4C217" hue="40" saturation="189" brightness="103"/>
-                    <SolidSwatchItem alpha="0.498039215686275"/>
-                    <SolidSwatchItem color="#FFFFFF" alpha="0.694117647058824" brightness="240"/>
-                    <SolidSwatchItem alpha="0.8"/>
-                    <SolidSwatchItem color="#81A5CD" hue="141" saturation="104" brightness="157"/>
-                    <SolidSwatchItem color="#660000" alpha="0.0470588235294118" saturation="239" brightness="48"/>
-                    <SolidSwatchItem color="#336666" alpha="0.8" hue="120" saturation="80" brightness="72"/>
-                    <SolidSwatchItem color="#FF9900" alpha="0.4" hue="24" saturation="239" brightness="120"/>
-                    <SolidSwatchItem color="#CC3300" alpha="0.4" hue="10" saturation="239" brightness="96"/>
-                    <SolidSwatchItem alpha="0.4"/>
                </swatches>
           </swatchList>
      </swatchLists>
@@ -497,32 +446,13 @@
                          <GradientEntry color="#FF00FF" ratio="0.831372549019608"/>
                          <GradientEntry color="#FF0000" ratio="1"/>
                     </LinearGradientSwatchItem>
-                    <LinearGradientSwatchItem>
-                         <GradientEntry color="#FF7048" ratio="0"/>
-                         <GradientEntry color="#D47300" ratio="1"/>
-                    </LinearGradientSwatchItem>
-                    <RadialGradientSwatchItem>
-                         <GradientEntry alpha="0" ratio="0"/>
-                         <GradientEntry color="#FFFFFF" alpha="0.301960784313725" ratio="1"/>
-                    </RadialGradientSwatchItem>
-                    <RadialGradientSwatchItem>
-                         <GradientEntry alpha="0.101960784313725" ratio="0"/>
-                         <GradientEntry color="#FFFFFF" alpha="0.301960784313725" ratio="1"/>
-                    </RadialGradientSwatchItem>
-                    <LinearGradientSwatchItem>
-                         <GradientEntry color="#FFB600" ratio="0"/>
-                         <GradientEntry color="#D09400" ratio="1"/>
-                    </LinearGradientSwatchItem>
                </swatches>
           </swatchList>
      </extendedSwatchLists>
-     <persistentData>
-          <PD n="ikTreeCount" t="i" v="2"/>
-          <PD n="ikBoneCount" t="i" v="2"/>
-          <PD n="ikNodeCount" t="i" v="2"/>
-     </persistentData>
      <PrinterSettings/>
      <publishHistory>
-          <PublishItem publishSize="22686" publishTime="1412516314"/>
+          <PublishItem publishSize="1185" publishTime="1412516714"/>
+          <PublishItem publishSize="1185" publishTime="1412516699"/>
+          <PublishItem publishSize="1184" publishTime="1412516677"/>
      </publishHistory>
 </DOMDocument>

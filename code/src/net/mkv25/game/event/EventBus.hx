@@ -51,6 +51,7 @@ class EventBus
 	public static var combat_playerHasWonCombatAtLocation = new Signal();
 	public static var combat_baseCapturedAtLocation = new Signal();
 	public static var combat_unitDestroyedAtLocation = new Signal();
+	public static var combat_occuredAtLocation = new Signal();
 	
 	// game turn events
 	public static var activePlayerUpdated = new Signal();

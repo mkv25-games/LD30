@@ -1,0 +1,200 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Explosion/Single Explosion" itemID="54314677-00000269" sourceLibraryItemHRef="Symbol 1" lastModified="1412515668">
+  <timeline>
+    <DOMTimeline name="Single Explosion" currentFrame="10">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="1.066650390625" d="1.066650390625" tx="-77.35" ty="-89"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="1.42218017578125" d="1.42218017578125" tx="-103.1" ty="-118.7"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.13330078125" d="2.13330078125" tx="-154.65" ty="-178"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="3" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.71104431152344" d="2.71104431152344" tx="-196.55" ty="-226.25"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="4" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.71104431152344" d="2.71104431152344" tx="-196.55" ty="-226.25"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF"/>
+                  </fill>
+                </DOMOvalObject>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.26658630371094" d="2.26658630371094" tx="-164.35" ty="-189.15"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FF9900" alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="5" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.71104431152344" d="2.71104431152344" tx="-196.55" ty="-226.25"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FF9900" alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.26658630371094" d="2.26658630371094" tx="-164.35" ty="-189.15"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FF9900" alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="6" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.71104431152344" d="2.71104431152344" tx="-196.55" ty="-226.25"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FF9900" alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.26658630371094" d="2.26658630371094" tx="-164.35" ty="-189.15"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#CC3300" alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="7" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.71104431152344" d="2.71104431152344" tx="-196.55" ty="-226.25"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#CC3300" alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.26658630371094" d="2.26658630371094" tx="-164.35" ty="-189.15"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#CC3300" alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="8" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.71104431152344" d="2.71104431152344" tx="-196.55" ty="-226.25"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#CC3300" alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.26658630371094" d="2.26658630371094" tx="-164.35" ty="-189.15"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="9" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.71104431152344" d="2.71104431152344" tx="-196.55" ty="-226.25"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.26658630371094" d="2.26658630371094" tx="-164.35" ty="-189.15"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor alpha="0.4"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="10" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.71104431152344" d="2.71104431152344" tx="-196.55" ty="-226.25"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor alpha="0.2"/>
+                  </fill>
+                </DOMOvalObject>
+                <DOMOvalObject objectWidth="45" objectHeight="45" x="50" y="60.95" endAngle="0">
+                  <matrix>
+                    <Matrix a="2.26658630371094" d="2.26658630371094" tx="-164.35" ty="-189.15"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor alpha="0.2"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
