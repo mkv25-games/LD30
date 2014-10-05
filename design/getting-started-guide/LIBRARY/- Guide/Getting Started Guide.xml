@@ -1,0 +1,39 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Guide/Getting Started Guide" itemID="54319157-000001d3" sourceLibraryItemHRef="Symbol 1" lastModified="1412535831" lastUniqueIdentifier="5">
+  <timeline>
+    <DOMTimeline name="Getting Started Guide" currentFrame="2">
+      <layers>
+        <DOMLayer name="pages" color="#4FFFFF" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Pages/Page 1" name="" centerPoint3DX="250" centerPoint3DY="250">
+                  <transformationPoint>
+                    <Point x="250" y="250"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="1" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Pages/Page 2" name="" centerPoint3DX="250" centerPoint3DY="250">
+                  <transformationPoint>
+                    <Point x="250" y="250"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+            <DOMFrame index="2" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Pages/Page 3" name="" selected="true" centerPoint3DX="250" centerPoint3DY="250">
+                  <transformationPoint>
+                    <Point x="250" y="250"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

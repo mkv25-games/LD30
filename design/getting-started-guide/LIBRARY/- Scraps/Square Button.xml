@@ -1,0 +1,31 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Scraps/Square Button" itemID="53f90cd9-0000152e" sourceLibraryItemHRef="Symbol 1" lastModified="1408830693">
+  <timeline>
+    <DOMTimeline name="Square Button">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="60" objectHeight="60" x="170" y="175" lockFlag="true" topLeftRadius="20" topRightRadius="20" bottomLeftRadius="20" bottomRightRadius="20">
+                  <matrix>
+                    <Matrix tx="-200" ty="-205"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor alpha="0.0862745098039216"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal" weight="6">
+                      <fill>
+                        <SolidColor color="#0066CC" alpha="0.8"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

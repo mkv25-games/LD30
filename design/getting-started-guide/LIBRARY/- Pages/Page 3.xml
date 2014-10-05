@@ -1,0 +1,160 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 3" itemID="54319617-000002e8" sourceLibraryItemHRef="Symbol 1" lastModified="1412536416" lastUniqueIdentifier="8">
+  <timeline>
+    <DOMTimeline name="Page 3">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText left="56.4" width="476" height="53.85" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-44.4" ty="12"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>THE DECK</characters>
+                      <textAttrs>
+                        <DOMTextAttrs aliasText="false" size="50" face="BigNoodleTitling" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText left="56.4" width="236" height="43.05" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="185.6" ty="17.4"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters> </characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="right" aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                    <DOMTextRun>
+                      <characters>1 . 2 . </characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="right" aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                    <DOMTextRun>
+                      <characters>3</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="right" aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#FFFFFF"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                    <DOMTextRun>
+                      <characters> . 4 . 5</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="right" aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#333333"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="text" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMStaticText left="56.4" width="466" height="147.5" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-39.4" ty="72"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Each turn a player draws 5 cards from their deck. Each card has a specific action, for example: gathering resources, buying technology, movement, or deploying units to name a few. </characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS" fillColor="#CCCCCC"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText left="56.4" width="466" height="87.7" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-39.4" ty="332"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Most cards once played will return to the player's discard pile, and be shuffled back into the deck, unless otherwise stated.</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS" fillColor="#CCCCCC"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText left="56.4" width="466" height="57.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-39.4" ty="243"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Each card represents a command dossier presented to you as leader of the fleet.</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS" fillColor="#CCCCCC"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="images" color="#FF800A" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="458" centerPoint3DY="458">
+                  <matrix>
+                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="426" ty="426"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="40" y="40"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="458" centerPoint3DY="458">
+                  <matrix>
+                    <Matrix a="2" d="2" tx="458" ty="458"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="42" centerPoint3DY="458">
+                  <matrix>
+                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="10" ty="426"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="40" y="40"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="42" centerPoint3DY="458">
+                  <matrix>
+                    <Matrix a="-2" d="2" tx="42" ty="458"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="background" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
+                  <transformationPoint>
+                    <Point x="250" y="250"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
