@@ -1,0 +1,56 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Hexes/Hexagon Territory" itemID="53f8f77f-00000c5a" sourceLibraryItemHRef="Symbol 1" lastModified="1409360609">
+  <timeline>
+    <DOMTimeline name="Hexagon Territory">
+      <layers>
+        <DOMLayer name="mid" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor color="#FFFFFF" alpha="0.0862745098039216"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle1="1" edges="!1783 866[#6F7.1 #36F.5B 1776.5 891!1776.5 891|1410.5 1525!1410.5 1525[#57B.B9 #600.A3 1392 1543.5!1392 1543.5[#564.66 #60E.1F 1367 1550!1367 1550|634 1550!634 1550[#26C.9A #60E.1F 609 1543.5!609 1543.5[#255.47 #600.A3 590.5 1525!590.5
+ 1525|224.5 891!224.5 891[#D9.EF #36F.5B 218 866!218 866[#D9.E6 #354.B7 224.5 841!224.5 841|590.5 206!590.5 206[#255.48 #C2.5A 609 187.5!609 187.5[#26C.9A #B4.E 634 181!634 181|1367 181!1367 181[#564.66 #B4.E 1392 187.5!1392 187.5[#57B.B8
+ #C2.5A 1410.5 206!1410.5 206|1776.5 841!1776.5 841[#6F7.1A #354.B7 1783 866"/>
+                    <Edge fillStyle0="1" edges="
+!1542 866[#605.F1 #37C.79 1528.5 916!1528.5 916|1307.5 1299!1307.5 1299[#50E.31 #52A.08 1271 1335.5!1271 1335.5[#4DF.CC #544.FE 1221 1349!1221 1349|779 1349!779 1349[#2F0.34 #544.FE 729 1335.5!729 1335.5[#2C1.CE #52A.08 692.5 1299!692.5
+ 1299|471.5 916!471.5 916[#1CA.0E #37C.79 458 866!458 866[#1CA.0E #347.86 471.5 816!471.5 816|692.5 433!692.5 433[#2C1.CE #199.F8 729 396.5!729 396.5[#2F0.34 #17F.02 779 383!779 383|1221 383!1221 383[#4DF.CC #17F.02 1271 396.5!1271 396.5
+[#50E.31 #199.F8 1307.5 433!1307.5 433|1528.5 816!1528.5 816[#605.F1 #347.86 1542 866"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="base" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <fills>
+                    <FillStyle index="1">
+                      <SolidColor alpha="0.498039215686275"/>
+                    </FillStyle>
+                    <FillStyle index="2">
+                      <SolidColor color="#336666" alpha="0.8"/>
+                    </FillStyle>
+                  </fills>
+                  <edges>
+                    <Edge fillStyle0="2" fillStyle1="1" edges="
+!511.5 20|1488.5 20!1488.5 20|1976.5 866!1976.5 866|1488.5 1712!1488.5 1712|511.5 1712!511.5 1712|23.5 866!23.5 866|511.5 20"/>
+                    <Edge fillStyle1="2" edges="
+!500 0|1500 0!1500 0|2000 866!2000 866|1500 1732!1500 1732|500 1732!500 1732|0 866!0 866|500 0"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

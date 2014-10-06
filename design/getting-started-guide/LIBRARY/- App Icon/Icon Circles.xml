@@ -1,0 +1,46 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- App Icon/Icon Circles" itemID="5419ec72-000002a9" sourceLibraryItemHRef="Symbol 1" lastModified="1410985074">
+  <timeline>
+    <DOMTimeline name="Icon Circles">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="102.5" objectHeight="102.5" x="44.95" y="71.95" selected="true" endAngle="0">
+                  <matrix>
+                    <Matrix a="1.01463317871094" d="1.01463317871094" tx="-97.6" ty="-125"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF" alpha="0.498039215686275"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal" caps="none" weight="2" joints="miter">
+                      <fill>
+                        <SolidColor alpha="0.6"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMOvalObject>
+                <DOMOvalObject objectWidth="102.5" objectHeight="102.5" x="44.95" y="71.95" selected="true" endAngle="0">
+                  <matrix>
+                    <Matrix a="0.81951904296875" d="0.81951904296875" tx="-78.85" ty="-100.7"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#FFFFFF" alpha="0.2"/>
+                  </fill>
+                  <stroke>
+                    <SolidStroke scaleMode="normal" caps="none" weight="2" joints="miter">
+                      <fill>
+                        <SolidColor alpha="0.0862745098039216"/>
+                      </fill>
+                    </SolidStroke>
+                  </stroke>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

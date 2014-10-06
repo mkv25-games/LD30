@@ -2,6 +2,7 @@ package net.mkv25.game.screens;
 
 import flash.events.KeyboardEvent;
 import flash.ui.Keyboard;
+import motion.Actuate;
 import net.mkv25.base.core.Screen;
 import net.mkv25.base.core.Text;
 import net.mkv25.base.ui.BubbleCircleUI;
@@ -108,6 +109,9 @@ class MainScreen extends Screen
 		message = (message == null) ? "" : message;
 		
 		adviceText.setText(message.toUpperCase());
+		
+		Actuate.apply(adviceText.artwork, { alpha: 1.0 } );
+		Actuate.tween(adviceText.artwork, 1.0, { alpha: 0 } ).delay(3.0);
 	}
 	
 	override public function show():Void 

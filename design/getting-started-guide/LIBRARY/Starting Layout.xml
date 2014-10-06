@@ -1,0 +1,235 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Starting Layout" itemID="5431d1cf-000003f3" sourceLibraryItemHRef="Symbol 1" lastModified="1412551472" lastUniqueIdentifier="27">
+  <timeline>
+    <DOMTimeline name="Starting Layout">
+      <layers>
+        <DOMLayer name="units" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DY="-90.3">
+                  <matrix>
+                    <Matrix a="2" d="2" tx="-0.3" ty="-86.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-80"/>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S1" name="" centerPoint3DX="-0.3">
+                  <matrix>
+                    <Matrix a="2" d="2" tx="-0.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-80"/>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DX="-73.7" centerPoint3DY="39.9">
+                  <matrix>
+                    <Matrix a="2" d="2" tx="-74" ty="43.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-80"/>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DX="74.2" centerPoint3DY="39.9">
+                  <matrix>
+                    <Matrix a="2" d="2" tx="73.9" ty="43.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="-80"/>
+                    <DropShadowFilter angle="90" distance="2" strength="0.25"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="lines" color="#FF4FFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMShape>
+                  <strokes>
+                    <StrokeStyle index="1">
+                      <SolidStroke scaleMode="normal" caps="square" weight="4" joints="miter">
+                        <fill>
+                          <SolidColor color="#FFFFFF"/>
+                        </fill>
+                      </SolidStroke>
+                    </StrokeStyle>
+                  </strokes>
+                  <edges>
+                    <Edge strokeStyle="1" edges="!-5 -1728|1340 -383!1340 -383|3989 -383!-5 0|-1008 -1003!-1008 -1003|-3717 -1003!-1480 876|-481 1875!-481 1875|2816 1875!2816 1875|3991 700!1478 876|3215 876!3215 876|4020 71"/>
+                  </edges>
+                </DOMShape>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="territory" color="#9933CC" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon Territory" name="" centerPoint3DX="15.7" centerPoint3DY="-72.6">
+                  <matrix>
+                    <Matrix tx="-50.4" ty="-129.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.7" tintColor="#008515"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon Territory" name="" centerPoint3DX="-58" centerPoint3DY="-29.1">
+                  <matrix>
+                    <Matrix tx="-124.1" ty="-86.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.7" tintColor="#008515"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon Territory" name="" centerPoint3DX="89.9" centerPoint3DY="-29.1">
+                  <matrix>
+                    <Matrix tx="23.8" ty="-86.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.7" tintColor="#008515"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon Territory" name="" centerPoint3DX="-58" centerPoint3DY="57.6">
+                  <matrix>
+                    <Matrix tx="-124.1" ty="0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.7" tintColor="#008515"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon Territory" name="" centerPoint3DX="89.9" centerPoint3DY="57.6">
+                  <matrix>
+                    <Matrix tx="23.8" ty="0.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.7" tintColor="#008515"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon Territory" name="" centerPoint3DX="15.7" centerPoint3DY="100.4">
+                  <matrix>
+                    <Matrix tx="-50.4" ty="43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.7" tintColor="#008515"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon Territory" name="" centerPoint3DX="15.7" centerPoint3DY="13.8">
+                  <matrix>
+                    <Matrix tx="-50.4" ty="-43.3"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.3"/>
+                  </transformationPoint>
+                  <color>
+                    <Color tintMultiplier="0.7" tintColor="#008515"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="hexes" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-0.3">
+                  <matrix>
+                    <Matrix tx="-50.1" ty="-43"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="49.8" y="43"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-0.3" centerPoint3DY="-86.4">
+                  <matrix>
+                    <Matrix tx="-50.1" ty="-129.8"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="49.8" y="43.4"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-0.3" centerPoint3DY="86.6">
+                  <matrix>
+                    <Matrix tx="-50.1" ty="43.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="49.8" y="43.4"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="73.9" centerPoint3DY="43.8">
+                  <matrix>
+                    <Matrix tx="24.15" ty="0.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="49.75" y="43.4"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="73.9" centerPoint3DY="-42.9">
+                  <matrix>
+                    <Matrix tx="24.15" ty="-86.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="49.75" y="43.25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-74" centerPoint3DY="43.8">
+                  <matrix>
+                    <Matrix tx="-124.1" ty="0.4"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.4"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="-74" centerPoint3DY="-42.9">
+                  <matrix>
+                    <Matrix tx="-124.1" ty="-86.15"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.25"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

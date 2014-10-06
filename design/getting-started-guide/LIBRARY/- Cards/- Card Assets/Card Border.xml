@@ -1,0 +1,53 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Cards/- Card Assets/Card Border" itemID="54035584-000001e8" lastModified="1410119883">
+  <timeline>
+    <DOMTimeline name="Card Border">
+      <layers>
+        <DOMLayer name="hlighlight" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <members>
+                    <DOMShape>
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor color="#FFFFFF" alpha="0.133333333333333"/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!2160 0|240 0!240 0[0 0 0 240!0 240|0 1929!0 1929|100 1819!100 1819|100 240!100 240[100 100 240 100!240 100|2160 100!2160 100[2300 100 2300 240!2300 240|2300 1369!2300 1369|2400 1269!2400 1269|2400 240!2400 240[2400 0 2160 0"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="black" color="#4FFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup selected="true">
+                  <members>
+                    <DOMShape selected="true">
+                      <fills>
+                        <FillStyle index="1">
+                          <SolidColor/>
+                        </FillStyle>
+                      </fills>
+                      <edges>
+                        <Edge fillStyle0="1" edges="!2370 240S1|2370 3360!2370 3360[2370 #DF1.FF 2160 3570!2160 3570|240 3570!240 3570[#1E.01 3570 30 3360!30 3360|30 240!30 240[30 #1E.01 240 30!240 30|2160 30!2160 30[#941.FF 30 2370 240!2160 0|240 0!240 0[0 0 0 240!0 240|0 3360!0 3360
+[0 3600 240 3600!240 3600|2160 3600!2160 3600[2400 3600 2400 3360!2400 3360|2400 240!2400 240[2400 0 2160 0"/>
+                      </edges>
+                    </DOMShape>
+                  </members>
+                </DOMGroup>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

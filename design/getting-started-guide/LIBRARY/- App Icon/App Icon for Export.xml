@@ -1,0 +1,222 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- App Icon/App Icon for Export" itemID="5419f120-00000433" sourceLibraryItemHRef="Symbol 1" lastModified="1410987396" lastUniqueIdentifier="29">
+  <timeline>
+    <DOMTimeline name="App Icon for Export">
+      <layers>
+        <DOMLayer name="units" color="#FF4FFF" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S4" name="" centerPoint3DX="256.4" centerPoint3DY="245.85">
+                  <matrix>
+                    <Matrix a="7.00006103515625" d="7.00006103515625" tx="256.4" ty="245.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" blurX="8" blurY="8" strength="0.6"/>
+                    <AdjustColorFilter brightness="35" contrast="70" saturation="-95" hue="160"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DX="256.4" centerPoint3DY="418.25">
+                  <matrix>
+                    <Matrix a="3.5" d="3.5" tx="256.4" ty="418.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" blurX="8" blurY="8" strength="0.6"/>
+                    <AdjustColorFilter brightness="35" contrast="70" saturation="-95" hue="160"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S2" name="" centerPoint3DX="115.4" centerPoint3DY="174.55">
+                  <matrix>
+                    <Matrix a="3.5" d="3.5" tx="115.4" ty="174.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" blurX="8" blurY="8" strength="0.6"/>
+                    <AdjustColorFilter brightness="35" contrast="70" saturation="-95" hue="160"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S3" name="" centerPoint3DX="397.4" centerPoint3DY="174.55">
+                  <matrix>
+                    <Matrix a="3.5" d="3.5" tx="397.4" ty="174.55"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" blurX="8" blurY="8" strength="0.6"/>
+                    <AdjustColorFilter brightness="35" contrast="70" saturation="-95" hue="160"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="hexes" color="#4FFF4F" locked="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="260.7" centerPoint3DY="259.6">
+                  <matrix>
+                    <Matrix a="1.89993286132813" d="1.89981079101563" tx="161.2" ty="173.7"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.15"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="119.7" centerPoint3DY="178.4">
+                  <matrix>
+                    <Matrix a="1.89993286132813" d="1.89981079101563" tx="20.2" ty="92.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.2"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" selected="true" centerPoint3DX="260.7" centerPoint3DY="97.1">
+                  <matrix>
+                    <Matrix a="1.89993286132813" d="1.89981079101563" tx="161.2" ty="11.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.2"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="260.7" centerPoint3DY="422.1">
+                  <matrix>
+                    <Matrix a="1.89993286132813" d="1.89981079101563" tx="161.2" ty="336.2"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.2"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="119.7" centerPoint3DY="340.9">
+                  <matrix>
+                    <Matrix a="1.89993286132813" d="1.89981079101563" tx="20.2" ty="255"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.2"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="401.7" centerPoint3DY="178.4">
+                  <matrix>
+                    <Matrix a="1.89993286132813" d="1.89981079101563" tx="302.2" ty="92.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.2"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon" name="" centerPoint3DX="401.7" centerPoint3DY="340.9">
+                  <matrix>
+                    <Matrix a="1.89993286132813" d="1.89981079101563" tx="302.2" ty="255"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="50.1" y="43.2"/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.5"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="sheen" color="#4F80FF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements/>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="circles" color="#4FFFFF" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- App Icon/Icon Circles" name="" centerPoint3DX="256.4" centerPoint3DY="255.85">
+                  <matrix>
+                    <Matrix a="3.29989624023438" d="3.29989624023438" tx="256.4" ty="255.85"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color alphaMultiplier="0.2890625"/>
+                  </color>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="border" color="#808080" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- App Icon/Icon Hex Border" name="" centerPoint3DX="256.2" centerPoint3DY="255.95">
+                  <matrix>
+                    <Matrix tx="256.2" ty="255.95"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" strength="0.5"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="corners" color="#FF800A" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="5" objectHeight="5" x="-172.5" y="81.05" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="172.5" ty="-81.05"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor alpha="0.00784313725490196"/>
+                  </fill>
+                </DOMRectangleObject>
+                <DOMRectangleObject objectWidth="5" objectHeight="5" x="-172.5" y="81.05" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="679.5" ty="425.95"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor alpha="0.00784313725490196"/>
+                  </fill>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="box guide" color="#9933CC" outline="true" useOutlineView="true" autoNamed="false" visible="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="512" objectHeight="512" x="-172.5" y="81.05" lockFlag="true">
+                  <matrix>
+                    <Matrix tx="172.5" ty="-81.05"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor alpha="0.0470588235294118"/>
+                  </fill>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

@@ -1,6 +1,6 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 3" itemID="54319617-000002e8" sourceLibraryItemHRef="Symbol 1" lastModified="1412553236" lastUniqueIdentifier="14">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 4" itemID="5431c68b-00000315" sourceLibraryItemHRef="Symbol 1" lastModified="1412550489" lastUniqueIdentifier="11">
   <timeline>
-    <DOMTimeline name="Page 3">
+    <DOMTimeline name="Page 4">
       <layers>
         <DOMLayer name="title" color="#4FFF4F" autoNamed="false">
           <frames>
@@ -12,7 +12,7 @@
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
-                      <characters>THE DECK</characters>
+                      <characters>MOVEMENT</characters>
                       <textAttrs>
                         <DOMTextAttrs aliasText="false" size="50" face="BigNoodleTitling" fillColor="#FFFFFF"/>
                       </textAttrs>
@@ -25,25 +25,19 @@
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
-                      <characters> </characters>
-                      <textAttrs>
-                        <DOMTextAttrs alignment="right" aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#FFFFFF"/>
-                      </textAttrs>
-                    </DOMTextRun>
-                    <DOMTextRun>
-                      <characters>1 . 2 . </characters>
+                      <characters> 1 . 2 . 3 . </characters>
                       <textAttrs>
                         <DOMTextAttrs alignment="right" aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#333333"/>
                       </textAttrs>
                     </DOMTextRun>
                     <DOMTextRun>
-                      <characters>3</characters>
+                      <characters>4</characters>
                       <textAttrs>
                         <DOMTextAttrs alignment="right" aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#FFFFFF"/>
                       </textAttrs>
                     </DOMTextRun>
                     <DOMTextRun>
-                      <characters> . 4 . 5 . 6</characters>
+                      <characters> . 5 . 6</characters>
                       <textAttrs>
                         <DOMTextAttrs alignment="right" aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#333333"/>
                       </textAttrs>
@@ -54,7 +48,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="text" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="text" color="#9933CC" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -64,52 +58,31 @@
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
-                      <characters>Each turn a player draws 5 cards from their deck. Each card has a specific action, for example: gathering resources, buying technology, movement, or deploying units to name a few. </characters>
+                      <characters>Units and bases can both be moved. To initiate movement, a play card must be sacrificed. This represents diverting skills and resources to logistics instead of investment or purchasing.</characters>
                       <textAttrs>
                         <DOMTextAttrs alignment="justify" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS" fillColor="#CCCCCC"/>
                       </textAttrs>
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
-                <DOMStaticText left="56.4" width="466" height="87.7" isSelectable="false">
+                <DOMStaticText left="56.4" width="466" height="177.4" isSelectable="false">
                   <matrix>
-                    <Matrix tx="-39.4" ty="622"/>
+                    <Matrix tx="-39.4" ty="242"/>
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
-                      <characters>Unless otherwise stated, cards once played will return to the player's discard pile, and be shuffled back into the deck.</characters>
-                      <textAttrs>
-                        <DOMTextAttrs alignment="justify" aliasText="false" size="24" face="TrebuchetMS" fillColor="#CCCCCC"/>
-                      </textAttrs>
-                    </DOMTextRun>
-                  </textRuns>
-                </DOMStaticText>
-                <DOMStaticText left="56.4" width="466" height="57.8" isSelectable="false">
-                  <matrix>
-                    <Matrix tx="-39.4" ty="543"/>
-                  </matrix>
-                  <textRuns>
-                    <DOMTextRun>
-                      <characters>Each card represents a command dossier presented to you as leader of the fleet.</characters>
+                      <characters>Units can move from planets to space above the planet. Units can move from space down to any tile on a planet. Units can also move through portals. Bases cannot move through portals, or into the same space as another base.</characters>
                       <textAttrs>
                         <DOMTextAttrs alignment="justify" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS" fillColor="#CCCCCC"/>
                       </textAttrs>
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
-                <DOMSymbolInstance libraryItemName="Card Diagram" name="" centerPoint3DX="255" centerPoint3DY="380">
-                  <matrix>
-                    <Matrix tx="255" ty="380"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
               </elements>
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="images" color="#FF800A" autoNamed="false">
+        <DOMLayer name="images" color="#FF800A" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>

@@ -1,0 +1,27 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Scraps/Cost Tab Background" itemID="53f8e5e7-00000422" sourceLibraryItemHRef="Symbol 1" lastModified="1410120405" lastUniqueIdentifier="1">
+  <timeline>
+    <DOMTimeline name="Cost Tab Background">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Resources" name="" centerPoint3DX="-15.5" centerPoint3DY="14.5">
+                  <matrix>
+                    <Matrix tx="-15.5" ty="14.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <DropShadowFilter angle="90" distance="1" strength="0.2"/>
+                  </filters>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

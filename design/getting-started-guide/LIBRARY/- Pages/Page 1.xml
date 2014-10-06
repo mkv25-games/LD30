@@ -1,8 +1,21 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 1" itemID="54319172-000001dc" sourceLibraryItemHRef="Symbol 1" lastModified="1412536245" lastUniqueIdentifier="3">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 1" itemID="54319172-000001dc" sourceLibraryItemHRef="Symbol 1" lastModified="1412550879" lastUniqueIdentifier="12">
   <timeline>
     <DOMTimeline name="Page 1">
       <layers>
-        <DOMLayer name="Layer 1" color="#4FFF4F">
+        <DOMLayer name="mask" color="#4FFFFF" locked="true" outline="true" useOutlineView="true" autoNamed="false" layerType="mask">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="Background Common" name="" selected="true" centerPoint3DX="250" centerPoint3DY="250">
+                  <transformationPoint>
+                    <Point x="250" y="250"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="title" color="#4FFF4F" parentLayerIndex="0" locked="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -31,7 +44,7 @@
                       </textAttrs>
                     </DOMTextRun>
                     <DOMTextRun>
-                      <characters>. 2 . 3 . 4 . 5</characters>
+                      <characters>. 2 . 3 . 4 . 5 . 6</characters>
                       <textAttrs>
                         <DOMTextAttrs alignment="right" aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#333333"/>
                       </textAttrs>
@@ -42,7 +55,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="text" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="text" color="#9933CC" parentLayerIndex="0" locked="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -67,7 +80,7 @@
                 </DOMStaticText>
                 <DOMStaticText left="56.4" width="466" height="117.6" isSelectable="false">
                   <matrix>
-                    <Matrix tx="-39.4" ty="332"/>
+                    <Matrix tx="-39.4" ty="462"/>
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
@@ -78,25 +91,86 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
+                <DOMGroup>
+                  <matrix>
+                    <Matrix a="0.899993896484375" d="0.899993896484375" tx="25.05" ty="41.5"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="249.95" y="353.9"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMSymbolInstance libraryItemName="- Cards/Card - Harvester" name="" selected="true" centerPoint3DX="88" centerPoint3DY="360">
+                      <matrix>
+                        <Matrix a="0.899993896484375" d="0.899993896484375" tx="34" ty="279"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="60" y="90"/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="- Cards/Card - Portal" name="" selected="true" centerPoint3DX="169" centerPoint3DY="360">
+                      <matrix>
+                        <Matrix a="0.899993896484375" d="0.899993896484375" tx="115" ty="279"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="60" y="90"/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="- Cards/Card - Scientists" name="" selected="true" centerPoint3DX="250" centerPoint3DY="360">
+                      <matrix>
+                        <Matrix a="0.899993896484375" d="0.899993896484375" tx="196" ty="279"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="60" y="90"/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="- Cards/Card - Engineers" name="" selected="true" centerPoint3DX="331" centerPoint3DY="360">
+                      <matrix>
+                        <Matrix a="0.899993896484375" d="0.899993896484375" tx="277" ty="279"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="60" y="90"/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="- Cards/Card - Assault Team" name="" selected="true" centerPoint3DX="412" centerPoint3DY="360">
+                      <matrix>
+                        <Matrix a="0.899993896484375" d="0.899993896484375" tx="358" ty="279"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point x="60" y="90"/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                  </members>
+                </DOMGroup>
               </elements>
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="images" color="#FF800A" autoNamed="false">
+        <DOMLayer name="images" color="#FF800A" parentLayerIndex="0" locked="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="458" centerPoint3DY="458">
+                <DOMSymbolInstance libraryItemName="- App Icon/App Icon for Export" name="" centerPoint3DX="-5.5" centerPoint3DY="564">
                   <matrix>
-                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="426" ty="426"/>
+                    <Matrix tx="-5.5" ty="564"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <color>
+                    <Color brightness="-0.7"/>
+                  </color>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="458" centerPoint3DY="758">
+                  <matrix>
+                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="426" ty="726"/>
                   </matrix>
                   <transformationPoint>
                     <Point x="40" y="40"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="458" centerPoint3DY="458">
+                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="458" centerPoint3DY="758">
                   <matrix>
-                    <Matrix a="2" d="2" tx="458" ty="458"/>
+                    <Matrix a="2" d="2" tx="458" ty="758"/>
                   </matrix>
                   <transformationPoint>
                     <Point/>
@@ -106,7 +180,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="background" color="#FF4FFF" autoNamed="false">
+        <DOMLayer name="background" color="#FF4FFF" parentLayerIndex="0" locked="true" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>

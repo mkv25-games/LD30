@@ -1,0 +1,46 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Planet Owner Marker" itemID="54078fce-00000279" sourceLibraryItemHRef="Symbol 1" lastModified="1409786125">
+  <timeline>
+    <DOMTimeline name="Planet Owner Marker">
+      <layers>
+        <DOMLayer name="sheen" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="14" objectHeight="14" x="369.95" y="13.5" endAngle="0">
+                  <matrix>
+                    <Matrix tx="-376.95" ty="-20.5"/>
+                  </matrix>
+                  <fill>
+                    <RadialGradient>
+                      <matrix>
+                        <Matrix a="0.0250244140625" d="0.0208740234375" tx="376.95" ty="4"/>
+                      </matrix>
+                      <GradientEntry color="#FFFFFF" ratio="0"/>
+                      <GradientEntry color="#FFFFFF" alpha="0" ratio="1"/>
+                    </RadialGradient>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="circle" color="#4FFF4F" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMOvalObject objectWidth="14" objectHeight="14" x="369.95" y="13.5" endAngle="0">
+                  <matrix>
+                    <Matrix tx="-376.95" ty="-20.5"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#0066CC"/>
+                  </fill>
+                </DOMOvalObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>
