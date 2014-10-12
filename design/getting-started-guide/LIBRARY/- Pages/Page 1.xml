@@ -2,11 +2,11 @@
   <timeline>
     <DOMTimeline name="Page 1">
       <layers>
-        <DOMLayer name="mask" color="#4FFFFF" locked="true" outline="true" useOutlineView="true" autoNamed="false" layerType="mask">
+        <DOMLayer name="mask" color="#4FFFFF" locked="true" outline="true" current="true" isSelected="true" useOutlineView="true" autoNamed="false" layerType="mask">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="Background Common" name="" selected="true" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/- Assets/Background Common" name="" selected="true" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>
@@ -92,11 +92,8 @@
                   </textRuns>
                 </DOMStaticText>
                 <DOMGroup>
-                  <matrix>
-                    <Matrix a="0.899993896484375" d="0.899993896484375" tx="25.05" ty="41.5"/>
-                  </matrix>
                   <transformationPoint>
-                    <Point x="249.95" y="353.9"/>
+                    <Point x="250" y="360"/>
                   </transformationPoint>
                   <members>
                     <DOMSymbolInstance libraryItemName="- Cards/Card - Harvester" name="" selected="true" centerPoint3DX="88" centerPoint3DY="360">
@@ -180,11 +177,11 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="background" color="#FF4FFF" parentLayerIndex="0" locked="true" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="background" color="#FF4FFF" parentLayerIndex="0" locked="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/- Assets/Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>

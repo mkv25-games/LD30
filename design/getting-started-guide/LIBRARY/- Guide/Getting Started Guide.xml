@@ -1,6 +1,6 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Guide/Getting Started Guide" itemID="54319157-000001d3" sourceLibraryItemHRef="Symbol 1" lastModified="1412552122" lastUniqueIdentifier="5">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Guide/Getting Started Guide" itemID="54319157-000001d3" sourceLibraryItemHRef="Symbol 1" lastModified="1413137930" lastUniqueIdentifier="6">
   <timeline>
-    <DOMTimeline name="Getting Started Guide" currentFrame="2">
+    <DOMTimeline name="Getting Started Guide" currentFrame="5">
       <layers>
         <DOMLayer name="pages" color="#4FFFFF" current="true" isSelected="true" autoNamed="false">
           <frames>
@@ -51,7 +51,7 @@
             </DOMFrame>
             <DOMFrame index="5" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="- Pages/Page 6" name="" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/Page 6" name="" selected="true" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>

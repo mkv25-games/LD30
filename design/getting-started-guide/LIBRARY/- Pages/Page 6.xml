@@ -1,8 +1,8 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 6" itemID="5431ce16-0000034f" sourceLibraryItemHRef="Symbol 1" lastModified="1412550518" lastUniqueIdentifier="17">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 6" itemID="5431ce16-0000034f" sourceLibraryItemHRef="Symbol 1" lastModified="1413139324" lastUniqueIdentifier="26">
   <timeline>
     <DOMTimeline name="Page 6">
       <layers>
-        <DOMLayer name="title" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="title" color="#4FFF4F" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -48,7 +48,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="text" color="#9933CC" autoNamed="false">
+        <DOMLayer name="text" color="#9933CC" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -80,7 +80,7 @@
                 </DOMStaticText>
                 <DOMStaticText left="56.4" width="466" height="57.8" isSelectable="false">
                   <matrix>
-                    <Matrix tx="-39.4" ty="318"/>
+                    <Matrix tx="-39.4" ty="441.6"/>
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
@@ -93,7 +93,7 @@
                 </DOMStaticText>
                 <DOMStaticText left="56.4" width="466" height="57.8" isSelectable="false">
                   <matrix>
-                    <Matrix tx="-39.4" ty="248"/>
+                    <Matrix tx="-39.4" ty="309.8"/>
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
@@ -116,19 +116,340 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
-                <DOMStaticText left="56.4" width="466" height="27.9" isSelectable="false">
+                <DOMStaticText left="56.4" width="466" height="57.8" isSelectable="false">
                   <matrix>
-                    <Matrix tx="-39.4" ty="388"/>
+                    <Matrix tx="-39.4" ty="573.4"/>
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
-                      <characters>The highest strength unit will fight first.</characters>
+                      <characters>The highest strength unit from each side will fight first, protecting weaker units.</characters>
                       <textAttrs>
                         <DOMTextAttrs alignment="justify" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS" fillColor="#CCCCCC"/>
                       </textAttrs>
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="Combat Table" name="" centerPoint3DX="252" centerPoint3DY="275">
+                  <matrix>
+                    <Matrix tx="252" ty="275"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S2" name="" centerPoint3DX="42" centerPoint3DY="275">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="42" ty="275"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DX="112" centerPoint3DY="275.9">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="111.8" ty="278.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="0.2" y="-2.7"/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="165"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMStaticText width="19.85" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="65.1" ty="260.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>vs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText width="90.65" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="131.1" ty="260.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>results in</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText width="152.55" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="280.1" ty="260.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>victory for blue</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S2" name="" centerPoint3DX="252" centerPoint3DY="275">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="252" ty="275"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Combat Table" name="" centerPoint3DX="252" centerPoint3DY="405">
+                  <matrix>
+                    <Matrix tx="252" ty="405"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S2" name="" centerPoint3DX="42" centerPoint3DY="405">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="42" ty="405"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S2" name="" centerPoint3DX="108.2" centerPoint3DY="402.65">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="108" ty="405"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="165"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMStaticText width="19.85" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="65.1" ty="390.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>vs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText width="90.65" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="131.1" ty="390.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>results in</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText width="187.9" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="280.1" ty="390.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>mutual destruction</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMBitmapInstance name="" referenceID="" libraryItemName="- Bitmaps/explosion-single-frame.png">
+                  <matrix>
+                    <Matrix a="0.2576904296875" d="0.2576904296875" tx="235.25" ty="388.25"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="65" y="65"/>
+                  </transformationPoint>
+                </DOMBitmapInstance>
+                <DOMSymbolInstance libraryItemName="Combat Table" name="" centerPoint3DX="252" centerPoint3DY="535">
+                  <matrix>
+                    <Matrix tx="252" ty="535"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S2" name="" centerPoint3DX="42" centerPoint3DY="535">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="42" ty="535"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S1" name="" centerPoint3DX="108.2" centerPoint3DY="532.65">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="108" ty="535"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="165"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMStaticText width="19.85" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="65.1" ty="520.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>vs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText width="90.65" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="131.1" ty="520.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>results in</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText width="139.75" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="280.1" ty="520.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>base captured</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S1" name="" centerPoint3DX="252.2" centerPoint3DY="532.65">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="252" ty="535"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="Combat Table" name="" centerPoint3DX="252" centerPoint3DY="665">
+                  <matrix>
+                    <Matrix tx="252" ty="665"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S2" name="" centerPoint3DX="42" centerPoint3DY="665">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="42" ty="665"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S3" name="" centerPoint3DX="118.2" centerPoint3DY="666.65">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="118" ty="669"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="165"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMStaticText width="19.85" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="65.1" ty="650.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>vs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMStaticText width="187.2" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="285.1" ty="650.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>attacker destroyed</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DX="158.2" centerPoint3DY="666.65">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="158" ty="669"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="165"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMStaticText width="17.65" height="25.55" autoExpand="true" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="176.1" ty="650.25"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>rs</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="22" bitmapSize="440" face="TrebuchetMS" fillColor="#999999"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S3" name="" centerPoint3DX="225.2" centerPoint3DY="666.65">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="225" ty="669"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="165"/>
+                  </filters>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DX="265.2" centerPoint3DY="666.65">
+                  <matrix>
+                    <Matrix a="1.19998168945313" d="1.19999694824219" tx="265" ty="669"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                  <filters>
+                    <AdjustColorFilter hue="165"/>
+                  </filters>
+                </DOMSymbolInstance>
               </elements>
             </DOMFrame>
           </frames>
@@ -177,7 +498,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/- Assets/Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>

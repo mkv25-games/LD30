@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icons for Export" itemID="54035584-0000022b" lastModified="1410308386" lastUniqueIdentifier="8">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Icons/Icons for Export" itemID="54035584-0000022b" lastModified="1412551728" lastUniqueIdentifier="8">
   <timeline>
     <DOMTimeline name="Icons for Export">
       <layers>
@@ -130,7 +130,7 @@
                     <DropShadowFilter angle="90" distance="2" strength="0.25"/>
                   </filters>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Icon Strip - Bases and Units" name="" centerPoint3DX="93.4" centerPoint3DY="214.6">
+                <DOMSymbolInstance libraryItemName="- Icons/Icon Strip - Bases and Units" name="" selected="true" centerPoint3DX="93.4" centerPoint3DY="214.6">
                   <matrix>
                     <Matrix ty="200"/>
                   </matrix>

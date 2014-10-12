@@ -3,7 +3,12 @@ Things to do
 
 Bugs
 ----
+- Trace statements in public release
+- Help message has dissapeared entirely
 
+In progress
+-----------
++ In-game player guide, getting started
 
 Improvements based on Player feedback
 -------------------------------------
@@ -23,10 +28,6 @@ Suggestions based on Player feedback
 - Add cards that allow cards to be trashed from the hand
 - Add cards that allow free production / deployment of certain units
 - Create a zoomable / moveable map
-
-In progress
------------
-+ In-game player guide, getting started
 
 Improvements
 ------------

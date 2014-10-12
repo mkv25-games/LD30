@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Gameplay - Space" itemID="54035584-00000237" lastModified="1409504644">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Screens/Screen - Gameplay - Space" itemID="54035584-00000237" lastModified="1412548305" lastUniqueIdentifier="3">
   <timeline>
     <DOMTimeline name="Screen - Gameplay - Space">
       <layers>
@@ -11,7 +11,7 @@
                     <Point x="250" y="25"/>
                   </transformationPoint>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Game Play Areas/Map Area" name="" selected="true" centerPoint3DX="250" centerPoint3DY="300">
+                <DOMSymbolInstance libraryItemName="- Game Play Areas/Map Area" name="" centerPoint3DX="250" centerPoint3DY="300">
                   <matrix>
                     <Matrix ty="50"/>
                   </matrix>

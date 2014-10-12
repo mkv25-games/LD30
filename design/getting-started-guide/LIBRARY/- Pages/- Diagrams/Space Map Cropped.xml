@@ -1,8 +1,8 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Space Map Cropped" itemID="5431d544-0000045f" sourceLibraryItemHRef="Symbol 1" lastModified="1412552083">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/- Diagrams/Space Map Cropped" itemID="5431d544-0000045f" sourceLibraryItemHRef="Symbol 1" lastModified="1413136782">
   <timeline>
     <DOMTimeline name="Space Map Cropped">
       <layers>
-        <DOMLayer name="crop" color="#9933CC" locked="true" current="true" isSelected="true" autoNamed="false" layerType="mask">
+        <DOMLayer name="crop" color="#9933CC" locked="true" outline="true" useOutlineView="true" autoNamed="false" layerType="mask">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -18,11 +18,11 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="image" color="#4FFF4F" parentLayerIndex="0" locked="true" autoNamed="false">
+        <DOMLayer name="image" color="#4FFF4F" parentLayerIndex="0" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMBitmapInstance name="" referenceID="" libraryItemName="- Bitmaps/space-map-six-player.png">
+                <DOMBitmapInstance name="" referenceID="" selected="true" libraryItemName="- Bitmaps/space-map-six-player.png">
                   <matrix>
                     <Matrix a="0.8800048828125" d="0.8800048828125" tx="-220" ty="-220"/>
                   </matrix>

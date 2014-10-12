@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 3" itemID="54319617-000002e8" sourceLibraryItemHRef="Symbol 1" lastModified="1412553236" lastUniqueIdentifier="14">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 3" itemID="54319617-000002e8" sourceLibraryItemHRef="Symbol 1" lastModified="1413136794" lastUniqueIdentifier="14">
   <timeline>
     <DOMTimeline name="Page 3">
       <layers>
@@ -97,7 +97,7 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
-                <DOMSymbolInstance libraryItemName="Card Diagram" name="" centerPoint3DX="255" centerPoint3DY="380">
+                <DOMSymbolInstance libraryItemName="- Pages/- Diagrams/Card Diagram" name="" centerPoint3DX="255" centerPoint3DY="380">
                   <matrix>
                     <Matrix tx="255" ty="380"/>
                   </matrix>
@@ -153,7 +153,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/- Assets/Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>

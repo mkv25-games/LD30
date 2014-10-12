@@ -7,15 +7,19 @@
           <DOMFolderItem name="- Cards/- Card Assets" itemID="53f8e0df-00000347"/>
           <DOMFolderItem name="- Guide" itemID="5431915f-000001da" isExpanded="true"/>
           <DOMFolderItem name="- Hexes" itemID="53f8b390-00000276" isExpanded="true"/>
-          <DOMFolderItem name="- Icons" itemID="54319310-00000289"/>
+          <DOMFolderItem name="- Icons" itemID="54319310-00000289" isExpanded="true"/>
           <DOMFolderItem name="- Pages" itemID="54319176-000001e2" isExpanded="true"/>
+          <DOMFolderItem name="- Pages/- Assets" itemID="543ac149-0000021f"/>
+          <DOMFolderItem name="- Pages/- Diagrams" itemID="543ac134-0000021a" isExpanded="true"/>
           <DOMFolderItem name="- Scraps" itemID="53fa8e2d-0000275d"/>
      </folders>
      <media>
+          <DOMBitmapItem name="- Bitmaps/explosion-single-frame.png" itemID="543acaea-00000589" sourceExternalFilepath=".\LIBRARY\- Bitmaps\explosion-single-frame.png" sourceLastImported="1413138843" externalFileSize="8559" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\explosion-single-frame.png" bitmapDataHRef="M 8 1413138849.dat" frameRight="2600" frameBottom="2600"/>
           <DOMBitmapItem name="- Bitmaps/icon-deploy.png" itemID="540cbfc1-0000083b" sourceExternalFilepath=".\LIBRARY\- Bitmaps\icon-deploy.png" sourceLastImported="1410121664" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-deploy.png" bitmapDataHRef="M 10 1410121448.dat" frameRight="780" frameBottom="780"/>
           <DOMBitmapItem name="- Bitmaps/icon-move.png" itemID="540cbc5e-0000078f" sourceExternalFilepath=".\LIBRARY\icon-move.png" sourceLastImported="1409366096" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-move.png" bitmapDataHRef="M 9 1410120741.dat" frameRight="780" frameBottom="780"/>
           <DOMBitmapItem name="- Bitmaps/icon-portal-1.png" itemID="540cbfc0-00000839" sourceExternalFilepath=".\LIBRARY\- Bitmaps\icon-portal-1.png" sourceLastImported="1409614071" externalFileSize="1103" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-portal-1.png" bitmapDataHRef="M 11 1410121593.dat" frameRight="780" frameBottom="780"/>
           <DOMBitmapItem name="- Bitmaps/icon-portal-2.png" itemID="540cbfc0-0000083a" sourceExternalFilepath=".\LIBRARY\- Bitmaps\icon-portal-2.png" sourceLastImported="1409612057" externalFileSize="1111" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-portal-2.png" bitmapDataHRef="M 12 1410121616.dat" frameRight="780" frameBottom="780"/>
+          <DOMBitmapItem name="- Bitmaps/space-map-movement.png" itemID="543ac298-00000268" sourceExternalFilepath=".\LIBRARY\- Bitmaps\space-map-movement.png" sourceLastImported="1413136631" externalFileSize="61248" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\space-map-movement.png" bitmapDataHRef="M 7 1413136657.dat" frameRight="10000" frameBottom="10000"/>
           <DOMBitmapItem name="- Bitmaps/space-map-six-player.png" itemID="5431d544-00000460" sourceExternalFilepath=".\LIBRARY\space-map-six-player.png" sourceLastImported="1412551980" allowSmoothing="true" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\space-map-six-player.png" bitmapDataHRef="M 6 1412551994.dat" frameRight="10000" frameBottom="10000"/>
           <DOMBitmapItem name="- Bitmaps/starfield-small.png" itemID="53f8bf3b-00000332" sourceExternalFilepath=".\LIBRARY\- Bitmaps\starfield-small.png" sourceLastImported="1408810784" externalFileSize="4557" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\starfield-small.png" bitmapDataHRef="M 1 1408810811.dat" frameRight="10000" frameBottom="10000"/>
      </media>
@@ -54,6 +58,11 @@
           <Include href="- Icons/Portal Connect Icon 1.xml" loadImmediate="false"/>
           <Include href="- Icons/Portal Connect Icon 2.xml" loadImmediate="false"/>
           <Include href="- Icons/Unit Strip - Bases and Units.xml" loadImmediate="false"/>
+          <Include href="- Pages/- Assets/Background Common.xml" loadImmediate="false"/>
+          <Include href="- Pages/- Diagrams/Card Diagram.xml" loadImmediate="false"/>
+          <Include href="- Pages/- Diagrams/Space Map Cropped.xml" loadImmediate="false"/>
+          <Include href="- Pages/- Diagrams/Space Movement Cropped.xml" loadImmediate="false"/>
+          <Include href="- Pages/- Diagrams/Starting Layout.xml" loadImmediate="false"/>
           <Include href="- Pages/Page 1.xml" loadImmediate="false"/>
           <Include href="- Pages/Page 2.xml" loadImmediate="false"/>
           <Include href="- Pages/Page 3.xml" loadImmediate="false"/>
@@ -63,10 +72,7 @@
           <Include href="- Scraps/Cost Tab Background.xml" loadImmediate="false"/>
           <Include href="- Scraps/counter.xml" loadImmediate="false"/>
           <Include href="- Scraps/Square Button.xml" loadImmediate="false"/>
-          <Include href="Background Common.xml" loadImmediate="false"/>
-          <Include href="Card Diagram.xml" loadImmediate="false"/>
-          <Include href="Space Map Cropped.xml" loadImmediate="false"/>
-          <Include href="Starting Layout.xml" loadImmediate="false"/>
+          <Include href="Combat Table.xml" loadImmediate="false"/>
      </symbols>
      <timelines>
           <DOMTimeline name="Scene 1">

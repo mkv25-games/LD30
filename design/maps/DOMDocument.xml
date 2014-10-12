@@ -1,27 +1,27 @@
 <DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" backgroundColor="#CCCCCC" width="500" height="800" currentTimeline="1" xflVersion="2.0" creatorInfo="Adobe Flash Professional CS5" platform="Windows" versionInfo="Saved by Adobe Flash Windows 11.0 build 489" majorVersion="11" buildNumber="489" viewAngle3D="50.6510299754819" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false">
      <folders>
           <DOMFolderItem name="- App Icon" itemID="5419f10d-00000432" isExpanded="true"/>
-          <DOMFolderItem name="- Bitmaps" itemID="53f8e0e2-0000034c"/>
-          <DOMFolderItem name="- Buttons" itemID="53f90b68-000014ed"/>
+          <DOMFolderItem name="- Bitmaps" itemID="53f8e0e2-0000034c" isExpanded="true"/>
+          <DOMFolderItem name="- Buttons" itemID="53f90b68-000014ed" isExpanded="true"/>
           <DOMFolderItem name="- Cards" itemID="53f8e0cc-00000342"/>
           <DOMFolderItem name="- Cards/- Card Assets" itemID="53f8e0df-00000347"/>
           <DOMFolderItem name="- Game Play Areas" itemID="53f8af53-000001f6"/>
-          <DOMFolderItem name="- Hexes" itemID="53f8b390-00000276"/>
-          <DOMFolderItem name="- Icons" itemID="53f8bceb-0000030a"/>
+          <DOMFolderItem name="- Hexes" itemID="53f8b390-00000276" isExpanded="true"/>
+          <DOMFolderItem name="- Icons" itemID="53f8bceb-0000030a" isExpanded="true"/>
           <DOMFolderItem name="- Scraps" itemID="53fa8e2d-0000275d"/>
-          <DOMFolderItem name="- Screens" itemID="53f8b396-0000027a"/>
+          <DOMFolderItem name="- Screens" itemID="53f8b396-0000027a" isExpanded="true"/>
      </folders>
      <media>
           <DOMBitmapItem name="- Bitmaps/icon-deploy.png" itemID="540cbfc1-0000083b" sourceExternalFilepath=".\LIBRARY\- Bitmaps\icon-deploy.png" sourceLastImported="1410121664" externalFileSize="328" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-deploy.png" bitmapDataHRef="M 10 1410121448.dat" frameRight="780" frameBottom="780"/>
           <DOMBitmapItem name="- Bitmaps/icon-move.png" itemID="540cbc5e-0000078f" sourceExternalFilepath=".\LIBRARY\icon-move.png" sourceLastImported="1409366096" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-move.png" bitmapDataHRef="M 9 1410120741.dat" frameRight="780" frameBottom="780"/>
           <DOMBitmapItem name="- Bitmaps/icon-portal-1.png" itemID="540cbfc0-00000839" sourceExternalFilepath=".\LIBRARY\- Bitmaps\icon-portal-1.png" sourceLastImported="1409614071" externalFileSize="1103" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-portal-1.png" bitmapDataHRef="M 11 1410121593.dat" frameRight="780" frameBottom="780"/>
           <DOMBitmapItem name="- Bitmaps/icon-portal-2.png" itemID="540cbfc0-0000083a" sourceExternalFilepath=".\LIBRARY\- Bitmaps\icon-portal-2.png" sourceLastImported="1409612057" externalFileSize="1111" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\icon-portal-2.png" bitmapDataHRef="M 12 1410121616.dat" frameRight="780" frameBottom="780"/>
-          <DOMBitmapItem name="- Bitmaps/planet01.png" itemID="53fa8f95-000027cb" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet01.png" sourceLastImported="1408891436" externalFileCRC32="145299161" externalFileSize="4989" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet01.png" bitmapDataHRef="M 2 1408929685.dat" frameRight="10000" frameBottom="10000"/>
+          <DOMBitmapItem name="- Bitmaps/planet01.png" itemID="53fa8f95-000027cb" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet01.png" sourceLastImported="1408891436" externalFileCRC32="145299161" externalFileSize="4989" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet01.png" bitmapDataHRef="M 2 1408929685.dat" frameLeft="-115200" frameTop="-115200" frameRight="-115200" frameBottom="-115200"/>
           <DOMBitmapItem name="- Bitmaps/planet02.png" itemID="53fa8fc4-000027ed" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet02.png" sourceLastImported="1408891464" externalFileCRC32="2152926178" externalFileSize="4940" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet02.png" bitmapDataHRef="M 3 1408929732.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/planet03.png" itemID="53fa902b-00002866" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet03.png" sourceLastImported="1408891484" externalFileCRC32="1861700591" externalFileSize="4892" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet03.png" bitmapDataHRef="M 5 1408929835.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/planet04.png" itemID="53fa902b-0000286a" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet04.png" sourceLastImported="1408891500" externalFileCRC32="1838713532" externalFileSize="4989" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet04.png" bitmapDataHRef="M 6 1408929835.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/planet05.png" itemID="53fa902b-0000286e" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet05.png" sourceLastImported="1408891511" externalFileCRC32="3493012340" externalFileSize="5089" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet05.png" bitmapDataHRef="M 7 1408929835.dat" frameRight="10000" frameBottom="10000"/>
-          <DOMBitmapItem name="- Bitmaps/planet06.png" itemID="53fa902c-00002872" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet06.png" sourceLastImported="1408891524" externalFileCRC32="2939469081" externalFileSize="5051" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet06.png" bitmapDataHRef="M 8 1408929836.dat" frameRight="10000" frameBottom="10000"/>
+          <DOMBitmapItem name="- Bitmaps/planet03.png" itemID="53fa902b-00002866" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet03.png" sourceLastImported="1408891484" externalFileCRC32="1861700591" externalFileSize="4892" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet03.png" bitmapDataHRef="M 5 1408929835.dat" frameLeft="-115200" frameTop="-115200" frameRight="-115200" frameBottom="-115200"/>
+          <DOMBitmapItem name="- Bitmaps/planet04.png" itemID="53fa902b-0000286a" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet04.png" sourceLastImported="1408891500" externalFileCRC32="1838713532" externalFileSize="4989" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet04.png" bitmapDataHRef="M 6 1408929835.dat" frameLeft="-115200" frameTop="-115200" frameRight="-115200" frameBottom="-115200"/>
+          <DOMBitmapItem name="- Bitmaps/planet05.png" itemID="53fa902b-0000286e" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet05.png" sourceLastImported="1408891511" externalFileCRC32="3493012340" externalFileSize="5089" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet05.png" bitmapDataHRef="M 7 1408929835.dat" frameLeft="-115200" frameTop="-115200" frameRight="-115200" frameBottom="-115200"/>
+          <DOMBitmapItem name="- Bitmaps/planet06.png" itemID="53fa902c-00002872" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet06.png" sourceLastImported="1408891524" externalFileCRC32="2939469081" externalFileSize="5051" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet06.png" bitmapDataHRef="M 8 1408929836.dat" frameLeft="-115200" frameTop="-115200" frameRight="-115200" frameBottom="-115200"/>
           <DOMBitmapItem name="- Bitmaps/planet07.png" itemID="53fa902b-00002862" sourceExternalFilepath=".\LIBRARY\- Bitmaps\planet07.png" sourceLastImported="1408891540" externalFileCRC32="1496552249" externalFileSize="4945" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\planet07.png" bitmapDataHRef="M 4 1408929835.dat" frameRight="10000" frameBottom="10000"/>
           <DOMBitmapItem name="- Bitmaps/starfield-small.png" itemID="53f8bf3b-00000332" sourceExternalFilepath=".\LIBRARY\- Bitmaps\starfield-small.png" sourceLastImported="1408810784" externalFileSize="4557" useImportedJPEGData="false" compressionType="lossless" originalCompressionType="lossless" quality="50" href="- Bitmaps\starfield-small.png" bitmapDataHRef="M 1 1408810811.dat" frameRight="10000" frameBottom="10000"/>
      </media>
@@ -146,7 +146,7 @@
                                                   <Point x="250" y="400"/>
                                              </transformationPoint>
                                         </DOMSymbolInstance>
-                                        <DOMSymbolInstance libraryItemName="- Scraps/Hexagons for Export" name="" centerPoint3DX="543.45" centerPoint3DY="21.65">
+                                        <DOMSymbolInstance libraryItemName="- Scraps/Hexagons for Export" name="" selected="true" centerPoint3DX="543.45" centerPoint3DY="21.65">
                                              <matrix>
                                                   <Matrix tx="518.45"/>
                                              </matrix>
@@ -517,8 +517,8 @@
           </swatchList>
      </extendedSwatchLists>
      <persistentData>
-          <PD n="ikTreeCount" t="i" v="2"/>
           <PD n="ikBoneCount" t="i" v="2"/>
+          <PD n="ikTreeCount" t="i" v="2"/>
           <PD n="ikNodeCount" t="i" v="2"/>
      </persistentData>
      <PrinterSettings/>

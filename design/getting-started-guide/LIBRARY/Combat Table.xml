@@ -1,0 +1,24 @@
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Combat Table" itemID="543ac82e-000003cf" sourceLibraryItemHRef="Symbol 1" lastModified="1413139232">
+  <timeline>
+    <DOMTimeline name="Combat Table">
+      <layers>
+        <DOMLayer name="Layer 1" color="#4FFF4F" current="true" isSelected="true">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMRectangleObject objectWidth="460" objectHeight="44" x="16" y="253" lockFlag="true" topLeftRadius="4" topRightRadius="4" bottomLeftRadius="4" bottomRightRadius="4">
+                  <matrix>
+                    <Matrix tx="-246" ty="-275"/>
+                  </matrix>
+                  <fill>
+                    <SolidColor color="#333333"/>
+                  </fill>
+                </DOMRectangleObject>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+      </layers>
+    </DOMTimeline>
+  </timeline>
+</DOMSymbolItem>

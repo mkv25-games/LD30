@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="Card Diagram" itemID="5431da14-00000494" sourceLibraryItemHRef="Symbol 1" lastModified="1412553507" lastUniqueIdentifier="2">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/- Diagrams/Card Diagram" itemID="5431da14-00000494" sourceLibraryItemHRef="Symbol 1" lastModified="1412553507" lastUniqueIdentifier="2">
   <timeline>
     <DOMTimeline name="Card Diagram">
       <layers>
@@ -103,7 +103,7 @@
                     </StrokeStyle>
                   </strokes>
                   <edges>
-                    <Edge strokeStyle="1" edges="!1660 -1800|2280 -2420!2280 -2420|2640 -2420!-3520 -1560|-3720 -1760!-3720 -1760|-3720 -1980!-1320 -1600|-700 -2220!-2300 1800|-2300 2328!1460 460|1000 0!1000 0|600 0!2300 1800|2300 2328"/>
+                    <Edge strokeStyle="1" edges="!1660 -1800|2280 -2420!2280 -2420|2640 -2420!1460 460|1000 0!1000 0|600 0!2300 1800|2300 2328!-3520 -1560|-3720 -1760!-3720 -1760|-3720 -1980!-1320 -1600|-700 -2220!-2300 1800|-2300 2328"/>
                   </edges>
                 </DOMShape>
               </elements>

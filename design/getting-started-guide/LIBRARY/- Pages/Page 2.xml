@@ -58,15 +58,12 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMGroup>
-                  <matrix>
-                    <Matrix ty="10"/>
-                  </matrix>
+                <DOMGroup selected="true">
                   <transformationPoint>
-                    <Point x="247.35" y="666.3"/>
+                    <Point x="247.35" y="676.3"/>
                   </transformationPoint>
                   <members>
-                    <DOMSymbolInstance libraryItemName="Starting Layout" name="" centerPoint3DX="247.4" centerPoint3DY="676.3">
+                    <DOMSymbolInstance libraryItemName="- Pages/- Diagrams/Starting Layout" name="" selected="true" centerPoint3DX="247.4" centerPoint3DY="676.3">
                       <matrix>
                         <Matrix a="0.75" d="0.75" tx="247.4" ty="676.3"/>
                       </matrix>
@@ -128,7 +125,7 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
-                <DOMSymbolInstance libraryItemName="Space Map Cropped" name="" centerPoint3DX="251.95" centerPoint3DY="359.5">
+                <DOMSymbolInstance libraryItemName="- Pages/- Diagrams/Space Map Cropped" name="" centerPoint3DX="251.95" centerPoint3DY="359.5">
                   <matrix>
                     <Matrix tx="251.95" ty="359.5"/>
                   </matrix>
@@ -184,7 +181,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/- Assets/Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>

@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 4" itemID="5431c68b-00000315" sourceLibraryItemHRef="Symbol 1" lastModified="1412550489" lastUniqueIdentifier="11">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 4" itemID="5431c68b-00000315" sourceLibraryItemHRef="Symbol 1" lastModified="1413137067" lastUniqueIdentifier="13">
   <timeline>
     <DOMTimeline name="Page 4">
       <layers>
@@ -48,7 +48,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="text" color="#9933CC" autoNamed="false">
+        <DOMLayer name="text" color="#9933CC" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -65,13 +65,34 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
-                <DOMStaticText left="56.4" width="466" height="177.4" isSelectable="false">
+                <DOMStaticText left="56.4" width="466" height="117.6" isSelectable="false">
                   <matrix>
-                    <Matrix tx="-39.4" ty="242"/>
+                    <Matrix tx="-39.4" ty="507"/>
                   </matrix>
                   <textRuns>
                     <DOMTextRun>
-                      <characters>Units can move from planets to space above the planet. Units can move from space down to any tile on a planet. Units can also move through portals. Bases cannot move through portals, or into the same space as another base.</characters>
+                      <characters>Units can move from planets to space above the planet. Units can move from space down to any tile on a planet. Units can also move through portals.</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="24" face="TrebuchetMS" fillColor="#CCCCCC"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMSymbolInstance libraryItemName="- Pages/- Diagrams/Space Movement Cropped" name="" centerPoint3DX="250" centerPoint3DY="365">
+                  <matrix>
+                    <Matrix tx="250" ty="365"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMStaticText left="56.4" width="466" height="57.8" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-39.4" ty="647"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>Bases cannot move into the same space as another base, or move through portals.</characters>
                       <textAttrs>
                         <DOMTextAttrs alignment="justify" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS" fillColor="#CCCCCC"/>
                       </textAttrs>
@@ -82,7 +103,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="images" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="images" color="#FF800A" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -126,7 +147,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/- Assets/Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>

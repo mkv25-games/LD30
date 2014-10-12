@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Scraps/Hexagons for Export" itemID="53f9239b-0000164c" sourceLibraryItemHRef="Symbol 1" lastModified="1409403287" lastUniqueIdentifier="19">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Scraps/Hexagons for Export" itemID="53f9239b-0000164c" sourceLibraryItemHRef="Symbol 1" lastModified="1412551253" lastUniqueIdentifier="19">
   <timeline>
     <DOMTimeline name="Hexagons for Export">
       <layers>
@@ -90,7 +90,7 @@
                     <Color tintMultiplier="0.7" tintColor="#BB2FC2"/>
                   </color>
                 </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon Territory" name="" centerPoint3DX="333.05" centerPoint3DY="31.9">
+                <DOMSymbolInstance libraryItemName="- Hexes/Hexagon Territory" name="" selected="true" centerPoint3DX="333.05" centerPoint3DY="31.9">
                   <matrix>
                     <Matrix a="0.5" d="0.5" tx="300" ty="3.35"/>
                   </matrix>

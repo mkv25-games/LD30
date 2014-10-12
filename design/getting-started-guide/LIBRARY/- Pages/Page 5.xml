@@ -1,8 +1,8 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 5" itemID="5431c693-00000328" sourceLibraryItemHRef="Symbol 1" lastModified="1412550504" lastUniqueIdentifier="16">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 5" itemID="5431c693-00000328" sourceLibraryItemHRef="Symbol 1" lastModified="1413137810" lastUniqueIdentifier="32">
   <timeline>
     <DOMTimeline name="Page 5">
       <layers>
-        <DOMLayer name="title" color="#4FFF4F" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="title" color="#4FFF4F" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -54,7 +54,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="text" color="#9933CC" autoNamed="false">
+        <DOMLayer name="text" color="#9933CC" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -97,6 +97,145 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
+                <DOMStaticText left="56.4" width="466" height="87.7" isSelectable="false">
+                  <matrix>
+                    <Matrix tx="-39.4" ty="523"/>
+                  </matrix>
+                  <textRuns>
+                    <DOMTextRun>
+                      <characters>There are 4 types of deployable units, and 4 types of deployable bases. Each type is a magnitude stronger then the previous.</characters>
+                      <textAttrs>
+                        <DOMTextAttrs alignment="justify" aliasText="false" size="24" bitmapSize="480" face="TrebuchetMS" fillColor="#CCCCCC"/>
+                      </textAttrs>
+                    </DOMTextRun>
+                  </textRuns>
+                </DOMStaticText>
+                <DOMGroup>
+                  <members>
+                    <DOMShape isDrawingObject="true">
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" caps="none" weight="2" joints="miter">
+                            <fill>
+                              <SolidColor color="#666666"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="!9600 10160|400 10160!400 8600|9600 8600"/>
+                      </edges>
+                    </DOMShape>
+                    <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DX="160" centerPoint3DY="470">
+                      <matrix>
+                        <Matrix a="1.50003051757813" d="1.5" tx="160" ty="470"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S2" name="" centerPoint3DX="250" centerPoint3DY="470">
+                      <matrix>
+                        <Matrix a="1.50003051757813" d="1.5" tx="250" ty="470"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S3" name="" centerPoint3DX="350" centerPoint3DY="470">
+                      <matrix>
+                        <Matrix a="1.50003051757813" d="1.5" tx="350" ty="470"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S4" name="" centerPoint3DX="440" centerPoint3DY="470">
+                      <matrix>
+                        <Matrix a="1.50003051757813" d="1.5" tx="440" ty="470"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMStaticText left="56.4" width="135" height="43.05" isSelectable="false">
+                      <matrix>
+                        <Matrix tx="-34.4" ty="446"/>
+                      </matrix>
+                      <textRuns>
+                        <DOMTextRun>
+                          <characters>UNITS</characters>
+                          <textAttrs>
+                            <DOMTextAttrs aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#999999"/>
+                          </textAttrs>
+                        </DOMTextRun>
+                      </textRuns>
+                    </DOMStaticText>
+                  </members>
+                </DOMGroup>
+                <DOMGroup>
+                  <members>
+                    <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S1" name="" centerPoint3DX="160" centerPoint3DY="668">
+                      <matrix>
+                        <Matrix a="1.50003051757813" d="1.5" tx="160" ty="668"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S2" name="" centerPoint3DX="250" centerPoint3DY="668">
+                      <matrix>
+                        <Matrix a="1.50003051757813" d="1.5" tx="250" ty="668"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S3" name="" centerPoint3DX="350" centerPoint3DY="668">
+                      <matrix>
+                        <Matrix a="1.50003051757813" d="1.5" tx="350" ty="668"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMSymbolInstance libraryItemName="- Icons/Icon - Base Tile - S4" name="" centerPoint3DX="440" centerPoint3DY="668">
+                      <matrix>
+                        <Matrix a="1.50003051757813" d="1.5" tx="440" ty="668"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                    <DOMShape isDrawingObject="true">
+                      <strokes>
+                        <StrokeStyle index="1">
+                          <SolidStroke scaleMode="normal" caps="none" weight="2" joints="miter">
+                            <fill>
+                              <SolidColor color="#666666"/>
+                            </fill>
+                          </SolidStroke>
+                        </StrokeStyle>
+                      </strokes>
+                      <edges>
+                        <Edge strokeStyle="1" edges="!400 12600|9600 12600!9600 14160|400 14160"/>
+                      </edges>
+                    </DOMShape>
+                    <DOMStaticText left="56.4" width="135" height="43.05" isSelectable="false">
+                      <matrix>
+                        <Matrix tx="-34.4" ty="646"/>
+                      </matrix>
+                      <textRuns>
+                        <DOMTextRun>
+                          <characters>BASES</characters>
+                          <textAttrs>
+                            <DOMTextAttrs aliasText="false" size="40" bitmapSize="800" face="BigNoodleTitling" fillColor="#999999"/>
+                          </textAttrs>
+                        </DOMTextRun>
+                      </textRuns>
+                    </DOMStaticText>
+                  </members>
+                </DOMGroup>
               </elements>
             </DOMFrame>
           </frames>
@@ -145,7 +284,7 @@
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/- Assets/Background Common" name="" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>
