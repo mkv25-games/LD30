@@ -69,15 +69,17 @@ class CombatLogModel
 	
 	public function printReport():Void
 	{
-		var i:Int = 0;
-		trace("Combat Report");
-		trace("-------------");
-		for (entry in events)
-		{
-			i++;
-			trace(i + ".\t" + entry);
-		}
-		trace("");
+		#if debug
+			var i:Int = 0;
+			trace("Combat Report");
+			trace("-------------");
+			for (entry in events)
+			{
+				i++;
+				trace(i + ".\t" + entry);
+			}
+			trace("");
+		#end
 	}
 	
 }

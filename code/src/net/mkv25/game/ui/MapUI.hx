@@ -243,10 +243,7 @@ class MapUI extends BaseUI
 			markedImage.show();
 			markedImage.zoomIn();
 			
-			trace("Marked selected hex: ");
-			Timer.measure(function() {
-				EventBus.mapMarkerPlacedOnMap.dispatch(markedHex);
-			});
+			EventBus.mapMarkerPlacedOnMap.dispatch(markedHex);
 			
 			highlightImage.popIn();
 			hexInfoText.setText(tile.q + ", " + tile.r);
