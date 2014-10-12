@@ -3,8 +3,7 @@ Things to do
 
 Bugs
 ----
-- Trace statements in public release
-- Help message has dissapeared entirely
+
 
 In progress
 -----------
@@ -55,7 +54,6 @@ Improvements
 - Add portal symbol to end of portal line links
 - Draw better icon for change/select unit action
 - Show connections between portals that are both on planets when in space
-- Animate status message when message changes
 - Basic combat report in status message
 - Create interesting planets with varied hex tiles
 - Create a scrollable map to support larger games

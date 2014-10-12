@@ -110,8 +110,18 @@ class MainScreen extends Screen
 		
 		adviceText.setText(message.toUpperCase());
 		
-		Actuate.apply(adviceText.artwork, { alpha: 1.0 } );
-		Actuate.tween(adviceText.artwork, 1.0, { alpha: 0 } ).delay(3.0);
+		var target = adviceText.artwork;
+		
+		Actuate.stop(target);
+		Actuate.apply(target, { alpha: 0.0, y: 500 } );
+		
+		target.visible = true;
+		Actuate.tween(target, 0.6, { alpha: 1.0, y: 480 } ).onComplete(
+			function(target)
+			{
+				Actuate.tween(target, 1.0, { alpha: 0 } ).delay(3.0);
+			}, [target]
+		);
 	}
 	
 	override public function show():Void 
