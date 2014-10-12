@@ -27,6 +27,8 @@ class MoveUnitController
 	
 	private var movementDestinations:StringMap<HexTile>;
 	
+	private var preferredMessage:String;
+	
 	public function new()
 	{
 		EventBus.playerWantsTo_moveAUnit.add(suggestUnitMovementOptionsToPlayer);
@@ -36,7 +38,7 @@ class MoveUnitController
 		EventBus.playerWantsTo_cancelTheCurrentAction.add(cancelMovement);
 		EventBus.cardSelectedFromHandByPlayer.add(cancelMovement);
 		
-		EventBus.mapMarkerPlacedOnMap.add(updateMovementAvailability);
+		EventBus.mapMarkerPlacedOnMap.add(clearMessagesAndUpdateMovementAvailability);
 	}
 	
 	public function setup(map:MapUI, movement:MovementUI):Void
@@ -53,9 +55,15 @@ class MoveUnitController
 		
 		enableMovement();
 		
-		updateMovementAvailability(markedLocation);
+		clearMessagesAndUpdateMovementAvailability(markedLocation);
 		
 		attemptToSelectUnitAndSuggestMovementOptions();
+	}
+	
+	function clearMessagesAndUpdateMovementAvailability(marker:HexTile):Void
+	{
+		preferredMessage = null;
+		updateMovementAvailability(marker);
 	}
 	
 	function attemptToSelectUnitAndSuggestMovementOptions(?model):Void
@@ -76,12 +84,12 @@ class MoveUnitController
 			
 			if (unit.engagedInCombatThisTurn)
 			{
-				EventBus.displayNewStatusMessage.dispatch("Unit engaged in combat this turn");
+				preferredMessage = "Unit engaged in combat this turn";
 				map.disableMovementOverlay();
 			}
 			else if (unit.movedThisTurn)
 			{
-				EventBus.displayNewStatusMessage.dispatch("Unit has already moved this turn");
+				preferredMessage = "Unit has already moved this turn";
 				map.disableMovementOverlay();
 			}
 			else
@@ -91,15 +99,15 @@ class MoveUnitController
 				
 				if (previousSelectedUnit == null)
 				{
-					EventBus.displayNewStatusMessage.dispatch("Select a location to move to");
+					preferredMessage = "Select a location to move to";
 				}
 				else if (previousSelectedUnit == unit)
 				{
-					EventBus.displayNewStatusMessage.dispatch(unit.type.name + " selected again");
+					preferredMessage = unit.type.name + " selected again";
 				}
 				else
 				{
-					EventBus.displayNewStatusMessage.dispatch(unit.type.name + " selected");
+					preferredMessage = unit.type.name + " selected";
 				}
 				
 				updateMovementConfirmationButton();
@@ -107,8 +115,10 @@ class MoveUnitController
 		}
 		else
 		{
-			EventBus.displayNewStatusMessage.dispatch("Choose a unit or base to move");
+			preferredMessage = "Choose a unit or base to move";
 		}
+		
+		EventBus.displayNewStatusMessage.dispatch(preferredMessage);
 	}
 	
 	function selectUnitForPlayerFrom(hex:HexTile, player:PlayerModel):Null<MapUnit>
@@ -167,20 +177,15 @@ class MoveUnitController
 		}
 		
 		updateUnitSelectionButton();
-		
-		if (selectedUnit.value == null)
-		{
-			EventBus.displayNewStatusMessage.dispatch("No unit here");
-		}
-		else
-		{
-			EventBus.displayNewStatusMessage.dispatch("Cannot move to this location");
-		}
-		
 		updateMovementConfirmationButton();
+		
+		if (preferredMessage != null)
+		{
+			EventBus.displayNewStatusMessage.dispatch(preferredMessage);
+		}
 	}
 	
-	function updateUnitSelectionButton():Void
+	function updateUnitSelectionButton()
 	{
 		// check that a player owned base exists in a neighbouring tile
 		if (markedLocation != null)
@@ -194,20 +199,31 @@ class MoveUnitController
 				movement.selectUnitButton.enable();
 				
 				// report to player about selection
-				if (selectedUnit.value != null)
+				if (selectedUnit.value == unit)
 				{
-					EventBus.displayNewStatusMessage.dispatch("Change selection: " + unit.type.name);
+					// same unit selected
+					return;
 				}
-				else
+				else if (selectedUnit.value != null && preferredMessage == null)
 				{
-					EventBus.displayNewStatusMessage.dispatch("Confirm selection: " + unit.type.name);
+					preferredMessage = "Change selection: " + unit.type.name;
 				}
-			}
+				else if(preferredMessage == null)
+				{
+					preferredMessage = "Confirm selection: " + unit.type.name;
+				}
 				
-			return;
+				return;
+			}
+			else if (selectedUnit.value == null && preferredMessage == null)
+			{
+				preferredMessage = "No unit here";
+			}
 		}
 		
 		movement.selectUnitButton.disable();
+		
+		return;
 	}
 	
 	function updateMovementConfirmationButton():Void
@@ -223,8 +239,15 @@ class MoveUnitController
 			if (MovementModel.mapContainsLocation(movementDestinations, markedLocation))
 			{
 				movement.confirmButton.enable();
-				EventBus.displayNewStatusMessage.dispatch("Confirm movement");
+				if (preferredMessage == null)
+				{
+					preferredMessage = "Confirm movement";
+				}
 				return;
+			}
+			else if(preferredMessage == null)
+			{
+				preferredMessage = "Cannot move here";
 			}
 		}
 		
