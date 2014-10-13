@@ -7,13 +7,14 @@ Bugs
 
 In progress
 -----------
-+ In-game player guide, getting started
+
 
 Improvements based on Player feedback
 -------------------------------------
 + Combat report summary
 + Not clear how to select and move a unit
 + A way to name individual players - pass and play between six people made it hard to track
+- Add screen shake for explosions
 
 Suggestions based on Player feedback
 ------------------------------------

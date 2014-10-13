@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 5" itemID="5431c693-00000328" sourceLibraryItemHRef="Symbol 1" lastModified="1413137810" lastUniqueIdentifier="32">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 5" itemID="5431c693-00000328" sourceLibraryItemHRef="Symbol 1" lastModified="1413242300" lastUniqueIdentifier="32">
   <timeline>
     <DOMTimeline name="Page 5">
       <layers>
@@ -54,7 +54,7 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="text" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="text" color="#9933CC" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
@@ -110,6 +110,14 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="images" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
                 <DOMGroup>
                   <members>
                     <DOMShape isDrawingObject="true">
@@ -123,7 +131,7 @@
                         </StrokeStyle>
                       </strokes>
                       <edges>
-                        <Edge strokeStyle="1" edges="!9600 10160|400 10160!400 8600|9600 8600"/>
+                        <Edge strokeStyle="1" edges="!400 8600|9600 8600!9600 10160|400 10160"/>
                       </edges>
                     </DOMShape>
                     <DOMSymbolInstance libraryItemName="- Icons/Icon - Unit Tile - S1" name="" centerPoint3DX="160" centerPoint3DY="470">
@@ -218,7 +226,7 @@
                         </StrokeStyle>
                       </strokes>
                       <edges>
-                        <Edge strokeStyle="1" edges="!400 12600|9600 12600!9600 14160|400 14160"/>
+                        <Edge strokeStyle="1" edges="!9600 14160|400 14160!400 12600|9600 12600"/>
                       </edges>
                     </DOMShape>
                     <DOMStaticText left="56.4" width="135" height="43.05" isSelectable="false">
@@ -236,46 +244,6 @@
                     </DOMStaticText>
                   </members>
                 </DOMGroup>
-              </elements>
-            </DOMFrame>
-          </frames>
-        </DOMLayer>
-        <DOMLayer name="images" color="#FF800A" autoNamed="false">
-          <frames>
-            <DOMFrame index="0" keyMode="9728">
-              <elements>
-                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="458" centerPoint3DY="758">
-                  <matrix>
-                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="426" ty="726"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point x="40" y="40"/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="42" centerPoint3DY="758">
-                  <matrix>
-                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="10" ty="726"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point x="40" y="40"/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="42" centerPoint3DY="758">
-                  <matrix>
-                    <Matrix a="-2" d="2" tx="42" ty="758"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Deployment Icon" name="" centerPoint3DX="458" centerPoint3DY="758">
-                  <matrix>
-                    <Matrix a="2" d="2" tx="458" ty="758"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
               </elements>
             </DOMFrame>
           </frames>

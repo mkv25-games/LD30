@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 1" itemID="54319172-000001dc" sourceLibraryItemHRef="Symbol 1" lastModified="1412550879" lastUniqueIdentifier="12">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 1" itemID="54319172-000001dc" sourceLibraryItemHRef="Symbol 1" lastModified="1413242224" lastUniqueIdentifier="14">
   <timeline>
     <DOMTimeline name="Page 1">
       <layers>
@@ -156,22 +156,6 @@
                   <color>
                     <Color brightness="-0.7"/>
                   </color>
-                </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="458" centerPoint3DY="758">
-                  <matrix>
-                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="426" ty="726"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point x="40" y="40"/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="458" centerPoint3DY="758">
-                  <matrix>
-                    <Matrix a="2" d="2" tx="458" ty="758"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point/>
-                  </transformationPoint>
                 </DOMSymbolInstance>
               </elements>
             </DOMFrame>

@@ -17,6 +17,10 @@ class BeginnersGuideScreen extends Screen
 	private var pageAssets:Array<String>;
 	private var currentPageIndex:Int;
 	
+	var previousPageButton:IconButtonUI;
+	var nextPageButton:IconButtonUI;
+	var backToIndexButton:IconButtonUI;
+	
 	public function new() 
 	{
 		super();
@@ -33,6 +37,22 @@ class BeginnersGuideScreen extends Screen
 			"img/guide/guide-p6.png"
 		];
 		
+		previousPageButton = new IconButtonUI();
+		previousPageButton.setup("img/icon-back.png", navigateToPreviousPage);
+		previousPageButton.move(40, Screen.HEIGHT - 40);
+		
+		nextPageButton = new IconButtonUI();
+		nextPageButton.setup("img/icon-forward.png", navigateToNextPage);
+		nextPageButton.move(Screen.WIDTH - 40, Screen.HEIGHT - 40);
+		
+		backToIndexButton = new IconButtonUI();
+		backToIndexButton.setup("img/icon-exit-page.png", navigateBackToIndex);
+		backToIndexButton.move(Screen.WIDTH * 0.5, Screen.HEIGHT - 40);
+		
+		artwork.addChild(previousPageButton.artwork);
+		artwork.addChild(nextPageButton.artwork);
+		artwork.addChild(backToIndexButton.artwork);
+		
 		showPage(0);
 	}
 	
@@ -44,6 +64,12 @@ class BeginnersGuideScreen extends Screen
 		var assetPath = pageAssets[currentPageIndex];
 		
 		setBackground(assetPath);
+		
+		var lastPage = pageAssets.length - 1;
+		(currentPageIndex == 0) ? previousPageButton.disable() : previousPageButton.enable();
+		(currentPageIndex == lastPage) ? nextPageButton.disable() : nextPageButton.enable();
+		
+		(currentPageIndex == 0 || currentPageIndex == lastPage) ? backToIndexButton.show() : backToIndexButton.hide();
 	}
 	
 	override public function handleKeyAction(event:KeyboardEvent):Void
@@ -55,15 +81,36 @@ class BeginnersGuideScreen extends Screen
 		
 		if (event.keyCode == Keyboard.LEFT)
 		{
-			showPage(currentPageIndex - 1);
+			navigateToPreviousPage();
 		}
 		else if (event.keyCode == Keyboard.RIGHT)
 		{
-			showPage(currentPageIndex + 1);
+			navigateToNextPage();
 		}
 		else if (event.keyCode == Keyboard.DOWN || event.keyCode == Keyboard.UP)
 		{
-			Index.screenController.showScreen(Index.introScreen);
+			navigateBackToIndex();
 		}
+	}
+	
+	function navigateToPreviousPage(?model)
+	{
+		SoundEffects.playBloop();
+		
+		showPage(currentPageIndex - 1);
+	}
+	
+	function navigateToNextPage(?model)
+	{
+		SoundEffects.playBloop();
+		
+		showPage(currentPageIndex + 1);
+	}
+	
+	function navigateBackToIndex(?model)
+	{
+		SoundEffects.playBloop();
+		
+		Index.screenController.showScreen(Index.introScreen);
 	}
 }

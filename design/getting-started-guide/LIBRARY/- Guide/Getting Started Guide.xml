@@ -1,7 +1,47 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Guide/Getting Started Guide" itemID="54319157-000001d3" sourceLibraryItemHRef="Symbol 1" lastModified="1413137930" lastUniqueIdentifier="6">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Guide/Getting Started Guide" itemID="54319157-000001d3" sourceLibraryItemHRef="Symbol 1" lastModified="1413242304" lastUniqueIdentifier="14">
   <timeline>
-    <DOMTimeline name="Getting Started Guide" currentFrame="5">
+    <DOMTimeline name="Getting Started Guide" currentFrame="1">
       <layers>
+        <DOMLayer name="buttons" color="#9933CC" locked="true" autoNamed="false" layerType="guide">
+          <frames>
+            <DOMFrame index="0" duration="6" keyMode="9728">
+              <elements>
+                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="458" centerPoint3DY="758">
+                  <matrix>
+                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="426" ty="726"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="40" y="40"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="458" centerPoint3DY="758">
+                  <matrix>
+                    <Matrix a="2" d="2" tx="458" ty="758"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="42" centerPoint3DY="758">
+                  <matrix>
+                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="10" ty="726"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point x="40" y="40"/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="42" centerPoint3DY="758">
+                  <matrix>
+                    <Matrix a="-2" d="2" tx="42" ty="758"/>
+                  </matrix>
+                  <transformationPoint>
+                    <Point/>
+                  </transformationPoint>
+                </DOMSymbolInstance>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
         <DOMLayer name="pages" color="#4FFFFF" current="true" isSelected="true" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
@@ -15,7 +55,7 @@
             </DOMFrame>
             <DOMFrame index="1" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="- Pages/Page 2" name="" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/Page 2" name="" selected="true" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>
@@ -24,7 +64,7 @@
             </DOMFrame>
             <DOMFrame index="2" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="- Pages/Page 3" name="" selected="true" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/Page 3" name="" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>
@@ -51,7 +91,7 @@
             </DOMFrame>
             <DOMFrame index="5" keyMode="9728">
               <elements>
-                <DOMSymbolInstance libraryItemName="- Pages/Page 6" name="" selected="true" centerPoint3DX="250" centerPoint3DY="250">
+                <DOMSymbolInstance libraryItemName="- Pages/Page 6" name="" centerPoint3DX="250" centerPoint3DY="250">
                   <transformationPoint>
                     <Point x="250" y="250"/>
                   </transformationPoint>

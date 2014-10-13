@@ -1,4 +1,4 @@
-<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 2" itemID="5431945b-000002d5" sourceLibraryItemHRef="Symbol 1" lastModified="1412552128" lastUniqueIdentifier="20">
+<DOMSymbolItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" name="- Pages/Page 2" itemID="5431945b-000002d5" sourceLibraryItemHRef="Symbol 1" lastModified="1413242417" lastUniqueIdentifier="21">
   <timeline>
     <DOMTimeline name="Page 2">
       <layers>
@@ -54,25 +54,10 @@
             </DOMFrame>
           </frames>
         </DOMLayer>
-        <DOMLayer name="text" color="#9933CC" current="true" isSelected="true" autoNamed="false">
+        <DOMLayer name="text" color="#9933CC" autoNamed="false">
           <frames>
             <DOMFrame index="0" keyMode="9728">
               <elements>
-                <DOMGroup selected="true">
-                  <transformationPoint>
-                    <Point x="247.35" y="676.3"/>
-                  </transformationPoint>
-                  <members>
-                    <DOMSymbolInstance libraryItemName="- Pages/- Diagrams/Starting Layout" name="" selected="true" centerPoint3DX="247.4" centerPoint3DY="676.3">
-                      <matrix>
-                        <Matrix a="0.75" d="0.75" tx="247.4" ty="676.3"/>
-                      </matrix>
-                      <transformationPoint>
-                        <Point/>
-                      </transformationPoint>
-                    </DOMSymbolInstance>
-                  </members>
-                </DOMGroup>
                 <DOMStaticText left="56.4" width="466" height="177.4" isSelectable="false">
                   <matrix>
                     <Matrix tx="-39.4" ty="72"/>
@@ -99,6 +84,29 @@
                     </DOMTextRun>
                   </textRuns>
                 </DOMStaticText>
+              </elements>
+            </DOMFrame>
+          </frames>
+        </DOMLayer>
+        <DOMLayer name="images" color="#FF800A" current="true" isSelected="true" autoNamed="false">
+          <frames>
+            <DOMFrame index="0" keyMode="9728">
+              <elements>
+                <DOMGroup>
+                  <transformationPoint>
+                    <Point x="247.35" y="676.3"/>
+                  </transformationPoint>
+                  <members>
+                    <DOMSymbolInstance libraryItemName="- Pages/- Diagrams/Starting Layout" name="" selected="true" centerPoint3DX="247.4" centerPoint3DY="676.3">
+                      <matrix>
+                        <Matrix a="0.75" d="0.75" tx="247.4" ty="676.3"/>
+                      </matrix>
+                      <transformationPoint>
+                        <Point/>
+                      </transformationPoint>
+                    </DOMSymbolInstance>
+                  </members>
+                </DOMGroup>
                 <DOMStaticText left="7.75" width="78.2" height="48.5" autoExpand="true" isSelectable="false">
                   <matrix>
                     <Matrix tx="17" ty="608.4"/>
@@ -128,46 +136,6 @@
                 <DOMSymbolInstance libraryItemName="- Pages/- Diagrams/Space Map Cropped" name="" centerPoint3DX="251.95" centerPoint3DY="359.5">
                   <matrix>
                     <Matrix tx="251.95" ty="359.5"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
-              </elements>
-            </DOMFrame>
-          </frames>
-        </DOMLayer>
-        <DOMLayer name="images" color="#FF800A" autoNamed="false">
-          <frames>
-            <DOMFrame index="0" keyMode="9728">
-              <elements>
-                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="458" centerPoint3DY="758">
-                  <matrix>
-                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="426" ty="726"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point x="40" y="40"/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="458" centerPoint3DY="758">
-                  <matrix>
-                    <Matrix a="2" d="2" tx="458" ty="758"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Buttons/Button - Square Over" name="" centerPoint3DX="42" centerPoint3DY="758">
-                  <matrix>
-                    <Matrix a="0.800003051757813" d="0.800003051757813" tx="10" ty="726"/>
-                  </matrix>
-                  <transformationPoint>
-                    <Point x="40" y="40"/>
-                  </transformationPoint>
-                </DOMSymbolInstance>
-                <DOMSymbolInstance libraryItemName="- Icons/Movement Icon" name="" centerPoint3DX="42" centerPoint3DY="758">
-                  <matrix>
-                    <Matrix a="-2" d="2" tx="42" ty="758"/>
                   </matrix>
                   <transformationPoint>
                     <Point/>

@@ -40,7 +40,9 @@ class Screen
 	
 	public function setBackground(asset:String):Void
 	{
-		background.bitmapData = Assets.getBitmapData(asset);	
+		background.bitmapData = Assets.getBitmapData(asset);
+		background.width = Screen.WIDTH;
+		background.height = Screen.HEIGHT;
 	}
 	
 	private function setup():Void
