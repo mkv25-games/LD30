@@ -70,6 +70,6 @@ class IntroScreen extends Screen
 	{
 		SoundEffects.playBloop();
 		
-		// Index.screenController.showScreen(Index.beginnersGuideScreen);
+		Index.screenController.showScreen(Index.guideScreen);
 	}
 }

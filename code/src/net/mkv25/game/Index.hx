@@ -15,6 +15,7 @@ import net.mkv25.game.controllers.MoveUnitController;
 import net.mkv25.game.models.ActiveGame;
 import net.mkv25.game.models.MapModel;
 import net.mkv25.game.provider.CardProvider;
+import net.mkv25.game.screens.BeginnersGuideScreen;
 import net.mkv25.game.screens.GameSetupScreen;
 import net.mkv25.game.screens.IntroScreen;
 import net.mkv25.game.screens.MainScreen;
@@ -46,6 +47,7 @@ class Index
 	
 	// screens
 	public static var introScreen:Screen;
+	public static var guideScreen:Screen;
 	public static var mainScreen:Screen;
 	public static var gameSetupScreen:Screen;
 	
@@ -88,6 +90,7 @@ class Index
 		
 		// screens
 		introScreen = new IntroScreen();
+		guideScreen = new BeginnersGuideScreen();
 		mainScreen = new MainScreen();
 		gameSetupScreen = new GameSetupScreen();
 		
