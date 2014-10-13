@@ -14,7 +14,8 @@ import openfl.Assets;
 
 class IntroScreen extends Screen
 {
-	var button:ButtonUI;
+	var newGameButton:ButtonUI;
+	var guideButton:ButtonUI;
 	
 	public function new() 
 	{
@@ -25,11 +26,16 @@ class IntroScreen extends Screen
 	{
 		setBackground("img/title-screen.png");
 		
-		button = new ButtonUI();
-		button.setup("NEW GAME", onNewGameAction);
-		button.move(horizontalCenter, verticalCenter + 100);
+		newGameButton = new ButtonUI();
+		newGameButton.setup("NEW GAME", onNewGameAction);
+		newGameButton.move(horizontalCenter, verticalCenter + 100);
 		
-		artwork.addChild(button.artwork);
+		guideButton = new ButtonUI();
+		guideButton.setup("BEGINNERS GUIDE", onBeginnersGuideAction);
+		guideButton.move(horizontalCenter, verticalCenter + 200);
+		
+		artwork.addChild(newGameButton.artwork);
+		artwork.addChild(guideButton.artwork);
 	}
 	
 	override public function handleKeyAction(event:KeyboardEvent):Void
@@ -58,5 +64,12 @@ class IntroScreen extends Screen
 		SoundEffects.playBloop();
 		
 		Index.screenController.showScreen(Index.gameSetupScreen);
+	}
+	
+	function onBeginnersGuideAction(?model:ButtonUI)
+	{
+		SoundEffects.playBloop();
+		
+		// Index.screenController.showScreen(Index.beginnersGuideScreen);
 	}
 }
