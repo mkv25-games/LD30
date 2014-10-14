@@ -247,6 +247,12 @@ class MapUI extends BaseUI
 			
 			highlightImage.popIn();
 			hexInfoText.setText(tile.q + ", " + tile.r);
+			
+			var movementDisabled = (movementFocusHexes == null);
+			if (movementDisabled && tile.containsWorld() && !tile.containsUnit())
+			{
+				switchToWorldMap();
+			}
 		}
 		else
 		{
