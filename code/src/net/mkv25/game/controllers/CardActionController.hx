@@ -121,8 +121,9 @@ class CardActionController
 			var action:PlayableCard->Void = cast Reflect.getProperty(specialActions, card.action);
 			action(card);
 		}
-		else {
-			throw "Unknown special card action: (" + card.name + ")";
+		else
+		{
+			EventBus.displayNewStatusMessage.dispatch("E111 Unknown card: (" + card.name + ")");
 		}
 	}
 	
@@ -155,6 +156,8 @@ class CardActionController
 			
 			EventBus.playerResourcesAdded.dispatch(new ResourceTransactionModel(activePlayer, card.resources));
 			
+			EventBus.displayNewStatusMessage.dispatch(card.resources + "x resources collected");
+			
 			discardActiveCard();
 		}
 	}
@@ -168,6 +171,8 @@ class CardActionController
 			
 			EventBus.playerResourcesRemoved.dispatch(new ResourceTransactionModel(activePlayer, - card.cost));
 			EventBus.addNewCardToActivePlayersDiscardPile.dispatch(card);
+			
+			EventBus.displayNewStatusMessage.dispatch(card.name + " purchased");
 			
 			discardActiveCard();
 		}
