@@ -11,6 +11,8 @@ In progress
 
 Improvements based on Player feedback
 -------------------------------------
++ When clicking on a world - if that world does not have a unit/base on it - go down to the world
++ Add tooltips to buttons - press and hold for mobile
 + Combat report summary
 + Not clear how to select and move a unit
 + A way to name individual players - pass and play between six people made it hard to track
