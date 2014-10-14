@@ -29,6 +29,7 @@ class Screen
 		artwork = new Sprite();
 		
 		background = new Bitmap();
+		
 		setupFlag = false;
 		lockKeysFlag = false;
 		
@@ -43,6 +44,7 @@ class Screen
 		background.bitmapData = Assets.getBitmapData(asset);
 		background.width = Screen.WIDTH;
 		background.height = Screen.HEIGHT;
+		background.smoothing = true;
 	}
 	
 	private function setup():Void
