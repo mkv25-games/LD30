@@ -19,6 +19,7 @@ import net.mkv25.game.screens.BeginnersGuideScreen;
 import net.mkv25.game.screens.GameSetupScreen;
 import net.mkv25.game.screens.IntroScreen;
 import net.mkv25.game.screens.MainScreen;
+import net.mkv25.game.screens.OptionsScreen;
 import net.mkv25.game.ui.DeploymentUI;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.MovementUI;
@@ -50,6 +51,7 @@ class Index
 	public static var guideScreen:Screen;
 	public static var mainScreen:Screen;
 	public static var gameSetupScreen:Screen;
+	public static var optionsScreen:Screen;
 	
 	// core ui elements
 	public static var mapHud:MapUI;
@@ -93,6 +95,7 @@ class Index
 		guideScreen = new BeginnersGuideScreen();
 		mainScreen = new MainScreen();
 		gameSetupScreen = new GameSetupScreen();
+		optionsScreen = new OptionsScreen();
 		
 		// core ui elements
 		mapHud = new MapUI();

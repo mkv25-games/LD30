@@ -47,7 +47,7 @@ class StatusBarUI extends BaseUI
 		
 		playerNameText = cast TextUI.makeFor("Setup phase", 0x000000).fontSize(28).align(TextFormatAlign.LEFT).size(300, 40).move(10, 5);
 		
-		var rhs = Screen.WIDTH - 40;
+		var rhs = Screen.WIDTH - 90;
 		var spacing = 70;
 		counterUnitsText = cast TextUI.makeFor("0", 0x000000).fontSize(28).align(TextFormatAlign.LEFT).size(50, 40).move(rhs - (spacing * 0), 7);
 		counterTerritoryText = cast TextUI.makeFor("0", 0x000000).fontSize(28).align(TextFormatAlign.LEFT).size(50, 40).move(rhs - (spacing * 1), 7);

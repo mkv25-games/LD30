@@ -34,6 +34,7 @@ class MainScreen extends Screen
 	var statusBar:StatusBarUI;
 	var playerHand:PlayerHandUI;
 	var adviceText:TextUI;
+	var menuButton:IconButtonUI;
 	
 	public static var LAYOUTS:Array<String> = [
 		"img/main-layout-player1.png",
@@ -79,6 +80,10 @@ class MainScreen extends Screen
 		adviceText = cast TextUI.makeFor("Welcome to the game", 0xFFFFFF).fontSize(24).size(Screen.WIDTH, 40).move(0, 480);
 		adviceText.artwork.mouseEnabled = adviceText.artwork.mouseChildren = false; 
 		
+		menuButton = new IconButtonUI();
+		menuButton.move(Screen.WIDTH - 35, 25);
+		menuButton.setup("img/icon-menu.png", onMenuButtonSelected, "img/button/menu");
+		
 		artwork.addChild(map.artwork);
 		artwork.addChild(unitSelection.artwork);
 		artwork.addChild(deployment.artwork);
@@ -87,6 +92,7 @@ class MainScreen extends Screen
 		artwork.addChild(statusBar.artwork);
 		artwork.addChild(playerHand.artwork);
 		artwork.addChild(adviceText.artwork);
+		artwork.addChild(menuButton.artwork);
 		
 		EventBus.activePlayerChanged.add(onActivePlayerChange);
 		EventBus.displayNewStatusMessage.add(handleDisplayNewStatus);
@@ -102,6 +108,12 @@ class MainScreen extends Screen
 	{
 		var layoutAsset = MainScreen.LAYOUTS[player.playerNumberZeroBased];
 		setBackground(layoutAsset);
+	}
+	
+	function onMenuButtonSelected(?model)
+	{
+		// Display ingame menu
+		Index.screenController.showScreen(Index.optionsScreen);
 	}
 	
 	function handleDisplayNewStatus(message:String)

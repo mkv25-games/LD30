@@ -81,7 +81,7 @@ class ScreenController
 		var idealScale:Float;
 		
 		// scale to fit
-		zoomContainer.height = stage.stageHeight;
+		zoomContainer.scaleY = stage.stageHeight / Screen.HEIGHT;
 		zoomContainer.scaleX = zoomContainer.scaleY;
 		
 		// set ideal scaling

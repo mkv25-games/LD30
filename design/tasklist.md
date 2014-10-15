@@ -3,11 +3,11 @@ Things to do
 
 Bugs
 ----
-
+- Screen scales to wrong size when switching between options menu and screen
 
 In progress
 -----------
-
++ Exit button to end game
 
 Improvements based on Player feedback
 -------------------------------------
@@ -36,9 +36,7 @@ Suggestions based on Player feedback
 
 Improvements
 ------------
-+ Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 + Saving of game state
-+ Exit button to end game
 + AI Players
 + Variety of AI Players
 + Sexier graphics for planets
@@ -55,6 +53,7 @@ Improvements
 + Create beginners guide / tutorial
 + Create new animation that highlights space map, and zooms down to planet
 + Animate to show zoom down to planets, and zoom up to space
++ Consider new design for base icons where they fill the outside edge of a hex, and are drawn underneath units
 - Full combat report
 - Upload combat report to web server for review
 - Add portal symbol to end of portal line links

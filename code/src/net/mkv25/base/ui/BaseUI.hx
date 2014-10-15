@@ -155,22 +155,22 @@ class BaseUI
 	}
 	
 	// properties
-	public function get_scale():Float
+	function get_scale():Float
 	{
 		return artwork.scaleX;
 	}
 	
-	public function set_scale(value:Float):Float
+	function set_scale(value:Float):Float
 	{
 		return artwork.scaleX = artwork.scaleY = value;
 	}
 	
-	public function get_visible():Bool
+	function get_visible():Bool
 	{
 		return artwork.visible;
 	}
 	
-	public function set_visible(value:Bool):Bool
+	function set_visible(value:Bool):Bool
 	{
 		return artwork.visible = value;
 	}
