@@ -15,6 +15,8 @@ import openfl.Assets;
 class OptionsScreen extends Screen
 {
 	var continueGameButton:ButtonUI;
+	var beginnersGuideButton:ButtonUI;
+	
 	var exitGameButton:ButtonUI;
 	
 	public function new() 
@@ -30,11 +32,16 @@ class OptionsScreen extends Screen
 		continueGameButton.setup("CONTINUE", onContinueGameAction);
 		continueGameButton.move(horizontalCenter, verticalCenter - 200);
 		
+		beginnersGuideButton = new ButtonUI();
+		beginnersGuideButton.setup("BEGINNERS GUIDE", onBeginnersGuideAction);
+		beginnersGuideButton.move(horizontalCenter, verticalCenter - 100);
+		
 		exitGameButton = new ButtonUI();
-		exitGameButton.setup("EXIT", onExitGameAction);
-		exitGameButton.move(horizontalCenter, verticalCenter - 100);
+		exitGameButton.setup("EXIT GAME", onExitGameAction);
+		exitGameButton.move(horizontalCenter, verticalCenter + 100);
 		
 		artwork.addChild(continueGameButton.artwork);
+		artwork.addChild(beginnersGuideButton.artwork);
 		artwork.addChild(exitGameButton.artwork);
 	}
 	
@@ -64,6 +71,13 @@ class OptionsScreen extends Screen
 		SoundEffects.playBloop();
 		
 		Index.screenController.showScreen(Index.mainScreen);
+	}
+	
+	function onBeginnersGuideAction(?model:ButtonUI)
+	{
+		SoundEffects.playBloop();
+		
+		Index.screenController.showScreen(Index.guideScreen);
 	}
 	
 	function onExitGameAction(?model:ButtonUI)

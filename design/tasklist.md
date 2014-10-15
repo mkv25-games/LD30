@@ -3,11 +3,11 @@ Things to do
 
 Bugs
 ----
-- Screen scales to wrong size when switching between options menu and screen
+
 
 In progress
 -----------
-+ Exit button to end game
+
 
 Improvements based on Player feedback
 -------------------------------------

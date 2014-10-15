@@ -111,6 +111,6 @@ class BeginnersGuideScreen extends Screen
 	{
 		SoundEffects.playBloop();
 		
-		Index.screenController.showScreen(Index.introScreen);
+		Index.screenController.showLastScreen();
 	}
 }
