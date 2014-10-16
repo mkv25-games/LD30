@@ -34,6 +34,10 @@ class MovementUI extends BaseUI
 		confirmButton.setup("img/icon-confirm.png", confirmButtonSelected);
 		confirmButton.move(MapUI.MAP_WIDTH - 40, 40);
 		
+		Index.tooltipHud.registerTooltip(cancelButton.artwork, "Cancel movement action"); 
+		Index.tooltipHud.registerTooltip(selectUnitButton.artwork, "Change unit selection"); 
+		Index.tooltipHud.registerTooltip(confirmButton.artwork, "Confirm movement"); 
+		
 		artwork.addChild(cancelButton.artwork);
 		artwork.addChild(selectUnitButton.artwork);
 		artwork.addChild(confirmButton.artwork);

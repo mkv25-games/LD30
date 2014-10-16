@@ -69,7 +69,7 @@ class BaseUI
 		return this;
 	}
 	
-	public function center(image:DisplayObject, offsetX:Int=0, offsetY:Int=0):Void
+	public function center(image:DisplayObject, offsetX:Float=0, offsetY:Float=0):Void
 	{
 		image.x = - Math.round(image.width / 2) + offsetX;
 		image.y = - Math.round(image.height / 2) + offsetY;
@@ -152,6 +152,31 @@ class BaseUI
 		
 		Actuate.tween(artwork, animationLength, { x: targetx } ).ease(Quad.easeIn).delay(delayTime);
 		return Actuate.tween(artwork, animationLength, { y: targety }, false ).ease(Quad.easeOut).delay(delayTime);
+	}
+	
+	public function moveRelativeTo(target:DisplayObject, offsetX:Float, offsetY:Float):Void
+	{
+		if (artwork.stage == null)
+		{
+			return null;
+		}
+		
+		var scale:Float = Index.screenController.scale;
+		
+		p1.x = 0;
+		p1.y = 0;
+		p1 = artwork.localToGlobal(p1);
+		p1.setTo(p1.x / scale, p1.y / scale);
+		
+		p2.x = 0;
+		p2.y = 0;
+		p2 = target.localToGlobal(p2);
+		p2.setTo(p2.x / scale, p2.y / scale);
+		
+		var targetx = artwork.x + (p2.x - p1.x);
+		var targety = artwork.y + (p2.y - p1.y);
+		
+		move(targetx + offsetX, targety + offsetY);
 	}
 	
 	// properties

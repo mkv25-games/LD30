@@ -50,9 +50,16 @@ class PortalsUI extends BaseUI
 		
 		base1Icon = new BitmapUI();
 		base1Icon.move(portal1Button.artwork.x, portal1Button.artwork.y);
+		base1Icon.disable();
 		
 		base2Icon = new BitmapUI();
 		base2Icon.move(portal2Button.artwork.x, portal2Button.artwork.y);
+		base2Icon.disable();
+		
+		Index.tooltipHud.registerTooltip(cancelButton.artwork, "Cancel portal connection"); 
+		Index.tooltipHud.registerTooltip(portal1Button.artwork, "The first base in the connection"); 
+		Index.tooltipHud.registerTooltip(portal2Button.artwork, "The second base in the connection"); 
+		Index.tooltipHud.registerTooltip(confirmButton.artwork, "Confirm connection"); 
 		
 		artwork.addChild(cancelButton.artwork);
 		artwork.addChild(portal1Button.artwork);

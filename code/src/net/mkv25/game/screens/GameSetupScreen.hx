@@ -51,6 +51,8 @@ class GameSetupScreen extends Screen
 		startButton.setup("START GAME", onStartAction);
 		startButton.move(horizontalCenter, 600);
 		
+		Index.tooltipHud.registerTooltip(startButton.artwork, "Start a new game with the selected options.");
+		
 		artwork.addChild(playerCountSelection.artwork);
 		artwork.addChild(gameLengthSelection.artwork);
 		artwork.addChild(startButton.artwork);

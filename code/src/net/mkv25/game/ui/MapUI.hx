@@ -123,6 +123,9 @@ class MapUI extends BaseUI
 			hexInfoText.hide();
 		#end
 		
+		Index.tooltipHud.registerTooltip(spaceViewButton.artwork, "Change map view to space");
+		Index.tooltipHud.registerTooltip(worldViewButton.artwork, "Change map view to planet");
+		
 		artwork.addChild(mapImage);
 		artwork.addChild(viewLayer);
 		viewLayer.addChild(planetLayer);

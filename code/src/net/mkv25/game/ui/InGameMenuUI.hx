@@ -61,6 +61,9 @@ class InGameMenuUI extends BaseUI
 		cancelButton.setup("img/icon-cancel.png", cancelAction);
 		cancelButton.move(hs + 50, hs + 150);
 		
+		Index.tooltipHud.registerTooltip(discardButton.artwork, "Discard the selected card"); 
+		Index.tooltipHud.registerTooltip(cancelButton.artwork, "Cancel this card action"); 
+		
 		artwork.addChild(option1.artwork);
 		artwork.addChild(option2.artwork);
 		artwork.addChild(cancelButton.artwork);

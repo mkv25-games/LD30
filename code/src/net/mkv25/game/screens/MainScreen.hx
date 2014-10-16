@@ -84,6 +84,9 @@ class MainScreen extends Screen
 		menuButton.move(Screen.WIDTH - 35, 25);
 		menuButton.setup("img/icon-menu.png", onMenuButtonSelected, "img/button/menu");
 		
+		var NL:String = "\n";
+		Index.tooltipHud.registerTooltip(menuButton.artwork, "Options Menu:" + NL + "- Beginners Guide" + NL + "- Exit Game"); 
+		
 		artwork.addChild(map.artwork);
 		artwork.addChild(unitSelection.artwork);
 		artwork.addChild(deployment.artwork);

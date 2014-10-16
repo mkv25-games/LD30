@@ -122,6 +122,20 @@ class TextUI extends BaseUI
 		return this;
 	}
 	
+	public function autoSize(maxWidth:Float=400):BaseUI
+	{
+		text.width = maxWidth;
+			
+		if (text.textWidth < maxWidth)
+		{
+			text.width = text.textWidth + 10;
+		}
+		
+		text.height = text.textHeight + 6;
+		
+		return this;
+	}
+	
 	public static function makeFor(label:String, color:Int=0x136713):TextUI
 	{
 		var text:TextUI = new TextUI();

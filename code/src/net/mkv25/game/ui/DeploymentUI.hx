@@ -27,6 +27,9 @@ class DeploymentUI extends BaseUI
 		cancelButton.setup("img/icon-cancel.png", cancelButtonSelected);
 		cancelButton.move(MapUI.MAP_WIDTH - 100, 40);
 		
+		Index.tooltipHud.registerTooltip(deployButton.artwork, "Deploy unit to selected tile"); 
+		Index.tooltipHud.registerTooltip(cancelButton.artwork, "Cancel unit deployment"); 
+		
 		artwork.addChild(deployButton.artwork);
 		artwork.addChild(cancelButton.artwork);
 	}

@@ -24,6 +24,7 @@ import net.mkv25.game.ui.DeploymentUI;
 import net.mkv25.game.ui.MapUI;
 import net.mkv25.game.ui.MovementUI;
 import net.mkv25.game.ui.PortalsUI;
+import net.mkv25.game.ui.TooltipUI;
 import net.mkv25.ld30.dbvos.DBVOsModel;
 
 class Index
@@ -60,6 +61,7 @@ class Index
 	public static var portalsHud:PortalsUI;
 	public static var resourceCounterHud:BaseUI;
 	public static var discardPileHud:BaseUI;
+	public static var tooltipHud:TooltipUI;
 	
 	// debug
 	public static var debug:DebugUI;
@@ -98,6 +100,7 @@ class Index
 		optionsScreen = new OptionsScreen();
 		
 		// core ui elements
+		tooltipHud = new TooltipUI();
 		mapHud = new MapUI();
 		deploymentHud = new DeploymentUI();
 		movementHud = new MovementUI();
@@ -115,6 +118,7 @@ class Index
 		moveUnitController.setup(mapHud, movementHud);
 		connectPortalsController.setup(mapHud, portalsHud);
 		mapFocusController.setup(mapHud);
+		tooltipHud.setup(screenController);
 		
 		// start
 		Index.screenController.showScreen(Index.introScreen);

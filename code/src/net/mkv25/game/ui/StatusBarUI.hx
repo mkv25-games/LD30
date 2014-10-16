@@ -60,6 +60,10 @@ class StatusBarUI extends BaseUI
 		resourceHarvester = new ResourceHarvestingUI();
 		resourceSpender = new ResourceSpendingUI();
 		
+		Index.tooltipHud.registerTooltip(iconUnits.artwork, "Number of units"); 
+		Index.tooltipHud.registerTooltip(iconTerritory.artwork, "Controlled territory"); 
+		Index.tooltipHud.registerTooltip(iconResources.artwork, "Available resources"); 
+		
 		artwork.addChild(playerNameText.artwork);
 		artwork.addChild(counterUnitsText.artwork);
 		artwork.addChild(counterTerritoryText.artwork);

@@ -62,6 +62,8 @@ class PlayerCountSelectionUI extends BaseUI
 		optionMap.set(numberOfPlayers, option);
 		options.addChild(option.artwork);
 		
+		Index.tooltipHud.registerTooltip(option.artwork, "Play with " + numberOfPlayers + " players");
+		
 		return option;
 	}
 	

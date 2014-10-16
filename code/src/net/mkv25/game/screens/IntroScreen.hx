@@ -34,6 +34,9 @@ class IntroScreen extends Screen
 		guideButton.setup("BEGINNERS GUIDE", onBeginnersGuideAction);
 		guideButton.move(horizontalCenter, verticalCenter + 200);
 		
+		Index.tooltipHud.registerTooltip(newGameButton.artwork, "Start a new game");
+		Index.tooltipHud.registerTooltip(guideButton.artwork, "Learn how to play");
+		
 		artwork.addChild(newGameButton.artwork);
 		artwork.addChild(guideButton.artwork);
 	}

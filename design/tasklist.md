@@ -7,11 +7,10 @@ Bugs
 
 In progress
 -----------
-
++ Add press and hold tooltip support for mobile
 
 Improvements based on Player feedback
 -------------------------------------
-+ Add tooltips to buttons - press and hold for mobile
 + Combat report summary
 + Not clear how to select and move a unit
 + A way to name individual players - pass and play between six people made it hard to track
@@ -36,7 +35,7 @@ Suggestions based on Player feedback
 
 Improvements
 ------------
-+ Saving of game state
++ Saving and loading of game state
 + AI Players
 + Variety of AI Players
 + Sexier graphics for planets
@@ -67,6 +66,7 @@ Improvements
 - Add alternative image for unsupported flash player plugin on web preview
 - View map after end of game, without any further player interaction
 - Pre-combat report about battle allowing the player to confirm or postpone the battle
+- Animate text changes on Game Setup screen
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn
