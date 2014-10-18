@@ -13,31 +13,31 @@ class IconButtonUI extends BaseUI
 {
 	private static inline var DEFAULT_ASSET_PREFIX:String = "img/button/button_plain";
 	
+	var imagePrefix:String;
+	
 	var buttonBitmap:Bitmap;
 	var iconBitmap:Bitmap;
 	var iconPath:String;
 	
-	var waitingOnActivation:Bool;
 	var action:Dynamic->Void;
-	var imagePrefix:String;
+	var logic:ButtonLogic;
 	
 	public function new() 
 	{
 		super();
 		
+		imagePrefix = DEFAULT_ASSET_PREFIX;
+		
 		buttonBitmap = new Bitmap();
 		iconBitmap = new Bitmap();
 		iconPath = null;
-		imagePrefix = DEFAULT_ASSET_PREFIX;
 		
-		waitingOnActivation = false;
 		action = null;
-		
-		artwork.addEventListener(MouseEvent.CLICK, onMouseClick);
-		artwork.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
-		artwork.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
-		artwork.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
-		artwork.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
+		logic = new ButtonLogic(artwork);
+		logic.upState = upState;
+		logic.overState = overState;
+		logic.downState = downState;
+		logic.activate = activate;
 	}
 	
 	override public function enable() 
@@ -74,20 +74,13 @@ class IconButtonUI extends BaseUI
 		// activate();
 	}
 	
-	function activate():Void {
-		if (waitingOnActivation)
-			return;
-			
+	function activate():Void
+	{
 		if (action == null)
+		{
 			return;
-		
-		waitingOnActivation = true;
-		Actuate.timer(0.1).onComplete(onActivationComplete);
-	}
-	
-	function onActivationComplete():Void {
+		}
 		action(this);
-		waitingOnActivation = false;
 	}
 	
 	function upState()
@@ -106,27 +99,5 @@ class IconButtonUI extends BaseUI
 	{
 		buttonBitmap.bitmapData = Assets.getBitmapData(imagePrefix + "_down.png");
 		center(buttonBitmap);
-	}
-	
-	function onMouseOver(e)
-	{
-		overState();
-	}
-	
-	function onMouseOut(e)
-	{
-		upState();
-	}
-	
-	function onMouseDown(e)
-	{
-		downState();
-		
-		activate();
-	}
-	
-	function onMouseUp(e)
-	{
-		overState();
 	}
 }

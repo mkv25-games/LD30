@@ -7,7 +7,7 @@ Bugs
 
 In progress
 -----------
-+ Add press and hold tooltip support for mobile
+
 
 Improvements based on Player feedback
 -------------------------------------
