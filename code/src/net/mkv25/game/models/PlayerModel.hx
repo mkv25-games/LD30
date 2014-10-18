@@ -3,8 +3,9 @@ package net.mkv25.game.models;
 import haxe.ds.StringMap;
 import net.mkv25.base.core.Color;
 import net.mkv25.base.core.CoreModel;
+import net.mkv25.base.core.ISerializable;
 
-class PlayerModel extends CoreModel
+class PlayerModel extends CoreModel implements ISerializable
 {
 	public var playerNumberZeroBased(default, null):Int;
 	
@@ -50,5 +51,27 @@ class PlayerModel extends CoreModel
 	public function baseCount():Int
 	{
 		return bases.length();
+	}
+	
+	public function readFrom(object:Dynamic):Void
+	{
+		
+	}
+	
+	public function serialize():Dynamic
+	{
+		var result:Dynamic = { };
+		
+		// writeObject("playerHand", result, playerHand);
+		write("resources", result, resources);
+		write("territory", result, territory);
+		
+		// writeObject("units", result, units);
+		// writeObject("bases", result, bases);
+		// writeObject("worlds", result, worlds);
+		
+		// writeObject("playerColour", result, playerColour);
+		
+		return result;
 	}
 }

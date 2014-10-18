@@ -60,4 +60,47 @@ class CoreModel
 	{
 		write(property, to, Std.string(value));
 	}
+	
+	function writeObject(property:String, to:Dynamic, value:ISerializable)
+	{
+		write(property, to, value.serialize());
+	}
+	
+	function readObject<T:ISerializable>(property:String, from:Dynamic, type:Class<T>):T
+	{
+		var value:T = Type.createEmptyInstance(type);
+		
+		value.readFrom(from);
+		
+		return value;
+	}
+	
+	function writeArray<T:ISerializable>(property:String, to:Dynamic, valueArray:Array<T>)
+	{
+		var itemArray = new Array<Dynamic>();
+		for (value in valueArray)
+		{
+			var item:Dynamic = value.serialize();
+			itemArray.push(item);
+		}
+	}
+	
+	function readArray<T:ISerializable>(property:String, from:Dynamic, type:Class<T>):Array<T>
+	{
+		var itemArray:Array<Dynamic> = cast read(property, from, []);
+		var valueArray:Array<T> = new Array<T>();
+		
+		for (item in itemArray)
+		{
+			if (item != null)
+			{
+				var value:T = Type.createEmptyInstance(type);
+				value.readFrom(item);
+				
+				valueArray.push(value);
+			}
+		}
+		
+		return valueArray;
+	}
 }

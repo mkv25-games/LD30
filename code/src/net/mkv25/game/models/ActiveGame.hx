@@ -20,23 +20,26 @@ class ActiveGame extends CoreModel
 {
 	public var playerIndex(default, null):Array<PlayerModel>;
 	
-	private var activePlayers(default, null):TurnModel<PlayerModel>;
-	
 	public var activePlayer(get, null):PlayerModel;
 	public var finalPlayerInRound(get, null):PlayerModel;
 	
 	public var space:MapModel;
 	public var worlds:Array<MapModel>;
 	
-	public function new(numberOfPlayers:Int) 
+	private var activePlayers(default, null):TurnModel<PlayerModel>;
+	
+	public function new(numberOfPlayers:Int=0) 
 	{
 		super();
 		
-		IconProvider.setup();
-		
-		validateNumberOfPlayers(numberOfPlayers);
-		MapLayoutProvider.createWorldsFor(numberOfPlayers, this);
-		createPlayers(numberOfPlayers);
+		if (numberOfPlayers > 0)
+		{
+			IconProvider.setup();
+			
+			validateNumberOfPlayers(numberOfPlayers);
+			MapLayoutProvider.createWorldsFor(numberOfPlayers, this);
+			createPlayers(numberOfPlayers);
+		}
 	}
 	
 	function validateNumberOfPlayers(numberOfPlayers:Int):Void
@@ -109,6 +112,13 @@ class ActiveGame extends CoreModel
 	}
 	
 	public function startFirstPlayerTurn():Void
+	{
+		checkForValidPlayers();
+		
+		updateGameForActivePlayer();
+	}
+	
+	public function resumePlayerTurn():Void
 	{
 		checkForValidPlayers();
 		
@@ -277,6 +287,29 @@ class ActiveGame extends CoreModel
 	public function activePlayerCount():Int
 	{
 		return activePlayers.size();
+	}
+	
+	public function readFrom(object:Dynamic):Void
+	{
+		
+	}
+	
+	public function serialize():Dynamic
+	{
+		var result:Dynamic = { };
+		
+		writeArray("playerIndex", result, playerIndex);
+		
+		return result;
+	}
+	
+	public static function makeFrom(object:Dynamic):ActiveGame
+	{
+		var game:ActiveGame = new ActiveGame(0);
+		
+		game.readFrom(object);
+		
+		return game;
 	}
 	
 }

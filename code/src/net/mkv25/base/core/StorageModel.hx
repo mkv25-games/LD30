@@ -5,7 +5,8 @@ import openfl.net.SharedObjectFlushStatus;
 
 class StorageModel
 {
-	private static var LOCAL_PATH:String = "mkv25/games/ld30/";
+	private static var LOCAL_PATH:String = null;
+	private static var SECURE:Bool = false;
 	
 	var path:String;
 	
@@ -71,7 +72,7 @@ class StorageModel
 	
 	function getSharedObject(path:String):SharedObject
 	{
-		return SharedObject.getLocal(path, LOCAL_PATH);
+		return SharedObject.getLocal(path, LOCAL_PATH, SECURE);
 	}
 	
 	function completeWrite(?callback:Void->Void):Void

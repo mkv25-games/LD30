@@ -44,6 +44,7 @@ class GameFlowController
 		EventBus.gameVariantChanged.add(handle_gameVariantChanged);
 		
 		EventBus.startNewGame.add(handle_startNewGame);
+		EventBus.continueSavedGame.add(handle_continueSavedGame);
 		EventBus.restartGame.add(handle_restartGame);
 		
 		EventBus.activePlayerChanged.add(handle_startOfPlayersTurn);
@@ -73,6 +74,15 @@ class GameFlowController
 		Index.activeGame = game;
 		Index.screenController.showScreen(Index.mainScreen);
 		Index.activeGame.startFirstPlayerTurn();
+	}
+	
+	function handle_continueSavedGame(?model)
+	{
+		var game:ActiveGame = Index.lastSavedGameModel.savedGame;
+	
+		Index.activeGame = game;
+		Index.screenController.showScreen(Index.mainScreen);
+		Index.activeGame.resumePlayerTurn();
 	}
 	
 	function handle_restartGame(?model)

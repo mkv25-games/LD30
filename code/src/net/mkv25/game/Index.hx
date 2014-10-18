@@ -1,6 +1,7 @@
 package net.mkv25.game;
 
 import flash.display.Stage;
+import motion.Actuate;
 import net.mkv25.base.core.CoreModel;
 import net.mkv25.base.core.Screen;
 import net.mkv25.base.core.ScreenController;
@@ -13,6 +14,7 @@ import net.mkv25.game.controllers.CardActionController;
 import net.mkv25.game.controllers.MapFocusController;
 import net.mkv25.game.controllers.MoveUnitController;
 import net.mkv25.game.models.ActiveGame;
+import net.mkv25.game.models.LastSavedGameModel;
 import net.mkv25.game.models.MapModel;
 import net.mkv25.game.provider.CardProvider;
 import net.mkv25.game.screens.BeginnersGuideScreen;
@@ -34,6 +36,7 @@ class Index
 	// models
 	public static var dbvos:DBVOsModel;
 	public static var activeGame:ActiveGame;
+	public static var lastSavedGameModel:LastSavedGameModel;
 	
 	// controllers
 	public static var screenController:ScreenController;
@@ -79,6 +82,7 @@ class Index
 		// models
 		dbvos = new DBVOsModel();
 		activeGame = null;
+		lastSavedGameModel = new LastSavedGameModel();
 		
 		// controllers
 		screenController = new ScreenController();

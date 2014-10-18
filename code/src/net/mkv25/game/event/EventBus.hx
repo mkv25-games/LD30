@@ -11,6 +11,7 @@ class EventBus
 	// general actions actions
 	public static var startNewGame = new Signal();
 	public static var restartGame = new Signal();
+	public static var continueSavedGame = new Signal();
 	public static var displayNewStatusMessage = new Signal();
 	
 	// game setup events
@@ -62,5 +63,9 @@ class EventBus
 	public static var mapViewChanged = new Signal();
 	public static var mapMarkerPlacedOnMap = new Signal();
 	public static var unitSelectionChanged = new Signal();
+	
+	// errors
+	public static var lastSavedGameAvailable = new Signal();
+	public static var errorLoadingSavedGame = new Signal();
 	
 }
