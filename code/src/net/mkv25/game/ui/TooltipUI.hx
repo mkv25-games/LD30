@@ -9,6 +9,7 @@ import net.mkv25.base.ui.TextUI;
 import openfl.display.DisplayObject;
 import openfl.display.Graphics;
 import openfl.events.MouseEvent;
+import openfl.Lib;
 
 class TooltipUI extends BaseUI
 {
@@ -16,6 +17,8 @@ class TooltipUI extends BaseUI
 	
 	var lastSeenObject:DisplayObject;
 	var regsiteredObjects:Map<DisplayObject, String>;
+	
+	var mouseDown:Bool;
 
 	public function new() 
 	{
@@ -23,13 +26,25 @@ class TooltipUI extends BaseUI
 		
 		regsiteredObjects = new Map<DisplayObject, String>();
 		
-		text = cast TextUI.makeFor("Tooltip goes here", 0xEEEEEE).fontSize(22).alignCenter().size(400, 100);
+		init();
+	}
+	
+	function init()
+	{
+		text = cast TextUI.makeFor("Tooltip goes here", 0x222222).fontSize(18).alignCenter().size(400, 100);
 		
 		artwork.addChild(text.artwork);
 		
 		artwork.alpha = 0.0;
 		disable();
 		hide();
+		
+		// register events
+		Lib.current.stage.addEventListener(MouseEvent.MOUSE_UP, function(?event) {
+			mouseDown = false;
+			lastSeenObject = null;
+			checkToHideTooltip(null);
+		});
 	}
 	
 	public function setup(screenController:ScreenController):Void
@@ -54,7 +69,15 @@ class TooltipUI extends BaseUI
 			checkToHideTooltip(displayObject);
 		});
 		
+		#if mobile
+			displayObject.addEventListener(MouseEvent.MOUSE_DOWN, function(?event) {
+				mouseDown = true;
+				showMobileTooltipFor(displayObject);
+			});	
+		#end
+		
 		displayObject.addEventListener(MouseEvent.MOUSE_UP, function(?event) {
+			mouseDown = false;
 			checkToHideTooltip(displayObject);
 		});
 	}
@@ -69,17 +92,32 @@ class TooltipUI extends BaseUI
 		
 		// show and position tooltip
 		lastSeenObject = displayObject;
-		text.setText(tooltip);
+		text.setText(tooltip.toUpperCase());
 		draw();
 		positionTooltip();
 		
 		// display straight away if partially visible, or wait a moment
+		/*
 		if (artwork.alpha > 0.0)
 		{
 			artwork.alpha = 1.0;
 			show();
 		}
+		*/
+		Actuate.apply(artwork, { alpha: 0.0 } );
 		Actuate.tween(artwork, 0.5, { alpha: 1.0 } ).delay(0.75);
+	}
+	
+	function showMobileTooltipFor(displayObject:DisplayObject):Void
+	{
+		Actuate.timer(0.8).onComplete(function() {
+			if (mouseDown) {
+				#if mobile
+					openfl.feedback.Haptic.vibrate(100, 450);
+				#end
+				showTooltipFor(displayObject);
+			}
+		});
 	}
 	
 	function checkToHideTooltip(displayObject:DisplayObject)
@@ -90,19 +128,14 @@ class TooltipUI extends BaseUI
 		}
 	}
 	
-	public function hideTooltip():Void
-	{
-		visible = false;
-	}
-	
 	function draw()
 	{
 		text.autoSize(300);
 		
 		var g:Graphics = artwork.graphics;
 		g.clear();
-		g.lineStyle(2, 0x999999, 0.5);
-		g.beginFill(0x111111, 0.7);
+		g.lineStyle(2, 0xCECECE, 0.7);
+		g.beginFill(0xEFEFEF, 0.8);
 		g.drawRect(0, 0, text.artwork.width, text.artwork.height);
 		g.endFill();
 	}
@@ -112,7 +145,7 @@ class TooltipUI extends BaseUI
 		// position near last seen object
 		if (lastSeenObject != null)
 		{
-			moveRelativeTo(lastSeenObject, - (artwork.width / 2), artwork.height + 10);
+			moveRelativeTo(lastSeenObject, - (artwork.width / 2), (lastSeenObject.height / 2) + 10);
 		}
 		else
 		{
@@ -124,7 +157,7 @@ class TooltipUI extends BaseUI
 			artwork.x = 5;
 		}
 		
-		if (artwork.x > Screen.WIDTH - artwork.width) {
+		if (artwork.x > Screen.WIDTH - artwork.width){
 			artwork.x = Screen.WIDTH - artwork.width;
 		}
 		

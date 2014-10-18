@@ -22,10 +22,9 @@ class ToggleButtonUI extends BaseUI
 	var buttonBitmap:Bitmap;
 	var iconBitmap:Bitmap;
 	var iconPath:String;
-	
-	var waitingOnActivation:Bool;
-	var action:Dynamic->Void;
 	var imagePrefix:String;
+	
+	var logic:ButtonLogic;
 	
 	public function new() 
 	{
@@ -40,16 +39,14 @@ class ToggleButtonUI extends BaseUI
 		iconPath = null;
 		imagePrefix = DEFAULT_ASSET_PREFIX;
 		
-		waitingOnActivation = false;
-		action = null;
-		
-		artwork.addEventListener(MouseEvent.MOUSE_OVER, onMouseOver);
-		artwork.addEventListener(MouseEvent.MOUSE_OUT, onMouseOut);
-		artwork.addEventListener(MouseEvent.MOUSE_DOWN, onMouseDown);
-		artwork.addEventListener(MouseEvent.MOUSE_UP, onMouseUp);
-		
 		artwork.addChild(buttonBitmap);
 		artwork.addChild(iconBitmap);
+		
+		logic = new ButtonLogic(artwork);
+		logic.upState = upState;
+		logic.overState = overState;
+		logic.downState = downState;
+		logic.activate = activate;
 	}
 	
 	public function setup(iconPath:String):ToggleButtonUI
@@ -128,24 +125,12 @@ class ToggleButtonUI extends BaseUI
 		center(buttonBitmap);
 	}
 	
-	function onMouseOver(e)
+	function activate()
 	{
-		overState();
-	}
-	
-	function onMouseOut(e)
-	{
-		upState();
-	}
-	
-	function onMouseDown(e)
-	{
-		downState();
-		this.selected.dispatch(this);
-	}
-	
-	function onMouseUp(e)
-	{
-		overState();
+		#if mobile
+			openfl.feedback.Haptic.vibrate(100, 250);
+		#end
+		
+		selected.dispatch(this);
 	}
 }

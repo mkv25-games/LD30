@@ -59,9 +59,9 @@ class GameLengthSelectionUI extends BaseUI
 		options.addChild(optionMedium.artwork);
 		options.addChild(optionLong.artwork);
 		
-		Index.tooltipHud.registerTooltip(optionShort.artwork, "Victory conditions for a short game");
-		Index.tooltipHud.registerTooltip(optionMedium.artwork, "Victory conditions for a medium game");
-		Index.tooltipHud.registerTooltip(optionLong.artwork, "Victory conditions for a long game");
+		Index.tooltipHud.registerTooltip(optionShort.artwork, "Victory conditions\nfor a short game");
+		Index.tooltipHud.registerTooltip(optionMedium.artwork, "Victory conditions\nfor a medium game");
+		Index.tooltipHud.registerTooltip(optionLong.artwork, "Victory conditions\nfor a long game");
 		
 		artwork.addChild(gameLengthText.artwork);
 		artwork.addChild(options);
