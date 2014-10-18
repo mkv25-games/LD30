@@ -7,6 +7,7 @@ Bugs
 
 In progress
 -----------
++ Saving and loading of game state
 
 
 Improvements based on Player feedback
@@ -35,7 +36,6 @@ Suggestions based on Player feedback
 
 Improvements
 ------------
-+ Saving and loading of game state
 + AI Players
 + Variety of AI Players
 + Sexier graphics for planets
@@ -67,6 +67,7 @@ Improvements
 - View map after end of game, without any further player interaction
 - Pre-combat report about battle allowing the player to confirm or postpone the battle
 - Animate text changes on Game Setup screen
+- Change build name from LudumDare.apk to ConnectTheWorlds.apk - update website link, and check CI job
 
 + Turn action log - documenting each player action and event in the game
 + Turn replay feature - show each action that occurred on the last turn
