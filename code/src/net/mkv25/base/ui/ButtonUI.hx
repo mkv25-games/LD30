@@ -86,7 +86,7 @@ class ButtonUI extends BaseUI
 		}
 		
 		#if mobile
-			openfl.feedback.Haptic.vibrate(10, 150);
+			openfl.feedback.Haptic.vibrate(1, 100);
 		#end
 		
 		action(this);

@@ -98,16 +98,18 @@ class TooltipUI extends BaseUI
 		
 		// clear any animations, and wait to display tooltip
 		Actuate.apply(artwork, { alpha: 0.0 } );
-		Actuate.tween(artwork, 0.5, { alpha: 1.0 } ).delay(0.75);
+		Actuate.tween(artwork, 0.5, { alpha: 1.0 } ).delay(0.75).onComplete(function()
+		{
+			#if mobile
+				openfl.feedback.Haptic.vibrate(5, 200);
+			#end
+		});
 	}
 	
 	function showMobileTooltipFor(displayObject:DisplayObject):Void
 	{
 		Actuate.timer(0.8).onComplete(function() {
 			if (mouseDown) {
-				#if mobile
-					openfl.feedback.Haptic.vibrate(50, 250);
-				#end
 				showTooltipFor(displayObject);
 			}
 		});

@@ -80,6 +80,11 @@ class IconButtonUI extends BaseUI
 		{
 			return;
 		}
+		
+		#if mobile
+			openfl.feedback.Haptic.vibrate(1, 100);
+		#end
+		
 		action(this);
 	}
 	

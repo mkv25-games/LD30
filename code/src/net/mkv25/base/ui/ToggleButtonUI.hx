@@ -128,7 +128,7 @@ class ToggleButtonUI extends BaseUI
 	function activate()
 	{
 		#if mobile
-			openfl.feedback.Haptic.vibrate(10, 150);
+			openfl.feedback.Haptic.vibrate(1, 100);
 		#end
 		
 		selected.dispatch(this);
