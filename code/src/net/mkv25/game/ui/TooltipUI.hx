@@ -61,19 +61,19 @@ class TooltipUI extends BaseUI
 		
 		regsiteredObjects.set(displayObject, tooltip);
 		
-		displayObject.addEventListener(MouseEvent.MOUSE_OVER, function(?event) {
-			showTooltipFor(displayObject);
-		});
-		
-		displayObject.addEventListener(MouseEvent.MOUSE_OUT, function(?event) {
-			checkToHideTooltip(displayObject);
-		});
-		
 		#if mobile
 			displayObject.addEventListener(MouseEvent.MOUSE_DOWN, function(?event) {
 				mouseDown = true;
 				showMobileTooltipFor(displayObject);
 			});	
+		#else
+			displayObject.addEventListener(MouseEvent.MOUSE_OVER, function(?event) {
+				showTooltipFor(displayObject);
+			});
+			
+			displayObject.addEventListener(MouseEvent.MOUSE_OUT, function(?event) {
+				checkToHideTooltip(displayObject);
+			});
 		#end
 		
 		displayObject.addEventListener(MouseEvent.MOUSE_UP, function(?event) {
@@ -96,14 +96,7 @@ class TooltipUI extends BaseUI
 		draw();
 		positionTooltip();
 		
-		// display straight away if partially visible, or wait a moment
-		/*
-		if (artwork.alpha > 0.0)
-		{
-			artwork.alpha = 1.0;
-			show();
-		}
-		*/
+		// clear any animations, and wait to display tooltip
 		Actuate.apply(artwork, { alpha: 0.0 } );
 		Actuate.tween(artwork, 0.5, { alpha: 1.0 } ).delay(0.75);
 	}
@@ -113,7 +106,7 @@ class TooltipUI extends BaseUI
 		Actuate.timer(0.8).onComplete(function() {
 			if (mouseDown) {
 				#if mobile
-					openfl.feedback.Haptic.vibrate(100, 450);
+					openfl.feedback.Haptic.vibrate(50, 250);
 				#end
 				showTooltipFor(displayObject);
 			}
@@ -145,7 +138,11 @@ class TooltipUI extends BaseUI
 		// position near last seen object
 		if (lastSeenObject != null)
 		{
-			moveRelativeTo(lastSeenObject, - (artwork.width / 2), (lastSeenObject.height / 2) + 10);
+			#if mobile
+				moveRelativeTo(lastSeenObject, - (artwork.width / 2), - (lastSeenObject.height / 2) - 10 - artwork.height);
+			#else
+				moveRelativeTo(lastSeenObject, - (artwork.width / 2), (lastSeenObject.height / 2) + 10);
+			#end
 		}
 		else
 		{
