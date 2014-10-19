@@ -42,7 +42,7 @@ class MapLayoutProvider
 	{
 		game.space = new MapModel();
 		game.space.setup("s0", Assets.getBitmapData("img/starfield-small.png"), null);
-		game.space.hexes = MapModel.createCircle(radius);
+		MapModel.createCircle(radius, game.space.hexes.list);
 		game.space.indexHexes();
 	}
 	
@@ -126,7 +126,7 @@ class MapLayoutProvider
 	{
 		var world:MapModel = new MapModel();
 		world.setup("w" + id, Assets.getBitmapData(backgroundAsset), IconProvider.WORLD_ICONS[id]);
-		world.hexes = MapModel.createRectangle(13, 9);
+		MapModel.createRectangle(13, 9, world.hexes.list);
 		world.indexHexes();
 		
 		var hex:HexTile = game.space.getHexTile(q, r);

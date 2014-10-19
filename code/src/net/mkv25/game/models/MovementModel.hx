@@ -79,7 +79,7 @@ class MovementModel
 				var world:MapModel = MovementModel.getWorldFrom(location);
 				if (world != null)
 				{
-					for (hex in world.hexes)
+					for (hex in world.hexes.list)
 					{
 						if (hex.searchId == searchId)
 						{

@@ -321,7 +321,7 @@ class MapUI extends BaseUI
 		
 		// draw all hexes currently in view
 		var hexes = currentModel.hexes;
-		for (hex in hexes) {
+		for (hex in hexes.list) {
 			drawHex(hex);
 			drawThingsInHex(hex);
 		}

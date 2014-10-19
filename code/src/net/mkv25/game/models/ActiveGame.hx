@@ -189,7 +189,7 @@ class ActiveGame extends CoreModel
 	{
 		map.recalculateTerritory();
 		
-		for (hex in map.hexes)
+		for (hex in map.hexes.list)
 		{
 			var things = hex.listContents();
 			for (thing in things)
@@ -247,7 +247,7 @@ class ActiveGame extends CoreModel
 	{
 		map.recalculateTerritory();
 		
-		for (hex in map.hexes)
+		for (hex in map.hexes.list)
 		{
 			var things = hex.listContents();
 			for (thing in things)
@@ -294,8 +294,8 @@ class ActiveGame extends CoreModel
 	public function readFrom(object:Dynamic):Void
 	{
 		playerIndex = readArray("playerIndex", object, PlayerModel);
-		space = readObject("space", object, MapModel);
-		worlds = readArray("worlds", object, MapModel);
+		// space = readObject("space", object, MapModel);
+		// worlds = readArray("worlds", object, MapModel);
 		activePlayers = new TurnModel<PlayerModel>();
 		activePlayers.readFrom(read("activePlayers", object, {}), playerIndex);
 	}
@@ -305,8 +305,8 @@ class ActiveGame extends CoreModel
 		var result:Dynamic = { };
 		
 		writeArray("playerIndex", result, playerIndex);
-		writeObject("space", result, space);
-		writeArray("worlds", result, worlds);
+		// writeObject("space", result, space);
+		// writeArray("worlds", result, worlds);
 		writeObject("activePlayers", result, activePlayers.serialize()); 
 		
 		return result;

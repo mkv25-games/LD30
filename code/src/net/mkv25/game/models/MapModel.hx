@@ -6,31 +6,38 @@ import haxe.ds.StringMap;
 import net.mkv25.base.core.CoreModel;
 import net.mkv25.base.core.ISerializable;
 
-class MapModel extends CoreModel implements IMapThing implements ISerializable
+class MapModel extends CoreModel implements IMapThing
 {
-	public var hexes:StringMap<HexTile>;
+	// serialized properties
+	public var hexes:HexMap;
 	
 	private var id:String;
+	private var spaceHex:HexTile;
+	public var contested:Bool;
+	
+	// display properties
+	public var owner:Null<PlayerModel>;
 	private var background:BitmapData;
 	private var mapIcon:BitmapData;
 	private var mapDepth:Int;
-	private var spaceHex:HexTile;
-	
-	public var contested:Bool;
-	public var owner:Null<PlayerModel>;
 	
 	public function new() 
 	{
 		super();
 		
-		hexes = new StringMap<HexTile>();
+		init();
+	}
+	
+	function init()
+	{
+		hexes = new HexMap();
+		
+		contested = false;
+		owner = null;
 		
 		background = null;
 		mapIcon = null;
 		mapDepth = 0;
-		
-		contested = false;
-		owner = null;
 	}
 	
 	public function setup(id:String, background:BitmapData, mapIcon:BitmapData):Void
@@ -72,14 +79,12 @@ class MapModel extends CoreModel implements IMapThing implements ISerializable
 	
 	public function getHexTile(q:Int, r:Int):Null<HexTile>
 	{
-		var key:String = q + "," + r;
-		
-		return hexes.get(key);
+		return hexes.get(q, r);
 	}
 	
 	public function indexHexes():Void
 	{
-		for (hex in hexes)
+		for (hex in hexes.list)
 		{
 			hex.map = this;
 		}
@@ -90,13 +95,13 @@ class MapModel extends CoreModel implements IMapThing implements ISerializable
 		// reset all tiles
 		this.owner = null;
 		this.contested = false;
-		for (hex in hexes)
+		for (hex in hexes.list)
 		{
 			hex.resetOwnership();
 		}
 		
 		// recalcuate all tiles
-		for (hex in hexes)
+		for (hex in hexes.list)
 		{
 			hex.updateTerritory();
 			if (hex.contested)
@@ -116,41 +121,40 @@ class MapModel extends CoreModel implements IMapThing implements ISerializable
 		return (this.spaceHex != null);
 	}
 	
-	public static function createCircle(radius:Int):StringMap<HexTile>
+	public static function createCircle(radius:Int, hexes:StringMap<HexTile>):Void
 	{
-		var hexes = new StringMap<HexTile>();
-		
-		for (i in -radius...radius+1) {
-			for (j in -radius...radius+1) {
-				if(validCircleCoordinate(i, j, radius)) {
+		for (i in -radius...radius + 1)
+		{
+			for (j in -radius...radius + 1)
+			{
+				if (validCircleCoordinate(i, j, radius))
+				{
 					safeAdd(hexes, i, j);
 				}
 			}
 		}
-		
-		return hexes;
 	}
 	
-	public static function createRectangle(width:Int, height:Int):StringMap<HexTile>
+	public static function createRectangle(width:Int, height:Int, hexes:StringMap<HexTile>):Void
 	{
-		var hexes = new StringMap<HexTile>();
 		var offset_x = -Math.floor(width / 2);
 		var offset_y = -Math.floor(height / 2);
 		
-		for (j in 0...width) {
-			for (i in 0...height) {
+		for (j in 0...width)
+		{
+			for (i in 0...height)
+			{
 				var q = j + offset_x;
 				var r = i + offset_y;
 				safeAdd(hexes, q,  r - Math.floor(q / 2));
 			}
 		}
-		
-		return hexes;
 	}
 	
 	public static function safeAdd(hexes:StringMap<HexTile>, q:Int, r:Int):Void
 	{
-		if(!hexes.exists(q + "," + r)) {
+		if (!hexes.exists(q + "," + r))
+		{
 			var hex = new HexTile();
 			hex.q = q;
 			hex.r = r;
@@ -158,27 +162,18 @@ class MapModel extends CoreModel implements IMapThing implements ISerializable
 		}
 	}
 	
-	private static inline function validCircleCoordinate(q:Int, r:Int, radius:Int):Bool {
+	private static inline function validCircleCoordinate(q:Int, r:Int, radius:Int):Bool
+	{
 		return insideRadius(q, r, radius) && !isCorner(q, r, radius);
 	}
 	
-	private static inline function insideRadius(q:Int, r:Int, radius:Int):Bool {
+	private static inline function insideRadius(q:Int, r:Int, radius:Int):Bool
+	{
 		return (Math.abs(q + r) <= radius);
 	}
 	
-	private static inline function isCorner(q:Int, r:Int, radius:Int):Bool {
+	private static inline function isCorner(q:Int, r:Int, radius:Int):Bool
+	{
 		return (Math.abs(q) == radius && r == 0) || (Math.abs(r) == radius && q == 0) || (Math.abs(q) == radius && Math.abs(r) == radius);
-	}
-	
-	public function readFrom(object:Dynamic)
-	{
-		
-	}
-	
-	public function serialize():Dynamic
-	{
-		var result:Dynamic = { };
-		
-		return result;
 	}
 }
