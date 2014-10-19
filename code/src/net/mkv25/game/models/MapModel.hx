@@ -4,8 +4,9 @@ import flash.display.BitmapData;
 import haxe.ds.HashMap;
 import haxe.ds.StringMap;
 import net.mkv25.base.core.CoreModel;
+import net.mkv25.base.core.ISerializable;
 
-class MapModel extends CoreModel implements IMapThing
+class MapModel extends CoreModel implements IMapThing implements ISerializable
 {
 	public var hexes:StringMap<HexTile>;
 	
@@ -167,5 +168,17 @@ class MapModel extends CoreModel implements IMapThing
 	
 	private static inline function isCorner(q:Int, r:Int, radius:Int):Bool {
 		return (Math.abs(q) == radius && r == 0) || (Math.abs(r) == radius && q == 0) || (Math.abs(q) == radius && Math.abs(r) == radius);
+	}
+	
+	public function readFrom(object:Dynamic)
+	{
+		
+	}
+	
+	public function serialize():Dynamic
+	{
+		var result:Dynamic = { };
+		
+		return result;
 	}
 }

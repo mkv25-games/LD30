@@ -170,6 +170,18 @@ class TurnModel<T>
 		
 		return output;
 	}
+	
+	public function readFrom(object:Dynamic, dataSource:Array<T>)
+	{
+		
+	}
+	
+	public function serialize():Dynamic
+	{
+		var result:Dynamic = { };
+	
+		return result;
+	}
 }
 
 private class LinkedListEntry<T>

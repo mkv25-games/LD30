@@ -18,10 +18,12 @@ import openfl.Assets;
 
 class ActiveGame extends CoreModel
 {
-	public var playerIndex(default, null):Array<PlayerModel>;
-	
+	// properties
 	public var activePlayer(get, null):PlayerModel;
 	public var finalPlayerInRound(get, null):PlayerModel;
+	
+	// serializable properties
+	public var playerIndex(default, null):Array<PlayerModel>;
 	
 	public var space:MapModel;
 	public var worlds:Array<MapModel>;
@@ -291,7 +293,11 @@ class ActiveGame extends CoreModel
 	
 	public function readFrom(object:Dynamic):Void
 	{
-		
+		playerIndex = readArray("playerIndex", object, PlayerModel);
+		space = readObject("space", object, MapModel);
+		worlds = readArray("worlds", object, MapModel);
+		activePlayers = new TurnModel<PlayerModel>();
+		activePlayers.readFrom(read("activePlayers", object, {}), playerIndex);
 	}
 	
 	public function serialize():Dynamic
@@ -299,6 +305,9 @@ class ActiveGame extends CoreModel
 		var result:Dynamic = { };
 		
 		writeArray("playerIndex", result, playerIndex);
+		writeObject("space", result, space);
+		writeArray("worlds", result, worlds);
+		writeObject("activePlayers", result, activePlayers.serialize()); 
 		
 		return result;
 	}
