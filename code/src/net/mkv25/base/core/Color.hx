@@ -1,6 +1,6 @@
 package net.mkv25.base.core;
 
-class Color
+class Color implements ISerializable
 {
 	public var value:Int;
 	public var alpha:Float;
@@ -9,5 +9,26 @@ class Color
 	{
 		this.value = value;
 		this.alpha = alpha;
+	}
+	
+	public function readFrom(object:Dynamic)
+	{
+		if (object == null)
+		{
+			return;
+		}
+		
+		value = Std.parseInt(object.value);
+		alpha = Std.parseFloat(object.alpha);
+	}
+	
+	public function serialize():Dynamic
+	{
+		var result:Dynamic = { };
+		
+		result.value = Std.string(value);
+		result.alpha = Std.string(alpha);
+		
+		return result;
 	}
 }

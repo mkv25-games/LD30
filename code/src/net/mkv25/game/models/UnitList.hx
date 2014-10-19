@@ -1,6 +1,8 @@
 package net.mkv25.game.models;
 
-class UnitList
+import net.mkv25.base.core.ISerializable;
+
+class UnitList implements ISerializable
 {
 	private var units:Array<MapUnit>;
 
@@ -118,6 +120,18 @@ class UnitList
 				return 0;
 			}
 		}
+	}
+	
+	public function readFrom(object:Dynamic)
+	{
+		
+	}
+	
+	public function serialize():Dynamic
+	{
+		var result:Dynamic = { };
+		
+		return result;
 	}
 	
 }

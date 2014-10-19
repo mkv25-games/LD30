@@ -2,9 +2,10 @@ package net.mkv25.game.models;
 
 import haxe.ds.ArraySort;
 import net.mkv25.base.core.CoreModel;
+import net.mkv25.base.core.ISerializable;
 import net.mkv25.game.enums.PlayableCardType;
 
-class PlayerHand extends CoreModel
+class PlayerHand extends CoreModel implements ISerializable
 {
 	public inline static var MAX_HAND_SIZE:Int = 5;
 	
@@ -108,5 +109,18 @@ class PlayerHand extends CoreModel
 	{
 		hand.remove(card);
 	}
-			
+	
+	
+	public function readFrom(object:Dynamic)
+	{
+		
+	}
+	
+	public function serialize():Dynamic
+	{
+		var result:Dynamic = { };
+		
+		return result;
+	}
+	
 }

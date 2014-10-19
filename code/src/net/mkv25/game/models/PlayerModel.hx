@@ -26,6 +26,11 @@ class PlayerModel extends CoreModel implements ISerializable
 		
 		this.playerNumberZeroBased = playerNumberZeroBased;
 		
+		init();
+	}
+	
+	function init()
+	{
 		playerHand = new PlayerHand();
 		
 		resources = 6;
@@ -55,22 +60,28 @@ class PlayerModel extends CoreModel implements ISerializable
 	
 	public function readFrom(object:Dynamic):Void
 	{
+		init();
 		
+		playerNumberZeroBased = readInt("playerNumberZeroBased", object, -1);
+		
+		playerHand.readFrom(read("playerHand", object, { }));
+		resources = readInt("resources", object, 0);
+		territory = readInt("territory", object, 0);
+		
+		playerColour.readFrom(read("playerColour", object, { }));
 	}
 	
 	public function serialize():Dynamic
 	{
 		var result:Dynamic = { };
 		
-		// writeObject("playerHand", result, playerHand);
+		write("playerNumberZeroBased", result, playerNumberZeroBased);
+		
+		writeObject("playerHand", result, playerHand);
 		write("resources", result, resources);
 		write("territory", result, territory);
 		
-		// writeObject("units", result, units);
-		// writeObject("bases", result, bases);
-		// writeObject("worlds", result, worlds);
-		
-		// writeObject("playerColour", result, playerColour);
+		writeObject("playerColour", result, playerColour);
 		
 		return result;
 	}
