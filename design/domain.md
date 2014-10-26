@@ -1,51 +1,54 @@
 game : Game
 
 -- units : Unit[]
-   -- type : CardId
+   -- type : Pointer<Card>
    -- location : MapLocation
-      -- map : MapId
+      -- map : Pointer<Map>
       -- q : Int
       -- r : Int
 
-   -- owner : Player
+   -- owner : Pointer<Player>
 
--- map
+-- map : GameMap
    -- seed : MapSeed
       -- type : MapType
+	     -- variant : String
 
    -- space : SpaceMap
-      -- id : MapId
-      -- hexes : MapLocation[]
-         -- map : MapId
-         -- q : Int
-         -- r : Int
-
-   -- worlds : WorldMap[]
-         -- id : MapId
-         -- space location : MapLocation
-            -- map : MapId
-            -- q : Int
-            -- r : Int
-
-         -- hexes[] : MapHex
+      -- mapId : String
+         -- hexes : MapHex[]
             -- location : MapLocation
-	            -- map : MapId
+	            -- map : Pointer<Map>
 	            -- q : Int
 	            -- r : Int
 
--- players[] : Player
-   -- playerId : PlayerId
-   -- cards : PlayerHand
-      -- deck[] : CardId
-      -- hand[] : CardId
-      -- discards[] : CardId
+   -- worlds : WorldMap[]
+         -- mapId : String
+         -- space location : MapLocation
+            -- map : Pointer<Map>
+            -- q : Int
+            -- r : Int
 
--- turn model[]
-   -- active players : PlayerId[]
-   -- current player : PlayerId[]
+         -- hexes : MapHex[]
+            -- location : MapLocation
+	            -- map : Pointer<Map>
+	            -- q : Int
+	            -- r : Int
+
+-- players : Player[]
+   -- playerId : String
+   -- cards : PlayerHand
+      -- deck : Pointer<Card>[]
+      -- hand : Pointer<Card>[]
+      -- discards : Pointer<Card>[]
+   -- resources : Int
+
+-- turn model : TurnModel
+   -- active players : Pointer<Player>[]
+   -- current player : Pointer<Player>
 
 -- cards : Card[]
-   -- cardId : CardId
+   -- cardId : String
    -- name : String
    -- action : String
    -- movement : Int
