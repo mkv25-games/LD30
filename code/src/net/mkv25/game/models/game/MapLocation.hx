@@ -17,7 +17,7 @@ class MapLocation extends CoreModel implements ISerializable
 	{
 		super();
 		
-		mapPointer = new Pointer<Map>(null);
+		mapPointer = new Pointer<Map>(null, Map);
 		q = 0;
 		r = 0;
 	}
@@ -29,7 +29,7 @@ class MapLocation extends CoreModel implements ISerializable
 	
 	function set_map(value:Map):Null<Map>
 	{
-		mapPointer = new Pointer<Map>(value.mapId);
+		mapPointer = new Pointer<Map>(value.mapId, Map);
 		
 		return value;
 	}
@@ -62,7 +62,7 @@ class MapLocation extends CoreModel implements ISerializable
 	public function readFrom(object:Dynamic):Void
 	{	
 		var mapId:String = read("map", object, null);
-		this.mapPointer = new Pointer<Map>(mapId);
+		this.mapPointer = new Pointer<Map>(mapId, Map);
 		
 		this.q = readInt("q", object, 0);
 		this.r = readInt("r", object, 0);

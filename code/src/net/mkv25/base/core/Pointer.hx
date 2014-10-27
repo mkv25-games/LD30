@@ -18,14 +18,15 @@ class Pointer<T>
 	 * @param	id     the unique id used to store T within the domain
 	 * @param	value  the item of type T to store
 	 */
-	public static function store(id:String, value:Dynamic):Void
+	public static function store(type:Class<Dynamic>, id:String, value:Dynamic):Void
 	{
-		if (exists(id))
+		if (exists(type, id))
 		{
-			throw "Item already exists at index " + id;
+			throw "Item type '" + Type.getClassName(type) + "' already exists for id '" + id + "'.";
 		}
 		
-		table.set(id, value);
+		var key = Pointer.generateStorageKey(type, id);
+		table.set(key, value);
 	}
 	
 	/**
@@ -49,20 +50,26 @@ class Pointer<T>
 	 * @param	id
 	 * @return  true if an entry exists for the supplied value
 	 */
-	public static function exists(id:String):Bool
+	public static function exists(type:Class<Dynamic>, id:String):Bool
 	{
 		if (table == null)
 		{
 			initialise();
 		}
 		
-		return table.exists(id);
+		var key = Pointer.generateStorageKey(type, id);
+		return table.exists(key);
 	}
 	
 	/**
 	 * The id of the current reference
 	 */
 	private var id:String;
+	
+	/**
+	 * The type of data being pointed to.
+	 */
+	private var type:Class<T>;
 	
 	/**
 	 * The value of the reference, will incur a table look up if the value is null.
@@ -72,9 +79,10 @@ class Pointer<T>
 	/**
 	 * Use Pointer<T>.makeFrom to instantiate new pointers.
 	 */
-	public function new(id:String) 
+	public function new(id:String, type:Class<T>) 
 	{
 		this.id = id;
+		this.type = type;
 	}
 	
 	/**
@@ -89,10 +97,20 @@ class Pointer<T>
 		}
 		else
 		{
-			value = cast table.get(id);
+			var key = Pointer.generateStorageKey(type, id);
+			value = cast table.get(key);
 		}
 		
 		return value;
+	}
+	
+	/**
+	 * Generate a storage key based on type and id.
+	 * @return
+	 */
+	private static function generateStorageKey(type:Class<Dynamic>, id:String):String
+	{
+		return Type.getClassName(type) + "_" + id;
 	}
 	
 	/**

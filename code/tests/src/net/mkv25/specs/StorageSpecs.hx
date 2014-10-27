@@ -1,6 +1,7 @@
 package net.mkv25.specs;
 
 import hxpect.core.BaseSpec;
+import net.mkv25.base.core.Pointer.Pointer;
 import net.mkv25.base.core.StorageModel;
 import net.mkv25.game.models.MapUnit;
 import net.mkv25.game.models.UnitList;
