@@ -21,29 +21,13 @@ class DomainSpecs extends BaseSpec
 				
 			});
 			
-			it("should be able to store information about units", function()
+			it("should be initialised with the correct properties", function()
 			{
-				
-			});
-			
-			it("should be able to store information about the game map", function()
-			{
-				
-			});
-			
-			it("should be able to store information about players", function()
-			{
-				
-			});
-			
-			it("should be able to store information about active players, and who the current player is", function()
-			{
-				
-			});
-			
-			it("should be able to store information about card types", function()
-			{
-				
+				expect(domain.cards).to.not.beNull();
+				expect(domain.map).to.not.beNull();
+				expect(domain.players).to.not.beNull();
+				expect(domain.turnModel).to.not.beNull();
+				expect(domain.units).to.not.beNull();
 			});
 		});
 	}

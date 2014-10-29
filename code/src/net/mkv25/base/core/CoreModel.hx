@@ -83,6 +83,7 @@ class CoreModel
 			var item:Dynamic = value.serialize();
 			itemArray.push(item);
 		}
+		write(property, to, itemArray);
 	}
 	
 	function readArray<T:ISerializable>(property:String, from:Dynamic, type:Class<T>):Array<T>
