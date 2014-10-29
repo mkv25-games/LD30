@@ -4,6 +4,7 @@ import haxe.Json;
 import hxpect.core.BaseSpec;
 import net.mkv25.game.models.game.Card;
 import net.mkv25.game.models.game.Game;
+import net.mkv25.game.models.game.Player;
 import net.mkv25.game.models.game.Unit;
 
 class SerializationSpecs extends BaseSpec
@@ -41,6 +42,7 @@ class SerializationSpecs extends BaseSpec
 				
 				var expected = {
 					cards: [cardData],
+					players: [],
 					units: []
 				}
 				var result = domain.serialize();
@@ -74,7 +76,42 @@ class SerializationSpecs extends BaseSpec
 				
 				var expected = {
 					cards: [],
+					players: [],
 					units: [unitData]
+				}
+				var result = domain.serialize();
+				
+				expect(Json.stringify(result)).to.be(Json.stringify(expected));
+			});
+		});
+		
+		describe("Serializing players", function()
+		{
+			var player:Player;
+			var playerData:Dynamic = {
+				playerId: "expected player id",
+				cards: {
+					deck: ["card one", "card two"],
+					hand: ["card three", "card four"],
+					discards: ["card five", "card six", "card seven"]
+				},
+				resources: 500
+			};
+			
+			beforeEach(function()
+			{
+				player = new Player();
+				player.readFrom(playerData);
+			});
+			
+			it("should be able to serialize, and deserialize players", function()
+			{
+				domain.players.push(player);
+				
+				var expected = {
+					cards: [],
+					players: [playerData],
+					units: []
 				}
 				var result = domain.serialize();
 				

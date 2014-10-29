@@ -6,7 +6,7 @@ import haxe.ds.StringMap;
  * Soft reference type : Pointer<T> - that can be easily serialized
  * For use when you need a reference to an object in a different domain, where this domain requires serialization, and the referenced object should not form part of this domain's serialization tree.
  */
-class Pointer<T>
+class Pointer<T> implements ISerializable
 {
 	/**
 	 * The in memory reference table, that will be populated when objects of type T are deserialized.
@@ -111,6 +111,11 @@ class Pointer<T>
 	private static function generateStorageKey(type:Class<Dynamic>, id:String):String
 	{
 		return Type.getClassName(type) + "_" + id;
+	}
+	
+	public function readFrom(object:Dynamic):Void
+	{
+		
 	}
 	
 	/**

@@ -33,6 +33,7 @@ class Game extends CoreModel implements ISerializable
 		var result:Dynamic = { };
 		
 		writeArray("cards", result, cards);
+		writeArray("players", result, players);
 		writeArray("units", result, units);
 		
 		return result;

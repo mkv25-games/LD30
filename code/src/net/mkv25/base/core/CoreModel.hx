@@ -105,4 +105,22 @@ class CoreModel
 		
 		return valueArray;
 	}
+	
+	function readPointerArray<T>(property:String, from:Dynamic, type:Class<T>):Array<Pointer<T>>
+	{
+		var itemArray:Array<Dynamic> = cast read(property, from, []);
+		var valueArray:Array<Pointer<T>> = new Array<Pointer<T>>();
+		
+		for (item in itemArray)
+		{
+			if (item != null)
+			{
+				var value:Pointer<T> = new Pointer<T>(item, type);
+				
+				valueArray.push(value);
+			}
+		}
+		
+		return valueArray;
+	}
 }
