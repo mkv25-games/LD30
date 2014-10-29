@@ -9,7 +9,7 @@ class CoreModel
 		changed = new Signal();
 	}
 
-	function read(property:String, from:Dynamic, defaultTo:Dynamic):Dynamic
+	function read(property:String, from:Dynamic, ?defaultTo:Dynamic):Dynamic
 	{
 		if (from == null) return defaultTo;
 		return Reflect.hasField(from, property) ? Reflect.field(from, property) : defaultTo;
@@ -70,7 +70,8 @@ class CoreModel
 	{
 		var value:T = Type.createEmptyInstance(type);
 		
-		value.readFrom(from);
+		var object:Dynamic = read(property, from, {});
+		value.readFrom(object);
 		
 		return value;
 	}

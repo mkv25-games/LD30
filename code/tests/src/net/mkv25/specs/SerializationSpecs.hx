@@ -40,7 +40,41 @@ class SerializationSpecs extends BaseSpec
 				domain.cards.push(card);
 				
 				var expected = {
-					cards: [cardData]
+					cards: [cardData],
+					units: []
+				}
+				var result = domain.serialize();
+				
+				expect(Json.stringify(result)).to.be(Json.stringify(expected));
+			});
+		});
+		
+		describe("Serializing units", function()
+		{
+			var unit:Unit;
+			var unitData:Dynamic = {
+				type: "expected unit id",
+				owner: "expected owner id",
+				location: {
+					map: "expected map id",
+					q: 200,
+					r: 300
+				}
+			};
+			
+			beforeEach(function()
+			{
+				unit = new Unit();
+				unit.readFrom(unitData);
+			});
+			
+			it("should be able to serialize, and deserialize units", function()
+			{
+				domain.units.push(unit);
+				
+				var expected = {
+					cards: [],
+					units: [unitData]
 				}
 				var result = domain.serialize();
 				

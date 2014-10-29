@@ -61,9 +61,7 @@ class MapLocation extends CoreModel implements ISerializable
 	
 	public function readFrom(object:Dynamic):Void
 	{	
-		var mapId:String = read("map", object, null);
-		this.mapPointer = new Pointer<Map>(mapId, Map);
-		
+		this.mapPointer = new Pointer<Map>(read("map", object), Map);
 		this.q = readInt("q", object, 0);
 		this.r = readInt("r", object, 0);
 	}	
