@@ -11,9 +11,9 @@ game : Game
 
 -- map : GameMap
    -- seed : MapSeed
-      -- type : MapType
-	     -- variant : String
-
+	  -- variant : Pointer<IStartVariant>
+	  -- value : Int
+	  
    -- space : SpaceMap
       -- mapId : String
          -- hexes : MapHex[]

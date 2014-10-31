@@ -30,6 +30,7 @@ class Map extends CoreModel implements ISerializable
 	public function readFrom(object:Dynamic):Void
 	{
 		mapId = read("mapId", object, null);
+		hexes = new StringMap<MapLocation>();
 		
 		var hexArray = readArray("hexes", object, MapLocation);
 		for (hex in hexArray)

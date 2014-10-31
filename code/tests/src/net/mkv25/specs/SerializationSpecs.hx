@@ -4,6 +4,7 @@ import haxe.Json;
 import hxpect.core.BaseSpec;
 import net.mkv25.game.models.game.Card;
 import net.mkv25.game.models.game.Game;
+import net.mkv25.game.models.game.GameMap;
 import net.mkv25.game.models.game.Player;
 import net.mkv25.game.models.game.Unit;
 
@@ -12,6 +13,16 @@ class SerializationSpecs extends BaseSpec
 	override public function run()
 	{
 		var domain:Game;
+		
+		var emptyMapData:Dynamic = {
+			archetype: {
+				seed: 0
+			},
+			space: {
+				hexes: []
+			},
+			worlds: []
+		}
 		
 		beforeEach(function()
 		{
@@ -42,6 +53,7 @@ class SerializationSpecs extends BaseSpec
 				
 				var expected = {
 					cards: [cardData],
+					map: emptyMapData,
 					players: [],
 					units: []
 				}
@@ -76,6 +88,7 @@ class SerializationSpecs extends BaseSpec
 				
 				var expected = {
 					cards: [],
+					map: emptyMapData,
 					players: [],
 					units: [unitData]
 				}
@@ -110,7 +123,43 @@ class SerializationSpecs extends BaseSpec
 				
 				var expected = {
 					cards: [],
+					map: emptyMapData,
 					players: [playerData],
+					units: []
+				}
+				var result = domain.serialize();
+				
+				expect(Json.stringify(result)).to.be(Json.stringify(expected));
+			});
+		});
+		
+		describe("Serializing the game map", function()
+		{
+			var map:GameMap;
+			var mapData:Dynamic = {
+				archetype: {
+					variant: "expected variant id",
+					seed: 500
+				},
+				space: {
+					hexes: []
+				},
+				worlds: [
+				
+				]
+			};
+			
+			beforeEach(function()
+			{
+				domain.map.readFrom(mapData);
+			});
+			
+			it("should be able to serialize, and deserialize the game map", function()
+			{
+				var expected = {
+					cards: [],
+					map: mapData,
+					players: [],
 					units: []
 				}
 				var result = domain.serialize();

@@ -26,9 +26,9 @@ class Unit extends CoreModel implements ISerializable
 	{
 		var result:Dynamic = { };
 		
-		write("type", result, type.serialize());
+		writeObject("type", result, type);
 		writeObject("location", result, location);
-		write("owner", result, owner.serialize());
+		writeObject("owner", result, owner);
 		
 		return result;
 	}
