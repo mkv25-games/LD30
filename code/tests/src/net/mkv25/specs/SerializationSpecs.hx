@@ -157,10 +157,18 @@ class SerializationSpecs extends BaseSpec
 					seed: 500
 				},
 				space: {
-					hexes: []
+					mapId: "s",
+					hexes: [
+						{q: 4, r: 4, map: "s" }
+					]
 				},
 				worlds: [
-				
+					{
+						mapId: "w1",
+						hexes: [
+							{q: 5, r: 5, map: "w1" }
+						]
+					}
 				]
 			};
 			
