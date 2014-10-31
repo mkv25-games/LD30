@@ -10,23 +10,47 @@ import net.mkv25.game.models.game.Unit;
 
 class SerializationSpecs extends BaseSpec
 {
+	public var emptyGameData(get, null):Dynamic;
+	
+	function get_emptyGameData():Dynamic
+	{
+		var emptyGameData:Dynamic = {
+			cards: [],
+			map: {
+				archetype: {
+					seed: 0
+				},
+				space: {
+					hexes: []
+				},
+				worlds: []
+			},
+			players: [],
+			units: []
+		};
+		
+		return emptyGameData;
+	}
+	
 	override public function run()
 	{
 		var domain:Game;
 		
-		var emptyMapData:Dynamic = {
-			archetype: {
-				seed: 0
-			},
-			space: {
-				hexes: []
-			},
-			worlds: []
-		}
-		
 		beforeEach(function()
 		{
 			domain = new Game();
+		});
+		
+		describe("Serializing empty data", function()
+		{
+			it("should be able to serialize, and deserialize an empty game object", function()
+			{
+				var expected = emptyGameData;
+				
+				var result = domain.serialize();
+				
+				expect(Json.stringify(result)).to.be(Json.stringify(expected));
+			});
 		});
 		
 		describe("Serializing cards", function()
@@ -51,12 +75,9 @@ class SerializationSpecs extends BaseSpec
 			{
 				domain.cards.push(card);
 				
-				var expected = {
-					cards: [cardData],
-					map: emptyMapData,
-					players: [],
-					units: []
-				}
+				var expected = emptyGameData;
+				expected.cards.push(cardData);
+				
 				var result = domain.serialize();
 				
 				expect(Json.stringify(result)).to.be(Json.stringify(expected));
@@ -86,12 +107,9 @@ class SerializationSpecs extends BaseSpec
 			{
 				domain.units.push(unit);
 				
-				var expected = {
-					cards: [],
-					map: emptyMapData,
-					players: [],
-					units: [unitData]
-				}
+				var expected = emptyGameData;
+				expected.units.push(unitData);
+				
 				var result = domain.serialize();
 				
 				expect(Json.stringify(result)).to.be(Json.stringify(expected));
@@ -121,12 +139,9 @@ class SerializationSpecs extends BaseSpec
 			{
 				domain.players.push(player);
 				
-				var expected = {
-					cards: [],
-					map: emptyMapData,
-					players: [playerData],
-					units: []
-				}
+				var expected = emptyGameData;
+				expected.players.push(playerData);
+				
 				var result = domain.serialize();
 				
 				expect(Json.stringify(result)).to.be(Json.stringify(expected));
@@ -156,12 +171,9 @@ class SerializationSpecs extends BaseSpec
 			
 			it("should be able to serialize, and deserialize the game map", function()
 			{
-				var expected = {
-					cards: [],
-					map: mapData,
-					players: [],
-					units: []
-				}
+				var expected = emptyGameData;
+				expected.map = mapData;
+				
 				var result = domain.serialize();
 				
 				expect(Json.stringify(result)).to.be(Json.stringify(expected));
