@@ -32,6 +32,19 @@ class SerializationSpecs extends BaseSpec
 		return emptyGameData;
 	}
 	
+	function verify(domain:Game):Void
+	{
+		var verification = new Game();
+		
+		var domainData = Json.stringify(domain);
+		verification.readFrom(domainData);
+		
+		var expected = domainData;
+		var actual = Json.stringify(verification);
+		
+		expect(actual).to.be(expected);
+	}
+	
 	override public function run()
 	{
 		var domain:Game;
@@ -50,6 +63,8 @@ class SerializationSpecs extends BaseSpec
 				var result = domain.serialize();
 				
 				expect(Json.stringify(result)).to.be(Json.stringify(expected));
+				
+				verify(domain);
 			});
 		});
 		
@@ -81,6 +96,8 @@ class SerializationSpecs extends BaseSpec
 				var result = domain.serialize();
 				
 				expect(Json.stringify(result)).to.be(Json.stringify(expected));
+				
+				verify(domain);
 			});
 		});
 		
@@ -113,6 +130,8 @@ class SerializationSpecs extends BaseSpec
 				var result = domain.serialize();
 				
 				expect(Json.stringify(result)).to.be(Json.stringify(expected));
+				
+				verify(domain);
 			});
 		});
 		
@@ -145,6 +164,8 @@ class SerializationSpecs extends BaseSpec
 				var result = domain.serialize();
 				
 				expect(Json.stringify(result)).to.be(Json.stringify(expected));
+				
+				verify(domain);
 			});
 		});
 		
@@ -185,6 +206,8 @@ class SerializationSpecs extends BaseSpec
 				var result = domain.serialize();
 				
 				expect(Json.stringify(result)).to.be(Json.stringify(expected));
+				
+				verify(domain);
 			});
 		});
 	}	

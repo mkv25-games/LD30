@@ -25,7 +25,10 @@ class Game extends CoreModel implements ISerializable
 	
 	public function readFrom(object:Dynamic):Void
 	{
-		
+		readArray("cards", object, Card);
+		readObject("map", object, GameMap);
+		readArray("players", object, Player);
+		readArray("units", object, Unit);
 	}
 	
 	public function serialize():Dynamic
