@@ -36,13 +36,13 @@ class SerializationSpecs extends BaseSpec
 	{
 		var verification = new Game();
 		
-		var domainData = Json.stringify(domain);
+		var domainData = domain.serialize();
 		verification.readFrom(domainData);
 		
 		var expected = domainData;
-		var actual = Json.stringify(verification);
+		var actual = verification.serialize();
 		
-		expect(actual).to.be(expected);
+		expect(Json.stringify(actual)).to.be(Json.stringify(expected));
 	}
 	
 	override public function run()
