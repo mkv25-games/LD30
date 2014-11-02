@@ -296,8 +296,6 @@ class ActiveGame extends CoreModel
 		playerIndex = readArray("playerIndex", object, PlayerModel);
 		// space = readObject("space", object, MapModel);
 		// worlds = readArray("worlds", object, MapModel);
-		activePlayers = new TurnModel<PlayerModel>();
-		activePlayers.readFrom(read("activePlayers", object, {}), playerIndex);
 	}
 	
 	public function serialize():Dynamic
@@ -307,7 +305,6 @@ class ActiveGame extends CoreModel
 		writeArray("playerIndex", result, playerIndex);
 		// writeObject("space", result, space);
 		// writeArray("worlds", result, worlds);
-		writeObject("activePlayers", result, activePlayers.serialize()); 
 		
 		return result;
 	}

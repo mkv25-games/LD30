@@ -171,15 +171,47 @@ class TurnModel<T>
 		return output;
 	}
 	
-	public function readFrom(object:Dynamic, dataSource:Array<T>)
+	public function readFrom(dataSource:Array<T>, activePlayer:T)
 	{
+		// clear existing data
+		first = null;
+		active = null;
 		
+		// add items from data source
+		for (item in dataSource)
+		{
+			add(item);
+		}
+		
+		// set the active player
+		var entry = first;
+		if (entry != null)
+		{
+			do
+			{
+				if (entry.value == activePlayer)
+				{
+					active = entry;
+				}
+				entry = entry.next;
+			} while (entry != first);
+		}
 	}
 	
-	public function serialize():Dynamic
+	public function toArray():Array<T>
 	{
-		var result:Dynamic = { };
-	
+		var result:Array<T> = new Array<T>();
+		/*
+		var entry = first;
+		if (entry != null)
+		{
+			do
+			{
+				result.push(entry.value);
+				entry = entry.next;
+			} while (entry != first);
+		}
+		*/
 		return result;
 	}
 }

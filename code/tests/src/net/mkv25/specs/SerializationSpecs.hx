@@ -16,6 +16,7 @@ class SerializationSpecs extends BaseSpec
 	{
 		var emptyGameData:Dynamic = {
 			cards: [],
+			activePlayers: [],
 			map: {
 				archetype: {
 					seed: 0

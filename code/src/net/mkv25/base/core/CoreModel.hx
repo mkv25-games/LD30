@@ -63,6 +63,7 @@ class CoreModel
 	
 	function writeObject(property:String, to:Dynamic, value:ISerializable)
 	{
+		if (value == null) return;
 		write(property, to, value.serialize());
 	}
 	
