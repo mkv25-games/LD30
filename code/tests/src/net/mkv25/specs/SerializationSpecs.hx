@@ -211,5 +211,27 @@ class SerializationSpecs extends BaseSpec
 				verify(domain);
 			});
 		});
+		
+		describe("Serializing the turn model", function()
+		{
+			var activePlayerId:String = "expected player id 2";
+			var activePlayers:Array<Dynamic> = ["expected player id 1", "expected player id 2", "expected player id 3"];
+			
+			it("should be able to serialize, and deserialize players", function()
+			{
+				var domainData = emptyGameData;
+				domainData.activePlayer = activePlayerId;
+				domainData.activePlayers = activePlayers;
+				
+				trace(domainData);
+				
+				domain.readFrom(domainData);
+				var result = domain.serialize();
+				
+				expect(Json.stringify(result)).to.be(Json.stringify(domainData));
+				
+				verify(domain);
+			});
+		});
 	}	
 }

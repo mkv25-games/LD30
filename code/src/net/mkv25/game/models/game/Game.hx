@@ -33,9 +33,28 @@ class Game extends CoreModel implements ISerializable
 		players = readArray("players", object, Player);
 		cards = readArray("cards", object, Card);
 		
+		readTurnModelFrom(object);
+	}
+	
+	function readTurnModelFrom(object:Dynamic):Void
+	{
 		turnModel = new TurnModel<Pointer<Player>>();
+		
+		// create pointer array from active players list
 		var activePlayers:Array<Pointer<Player>> = readPointerArray("activePlayers", object, Player);
-		var activePlayer:Pointer<Player> = new Pointer<Player>(read("activePlayer", object), Player);
+		
+		// search pointer array for matching player reference
+		var activePlayer:Pointer<Player> = null;
+		var activePlayerId:String = read("activePlayer", object);
+		for (player in activePlayers)
+		{
+			if (player.serialize() == activePlayerId)
+			{
+				activePlayer = player;
+			}
+		}
+		
+		// pass the normalised data to the turn model
 		turnModel.readFrom(activePlayers, activePlayer);
 	}
 	

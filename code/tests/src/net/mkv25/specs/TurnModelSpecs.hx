@@ -188,6 +188,18 @@ class TurnModelSpecs extends BaseSpec
 					expect(model.nextPlayer).to.be(null);
 				});
 			});
+			
+			describe("Serialization", function()
+			{	
+				it("should be able to return an array of players", function()
+				{
+					var result = model.toArray();
+					expect(result[0]).to.be(john);
+					expect(result[1]).to.be(james);
+					expect(result[2]).to.be(juliet);
+					expect(result[3]).to.be(johanna);
+				});
+			});
 		});
 	}
 }

@@ -201,7 +201,7 @@ class TurnModel<T>
 	public function toArray():Array<T>
 	{
 		var result:Array<T> = new Array<T>();
-		/*
+		
 		var entry = first;
 		if (entry != null)
 		{
@@ -211,7 +211,7 @@ class TurnModel<T>
 				entry = entry.next;
 			} while (entry != first);
 		}
-		*/
+		
 		return result;
 	}
 }
